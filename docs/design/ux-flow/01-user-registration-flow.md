@@ -3,6 +3,10 @@
 ## Overview
 This document outlines the complete user journey for first-time users registering with the Identity Provider service. The flow prioritizes simplicity, security, and trust-building while ensuring proper consent and verification.
 
+**Related Documents**:
+- [UX Standards and Guidelines](./00-ux-standards.md) - Shared accessibility and localization requirements
+- [Technical Implementation](../architecture/auth-flows-technical.md) - Security and integration details
+
 ## User Goals
 - Create a secure account with minimal friction
 - Understand what data is being collected and why
@@ -31,11 +35,7 @@ This document outlines the complete user journey for first-time users registerin
 - Present privacy-first messaging
 - Include "Already have an account?" link
 
-**Accessibility**: 
-- Clear focus indicators
-- Screen reader compatible
-- Keyboard navigation support
-- High contrast mode support
+**Accessibility**: See [UX Standards](./00-ux-standards.md#accessibility-standards) for complete requirements
 
 ### Step 2: Information Collection
 **Screen**: Registration Form
@@ -159,106 +159,72 @@ This document outlines the complete user journey for first-time users registerin
 - Status page link
 - Alternative registration methods
 
-## Integration Touchpoints
+## Integration Points
 
-### With Client Applications
-- Seamless redirect after registration
-- Account linking for existing app users
-- Developer webhook notifications
-- User profile data sharing (with consent)
+### Client Application Flow
+- Seamless redirect after registration completion
+- Context preservation for intended destination
+- Clear confirmation of successful account creation
+- Immediate usability of new account
 
-### With External Services
-- Social provider authentication
-- Email delivery services
-- SMS providers (for 2FA)
-- Identity verification services
+### External Authentication
+- Social provider login options (Google, GitHub, Apple)
+- Consistent branding across authentication methods
+- Clear value proposition for each option
+- Fallback to email/password if social login fails
 
-## Security Considerations
+**Technical Details**: See [Authentication Flows Technical Documentation](../../architecture/auth-flows-technical.md#user-registration---technical-requirements) for security considerations, fraud prevention, and integration specifications.
 
-### Data Protection
-- Encrypted data transmission (HTTPS)
-- Secure password storage (bcrypt/Argon2)
-- PII data minimization
-- GDPR/CCPA compliance
-
-### Fraud Prevention
-- Rate limiting on registration attempts
-- CAPTCHA for suspicious activity
-- Email domain validation
-- Duplicate account detection
-
-### Account Security
-- Strong password requirements
-- Optional 2FA setup
-- Account lockout protection
-- Suspicious activity monitoring
-
-## Mobile Responsiveness
+## Mobile Experience
 
 ### Design Adaptations
 - Single-column layout on mobile
-- Touch-friendly form elements
-- Larger tap targets (minimum 44px)
-- Simplified navigation
+- Touch-optimized form elements
+- Simplified navigation and reduced cognitive load
+- Progressive disclosure of optional features
 
-### Mobile-Specific Features
-- Autofill support for forms
-- Biometric authentication options
-- App deep linking support
-- SMS verification as alternative
+### Mobile-Specific Enhancements
+- Form autofill integration
+- Biometric authentication where available
+- SMS verification as verification alternative
+- Deep linking support for app-to-app flows
 
-## Analytics and Metrics
+**Full Mobile Standards**: See [UX Standards](./00-ux-standards.md#mobile-experience-standards) for complete mobile requirements
 
-### Conversion Tracking
-- Registration funnel completion rates
-- Drop-off points identification
-- Time to complete registration
-- Method preference analysis
+## Success Metrics and Optimization
 
-### Success Metrics
-- Email verification completion rate
-- Profile setup completion rate
-- Time to first successful login
-- User retention after registration
+### User Experience Metrics
+- Registration funnel completion rates by method
+- Drop-off points and recovery success rates
+- Time to complete registration flow
+- User satisfaction with registration process
 
-## Accessibility Requirements
+### Behavioral Insights
+- Authentication method preferences
+- Profile completion patterns
+- First-session engagement levels
+- Long-term user activation rates
 
-### WCAG 2.1 AA Compliance
-- Keyboard navigation throughout
-- Screen reader compatibility
-- Color contrast requirements
-- Focus management
+**Analytics Implementation**: See [UX Standards](./00-ux-standards.md#performance-and-analytics-standards) for privacy-respecting analytics approach
 
-### Assistive Technology Support
-- Clear form labels and instructions
-- Error message announcements
-- Progress indication for screen readers
-- Alternative text for visual elements
+## Accessibility and Localization
 
-## Localization Considerations
+This flow must implement all standards defined in the [UX Standards document](./00-ux-standards.md):
+- [Accessibility Standards](./00-ux-standards.md#accessibility-standards) - WCAG 2.1 AA compliance
+- [Localization Standards](./00-ux-standards.md#localization-standards) - Multi-language and cultural considerations
+- [Error Handling Standards](./00-ux-standards.md#error-handling-standards) - User-friendly error messaging
 
-### Multi-language Support
-- Form field translations
-- Error message localization
-- Cultural date/time formats
-- Right-to-left language support
+## Future Enhancements and Testing
 
-### Regional Compliance
-- Data residency requirements
-- Local privacy law compliance
-- Currency and timezone detection
-- Regional verification methods
-
-## Future Enhancements
-
-### Planned Improvements
-- Biometric authentication support
-- Enterprise SSO integration
-- Advanced fraud detection
-- AI-powered user assistance
+### Planned UX Improvements
+- Streamlined consent interface with progressive disclosure
+- Enhanced onboarding with contextual guidance
+- Personalized registration experience based on referral source
+- Improved mobile web app installation prompts
 
 ### A/B Testing Opportunities
-- Registration form length
-- Social login placement
-- Consent flow design
-- Verification method options
+- Registration form length vs. completion rates
+- Social login prominence and positioning
+- Consent presentation format (granular vs. bundled)
+- Email verification reminder timing and messaging
+- Progressive profile completion vs. upfront collection

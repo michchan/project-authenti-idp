@@ -1,7 +1,11 @@
-# Wireframe Concepts - Identity Provider Platform
+# MVP Wireframe Concepts - Identity Provider Platform
 
 ## Overview
-This document provides structural wireframes for critical screens across the Identity Provider platform. These wireframes focus on layout, content hierarchy, and functional placement rather than visual design. They serve as blueprints for the development team and visual designers.
+This document provides structural wireframes for critical screens across the Identity Provider platform's MVP (Minimum Viable Product) release. These wireframes focus on layout, content hierarchy, and functional placement rather than visual design. They serve as blueprints for the development team and visual designers.
+
+**Related Documents**:
+- [UX Standards and Guidelines](../ux-flow/00-ux-standards.md) - Accessibility and design system requirements
+- [User Flow Documents](../ux-flow/) - Behavioral logic and interaction patterns
 
 ## Wireframe Notation
 ```

@@ -55,8 +55,10 @@ Developers need a simple way to integrate their applications with the IDP servic
 - Developer dashboard for application registration and management
 - OAuth 2.0 authorization server implementation
 - OpenID Connect provider capabilities
-- JavaScript/Node.js SDK for web applications
-- Python SDK for backend applications
+- JavaScript/Node.js SDK for web applications and backend services
+- React SDK with hooks for Create-React-App and SPA integration
+- Next.js SDK with server-side rendering support
+- Support for multiple package managers (npm, yarn, pnpm, bun)
 - Integration documentation and tutorials
 - Testing tools for verifying integration
 - Basic application analytics (user counts, login frequency)
@@ -84,7 +86,7 @@ Developers need a simple way to integrate their applications with the IDP servic
 ## Dependencies
 
 ### Technical Dependencies
-- Core authentication system (previous epic)
+- Core authentication system (see [core-authentication.md](core-authentication.md))
 - Database for storing application configurations
 - Web framework for developer dashboard
 - Documentation platform for integration guides

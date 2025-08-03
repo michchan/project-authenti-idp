@@ -3,6 +3,10 @@
 ## Overview
 This document defines the user experience for administrators and product managers who oversee the Identity Provider platform. The flow emphasizes comprehensive system monitoring, user management capabilities, security oversight, and business intelligence to enable effective platform governance.
 
+**Related Documents**:
+- [UX Standards and Guidelines](./00-ux-standards.md) - Shared accessibility and localization requirements
+- [Technical Implementation](../../architecture/auth-flows-technical.md) - Security and monitoring technical details
+
 ## User Goals
 - Monitor platform health and performance metrics
 - Manage user accounts and resolve support issues

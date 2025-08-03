@@ -3,6 +3,10 @@
 ## Overview
 This document defines the overall information architecture and navigation structure for the Identity Provider platform, ensuring consistent user experience across all user types and interfaces while maintaining clear information hierarchy and intuitive navigation patterns.
 
+**Related Documents**:
+- [UX Standards and Guidelines](./00-ux-standards.md) - Shared accessibility and localization requirements
+- [User Flow Documents](./01-user-registration-flow.md) - Individual flow specifications
+
 ## Platform Structure Overview
 
 ### Primary User Interfaces

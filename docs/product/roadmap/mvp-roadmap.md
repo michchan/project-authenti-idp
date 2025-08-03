@@ -57,7 +57,7 @@
 - OAuth 2.0 authorization flow for third-party applications
 - Basic user profile management (name, email, basic attributes)
 - Application registration and management dashboard
-- Integration SDKs for JavaScript/Node.js and Python
+- Integration SDKs for JavaScript/Node.js, React, and Next.js
 - Email verification and password reset functionality
 
 ### Enhanced Features (Should Have)

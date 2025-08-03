@@ -46,16 +46,14 @@ Enable small-scale product creators to build interconnected applications with sh
 ## Success Metrics
 
 ### Primary KPIs
-- **Developer Adoption**: 50+ active developers using the IDP within 6 months
-- **Application Integration**: 100+ applications integrated within first year
 - **Cost Efficiency**: Maintain $0 operational cost for applications <100 monthly active users
 - **Integration Speed**: <2 hours from start to working authentication in new app
+- **Personal Portfolio Growth**: Enable creators to build 3-5 interconnected applications
 
 ### Secondary Metrics
 - **User Experience**: <5 second authentication flow completion
 - **Security Compliance**: Zero security incidents in first year
 - **Developer Satisfaction**: >4.5/5 developer experience rating
-- **Cross-Product Usage**: >60% of users active across multiple connected applications
 
 ## Strategic Constraints
 
@@ -65,8 +63,8 @@ Enable small-scale product creators to build interconnected applications with sh
 - Infrastructure costs should not exceed $50/month until 1000+ monthly active users
 
 ### Technical Constraints
-- Must work with existing application architectures (web, mobile, API-first)
-- Should integrate with popular development frameworks and platforms
+- Must work with modern web application architectures
+- Should integrate seamlessly with Next.js, Create-React-App, and Express (Node.js backend)
 - Must maintain security standards comparable to established providers
 
 ### Scale Constraints

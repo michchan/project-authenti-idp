@@ -3,6 +3,10 @@
 ## Overview
 This document defines the user experience for managing account settings, security preferences, connected applications, and privacy controls within the Identity Provider. The flow emphasizes user control, transparency, and easy access to critical account functions.
 
+**Related Documents**:
+- [UX Standards and Guidelines](./00-ux-standards.md) - Shared accessibility and localization requirements
+- [Technical Implementation](../../architecture/auth-flows-technical.md) - Security and integration details
+
 ## User Goals
 - Easily update profile and account information
 - Manage security settings and authentication methods

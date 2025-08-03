@@ -1,7 +1,11 @@
 # SSO Flow - Identity Provider
 
 ## Overview
-This document outlines the Single Sign-On (SSO) user experience when users access client applications through the Identity Provider. The flow emphasizes seamless authentication, clear consent management, and secure token exchange while maintaining user control and transparency.
+This document outlines the Single Sign-On (SSO) user experience when users access client applications through the Identity Provider. The flow emphasizes seamless authentication, clear consent management, and user control while maintaining transparency and trust.
+
+**Related Documents**:
+- [UX Standards and Guidelines](./00-ux-standards.md) - Shared accessibility and localization requirements
+- [Technical Implementation](../../architecture/auth-flows-technical.md) - Security and technical integration details
 
 ## User Goals
 - Access client applications without repeated authentication
@@ -17,12 +21,11 @@ This document outlines the Single Sign-On (SSO) user experience when users acces
 
 #### Step 1: Initial Redirect
 **User Action**: User clicks "Login with [IDP Name]" or similar
-**System Action**: Client app redirects to IDP with parameters:
-- `client_id`: Application identifier
-- `redirect_uri`: Return URL
-- `scope`: Requested permissions
-- `state`: CSRF protection token
-- `response_type`: Authorization flow type
+**User Experience**: 
+- Clear indication that user is being redirected to trusted identity provider
+- Loading screen with progress indication during redirect
+- Branded transition showing both client app and IDP logos
+- Cancel option available during redirect process
 
 #### Step 2: Authentication Required
 **Screen**: IDP Login Interface
@@ -55,13 +58,13 @@ This document outlines the Single Sign-On (SSO) user experience when users acces
 - Clear revocation process
 
 #### Step 4: Authorization Grant
-**System Action**: Generate authorization code
-**User Experience**: Automatic redirect to client application
-**Security Measures**:
-- Short-lived authorization codes (5 minutes)
-- PKCE (Proof Key for Code Exchange) support
-- State parameter validation
-- Secure redirect URI validation
+**User Experience**: 
+- Brief confirmation screen showing successful authorization
+- Clear messaging about redirect back to application
+- Loading indicator during redirect process
+- Option to cancel and return to IDP if redirect fails
+
+**Technical Details**: See [Authentication Flows Technical Documentation](../../architecture/auth-flows-technical.md#sso-flow---technical-requirements) for security measures, token generation, and validation requirements.
 
 ### 2. Existing Session Flow
 **Scenario**: User already authenticated with IDP
@@ -161,53 +164,37 @@ The following permissions are requested:
 - Default selections favor user privacy
 - Easy permission modification
 
-### Consent Persistence
-**Storage Requirements**:
-- User consent records
-- Permission scope tracking
-- Consent timestamp logging
-- Revocation history
+### Consent Management Experience
+**User Dashboard Features**:
+- Clear overview of all connected applications
+- Easy-to-understand permission summaries
+- One-click permission modification
+- Simple revocation process with confirmation
+- Downloadable consent history for transparency
 
-**Management Features**:
-- View all connected applications
-- Modify existing permissions
-- Revoke access completely
-- Download consent history
+**Ongoing Consent Management**:
+- Annual consent renewal reminders
+- Notifications when apps request new permissions
+- Easy access to consent settings from any connected app
+- Clear explanation of data sharing implications
 
-## Token Management
+## Token and Session Experience
 
-### Authorization Code Flow
-**Process**:
-1. User authorization at IDP
-2. Authorization code generation
-3. Client app receives code
-4. Backend token exchange
-5. Access/refresh token delivery
+### Seamless Authentication Flow
+**User Experience**:
+1. User grants authorization at IDP
+2. Brief processing screen with progress indicator
+3. Automatic redirect back to client application
+4. Immediate application access without re-authentication
+5. Clear confirmation of successful login
 
-**Security Measures**:
-- HTTPS-only communication
-- Short authorization code lifetime
-- One-time code usage
-- PKCE implementation
+**Session Management**:
+- Consistent authentication state across applications
+- Clear session timeout notifications
+- Easy session extension when needed
+- Graceful handling of expired sessions
 
-### Token Types
-**Access Tokens**:
-- JWT or opaque token format
-- Short lifetime (15 minutes - 1 hour)
-- Scope-limited permissions
-- Audience validation
-
-**Refresh Tokens**:
-- Secure, long-lived tokens
-- Rotation on each use
-- Revocation capability
-- Device binding
-
-**ID Tokens** (OpenID Connect):
-- User identity information
-- Signed JWT format
-- Standard claims support
-- Custom claim inclusion
+**Technical Details**: See [Authentication Flows Technical Documentation](../../architecture/auth-flows-technical.md#token-management) for token types, security measures, and technical implementation.
 
 ## Error Handling
 
@@ -255,151 +242,162 @@ The following permissions are requested:
 - Direct contact methods
 - Alternative access paths
 
-### Developer-Facing Errors
-**Error Response Format**:
-```json
-{
-  "error": "invalid_request",
-  "error_description": "The redirect_uri parameter is invalid",
-  "error_uri": "https://docs.idp.com/errors/invalid_redirect",
-  "state": "xyz"
-}
-```
+### Error Communication to Users
+**When Technical Errors Occur**:
+- Clear, non-technical error messages for users
+- Specific guidance on what users can do to resolve issues
+- Contact information for both IDP and application support
+- Option to report issues directly from error screens
 
-**Common Error Types**:
-- `invalid_client`: Application not recognized
-- `invalid_scope`: Requested permissions unavailable
-- `access_denied`: User declined authorization
-- `server_error`: Internal system error
+**Common User-Facing Error Scenarios**:
+- Application not found: Clear messaging with alternatives
+- Permission issues: Explanation of required permissions
+- User declined authorization: Confirmation and alternatives
+- System errors: Helpful troubleshooting steps and support options
+
+**Technical Error Details**: See [Authentication Flows Technical Documentation](../../architecture/auth-flows-technical.md#error-response-format) for developer-facing error specifications.
 
 ## Cross-Application Experience
 
 ### Session Coordination
-**Multi-Tab Behavior**:
-- Consistent authentication state
-- Automatic session updates
-- Coordinated logout events
-- Tab-to-tab communication
+**Multi-Tab and Window Experience**:
+- Consistent login state across all browser tabs
+- Automatic updates when authentication status changes
+- Coordinated logout across all connected applications
+- Clear communication when session conflicts occur
 
-**Cross-Device Synchronization**:
-- Session state sharing
-- Device trust management
-- Security event propagation
-- Unified logout capability
+**Cross-Device Experience**:
+- Seamless session handoff between trusted devices
+- Clear device management and trust settings
+- Security notifications when accessing from new devices
+- Unified logout option across all devices
 
-### Application Switching
-**User Experience**:
-- Seamless app-to-app navigation
-- Context preservation
-- Quick application launcher
-- Recent activity tracking
+### Application Ecosystem
+**Seamless Navigation**:
+- Quick switching between connected applications
+- Context preservation when moving between apps
+- Application launcher with frequently used apps
+- Recent activity and quick access features
 
-**Implementation**:
-- Iframe-based session checks
-- JavaScript-based communication
-- Server-side session coordination
-- Secure cross-origin messaging
+**Technical Implementation**: See [Authentication Flows Technical Documentation](../../architecture/auth-flows-technical.md#cross-application-experience) for session coordination and cross-origin messaging details.
 
-## Security Considerations
+## Security User Experience
 
-### CSRF Protection
-- State parameter validation
-- Origin header verification
-- Referrer policy enforcement
-- Token binding mechanisms
+### Trust and Transparency
+- Clear security indicators throughout the flow
+- Transparent communication about data protection
+- Educational content about SSO security benefits
+- Regular security status updates and notifications
 
-### Session Security
-- Secure cookie configuration
-- SameSite cookie attributes
-- Session fixation prevention
-- Concurrent session management
+### User Security Controls
+- Easy-to-access security settings and preferences
+- Clear session management and device trust controls
+- Immediate security incident notifications
+- Simple security feature setup and management
 
-### Token Security
-- JWT signature verification
-- Token encryption in transit
-- Secure token storage
-- Token leakage prevention
+**Security Technical Details**: See [Security Model](../../architecture/security/security-model.md) for CSRF protection, session security, and token security implementation.
 
-## Mobile and Native App Support
+## Mobile and Native App Experience
 
-### Native App Flow
-**Authorization Methods**:
-- Custom URL schemes
-- Universal links (iOS/Android)
-- Chrome Custom Tabs
-- In-app browser
+### Native App Authentication
+**Seamless App-to-App Flow**:
+- Native app integration with clear branding
+- Smooth transitions between apps without jarring browser switches
+- Universal link handling with fallback options
+- Consistent authentication experience across platforms
 
-**Security Enhancements**:
-- App-to-app authentication
-- Certificate pinning
-- Biometric integration
-- Hardware security modules
+**Enhanced Mobile Security**:
+- Biometric authentication integration where available
+- Clear security prompts and confirmations
+- Device-specific security features utilization
+- Transparent security upgrade notifications
 
 ### Mobile Web Optimization
-**User Experience**:
-- Touch-optimized interfaces
-- Simplified consent flows
-- Faster loading times
-- Offline capability
+**Touch-Optimized Experience**:
+- Large, easy-to-tap consent and authentication controls
+- Simplified consent flows appropriate for mobile screens
+- Fast loading with progressive enhancement
+- Offline detection with clear messaging
 
-## Performance Optimization
+**Complete Mobile Standards**: See [UX Standards](./00-ux-standards.md#mobile-experience-standards) for detailed mobile requirements
 
-### Caching Strategies
-- Consent decision caching
-- Session state caching
-- Application metadata caching
-- Token response caching
+## Performance and Reliability
 
-### Network Optimization
-- Minimal redirect chains
-- Compressed response payloads
-- CDN-delivered static assets
-- Parallel request processing
+### User-Perceived Performance
+- Fast authentication flows with minimal waiting
+- Progressive loading with immediate feedback
+- Optimized redirect chains for smooth transitions
+- Predictable performance across different network conditions
 
-## Analytics and Monitoring
+### Reliability and Error Recovery
+- Graceful handling of network interruptions
+- Clear error messages with actionable recovery steps
+- Fallback options when primary systems are unavailable
+- Consistent performance monitoring and improvement
+
+**Technical Performance Details**: See [Authentication Flows Technical Documentation](../../architecture/auth-flows-technical.md#performance-optimization) for caching strategies and network optimization.
+
+## Success Metrics and Optimization
 
 ### User Experience Metrics
-- SSO completion rates
-- Authentication time
-- Consent acceptance rates
-- Error occurrence frequency
+- SSO flow completion rates across different applications
+- Time to complete authentication and consent flows
+- User consent acceptance and modification patterns
+- User satisfaction with SSO experience
 
-### Security Metrics
-- Failed authorization attempts
-- Suspicious activity detection
-- Token usage patterns
-- Consent revocation rates
+### Trust and Security Metrics
+- User adoption of security features
+- Response to security notifications and warnings
+- Consent revocation patterns and reasons
+- User trust indicators and feedback
 
-### Performance Metrics
-- End-to-end flow latency
-- Server response times
-- Client-side loading performance
-- Mobile performance specifics
+### Performance and Reliability
+- End-to-end SSO flow performance
+- Cross-device and cross-platform consistency
+- Error recovery success rates
+- Mobile vs desktop experience quality
 
-## Compliance and Privacy
+**Analytics Implementation**: See [UX Standards](./00-ux-standards.md#performance-and-analytics-standards) for privacy-respecting analytics approach
 
-### Data Protection
-- GDPR consent compliance
-- CCPA privacy rights
-- Data minimization principles
-- Purpose limitation adherence
+## Privacy and Compliance User Experience
 
-### Audit Requirements
-- Comprehensive access logging
-- Consent change tracking
-- Data sharing audit trails
-- Compliance reporting
+### Transparent Data Practices
+- Clear, understandable privacy notices
+- Granular consent options with plain language explanations
+- Easy access to data usage information
+- Simple exercise of privacy rights (access, deletion, portability)
 
-## Future Enhancements
+### Compliance-Friendly Features
+- GDPR and CCPA compliant consent interfaces
+- Data minimization reflected in permission requests
+- Clear purpose statements for all data collection
+- Audit trail access for users when requested
 
-### Planned Features
-- Advanced consent management
-- Zero-trust authentication
-- AI-powered risk assessment
-- Enhanced mobile integration
+**Technical Compliance Details**: See [Authentication Flows Technical Documentation](../../architecture/auth-flows-technical.md#compliance-and-audit-requirements) for detailed compliance implementation.
 
-### Technology Roadmap
-- WebAuthn integration
-- Decentralized identity support
-- Blockchain-based consent
-- Quantum-resistant cryptography
+## Accessibility and Localization
+
+This flow must implement all standards defined in the [UX Standards document](./00-ux-standards.md):
+- [Accessibility Standards](./00-ux-standards.md#accessibility-standards) - WCAG 2.1 AA compliance and assistive technology support
+- [Localization Standards](./00-ux-standards.md#localization-standards) - Multi-language support and cultural adaptations
+- [Error Handling Standards](./00-ux-standards.md#error-handling-standards) - User-friendly error messaging and recovery paths
+
+## Future Enhancements and Testing
+
+### Planned UX Improvements
+- Enhanced consent management with better visual hierarchy
+- Intelligent authentication method suggestions based on context
+- Improved cross-device authentication handoff experience
+- Advanced personalization of SSO experience
+
+### Emerging Authentication Patterns
+- WebAuthn integration with clear user education and setup
+- Decentralized identity support with user-friendly explanations
+- Enhanced privacy controls with transparent blockchain-based consent
+- Future-proofing for quantum-resistant authentication methods
+
+### A/B Testing Opportunities
+- Consent interface design and information hierarchy
+- Authentication method presentation and defaults
+- Error messaging and recovery flow effectiveness
+- Cross-device authentication flow optimization

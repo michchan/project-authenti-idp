@@ -3,6 +3,10 @@
 ## Overview
 This document defines the comprehensive user experience for privacy management and consent flows within the Identity Provider platform. The design emphasizes transparency, user control, regulatory compliance, and trust-building while maintaining usability and clear communication about data handling practices.
 
+**Related Documents**:
+- [UX Standards and Guidelines](./00-ux-standards.md) - Shared accessibility and localization requirements
+- [Technical Implementation](../../architecture/auth-flows-technical.md) - Compliance and technical details
+
 ## Privacy Design Principles
 
 ### Core Privacy Values

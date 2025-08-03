@@ -3,6 +3,11 @@
 ## Overview
 This document outlines the user experience for application developers integrating their applications with the Identity Provider. The flow emphasizes clear onboarding, comprehensive documentation, robust testing tools, and ongoing application management capabilities.
 
+**Related Documents**:
+- [UX Standards and Guidelines](./00-ux-standards.md) - Shared accessibility and localization requirements
+- [Technical Implementation](../../architecture/auth-flows-technical.md) - Security and integration details
+- [API Design](../../architecture/api-design.md) - Technical API specifications
+
 ## Developer Goals
 - Quickly understand integration requirements and capabilities
 - Set up and configure applications with minimal friction

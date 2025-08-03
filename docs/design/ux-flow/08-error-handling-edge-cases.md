@@ -3,6 +3,10 @@
 ## Overview
 This document comprehensively covers error handling strategies, edge case scenarios, and user experience patterns for managing unexpected situations across the Identity Provider platform. The approach emphasizes user-friendly error messages, clear recovery paths, and graceful degradation.
 
+**Related Documents**:
+- [UX Standards and Guidelines](./00-ux-standards.md) - Error handling standards and shared requirements
+- [User Flow Documents](./01-user-registration-flow.md) - Flow-specific error scenarios
+
 ## Error Handling Principles
 
 ### User-Centered Error Design

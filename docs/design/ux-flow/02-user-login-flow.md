@@ -3,6 +3,10 @@
 ## Overview
 This document defines the user experience for returning users authenticating with the Identity Provider. The flow emphasizes security, convenience, and seamless integration with client applications while maintaining user trust and providing clear feedback.
 
+**Related Documents**:
+- [UX Standards and Guidelines](./00-ux-standards.md) - Shared accessibility and localization requirements
+- [Technical Implementation](../../architecture/auth-flows-technical.md) - Security and integration details
+
 ## User Goals
 - Quickly and securely access their account
 - Seamlessly continue to intended destination
@@ -109,38 +113,38 @@ This document defines the user experience for returning users authenticating wit
 6. Session establishment
 
 **Provider Integration**:
-- OAuth 2.0/OpenID Connect
-- Scope management
-- Profile data synchronization
-- Account linking logic
+- Seamless social authentication experience
+- Clear permission requests and scope explanation
+- Consistent profile data handling
+- Account linking with existing accounts when appropriate
 
 ### Magic Link Flow
-**Process**:
+**User Experience**:
 1. User enters email address
-2. System sends magic link email
-3. User clicks link in email
-4. Automatic authentication
-5. Session establishment
+2. Clear confirmation message with email sending status
+3. Email with clear call-to-action link
+4. Automatic authentication on link click
+5. Welcome back confirmation
 
-**Security Considerations**:
-- Link expiration (15 minutes)
-- Single-use links
-- Device verification
-- Email delivery confirmation
+**User Communication**:
+- Clear explanation of magic link benefits
+- Email delivery confirmation and troubleshooting
+- Link expiration communication (15 minutes)
+- Fallback to password login if needed
 
 ### Biometric Authentication
-**Process** (Mobile/Desktop):
-1. Biometric prompt display
-2. User provides biometric data
-3. Local device verification
-4. Secure credential retrieval
-5. Session establishment
+**User Experience** (Mobile/Desktop):
+1. Clear biometric prompt with fallback options
+2. Intuitive biometric interface
+3. Immediate feedback on authentication status
+4. Quick session establishment
+5. Clear success confirmation
 
-**Supported Methods**:
-- Fingerprint recognition
-- Face ID/recognition
-- Voice recognition
-- Hardware security keys
+**Supported Methods and UX**:
+- Fingerprint: Touch sensor with visual guidance
+- Face ID: Proper camera positioning prompts
+- Voice: Clear audio instructions and privacy notes
+- Hardware keys: Step-by-step connection guidance
 
 ## Error Handling and Recovery
 
@@ -188,61 +192,54 @@ This document defines the user experience for returning users authenticating wit
 - Cached credential verification
 - Clear error messaging
 
-## SSO Integration Touchpoints
+## SSO Integration Experience
 
 ### Client Application Flow
-**Redirect Parameters**:
-- `client_id`: Application identifier
-- `redirect_uri`: Return destination
-- `scope`: Requested permissions
-- `state`: CSRF protection token
+**User Experience**:
+- Clear indication of which application requested access
+- Branded authentication interface showing both IDP and client app
+- Seamless redirect back to application after authentication
+- Clear communication about data sharing and permissions
 
-**Response Handling**:
-- Authorization code generation
-- User consent management
-- Scope validation
-- Secure redirect execution
+**Error Recovery**:
+- Clear error messages when authentication fails
+- Options to retry or use alternative authentication methods
+- Contact information for application-specific support
+- Graceful handling of invalid or expired requests
 
-### Cross-Domain Sessions
-**Implementation**:
-- Secure cookie configuration
-- Domain-specific session tokens
-- iframe communication (where secure)
-- Token refresh mechanisms
+**Technical Details**: See [Authentication Flows Technical Documentation](../../architecture/auth-flows-technical.md#user-login---technical-requirements) for redirect parameters, response handling, and cross-domain session management.
 
-## Security Framework
+## Security User Experience
 
-### Authentication Security
-- Encrypted credential transmission
-- Secure session management
-- CSRF protection tokens
-- XSS prevention measures
+### Trust Building
+- Clear security indicators and messaging
+- Transparent communication about protection measures
+- Educational content about security features
+- Regular security status updates
 
-### Account Protection
-- Failed login attempt monitoring
-- Unusual activity detection
-- Geographic login analysis
-- Device fingerprinting
+### Account Protection Messaging
+- Friendly notifications about unusual activity
+- Clear instructions for security incident recovery
+- Geographic login notifications with context
+- Device recognition and management interface
 
-### Data Protection
-- PII encryption at rest
-- Secure audit logging
-- GDPR compliance measures
-- Data retention policies
+**Security Technical Details**: See [Security Model](../../architecture/security/security-model.md) for complete security framework implementation.
 
-## Mobile Experience Optimization
+## Mobile Experience
 
-### Responsive Design
-- Touch-optimized form elements
-- Keyboard type optimization (email)
-- Biometric integration
-- App-to-app authentication
+### Touch and Input Optimization
+- Large, easy-to-tap authentication buttons
+- Appropriate keyboard types for different input fields
+- Biometric prompts with clear visual guidance
+- Seamless app-to-app authentication flows
 
-### Performance Considerations
-- Minimal network requests
-- Cached authentication states
-- Progressive enhancement
-- Offline capability planning
+### Performance and Reliability
+- Fast loading authentication screens
+- Offline detection with clear messaging
+- Progressive loading of secondary features
+- Reliable state management across app switching
+
+**Complete Mobile Standards**: See [UX Standards](./00-ux-standards.md#mobile-experience-standards) for detailed mobile requirements
 
 ## User Experience Enhancements
 
@@ -258,70 +255,51 @@ This document defines the user experience for returning users authenticating wit
 - Quick access to recent applications
 - Streamlined re-authentication
 
-## Analytics and Monitoring
+## Success Metrics and Optimization
 
-### Success Metrics
-- Login success rate
-- Time to authentication
-- Method preference distribution
-- User satisfaction scores
+### User Experience Metrics
+- Login success rate by authentication method
+- Time to complete authentication flow
+- User preference distribution across auth methods
+- User satisfaction and trust scores
 
-### Security Metrics
-- Failed login attempt patterns
-- Account compromise detection
-- 2FA adoption rates
-- Security incident frequency
+### Security and Trust Metrics
+- User security feature adoption rates
+- Security incident recovery success rates
+- User response to security notifications
+- Trust indicator effectiveness
 
-### Performance Metrics
-- Page load times
-- Authentication latency
-- Error rate tracking
-- Conversion funnel analysis
+### Performance and Reliability
+- Authentication flow completion times
+- Error recovery success rates
+- Cross-device authentication reliability
+- Mobile vs desktop experience quality
 
-## Accessibility Standards
+**Analytics Implementation**: See [UX Standards](./00-ux-standards.md#performance-and-analytics-standards) for privacy-respecting analytics approach
 
-### WCAG 2.1 AA Compliance
-- Keyboard navigation support
-- Screen reader compatibility
-- High contrast mode
-- Focus management
+## Accessibility and Localization
 
-### Assistive Technology
-- Form field associations
-- Error announcement
-- Progress indication
-- Alternative input methods
+This flow must implement all standards defined in the [UX Standards document](./00-ux-standards.md):
+- [Accessibility Standards](./00-ux-standards.md#accessibility-standards) - WCAG 2.1 AA compliance and assistive technology support
+- [Localization Standards](./00-ux-standards.md#localization-standards) - Multi-language support and cultural adaptations
+- [Error Handling Standards](./00-ux-standards.md#error-handling-standards) - User-friendly error messaging and recovery paths
 
-## Internationalization
+## Future Enhancements and Testing
 
-### Language Support
-- Multi-language authentication
-- Cultural authentication preferences
-- Localized error messages
-- Regional compliance requirements
+### Planned UX Improvements
+- Enhanced biometric authentication with better guidance
+- Intelligent authentication method suggestions
+- Seamless cross-device authentication handoff
+- Improved enterprise user onboarding flows
 
-### Regional Adaptations
-- Local authentication methods
-- Cultural design considerations
-- Time zone handling
-- Currency localization
+### Emerging Authentication Patterns
+- Passwordless authentication adoption strategy
+- WebAuthn integration with clear user education
+- Context-aware authentication with transparency
+- Simplified account recovery with multiple options
 
-## Future Roadmap
-
-### Planned Enhancements
-- Advanced biometric options
-- AI-powered fraud detection
-- Seamless device switching
-- Enhanced enterprise features
-
-### Technology Evolution
-- WebAuthn integration
-- Passwordless adoption
-- Zero-trust architecture
-- Quantum-resistant cryptography
-
-### User Experience Improvements
-- Predictive authentication
-- Context-aware security
-- Simplified recovery flows
-- Enhanced personalization
+### A/B Testing Opportunities
+- Authentication method presentation and ordering
+- Biometric setup prompts and timing
+- Security messaging effectiveness
+- Recovery flow design and success rates

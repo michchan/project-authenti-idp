@@ -44,10 +44,9 @@ Developers need to see the IDP service in action before committing to integratio
 - Code examples are clear and well-documented
 
 ### Business Success
-- 75% of demo users proceed to register as developers
 - Demo referenced in 90% of integration documentation usage
 - <5% of demo sessions encounter technical issues
-- Positive feedback from 85% of users who try the demo
+- Sample applications effectively demonstrate IDP value for personal projects
 
 ## Scope & Boundaries
 
@@ -81,10 +80,10 @@ Developers need to see the IDP service in action before committing to integratio
 ## Dependencies
 
 ### Technical Dependencies
-- Core authentication system (completed)
-- Application integration platform (completed)
+- Core authentication system (see [core-authentication.md](core-authentication.md))
+- Application integration platform (see [application-integration.md](application-integration.md))
 - Web hosting platform for demo applications
-- Domain name and SSL certificates for professional presentation
+- SSL certificates for secure demonstration
 
 ### Business Dependencies
 - Marketing strategy for promoting demo availability
@@ -114,9 +113,10 @@ Developers need to see the IDP service in action before committing to integratio
 - **Integration**: Full OAuth 2.0 flow with token management
 
 ### Secondary Application: "TimeTracker" - Simple Time Logging
-- **Purpose**: Demonstrate cross-application SSO experience
-- **Features**: Time entry, basic reporting, shared user profile
-- **Integration**: Same user session, demonstrating seamless navigation
+- **Purpose**: Demonstrate cross-application SSO experience where users can seamlessly move between applications
+- **Features**: Time entry with project selection, basic time reporting, shared user profile data from TaskFlow
+- **Integration**: Utilizes same user session as TaskFlow, demonstrating how users can navigate between applications without re-authentication
+- **SSO Demo**: Shows how project data from TaskFlow can inform time tracking options, creating a cohesive multi-application experience
 
 ## Definition of Done
 
@@ -129,7 +129,6 @@ Developers need to see the IDP service in action before committing to integratio
 
 ### User Acceptance
 - User testing validates smooth authentication experience
-- Developer feedback confirms code examples are helpful
-- Demo successfully used in sales/marketing presentations
-- Analytics show acceptable conversion and engagement rates
+- Code examples effectively demonstrate integration patterns
+- Demo showcases personal project development workflows
 - All major browsers and devices supported for demo access
