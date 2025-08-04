@@ -2,7 +2,7 @@
 
 ## OAuth 2.0 Authorization Code Flow with PKCE
 
-```mermaid
+<div class="mermaid">
 sequenceDiagram
     participant User as End User
     participant Client as Client Application
@@ -60,11 +60,39 @@ sequenceDiagram
     IDP->>TokenStore: Validate access_token
     IDP->>AuthDB: Get user information
     IDP->>Client: User profile data
-```
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+<script>
+  mermaid.initialize({ 
+    startOnLoad: true, 
+    theme: 'base',
+    themeVariables: {
+      primaryColor: '#ffffff',
+      primaryTextColor: '#000000',
+      primaryBorderColor: '#000000',
+      lineColor: '#000000',
+      sequenceNumberColor: '#ffffff',
+      sectionBkgColor: '#ffffff',
+      altSectionBkgColor: '#f0f0f0',
+      gridColor: '#333333',
+      subSectionBkgColor: '#ffffff',
+      mainBkg: '#ffffff',
+      secondBkg: '#f0f0f0',
+      tertiaryColor: '#ffffff',
+      activationBorderColor: '#000000',
+      activationBkgColor: '#f0f0f0',
+      loopTextColor: '#000000',
+      noteBorderColor: '#000000',
+      noteBkgColor: '#ffffff',
+      noteTextColor: '#000000'
+    }
+  });
+</script>
 
 ## OpenID Connect Identity Token Flow
 
-```mermaid
+<div class="mermaid">
 sequenceDiagram
     participant Client as Client Application
     participant IDP as Identity Provider
@@ -96,11 +124,11 @@ sequenceDiagram
     
     IDP->>IDP: Validate refresh token
     IDP->>Client: New access_token & id_token
-```
+</div>
 
 ## Multi-Application SSO Flow
 
-```mermaid
+<div class="mermaid">
 sequenceDiagram
     participant User as End User
     participant App1 as Application 1
@@ -148,11 +176,11 @@ sequenceDiagram
     IDP->>App1: Logout callback
     IDP->>App2: Logout notification (if supported)
     App2->>App2: Clear local session
-```
+</div>
 
 ## Mobile Application Flow (PKCE)
 
-```mermaid
+<div class="mermaid">
 sequenceDiagram
     participant User as Mobile User
     participant App as Mobile App
@@ -190,12 +218,12 @@ sequenceDiagram
     App->>IDP: POST /oauth/token<br/>grant_type=refresh_token&<br/>refresh_token=xxx
     IDP->>App: New access_token
     App->>Keychain: Update stored tokens
-```
+</div>
 
 ## Security Considerations for Auth Flows
 
 ### PKCE Implementation
-```mermaid
+<div class="mermaid">
 graph TB
     subgraph "PKCE Security Flow"
         CV[Code Verifier<br/>43-128 random chars]
@@ -217,10 +245,17 @@ graph TB
     Verify --> NoSecret
     Verify --> InterceptProof
     Verify --> ReplayProof
-```
+    
+    %% High-contrast styling
+    classDef flow fill:#2196F3,stroke:#000,stroke-width:2px,color:#fff
+    classDef security fill:#4CAF50,stroke:#000,stroke-width:2px,color:#fff
+    
+    class CV,CC,AC,Verify flow
+    class NoSecret,InterceptProof,ReplayProof security
+</div>
 
 ### Token Security Model
-```mermaid
+<div class="mermaid">
 graph LR
     subgraph "Token Types & Security"
         AT[Access Token<br/>Short-lived (15min)<br/>Bearer token]
@@ -247,7 +282,16 @@ graph LR
     AT --> Memory
     RT --> Keychain
     IT --> HttpOnly
-```
+    
+    %% High-contrast styling
+    classDef tokens fill:#FF9800,stroke:#000,stroke-width:2px,color:#fff
+    classDef measures fill:#9C27B0,stroke:#000,stroke-width:2px,color:#fff
+    classDef storage fill:#E91E63,stroke:#000,stroke-width:2px,color:#fff
+    
+    class AT,RT,IT tokens
+    class Rotation,Binding,Revocation measures
+    class Memory,Keychain,HttpOnly storage
+</div>
 
 ## Flow Selection Guidelines
 

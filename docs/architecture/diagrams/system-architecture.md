@@ -65,12 +65,12 @@ graph TB
     AuthService --> MonitorService
     UserService --> FileStorage
     
-    %% Styling
-    classDef frontend fill:#e1f5fe
-    classDef edge fill:#f3e5f5
-    classDef service fill:#e8f5e8
-    classDef data fill:#fff3e0
-    classDef external fill:#fce4ec
+    %% High-contrast styling with bold borders
+    classDef frontend fill:#1565C0,stroke:#000000,stroke-width:4px,color:#FFFFFF,font-weight:bold
+    classDef edge fill:#6A1B9A,stroke:#000000,stroke-width:4px,color:#FFFFFF,font-weight:bold
+    classDef service fill:#2E7D32,stroke:#000000,stroke-width:4px,color:#FFFFFF,font-weight:bold
+    classDef data fill:#EF6C00,stroke:#000000,stroke-width:4px,color:#FFFFFF,font-weight:bold
+    classDef external fill:#C62828,stroke:#000000,stroke-width:4px,color:#FFFFFF,font-weight:bold
     
     class AdminDash,LandingPage frontend
     class EdgeAuth,EdgeAPI edge
@@ -78,6 +78,80 @@ graph TB
     class PostgresDB,Redis,FileStorage data
     class EmailService,MonitorService,LogService external
 ```
+
+### High-Contrast Alternative (HTML Table Format)
+
+<table border="2" style="border-collapse: collapse; width: 100%; font-family: monospace;">
+<tr style="background-color: #000000; color: #FFFFFF; font-weight: bold;">
+  <td colspan="4" style="text-align: center; padding: 10px; font-size: 16px;">SYSTEM ARCHITECTURE OVERVIEW</td>
+</tr>
+<tr>
+  <td style="background-color: #1565C0; color: #FFFFFF; font-weight: bold; padding: 10px; text-align: center;">FRONTEND LAYER<br/>(Vercel Free Tier)</td>
+  <td style="background-color: #6A1B9A; color: #FFFFFF; font-weight: bold; padding: 10px; text-align: center;">EDGE LAYER<br/>(Vercel Edge Functions)</td>
+  <td style="background-color: #2E7D32; color: #FFFFFF; font-weight: bold; padding: 10px; text-align: center;">APPLICATION LAYER<br/>(Serverless Functions)</td>
+  <td style="background-color: #EF6C00; color: #FFFFFF; font-weight: bold; padding: 10px; text-align: center;">DATA LAYER<br/>(Supabase)</td>
+</tr>
+<tr>
+  <td style="background-color: #E3F2FD; padding: 10px; border: 2px solid #1565C0;">
+    <strong>Admin Dashboard</strong><br/>
+    • Next.js + React<br/>
+    • User Management<br/>
+    • System Config<br/><br/>
+    <strong>Landing Page</strong><br/>
+    • Static Site<br/>
+    • Documentation<br/>
+    • Client Registration
+  </td>
+  <td style="background-color: #F3E5F5; padding: 10px; border: 2px solid #6A1B9A;">
+    <strong>Edge Authentication</strong><br/>
+    • Rate Limiting<br/>
+    • CORS Handling<br/>
+    • Request Validation<br/><br/>
+    <strong>Edge API Gateway</strong><br/>
+    • Request Routing<br/>
+    • Response Caching<br/>
+    • Geographic Distribution
+  </td>
+  <td style="background-color: #E8F5E8; padding: 10px; border: 2px solid #2E7D32;">
+    <strong>Authentication Service</strong><br/>
+    • OAuth 2.0/OIDC<br/>
+    • Login/Logout Flows<br/><br/>
+    <strong>User Management</strong><br/>
+    • CRUD Operations<br/>
+    • Profile Management<br/><br/>
+    <strong>Token Service</strong><br/>
+    • JWT Gen/Validation<br/>
+    • Refresh Tokens<br/><br/>
+    <strong>Session Management</strong><br/>
+    • Server-side Sessions<br/>
+    • Security Policies
+  </td>
+  <td style="background-color: #FFF3E0; padding: 10px; border: 2px solid #EF6C00;">
+    <strong>PostgreSQL Database</strong><br/>
+    • User Data<br/>
+    • Applications<br/>
+    • Sessions<br/><br/>
+    <strong>Redis Cache</strong><br/>
+    • Session Storage<br/>
+    • Token Blacklist<br/>
+    • Rate Limiting<br/><br/>
+    <strong>File Storage</strong><br/>
+    • User Avatars<br/>
+    • App Logos<br/>
+    • Static Assets
+  </td>
+</tr>
+<tr>
+  <td colspan="4" style="background-color: #C62828; color: #FFFFFF; font-weight: bold; padding: 8px; text-align: center;">EXTERNAL INTEGRATIONS</td>
+</tr>
+<tr>
+  <td colspan="4" style="background-color: #FFEBEE; padding: 10px; border: 2px solid #C62828;">
+    <strong>Email Service:</strong> Resend/SendGrid (Free Tier) • 
+    <strong>Monitoring:</strong> UptimeRobot (Free) • 
+    <strong>Logging:</strong> Vercel Analytics
+  </td>
+</tr>
+</table>
 
 ## Component Responsibilities
 
@@ -135,6 +209,74 @@ sequenceDiagram
     Auth->>Client: Protected resource
 ```
 
+### High-Contrast Data Flow (Step-by-Step)
+
+<table border="3" style="border-collapse: collapse; width: 100%; font-family: monospace;">
+<tr style="background-color: #000000; color: #FFFFFF; font-weight: bold;">
+  <td style="padding: 10px; text-align: center;">STEP</td>
+  <td style="padding: 10px; text-align: center;">FROM</td>
+  <td style="padding: 10px; text-align: center;">TO</td>
+  <td style="padding: 10px; text-align: center;">ACTION</td>
+  <td style="padding: 10px; text-align: center;">PURPOSE</td>
+</tr>
+<tr style="background-color: #E3F2FD;">
+  <td style="padding: 8px; font-weight: bold; border: 2px solid #1565C0;">1</td>
+  <td style="padding: 8px; border: 2px solid #1565C0;">Client App</td>
+  <td style="padding: 8px; border: 2px solid #1565C0;">Edge Layer</td>
+  <td style="padding: 8px; border: 2px solid #1565C0;">GET /oauth/authorize</td>
+  <td style="padding: 8px; border: 2px solid #1565C0;">Start OAuth flow</td>
+</tr>
+<tr style="background-color: #F3E5F5;">
+  <td style="padding: 8px; font-weight: bold; border: 2px solid #6A1B9A;">2</td>
+  <td style="padding: 8px; border: 2px solid #6A1B9A;">Edge Layer</td>
+  <td style="padding: 8px; border: 2px solid #6A1B9A;">Auth Service</td>
+  <td style="padding: 8px; border: 2px solid #6A1B9A;">Route request</td>
+  <td style="padding: 8px; border: 2px solid #6A1B9A;">Forward to auth handler</td>
+</tr>
+<tr style="background-color: #E8F5E8;">
+  <td style="padding: 8px; font-weight: bold; border: 2px solid #2E7D32;">3</td>
+  <td style="padding: 8px; border: 2px solid #2E7D32;">Auth Service</td>
+  <td style="padding: 8px; border: 2px solid #2E7D32;">Database</td>
+  <td style="padding: 8px; border: 2px solid #2E7D32;">Validate client_id</td>
+  <td style="padding: 8px; border: 2px solid #2E7D32;">Verify client exists</td>
+</tr>
+<tr style="background-color: #FFF3E0;">
+  <td style="padding: 8px; font-weight: bold; border: 2px solid #EF6C00;">4</td>
+  <td style="padding: 8px; border: 2px solid #EF6C00;">Auth Service</td>
+  <td style="padding: 8px; border: 2px solid #EF6C00;">Client App</td>
+  <td style="padding: 8px; border: 2px solid #EF6C00;">Redirect to login</td>
+  <td style="padding: 8px; border: 2px solid #EF6C00;">Show authentication form</td>
+</tr>
+<tr style="background-color: #FFEBEE;">
+  <td style="padding: 8px; font-weight: bold; border: 2px solid #C62828;">5</td>
+  <td style="padding: 8px; border: 2px solid #C62828;">Client App</td>
+  <td style="padding: 8px; border: 2px solid #C62828;">Auth Service</td>
+  <td style="padding: 8px; border: 2px solid #C62828;">POST credentials</td>
+  <td style="padding: 8px; border: 2px solid #C62828;">Submit username/password</td>
+</tr>
+<tr style="background-color: #E1F5FE;">
+  <td style="padding: 8px; font-weight: bold; border: 2px solid #0277BD;">6</td>
+  <td style="padding: 8px; border: 2px solid #0277BD;">Auth Service</td>
+  <td style="padding: 8px; border: 2px solid #0277BD;">Database</td>
+  <td style="padding: 8px; border: 2px solid #0277BD;">Verify credentials</td>
+  <td style="padding: 8px; border: 2px solid #0277BD;">Authenticate user</td>
+</tr>
+<tr style="background-color: #F1F8E9;">
+  <td style="padding: 8px; font-weight: bold; border: 2px solid #558B2F;">7</td>
+  <td style="padding: 8px; border: 2px solid #558B2F;">Auth Service</td>
+  <td style="padding: 8px; border: 2px solid #558B2F;">Redis Cache</td>
+  <td style="padding: 8px; border: 2px solid #558B2F;">Store session</td>
+  <td style="padding: 8px; border: 2px solid #558B2F;">Create user session</td>
+</tr>
+<tr style="background-color: #FFF8E1;">
+  <td style="padding: 8px; font-weight: bold; border: 2px solid #F57F17;">8</td>
+  <td style="padding: 8px; border: 2px solid #F57F17;">Auth Service</td>
+  <td style="padding: 8px; border: 2px solid #F57F17;">Client App</td>
+  <td style="padding: 8px; border: 2px solid #F57F17;">Return auth code</td>
+  <td style="padding: 8px; border: 2px solid #F57F17;">Provide temporary code</td>
+</tr>
+</table>
+
 ## Deployment Architecture
 
 ```mermaid
@@ -170,17 +312,63 @@ graph LR
     VercelProd --> SupabaseProd
     VercelStaging --> SupabaseStaging
     
-    %% Styling
-    classDef dev fill:#e3f2fd
-    classDef cicd fill:#f1f8e9
-    classDef prod fill:#fff8e1
-    classDef staging fill:#fce4ec
+    %% High-contrast styling with thicker borders
+    classDef dev fill:#1565C0,stroke:#000000,stroke-width:4px,color:#FFFFFF,font-weight:bold
+    classDef cicd fill:#2E7D32,stroke:#000000,stroke-width:4px,color:#FFFFFF,font-weight:bold
+    classDef prod fill:#EF6C00,stroke:#000000,stroke-width:4px,color:#FFFFFF,font-weight:bold
+    classDef staging fill:#AD1457,stroke:#000000,stroke-width:4px,color:#FFFFFF,font-weight:bold
     
     class DevRepo,DevEnv dev
     class GHActions,Tests,Security cicd
     class VercelProd,SupabaseProd prod
     class VercelStaging,SupabaseStaging staging
 ```
+
+### Deployment Pipeline Flow Chart
+
+<div style="font-family: monospace; border: 3px solid #000; padding: 20px; background-color: #f5f5f5;">
+<div style="text-align: center; background-color: #000; color: #fff; padding: 10px; margin: -20px -20px 20px -20px; font-weight: bold; font-size: 18px;">DEPLOYMENT ARCHITECTURE FLOW</div>
+
+<div style="display: flex; justify-content: space-between; margin-bottom: 20px;">
+  <div style="background-color: #1565C0; color: #fff; padding: 15px; border: 3px solid #000; width: 22%; text-align: center; font-weight: bold;">
+    <div style="font-size: 16px; margin-bottom: 10px;">DEVELOPMENT</div>
+    <div style="font-size: 12px;">• GitHub Repository</div>
+    <div style="font-size: 12px;">• Local Development</div>
+    <div style="font-size: 12px;">• Feature Branches</div>
+  </div>
+  
+  <div style="background-color: #2E7D32; color: #fff; padding: 15px; border: 3px solid #000; width: 22%; text-align: center; font-weight: bold;">
+    <div style="font-size: 16px; margin-bottom: 10px;">CI/CD PIPELINE</div>
+    <div style="font-size: 12px;">• GitHub Actions</div>
+    <div style="font-size: 12px;">• Automated Tests</div>
+    <div style="font-size: 12px;">• Security Scanning</div>
+  </div>
+  
+  <div style="background-color: #EF6C00; color: #fff; padding: 15px; border: 3px solid #000; width: 22%; text-align: center; font-weight: bold;">
+    <div style="font-size: 16px; margin-bottom: 10px;">PRODUCTION</div>
+    <div style="font-size: 12px;">• Vercel Production</div>
+    <div style="font-size: 12px;">• Supabase Database</div>
+    <div style="font-size: 12px;">• Main Branch Deploy</div>
+  </div>
+  
+  <div style="background-color: #AD1457; color: #fff; padding: 15px; border: 3px solid #000; width: 22%; text-align: center; font-weight: bold;">
+    <div style="font-size: 16px; margin-bottom: 10px;">STAGING</div>
+    <div style="font-size: 12px;">• Vercel Preview</div>
+    <div style="font-size: 12px;">• Staging Database</div>
+    <div style="font-size: 12px;">• Feature Testing</div>
+  </div>
+</div>
+
+<div style="text-align: center; margin: 20px 0;">
+  <div style="display: inline-block; background-color: #000; color: #fff; padding: 5px 20px; margin: 0 10px;">PUSH</div>
+  <div style="display: inline-block;">→</div>
+  <div style="display: inline-block; background-color: #000; color: #fff; padding: 5px 20px; margin: 0 10px;">TEST</div>
+  <div style="display: inline-block;">→</div>
+  <div style="display: inline-block; background-color: #000; color: #fff; padding: 5px 20px; margin: 0 10px;">DEPLOY</div>
+  <div style="display: inline-block;">→</div>
+  <div style="display: inline-block; background-color: #000; color: #fff; padding: 5px 20px; margin: 0 10px;">MONITOR</div>
+</div>
+</div>
 
 ## Network Architecture & Security Boundaries
 
@@ -227,12 +415,12 @@ graph TB
         Audit[Audit Logging]
     end
     
-    %% Styling for security zones
-    classDef public fill:#ffebee
-    classDef edge fill:#e8f5e8
-    classDef app fill:#fff3e0
-    classDef service fill:#e1f5fe
-    classDef data fill:#f3e5f5
+    %% High-contrast styling for security zones with thicker borders
+    classDef public fill:#C62828,stroke:#000000,stroke-width:5px,color:#FFFFFF,font-weight:bold
+    classDef edge fill:#2E7D32,stroke:#000000,stroke-width:5px,color:#FFFFFF,font-weight:bold
+    classDef app fill:#EF6C00,stroke:#000000,stroke-width:5px,color:#FFFFFF,font-weight:bold
+    classDef service fill:#1565C0,stroke:#000000,stroke-width:5px,color:#FFFFFF,font-weight:bold
+    classDef data fill:#6A1B9A,stroke:#000000,stroke-width:5px,color:#FFFFFF,font-weight:bold
     
     class Internet public
     class CDN edge
@@ -240,6 +428,40 @@ graph TB
     class AuthSvc,UserSvc service
     class DBProxy,EncryptedDB data
 ```
+
+### Security Architecture - Layered Defense Model
+
+<div style="font-family: monospace; border: 4px solid #000; background-color: #fff;">
+<div style="background-color: #000; color: #fff; padding: 15px; text-align: center; font-weight: bold; font-size: 18px;">NETWORK SECURITY & BOUNDARIES</div>
+
+<table style="width: 100%; border-collapse: collapse;">
+<tr style="background-color: #C62828; color: #fff; font-weight: bold;">
+  <td style="padding: 12px; border: 3px solid #000; text-align: center;">LAYER 1: PUBLIC INTERNET</td>
+  <td style="padding: 12px; border: 3px solid #000;">• Untrusted traffic<br/>• DDoS attacks<br/>• Bot traffic</td>
+  <td style="padding: 12px; border: 3px solid #000;">• Global access<br/>• No filtering<br/>• High risk</td>
+</tr>
+<tr style="background-color: #2E7D32; color: #fff; font-weight: bold;">
+  <td style="padding: 12px; border: 3px solid #000; text-align: center;">LAYER 2: CDN/EDGE</td>
+  <td style="padding: 12px; border: 3px solid #000;">• SSL termination<br/>• DDoS protection<br/>• Geographic filtering</td>
+  <td style="padding: 12px; border: 3px solid #000;">• 99.9% uptime<br/>• Global POPs<br/>• Attack mitigation</td>
+</tr>
+<tr style="background-color: #EF6C00; color: #fff; font-weight: bold;">
+  <td style="padding: 12px; border: 3px solid #000; text-align: center;">LAYER 3: APPLICATION</td>
+  <td style="padding: 12px; border: 3px solid #000;">• WAF filtering<br/>• Rate limiting<br/>• IP blocking</td>
+  <td style="padding: 12px; border: 3px solid #000;">• Request validation<br/>• Auth gateway<br/>• Access control</td>
+</tr>
+<tr style="background-color: #1565C0; color: #fff; font-weight: bold;">
+  <td style="padding: 12px; border: 3px solid #000; text-align: center;">LAYER 4: SERVICE</td>
+  <td style="padding: 12px; border: 3px solid #000;">• Function isolation<br/>• JWT validation<br/>• Service mesh</td>
+  <td style="padding: 12px; border: 3px solid #000;">• Zero trust<br/>• Microservice security<br/>• Container isolation</td>
+</tr>
+<tr style="background-color: #6A1B9A; color: #fff; font-weight: bold;">
+  <td style="padding: 12px; border: 3px solid #000; text-align: center;">LAYER 5: DATA</td>
+  <td style="padding: 12px; border: 3px solid #000;">• Encryption at rest<br/>• TLS in transit<br/>• Row-level security</td>
+  <td style="padding: 12px; border: 3px solid #000;">• Database firewall<br/>• Connection pooling<br/>• Audit logging</td>
+</tr>
+</table>
+</div>
 
 ## Scalability Architecture Phases
 
