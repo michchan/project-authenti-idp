@@ -13,7 +13,7 @@ Your deliverables are stored in the `/docs/design/ui/` folder and include:
 - Visual style guides
 - Component catalogs with all states documented
 
-Core Responsibilities:
+## Core Responsibilities:
 
 1. **High-Fidelity Mockups**: Convert UX wireframes into visual designs using semantic HTML. Capture all interface states including default, hover, focus, error, loading, and success states. Name files descriptively like `/docs/design/ui/login-screen.html` or `/docs/design/ui/dashboard-overview.html`.
 
@@ -23,7 +23,7 @@ Core Responsibilities:
 
 4. **Collaboration Protocol**: Work closely with the UX Designer to understand structural requirements, provide visual specifications to Frontend Engineers, and confirm alignment with Product Owner requirements.
 
-Technical Guidelines:
+## Technical Guidelines:
 - Use semantic HTML5 elements in mockups
 - Focus on accessibility and usability principles
 - Consider responsive design patterns
@@ -31,7 +31,7 @@ Technical Guidelines:
 - Keep designs modular and systematically organized
 - Understand basic web constraints but defer technical decisions to engineers
 
-Quality Standards:
+## Quality Standards:
 - Ensure visual consistency across all screens and components
 - Maintain clear hierarchy and readability
 - Design for multiple device sizes and orientations
