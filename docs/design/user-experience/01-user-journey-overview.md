@@ -23,174 +23,83 @@ Platform administrators managing users, applications, and system health
 
 ## Master User Journey Map
 
-<div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0; font-family: monospace;">
-<h3 style="margin-top: 0;">🗺️ Complete Platform Journey</h3>
+### Complete Platform Journey
 
-<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; margin-top: 20px;">
-
-<div style="background: #e3f2fd; padding: 15px; border-radius: 6px;">
-<h4 style="margin: 0 0 10px 0; color: #1565c0;">👤 End User Journey</h4>
-<div style="font-size: 12px; line-height: 1.4;">
-<strong>Discovery</strong><br/>
-↓ Marketing/Referral<br/>
-↓ App Redirect<br/><br/>
-
-<strong>Registration</strong><br/>
-• Method Selection<br/>
-• Information Collection<br/>
-• Email Verification<br/>
-• Profile Setup<br/><br/>
-
-<strong>Authentication</strong><br/>
-• Login Options<br/>
-• 2FA Setup<br/>
-• SSO Authorization<br/><br/>
-
-<strong>Account Management</strong><br/>
-• Profile Updates<br/>
-• Security Settings<br/>
-• Connected Apps<br/>
-• Privacy Controls
-</div>
-</div>
-
-<div style="background: #f3e5f5; padding: 15px; border-radius: 6px;">
-<h4 style="margin: 0 0 10px 0; color: #7b1fa2;">🛠️ Developer Journey</h4>
-<div style="font-size: 12px; line-height: 1.4;">
-<strong>Discovery</strong><br/>
-↓ Documentation<br/>
-↓ Community<br/><br/>
-
-<strong>Onboarding</strong><br/>
-• Developer Registration<br/>
-• Portal Access<br/>
-• Getting Started Guide<br/><br/>
-
-<strong>Integration</strong><br/>
-• App Creation<br/>
-• Configuration<br/>
-• Testing Environment<br/>
-• API Implementation<br/><br/>
-
-<strong>Production</strong><br/>
-• Go-Live Checklist<br/>
-• Monitoring<br/>
-• Analytics<br/>
-• Support
-</div>
-</div>
-
-<div style="background: #fff3e0; padding: 15px; border-radius: 6px;">
-<h4 style="margin: 0 0 10px 0; color: #f57c00;">⚡ Admin Journey</h4>
-<div style="font-size: 12px; line-height: 1.4;">
-<strong>Dashboard</strong><br/>
-↓ System Overview<br/>
-↓ Health Monitoring<br/><br/>
-
-<strong>Management</strong><br/>
-• User Administration<br/>
-• App Review<br/>
-• Security Monitoring<br/><br/>
-
-<strong>Analytics</strong><br/>
-• Usage Metrics<br/>
-• Performance Data<br/>
-• Business Intelligence<br/><br/>
-
-<strong>Support</strong><br/>
-• Issue Resolution<br/>
-• User Assistance<br/>
-• System Maintenance
-</div>
-</div>
-
-</div>
-</div>
+```
+┌─────────────────────┬─────────────────────┬─────────────────────┐
+│ 👤 End User Journey  │ 🛠️ Developer Journey │ ⚡ Admin Journey     │
+├─────────────────────┼─────────────────────┼─────────────────────┤
+│ Discovery           │ Discovery           │ Dashboard           │
+│ ↓ Marketing/Referral │ ↓ Documentation     │ ↓ System Overview   │
+│ ↓ App Redirect      │ ↓ Community         │ ↓ Health Monitoring │
+│                     │                     │                     │
+│ Registration        │ Onboarding          │ Management          │
+│ • Method Selection  │ • Developer Reg     │ • User Admin        │
+│ • Info Collection   │ • Portal Access     │ • App Review        │
+│ • Email Verify      │ • Getting Started   │ • Security Monitor  │
+│ • Profile Setup     │                     │                     │
+│                     │ Integration         │ Analytics           │
+│ Authentication      │ • App Creation      │ • Usage Metrics     │
+│ • Login Options     │ • Configuration     │ • Performance Data  │
+│ • 2FA Setup         │ • Testing Env       │ • Business Intel    │
+│ • SSO Authorization │ • API Implementation│                     │
+│                     │                     │ Support             │
+│ Account Management  │ Production          │ • Issue Resolution  │
+│ • Profile Updates   │ • Go-Live Checklist│ • User Assistance   │
+│ • Security Settings │ • Monitoring        │ • System Maintenance│
+│ • Connected Apps    │ • Analytics         │                     │
+│ • Privacy Controls  │ • Support           │                     │
+└─────────────────────┴─────────────────────┴─────────────────────┘
+```
 
 ## Key Integration Points
 
-<div style="background: #f1f8e9; padding: 20px; border-radius: 8px; margin: 20px 0;">
-<h3 style="margin-top: 0;">🔗 Cross-Journey Connection Points</h3>
+### Cross-Journey Connection Points
 
-<table style="width: 100%; border-collapse: collapse; margin-top: 15px;">
-<thead>
-<tr style="background: #c8e6c9;">
-<th style="padding: 12px; text-align: left; border: 1px solid #a5d6a7;">Interaction Point</th>
-<th style="padding: 12px; text-align: left; border: 1px solid #a5d6a7;">End User Impact</th>
-<th style="padding: 12px; text-align: left; border: 1px solid #a5d6a7;">Developer Role</th>
-<th style="padding: 12px; text-align: left; border: 1px solid #a5d6a7;">Admin Oversight</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="padding: 10px; border: 1px solid #c8e6c9;"><strong>SSO Authorization</strong></td>
-<td style="padding: 10px; border: 1px solid #c8e6c9;">Seamless app access with consent</td>
-<td style="padding: 10px; border: 1px solid #c8e6c9;">Configure scope & permissions</td>
-<td style="padding: 10px; border: 1px solid #c8e6c9;">Monitor authorization patterns</td>
-</tr>
-<tr style="background: #f1f8e9;">
-<td style="padding: 10px; border: 1px solid #c8e6c9;"><strong>Account Security</strong></td>
-<td style="padding: 10px; border: 1px solid #c8e6c9;">2FA setup, security alerts</td>
-<td style="padding: 10px; border: 1px solid #c8e6c9;">Security best practices</td>
-<td style="padding: 10px; border: 1px solid #c8e6c9;">Security policy enforcement</td>
-</tr>
-<tr>
-<td style="padding: 10px; border: 1px solid #c8e6c9;"><strong>Error Handling</strong></td>
-<td style="padding: 10px; border: 1px solid #c8e6c9;">Clear recovery paths</td>
-<td style="padding: 10px; border: 1px solid #c8e6c9;">Integration error patterns</td>
-<td style="padding: 10px; border: 1px solid #c8e6c9;">System health monitoring</td>
-</tr>
-<tr style="background: #f1f8e9;">
-<td style="padding: 10px; border: 1px solid #c8e6c9;"><strong>Privacy Controls</strong></td>
-<td style="padding: 10px; border: 1px solid #c8e6c9;">Granular consent management</td>
-<td style="padding: 10px; border: 1px solid #c8e6c9;">Data usage transparency</td>
-<td style="padding: 10px; border: 1px solid #c8e6c9;">Compliance monitoring</td>
-</tr>
-</tbody>
-</table>
-</div>
+```
+┌─────────────────┬──────────────────────┬──────────────────────┬──────────────────────┐
+│ Interaction     │ End User Impact      │ Developer Role       │ Admin Oversight      │
+│ Point           │                      │                      │                      │
+├─────────────────┼──────────────────────┼──────────────────────┼──────────────────────┤
+│ SSO             │ Seamless app access  │ Configure scope &    │ Monitor authorization│
+│ Authorization   │ with consent         │ permissions          │ patterns             │
+├─────────────────┼──────────────────────┼──────────────────────┼──────────────────────┤
+│ Account         │ 2FA setup, security  │ Security best        │ Security policy      │
+│ Security        │ alerts               │ practices            │ enforcement          │
+├─────────────────┼──────────────────────┼──────────────────────┼──────────────────────┤
+│ Error           │ Clear recovery       │ Integration error    │ System health        │
+│ Handling        │ paths                │ patterns             │ monitoring           │
+├─────────────────┼──────────────────────┼──────────────────────┼──────────────────────┤
+│ Privacy         │ Granular consent     │ Data usage           │ Compliance           │
+│ Controls        │ management           │ transparency         │ monitoring           │
+└─────────────────┴──────────────────────┴──────────────────────┴──────────────────────┘
+```
 
 ## Flow Relationship Diagram
 
-<div style="background: #fafafa; padding: 20px; border-radius: 8px; margin: 20px 0; text-align: center;">
-<h3 style="margin-top: 0;">📊 User Experience Flow Network</h3>
+### User Experience Flow Network
 
-<div style="font-family: monospace; font-size: 14px; line-height: 1.6; margin-top: 20px;">
-<div style="margin-bottom: 20px;">
-<span style="background: #e3f2fd; padding: 4px 8px; border-radius: 4px;">Authentication & Registration</span>
-<br/>↙️ ↓ ↘️<br/>
-</div>
+```
+                    ┌─────────────────────────────┐
+                    │ Authentication & Registration│
+                    └─────────────────────────────┘
+                          ↙️        ↓        ↘️
+                         ↙          ↓          ↘
+                        ↙           ↓           ↘
+        ┌──────────────────┐ ┌─────────────┐ ┌────────────────┐
+        │ Account          │ │ SSO &       │ │ Developer      │
+        │ Management       │ │ Integration │ │ Portal         │
+        └──────────────────┘ └─────────────┘ └────────────────┘
+                ↕                 ↕                 ↕
+        ┌──────────────────┐ ┌─────────────┐ ┌────────────────┐
+        │ Error            │ │ Privacy &   │ │ Admin          │
+        │ Handling         │ │ Consent     │ │ Dashboard      │
+        └──────────────────┘ └─────────────┘ └────────────────┘
 
-<div style="display: inline-block; margin: 0 20px;">
-<span style="background: #f3e5f5; padding: 4px 8px; border-radius: 4px;">Account Management</span>
-</div>
-<div style="display: inline-block; margin: 0 20px;">
-<span style="background: #e8f5e8; padding: 4px 8px; border-radius: 4px;">SSO & Integration</span>
-</div>
-<div style="display: inline-block; margin: 0 20px;">
-<span style="background: #fff3e0; padding: 4px 8px; border-radius: 4px;">Developer Portal</span>
-</div>
-
-<div style="margin: 20px 0;">
-↓ ↑ ↓ ↑ ↓ ↑
-</div>
-
-<div style="display: inline-block; margin: 0 20px;">
-<span style="background: #fce4ec; padding: 4px 8px; border-radius: 4px;">Error Handling</span>
-</div>
-<div style="display: inline-block; margin: 0 20px;">
-<span style="background: #f1f8e9; padding: 4px 8px; border-radius: 4px;">Privacy & Consent</span>
-</div>
-<div style="display: inline-block; margin: 0 20px;">
-<span style="background: #e0f2f1; padding: 4px 8px; border-radius: 4px;">Admin Dashboard</span>
-</div>
-
-<div style="margin-top: 20px; font-size: 12px; color: #666;">
-← → Bidirectional flow interactions<br/>
-↑ ↓ Support and management flows
-</div>
-</div>
-</div>
+        Legend:
+        ← → Bidirectional flow interactions
+        ↑ ↓ Support and management flows
+```
 
 ## Success Metrics and Journey Optimization
 

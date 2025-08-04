@@ -12,68 +12,52 @@ This section covers the complete authentication and registration experience for 
 
 ### Registration Process
 
-<div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
-<h3 style="margin-top: 0;">🖼️ Registration Screen Wireframe</h3>
+### Registration Screen Wireframe
 
-<div style="border: 2px solid #dee2e6; padding: 20px; background: white; font-family: monospace; max-width: 600px; margin: 20px auto;">
-<div style="border-bottom: 1px solid #dee2e6; padding-bottom: 10px; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center;">
-<span style="font-weight: bold;">[🏠 Logo]</span>
-<span style="color: #6c757d;">(Already member?) <a href="#" style="color: #0066cc;">Sign In</a></span>
-</div>
-
-<div style="text-align: center; margin-bottom: 30px;">
-<h2 style="margin: 0 0 10px 0;">Create Your Account</h2>
-<p style="color: #6c757d; margin: 0;">Choose how to sign up:</p>
-</div>
-
-<div style="margin-bottom: 20px;">
-<button style="width: 100%; padding: 12px; margin-bottom: 10px; border: 1px solid #dee2e6; border-radius: 4px; background: white; display: flex; align-items: center; justify-content: center;">
-<span style="margin-right: 10px;">🔍</span> Continue with Google
-</button>
-<button style="width: 100%; padding: 12px; margin-bottom: 10px; border: 1px solid #dee2e6; border-radius: 4px; background: white; display: flex; align-items: center; justify-content: center;">
-<span style="margin-right: 10px;">🐱</span> Continue with GitHub
-</button>
-</div>
-
-<div style="text-align: center; margin: 20px 0; color: #6c757d;">
-───── OR ─────
-</div>
-
-<form style="margin-bottom: 20px;">
-<input type="email" placeholder="Email Address" style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #dee2e6; border-radius: 4px; box-sizing: border-box;">
-<input type="password" placeholder="Password" style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #dee2e6; border-radius: 4px; box-sizing: border-box;">
-<input type="password" placeholder="Confirm Password" style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #dee2e6; border-radius: 4px; box-sizing: border-box;">
-</form>
-
-<div style="background: #f8f9fa; padding: 15px; border-radius: 4px; margin-bottom: 20px; font-size: 14px;">
-<strong>Password Requirements:</strong><br/>
-<span style="color: #28a745;">✓</span> 8+ characters<br/>
-<span style="color: #dc3545;">✗</span> Uppercase letter<br/>
-<span style="color: #dc3545;">✗</span> Number<br/>
-<span style="color: #dc3545;">✗</span> Special character
-</div>
-
-<div style="margin-bottom: 20px; font-size: 14px;">
-<label style="display: flex; align-items: flex-start;">
-<input type="checkbox" style="margin-right: 8px; margin-top: 2px;"> 
-<span>I agree to the <a href="#" style="color: #0066cc;">Terms of Service</a> and <a href="#" style="color: #0066cc;">Privacy Policy</a></span>
-</label>
-<label style="display: flex; align-items: flex-start; margin-top: 8px;">
-<input type="checkbox" style="margin-right: 8px; margin-top: 2px;"> 
-<span>Send me product updates (optional)</span>
-</label>
-</div>
-
-<button style="width: 100%; padding: 12px; background: #0066cc; color: white; border: none; border-radius: 4px; font-weight: bold;">
-Create Account
-</button>
-
-<div style="text-align: center; margin-top: 30px; padding-top: 20px; border-top: 1px solid #dee2e6; font-size: 14px; color: #6c757d;">
-Need help? <a href="#" style="color: #0066cc;">Contact Support</a><br/>
-<a href="#" style="color: #0066cc;">Privacy Policy</a> | <a href="#" style="color: #0066cc;">Terms</a> | <a href="#" style="color: #0066cc;">Help</a>
-</div>
-</div>
-</div>
+```
++----------------------------------------------------------+
+|  [Logo]                          (Already member?) [Sign In] |
++----------------------------------------------------------+
+|                                                          |
+|                   Create Your Account                     |
+|                 Choose how to sign up:                   |
+|                                                          |
+|   +--------------------------------------------------+   |
+|   |  🔍  Continue with Google                        |   |
+|   +--------------------------------------------------+   |
+|   |  🐱  Continue with GitHub                        |   |
+|   +--------------------------------------------------+   |
+|                                                          |
+|                     ───── OR ─────                       |
+|                                                          |
+|   +--------------------------------------------------+   |
+|   |  Email Address                                   |   |
+|   +--------------------------------------------------+   |
+|   |  Password                                        |   |
+|   +--------------------------------------------------+   |
+|   |  Confirm Password                                |   |
+|   +--------------------------------------------------+   |
+|                                                          |
+|   ┌────────────────────────────────────────────────┐   |
+|   │  Password Requirements:                         │   |
+|   │  ✓ 8+ characters                              │   |
+|   │  ✗ Uppercase letter                           │   |
+|   │  ✗ Number                                     │   |
+|   │  ✗ Special character                          │   |
+|   └────────────────────────────────────────────────┘   |
+|                                                          |
+|   [ ] I agree to the Terms of Service and Privacy Policy |
+|   [ ] Send me product updates (optional)                |
+|                                                          |
+|   +--------------------------------------------------+   |
+|   |            [CREATE ACCOUNT]                       |   |
+|   +--------------------------------------------------+   |
+|                                                          |
+|  ─────────────────────────────────────────────────────   |
+|  Need help? Contact Support                             |
+|  Privacy Policy | Terms | Help                          |
++----------------------------------------------------------+
+```
 
 ### Registration Flow Steps
 
@@ -116,60 +100,42 @@ Need help? <a href="#" style="color: #0066cc;">Contact Support</a><br/>
 
 ### Login Process
 
-<div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
-<h3 style="margin-top: 0;">🖼️ Login Screen Wireframe</h3>
+### Login Screen Wireframe
 
-<div style="border: 2px solid #dee2e6; padding: 20px; background: white; font-family: monospace; max-width: 600px; margin: 20px auto;">
-<div style="border-bottom: 1px solid #dee2e6; padding-bottom: 10px; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center;">
-<span style="font-weight: bold;">[🏠 Logo]</span>
-<span style="color: #6c757d;">(Need account?) <a href="#" style="color: #0066cc;">Sign Up</a></span>
-</div>
-
-<div style="text-align: center; margin-bottom: 30px;">
-<h2 style="margin: 0 0 20px 0;">Welcome Back</h2>
-</div>
-
-<form style="margin-bottom: 20px;">
-<input type="email" placeholder="Email Address" style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #dee2e6; border-radius: 4px; box-sizing: border-box;">
-<div style="position: relative; margin-bottom: 15px;">
-<input type="password" placeholder="Password" style="width: 100%; padding: 10px; padding-right: 40px; border: 1px solid #dee2e6; border-radius: 4px; box-sizing: border-box;">
-<button type="button" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); background: none; border: none; color: #6c757d;">👁️</button>
-</div>
-</form>
-
-<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; font-size: 14px;">
-<label style="display: flex; align-items: center;">
-<input type="checkbox" style="margin-right: 6px;"> Remember me
-</label>
-<a href="#" style="color: #0066cc;">Forgot password?</a>
-</div>
-
-<button style="width: 100%; padding: 12px; background: #0066cc; color: white; border: none; border-radius: 4px; font-weight: bold; margin-bottom: 20px;">
-Sign In
-</button>
-
-<div style="text-align: center; margin: 20px 0; color: #6c757d;">
-───── OR ─────
-</div>
-
-<div style="margin-bottom: 20px;">
-<button style="width: 100%; padding: 12px; margin-bottom: 10px; border: 1px solid #dee2e6; border-radius: 4px; background: white; display: flex; align-items: center; justify-content: center;">
-<span style="margin-right: 10px;">🔍</span> Sign in with Google
-</button>
-<button style="width: 100%; padding: 12px; margin-bottom: 10px; border: 1px solid #dee2e6; border-radius: 4px; background: white; display: flex; align-items: center; justify-content: center;">
-<span style="margin-right: 10px;">🐱</span> Sign in with GitHub
-</button>
-<button style="width: 100%; padding: 12px; margin-bottom: 10px; border: 1px solid #dee2e6; border-radius: 4px; background: white; display: flex; align-items: center; justify-content: center;">
-<span style="margin-right: 10px;">✨</span> Sign in with Magic Link
-</button>
-</div>
-
-<div style="text-align: center; margin-top: 30px; padding-top: 20px; border-top: 1px solid #dee2e6; font-size: 14px; color: #6c757d;">
-Need help? <a href="#" style="color: #0066cc;">Contact Support</a><br/>
-<a href="#" style="color: #0066cc;">Privacy Policy</a> | <a href="#" style="color: #0066cc;">Terms</a> | <a href="#" style="color: #0066cc;">Help</a>
-</div>
-</div>
-</div>
+```
++----------------------------------------------------------+
+|  [Logo]                          (Need account?) [Sign Up] |
++----------------------------------------------------------+
+|                                                          |
+|                     Welcome Back                         |
+|                                                          |
+|   +--------------------------------------------------+   |
+|   |  Email Address                                   |   |
+|   +--------------------------------------------------+   |
+|   |  Password                                    👁️  |   |
+|   +--------------------------------------------------+   |
+|                                                          |
+|   [ ] Remember me              Forgot password?         |
+|                                                          |
+|   +--------------------------------------------------+   |
+|   |                [SIGN IN]                         |   |
+|   +--------------------------------------------------+   |
+|                                                          |
+|                     ───── OR ─────                       |
+|                                                          |
+|   +--------------------------------------------------+   |
+|   |  🔍  Sign in with Google                         |   |
+|   +--------------------------------------------------+   |
+|   |  🐱  Sign in with GitHub                         |   |
+|   +--------------------------------------------------+   |
+|   |  ✨  Sign in with Magic Link                     |   |
+|   +--------------------------------------------------+   |
+|                                                          |
+|  ─────────────────────────────────────────────────────   |
+|  Need help? Contact Support                             |
+|  Privacy Policy | Terms | Help                          |
++----------------------------------------------------------+
+```
 
 ### Authentication Methods
 
@@ -212,94 +178,52 @@ Need help? <a href="#" style="color: #0066cc;">Contact Support</a><br/>
 
 ### SSO Process
 
-<div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
-<h3 style="margin-top: 0;">🖼️ SSO Authorization Screen Wireframe</h3>
+### SSO Authorization Screen Wireframe
 
-<div style="border: 2px solid #dee2e6; padding: 20px; background: white; font-family: monospace; max-width: 600px; margin: 20px auto;">
-<div style="border-bottom: 1px solid #dee2e6; padding-bottom: 15px; margin-bottom: 20px; display: flex; align-items: center; justify-content: space-between;">
-<div style="display: flex; align-items: center;">
-<span style="background: #e9ecef; padding: 8px; border-radius: 4px; margin-right: 10px;">[📱 App Logo]</span>
-<span style="font-weight: bold;">MyApp</span>
-</div>
-<div style="display: flex; align-items: center;">
-<span style="color: #6c757d; margin-right: 5px;">wants to access your</span>
-<span style="background: #e9ecef; padding: 4px 8px; border-radius: 4px; margin-right: 5px;">[🏠 IDP Logo]</span>
-<span style="color: #6c757d;">account</span>
-</div>
-</div>
-
-<div style="margin-bottom: 25px;">
-<h3 style="margin: 0 0 15px 0; color: #495057;">Basic Information (Required)</h3>
-<div style="background: #f8f9fa; padding: 15px; border-radius: 4px; margin-bottom: 15px;">
-<label style="display: flex; align-items: flex-start;">
-<input type="checkbox" checked disabled style="margin-right: 10px; margin-top: 2px;">
-<div>
-<strong>Your name and email address</strong><br/>
-<span style="color: #6c757d; font-size: 14px;">Why: To personalize your experience</span>
-</div>
-</label>
-</div>
-<div style="background: #f8f9fa; padding: 15px; border-radius: 4px;">
-<label style="display: flex; align-items: flex-start;">
-<input type="checkbox" checked disabled style="margin-right: 10px; margin-top: 2px;">
-<div>
-<strong>Verify your identity</strong><br/>
-<span style="color: #6c757d; font-size: 14px;">Why: Confirm authorization</span>
-</div>
-</label>
-</div>
-</div>
-
-<div style="margin-bottom: 25px;">
-<h3 style="margin: 0 0 15px 0; color: #495057;">Optional Permissions</h3>
-<div style="background: #f8f9fa; padding: 15px; border-radius: 4px; margin-bottom: 10px;">
-<label style="display: flex; align-items: flex-start;">
-<input type="checkbox" style="margin-right: 10px; margin-top: 2px;">
-<div>
-<strong>Your profile picture</strong><br/>
-<span style="color: #6c757d; font-size: 14px;">Why: Display photo in app</span>
-</div>
-</label>
-</div>
-<div style="background: #f8f9fa; padding: 15px; border-radius: 4px; margin-bottom: 10px;">
-<label style="display: flex; align-items: flex-start;">
-<input type="checkbox" style="margin-right: 10px; margin-top: 2px;">
-<div>
-<strong>Account preferences</strong><br/>
-<span style="color: #6c757d; font-size: 14px;">Why: Configure app settings</span>
-</div>
-</label>
-</div>
-<div style="background: #f8f9fa; padding: 15px; border-radius: 4px;">
-<label style="display: flex; align-items: flex-start;">
-<input type="checkbox" style="margin-right: 10px; margin-top: 2px;">
-<div>
-<strong>Keep you signed in (30 days)</strong><br/>
-<span style="color: #6c757d; font-size: 14px;">Why: Avoid repeated logins</span>
-</div>
-</label>
-</div>
-</div>
-
-<div style="display: flex; gap: 10px; margin-bottom: 20px;">
-<button style="flex: 1; padding: 12px; border: 1px solid #dee2e6; border-radius: 4px; background: white; color: #6c757d;">
-Decline
-</button>
-<button style="flex: 1; padding: 12px; border: 1px solid #0066cc; border-radius: 4px; background: white; color: #0066cc;">
-Accept Selected
-</button>
-<button style="flex: 1; padding: 12px; background: #0066cc; color: white; border: none; border-radius: 4px; font-weight: bold;">
-Accept All
-</button>
-</div>
-
-<div style="text-align: center; padding-top: 20px; border-top: 1px solid #dee2e6; font-size: 14px; color: #6c757d;">
-By continuing, you agree to share<br/>
-selected information with MyApp<br/>
-<a href="#" style="color: #0066cc;">(Learn about data sharing)</a>
-</div>
-</div>
-</div>
+```
++----------------------------------------------------------+
+|  [📱 App Logo] MyApp     wants to access your [🏠 IDP Logo] account |
++----------------------------------------------------------+
+|                                                          |
+|    Basic Information (Required)                          |
+|                                                          |
+|    ┌────────────────────────────────────────────────┐   |
+|    │ [✓] Your name and email address                 │   |
+|    │     Why: To personalize your experience         │   |
+|    └────────────────────────────────────────────────┘   |
+|                                                          |
+|    ┌────────────────────────────────────────────────┐   |
+|    │ [✓] Verify your identity                        │   |
+|    │     Why: Confirm authorization                  │   |
+|    └────────────────────────────────────────────────┘   |
+|                                                          |
+|    Optional Permissions                                  |
+|                                                          |
+|    ┌────────────────────────────────────────────────┐   |
+|    │ [ ] Your profile picture                        │   |
+|    │     Why: Display photo in app                   │   |
+|    └────────────────────────────────────────────────┘   |
+|                                                          |
+|    ┌────────────────────────────────────────────────┐   |
+|    │ [ ] Account preferences                         │   |
+|    │     Why: Configure app settings                  │   |
+|    └────────────────────────────────────────────────┘   |
+|                                                          |
+|    ┌────────────────────────────────────────────────┐   |
+|    │ [ ] Keep you signed in (30 days)               │   |
+|    │     Why: Avoid repeated logins                   │   |
+|    └────────────────────────────────────────────────┘   |
+|                                                          |
+|  +--------+ +----------------+ +---------------+        |
+|  |Decline | |Accept Selected | | Accept All    |        |
+|  +--------+ +----------------+ +---------------+        |
+|                                                          |
+|  ─────────────────────────────────────────────────────   |
+|  By continuing, you agree to share                       |
+|  selected information with MyApp                         |
+|  (Learn about data sharing)                              |
++----------------------------------------------------------+
+```
 
 ### Consent Management
 
@@ -330,63 +254,44 @@ selected information with MyApp<br/>
 
 ## Mobile Experience
 
-<div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
-<h3 style="margin-top: 0;">📱 Mobile Login Wireframe</h3>
+### Mobile Login Wireframe
 
-<div style="border: 2px solid #dee2e6; padding: 15px; background: white; font-family: monospace; max-width: 320px; margin: 20px auto;">
-<div style="text-align: center; margin-bottom: 20px;">
-<div style="font-size: 24px; margin-bottom: 10px;">[🏠 Logo]</div>
-<h2 style="margin: 0; font-size: 18px;">Welcome Back</h2>
-</div>
-
-<form style="margin-bottom: 20px;">
-<input type="email" placeholder="Email Address" style="width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #dee2e6; border-radius: 6px; box-sizing: border-box; font-size: 16px;">
-<div style="position: relative; margin-bottom: 15px;">
-<input type="password" placeholder="Password" style="width: 100%; padding: 12px; padding-right: 45px; border: 1px solid #dee2e6; border-radius: 6px; box-sizing: border-box; font-size: 16px;">
-<button type="button" style="position: absolute; right: 12px; top: 50%; transform: translateY(-50%); background: none; border: none; font-size: 18px;">👁️</button>
-</div>
-</form>
-
-<div style="margin-bottom: 20px;">
-<label style="display: flex; align-items: center; font-size: 14px;">
-<input type="checkbox" style="margin-right: 8px;"> Remember me
-</label>
-</div>
-
-<button style="width: 100%; padding: 14px; background: #0066cc; color: white; border: none; border-radius: 6px; font-weight: bold; font-size: 16px; margin-bottom: 15px;">
-Sign In
-</button>
-
-<div style="text-align: center; margin-bottom: 20px;">
-<a href="#" style="color: #0066cc; font-size: 14px;">Forgot password?</a>
-</div>
-
-<div style="text-align: center; margin: 20px 0; color: #6c757d; font-size: 14px;">
-──── OR ────
-</div>
-
-<div style="margin-bottom: 20px;">
-<button style="width: 100%; padding: 14px; margin-bottom: 10px; border: 1px solid #dee2e6; border-radius: 6px; background: white; display: flex; align-items: center; justify-content: center; font-size: 16px;">
-<span style="margin-right: 10px; font-size: 18px;">📱</span> Face ID
-</button>
-<button style="width: 100%; padding: 14px; margin-bottom: 10px; border: 1px solid #dee2e6; border-radius: 6px; background: white; display: flex; align-items: center; justify-content: center; font-size: 16px;">
-<span style="margin-right: 10px; font-size: 18px;">🔍</span> Fingerprint
-</button>
-<button style="width: 100%; padding: 14px; margin-bottom: 10px; border: 1px solid #dee2e6; border-radius: 6px; background: white; display: flex; align-items: center; justify-content: center; font-size: 16px;">
-<span style="margin-right: 10px; font-size: 18px;">🔍</span> Continue with Google
-</button>
-</div>
-
-<div style="text-align: center; margin-top: 30px; padding-top: 20px; border-top: 1px solid #dee2e6; font-size: 14px; color: #6c757d;">
-<div style="margin-bottom: 10px;">
-(Need account?) <a href="#" style="color: #0066cc;">Sign Up</a>
-</div>
-<div>
-<a href="#" style="color: #0066cc;">Help</a> | <a href="#" style="color: #0066cc;">Privacy</a>
-</div>
-</div>
-</div>
-</div>
+```
++---------------------------+
+|                           |
+|        [🏠 Logo]          |
+|       Welcome Back        |
+|                           |
+| +---------------------+   |
+| | Email Address       |   |
+| +---------------------+   |
+| | Password        👁️  |   |
+| +---------------------+   |
+|                           |
+| [ ] Remember me           |
+|                           |
+| +---------------------+   |
+| |     [SIGN IN]       |   |
+| +---------------------+   |
+|                           |
+|    Forgot password?       |
+|                           |
+|       ──── OR ────        |
+|                           |
+| +---------------------+   |
+| | 📱 Face ID          |   |
+| +---------------------+   |
+| | 🔍 Fingerprint      |   |
+| +---------------------+   |
+| | 🔍 Continue with    |   |
+| |    Google           |   |
+| +---------------------+   |
+|                           |
+| ───────────────────────   |
+| (Need account?) Sign Up   |
+| Help | Privacy            |
++---------------------------+
+```
 
 ### Mobile Optimizations
 - **Touch Targets**: Minimum 44px for comfortable tapping

@@ -28,13 +28,13 @@ Create comprehensive user journeys that include:
 
 Use lists, diagrams, and clear annotations. Structure flows as step-by-step progressions with conditional branches.
 
-### 2. HTML-Based Wireframes
+### 2. ASCII Wireframes
 Build readable, structure-focused wireframes that:
-- Use HTML/CSS for better visual representation instead of ASCII
-- Show element positioning and hierarchy clearly
+- Use ASCII text characters for lightweight, portable visual representation
+- Show element positioning and hierarchy clearly using characters like |, -, +, [], etc.
 - Include functional annotations and interaction states
 - Focus on layout intent and information architecture
-- Provide both desktop and mobile responsive examples
+- Provide both desktop and mobile responsive examples using ASCII art
 - Use visual indicators for different interaction states
 
 ### 3. Behavioral Logic
@@ -81,10 +81,10 @@ When technical questions arise, recommend consulting with engineers or architect
 - Added comprehensive user journey overview showing cross-flow relationships
 
 **Visual Enhancements**:
-- HTML-based wireframes instead of hard-to-read ASCII representations
-- Visual flow charts and relationship diagrams using HTML/CSS
-- Color-coded elements for different interaction states and priorities
-- Responsive design examples for both desktop and mobile
+- ASCII wireframes for lightweight, portable documentation
+- Mermaid diagrams for flow charts and relationship diagrams
+- Text-based indicators for different interaction states and priorities
+- Responsive design examples for both desktop and mobile using ASCII art
 
 **Content Organization**:
 - Functional grouping (authentication, account management, developer portal, etc.)
