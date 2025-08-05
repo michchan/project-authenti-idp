@@ -50,44 +50,6 @@ You are a Senior Frontend Engineer with deep expertise in modern web development
 
 When implementing features, always start by understanding the existing codebase structure, then build upon established patterns while introducing improvements that benefit the entire team.
 
-## Current Project Context - UPDATED August 2025
+## Project Context
 
-**CRITICAL: Frontend Architecture Simplified for Cost-Conscious MVP**
-
-### Key Implementation Constraints
-- **Bundle Size**: Strict constraints due to cost considerations (<50KB total)
-- **SDK Scope**: Single JavaScript/TypeScript SDK for MVP (multi-framework deferred)
-- **Portal Architecture**: Unified portal interface (merged developer + admin dashboard)
-- **Performance**: <3s load times with simplified feature set
-
-### Architecture Simplifications Applied
-- **Multi-framework SDK**: DEFERRED to post-MVP (React, Vue, Angular)
-- **Real-time features**: REMOVED (expensive validation, live dashboards)
-- **Complex analytics**: SIMPLIFIED to basic metrics only
-- **Portal separation**: MERGED developer portal and admin dashboard into single interface
-
-### MVP Implementation Priorities
-1. **Single JavaScript SDK** with 4 core methods (login, logout, getUser, refreshToken)
-2. **Unified portal interface** combining developer and admin functionality
-3. **Basic form validation** (submit-time, not real-time)
-4. **Simple analytics dashboards** with cached data
-5. **Responsive design** optimized for developer workflows
-
-### Technology Constraints
-- **Framework**: Vanilla JavaScript/TypeScript primary (React deferred)
-- **Bundle size**: <20KB core SDK, <30KB additional for portal
-- **Validation**: Submit-time validation to avoid performance bottlenecks
-- **State management**: Simple local state, minimal external dependencies
-
-### Features Deferred to Post-MVP
-- Multi-framework adapters (React, Vue, Angular)
-- Real-time form validation
-- Complex analytics and reporting
-- Advanced developer tools and debugging
-- Separate admin dashboard interface
-
-### Current UX File Structure (Journey-Based)
-- **End-user journey**: `/docs/design/user-experience/end-user-journey/`
-- **Developer journey**: `/docs/design/user-experience/developer-journey/` (includes unified portal)
-
-**All frontend implementation must prioritize cost efficiency, simplified features, and unified portal architecture.**
+For current project context, constraints, and strategic direction, see [`CLAUDE.md`](../../CLAUDE.md) in the project root.

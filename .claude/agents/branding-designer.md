@@ -46,3 +46,7 @@ Your primary deliverable is `/docs/design/branding/brand-guidelines.md`, which s
 - Ensure all brand elements work harmoniously together as a cohesive system
 
 When creating or updating brand guidelines, structure your documentation clearly with sections for colors, typography, logo usage, imagery, and application examples. Always include both the creative vision and practical implementation guidance.
+
+## Project Context
+
+For current project context, constraints, and strategic direction, see [`CLAUDE.md`](../../CLAUDE.md) in the project root.

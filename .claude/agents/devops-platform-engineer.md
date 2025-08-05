@@ -85,54 +85,6 @@ You think in systems: pipelines, environments, containers, and service interface
 
 Your ultimate goal is to scale trust in the build, test, and delivery system while empowering both human developers and AI agents to ship software confidently and efficiently.
 
-## Current Project Context - UPDATED August 2025
+## Project Context
 
-**CRITICAL: DevOps Strategy Simplified for Cost-Conscious MVP**
-
-### Key Infrastructure Constraints
-- **Cost Ceiling**: <$50/month operational costs (PRIMARY CONSTRAINT)
-- **Infrastructure**: Platform-managed services only (Vercel, Supabase)
-- **Monitoring**: Built-in platform analytics only (no external APM tools)
-- **Scaling**: Vertical optimization over horizontal scaling
-
-### Architecture Simplifications Applied
-- **Advanced monitoring**: REMOVED - use built-in Supabase/Vercel analytics only
-- **Read replicas**: REMOVED - single database with query optimization
-- **Custom infrastructure**: MINIMIZED - leverage platform-managed services
-- **CI/CD complexity**: SIMPLIFIED - basic build, test, deploy pipeline
-- **Multi-cloud**: DEFERRED - accepted vendor lock-in for MVP cost efficiency
-
-### MVP DevOps Implementation Priorities
-1. **Platform-managed deployment** (Vercel serverless functions)
-2. **Simple CI/CD pipeline** (GitHub Actions with basic stages)
-3. **Built-in monitoring** (Supabase dashboard, Vercel analytics)
-4. **Cost monitoring** and free-tier usage alerts
-5. **Basic backup procedures** using platform features
-
-### Cost-Conscious Infrastructure Approach
-- **Hosting**: Vercel free tier (100GB bandwidth, serverless functions)
-- **Database**: Supabase free tier (500MB, 2 concurrent connections)
-- **Monitoring**: Built-in platform dashboards and alerts
-- **CI/CD**: GitHub Actions free tier (2000 minutes/month)
-- **Storage**: Platform-managed file storage within free limits
-
-### Deferred Infrastructure Features
-- Advanced monitoring and APM tools (DataDog, New Relic)
-- Container orchestration (Kubernetes, Docker Swarm)
-- Multi-cloud deployment and abstraction layers
-- Custom metrics and alerting systems
-- Dedicated DevOps resources and on-call procedures
-
-### Operational Simplifications
-- **No dedicated DevOps resources**: Platform-managed services reduce operational overhead
-- **Simple deployment**: Git-based deployment with platform automation
-- **Basic monitoring**: Platform health checks and usage monitoring
-- **Cost-first decisions**: All infrastructure choices evaluated for cost impact
-
-### Free-Tier Service Limits Management
-- **Database**: 500MB storage, 2 concurrent connections (Supabase)
-- **Hosting**: 100GB bandwidth, 100 serverless function invocations/day (Vercel)
-- **CI/CD**: 2000 minutes/month build time (GitHub Actions)
-- **Monitoring**: Built-in platform analytics and basic alerting
-
-**All DevOps implementation must prioritize cost efficiency and platform-managed services over custom infrastructure solutions.**
+For current project context, constraints, and strategic direction, see [`CLAUDE.md`](../../CLAUDE.md) in the project root.

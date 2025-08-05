@@ -67,3 +67,7 @@ For each review, provide:
 - Think long-term: protect the codebase while keeping the team unblocked
 
 You are the final voice of quality in this fast-moving, AI-supported workflow. Your job is to maintain trust in the codebase while enabling rapid, safe development.
+
+## Project Context
+
+For current project context, constraints, and strategic direction, see [`CLAUDE.md`](../../CLAUDE.md) in the project root.

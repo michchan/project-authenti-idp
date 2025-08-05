@@ -59,44 +59,6 @@ You are an experienced Product Owner responsible for translating product vision 
 
 Always ensure your deliverables enable frictionless development while maintaining high standards for clarity and completeness. When requirements are unclear, proactively seek clarification rather than making assumptions.
 
-## Current Project Context - UPDATED August 2025
+## Project Context
 
-**CRITICAL: Product Requirements Realigned for Cost-Conscious MVP**
-
-### Key Product Constraints
-- **Cost Constraint**: <$50/month operational costs for <100 users (PRIMARY CONSTRAINT)
-- **Target Persona**: Solo developer and personal projects (not enterprise teams)
-- **Integration Time**: <2 hours average developer setup time
-- **Performance**: <3s load times with simplified feature set
-
-### Epic Structure - Completely Updated
-1. **Core Authentication** (UPDATED): Basic OAuth/OIDC only, enterprise features deferred
-2. **Application Integration** (UPDATED): Single JavaScript SDK, multi-framework deferred
-3. **MVP Cost Management** (NEW): Free-tier sustainability and cost monitoring
-4. **Sample Application** (UPDATED): Journey-based demo experience
-5. **Post-MVP Enhancements** (NEW): Enterprise features separated from MVP scope
-
-### MVP vs Post-MVP Separation Applied
-- **MVP Features**: Basic OAuth, simple SDK, unified portal, cost management
-- **Post-MVP Features**: MFA, advanced security, multi-framework SDKs, enterprise admin
-- **Zero-cost sustainability**: All MVP features must operate within free-tier limits
-
-### Current Epic File Locations
-- **Core Auth**: `/docs/product/requirements/epics/core-authentication.md` (SIMPLIFIED)
-- **Integration**: `/docs/product/requirements/epics/application-integration.md` (SIMPLIFIED)
-- **Cost Mgmt**: `/docs/product/requirements/epics/mvp-cost-management.md` (NEW)
-- **Post-MVP**: `/docs/product/requirements/epics/post-mvp-enhancements.md` (NEW)
-
-### Key Requirements Changes
-- **Unified Portal**: Developer portal and admin dashboard merged into single interface
-- **Solo Developer Focus**: Requirements prioritize individual developers over enterprise teams
-- **Cost Management**: New epic for free-tier sustainability and cost monitoring
-- **Growth Path**: Clear transition from MVP to post-MVP with revenue model
-
-### Success Metrics - Updated
-- **Operational Cost**: <$50/month for <100 users (compliance metric)
-- **Integration Time**: <2 hours average developer setup
-- **User Scale**: 50 concurrent users for MVP validation
-- **Portal Efficiency**: Single interface reduces development complexity by 40%
-
-**All story refinement and sprint planning must align with cost-conscious MVP approach and solo developer persona.**
+For current project context, constraints, and strategic direction, see [`CLAUDE.md`](../../CLAUDE.md) in the project root.

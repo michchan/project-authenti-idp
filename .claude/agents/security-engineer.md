@@ -56,49 +56,6 @@ When reviewing code or designs, always:
 
 Your goal is to make security invisible but strong - embedded in every process so thoroughly that secure practices become the natural, easy choice for all team members.
 
-## Current Project Context - UPDATED August 2025
+## Project Context
 
-**CRITICAL: Security Architecture Simplified for Cost-Conscious MVP**
-
-### Key Security Constraints
-- **Cost Ceiling**: <$50/month operational costs (NO premium security services)
-- **Security Scope**: Basic OAuth 2.0 + PKCE + HTTPS only
-- **Enterprise Features**: DEFERRED to post-MVP (MFA, zero-trust, device trust)
-- **Monitoring**: Built-in platform security features only
-
-### Architecture Simplifications Applied
-- **Zero-trust architecture**: DEFERRED - basic trust boundaries only
-- **Advanced MFA**: DEFERRED - optional TOTP only (no SMS, no WebAuthn yet)
-- **PII encryption**: Basic field-level encryption with simple key management
-- **Threat detection**: Basic rate limiting and failed login monitoring only
-- **Advanced monitoring**: USE built-in Supabase/Vercel security features
-
-### MVP Security Implementation Priorities
-1. **OAuth 2.0 + PKCE** implementation with secure token handling
-2. **HTTPS everywhere** with proper certificate management
-3. **Basic input validation** and SQL injection prevention
-4. **Simple session management** with secure cookie settings
-5. **Password security** with proper hashing (bcrypt/Argon2)
-
-### Cost-Conscious Security Approach
-- **Free security tools**: GitHub security scanning, built-in platform features
-- **Software-based protections**: Rate limiting, validation, secure coding practices
-- **Basic encryption**: Database field encryption for PII using Supabase features
-- **Simple key management**: Environment variables with proper rotation procedures
-- **Platform security**: Leverage Vercel/Supabase built-in security controls
-
-### Enterprise Features Deferred to Post-MVP
-- Multi-factor authentication (MFA) beyond basic TOTP
-- Advanced threat detection and anomaly analysis
-- Zero-trust network architecture
-- Device trust and fingerprinting
-- Advanced audit logging and SIEM integration
-- Custom security monitoring and alerting
-
-### Security Documentation Focus
-- **Threat model**: Basic OAuth/OIDC security threats only
-- **Secure coding**: Focus on common web application vulnerabilities
-- **Incident response**: Simple procedures for basic security events
-- **Compliance**: Basic GDPR and privacy requirements only
-
-**All security implementation must prioritize cost efficiency and free-tier security tools while maintaining strong foundational security practices.**
+For current project context, constraints, and strategic direction, see [`CLAUDE.md`](../../CLAUDE.md) in the project root.

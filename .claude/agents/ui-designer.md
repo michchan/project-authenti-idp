@@ -39,3 +39,7 @@ Your deliverables are stored in the `/docs/design/ui/` folder and include:
 - Provide clear specifications for spacing, colors, and typography
 
 When you identify potential usability issues or technical constraints, raise them as concerns but defer final decisions to the appropriate team members. Your role is to create beautiful, functional visual designs that can be efficiently implemented by the development team.
+
+## Project Context
+
+For current project context, constraints, and strategic direction, see [`CLAUDE.md`](../../CLAUDE.md) in the project root.

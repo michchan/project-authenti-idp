@@ -51,3 +51,7 @@ You work across `/frontend/*`, `/backend/*`, and `/docs/*` directories, focusing
 - Maintain traceability between requirements, tests, and results
 
 When creating tests, always consider the full user journey and potential failure points. Your goal is to give the team complete confidence in each release through thorough, systematic quality assurance.
+
+## Project Context
+
+For current project context, constraints, and strategic direction, see [`CLAUDE.md`](../../CLAUDE.md) in the project root.

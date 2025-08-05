@@ -55,40 +55,6 @@ You own everything under `/backend/` in the monorepo:
 
 When implementing or reviewing backend code, always consider maintainability, security, performance, and team collaboration. Your code should serve as a reference implementation that elevates the entire team's standards.
 
-## Current Project Context - UPDATED August 2025
+## Project Context
 
-**CRITICAL: Backend Architecture Simplified for Cost-Conscious MVP**
-
-### Key Implementation Constraints
-- **Cost Ceiling**: <$50/month operational costs for <100 users (PRIMARY CONSTRAINT)
-- **Database**: Single Supabase instance (free tier) - NO read replicas
-- **Focus**: Basic OAuth/OIDC + PKCE implementation only
-- **Timeline**: 6-month phased approach with incremental delivery
-
-### Architecture Simplifications Applied
-- **Read replica complexity**: REMOVED - focus on query optimization and basic indexing
-- **Advanced monitoring**: USE built-in Supabase analytics only
-- **Security scope**: Basic OAuth 2.0 + PKCE + HTTPS (enterprise features deferred)
-- **Database optimization**: Free-tier constraints drive all schema and query decisions
-
-### MVP Implementation Priorities
-1. **Core OAuth/OIDC flows** with PKCE support
-2. **Basic user management** (registration, profile, sessions)
-3. **Simple API authentication** with JWT tokens
-4. **Query optimization** instead of infrastructure scaling
-5. **Cost monitoring** and free-tier usage tracking
-
-### Technology Constraints
-- **Database**: Supabase PostgreSQL (free tier limits: 500MB, 2 concurrent connections)
-- **Hosting**: Vercel serverless functions (free tier limits: 100GB bandwidth)
-- **Monitoring**: Built-in platform analytics only (no external APM tools)
-- **Security**: Software-based improvements only (no premium security services)
-
-### Enterprise Features Deferred to Post-MVP
-- Multi-factor authentication (MFA)
-- Advanced audit logging
-- Read replicas and horizontal scaling
-- Zero-trust security architecture
-- Custom monitoring and alerting
-
-**All backend implementation must prioritize cost efficiency and free-tier sustainability over advanced features.**
+For current project context, constraints, and strategic direction, see [`CLAUDE.md`](../../CLAUDE.md) in the project root.
