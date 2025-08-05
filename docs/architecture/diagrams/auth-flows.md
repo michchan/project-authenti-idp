@@ -223,13 +223,14 @@ sequenceDiagram
 ## Security Considerations for Auth Flows
 
 ### PKCE Implementation
-<div class="mermaid">
+
+```mermaid
 graph TB
     subgraph "PKCE Security Flow"
-        CV[Code Verifier<br/>43-128 random chars]
-        CC[Code Challenge<br/>SHA256(code_verifier)]
-        AC[Authorization Code<br/>Temporary, single-use]
-        Verify[Verification<br/>code_challenge == SHA256(code_verifier)]
+        CV["Code Verifier<br/>43-128 random chars"]
+        CC["Code Challenge<br/>SHA256(code_verifier)"]
+        AC["Authorization Code<br/>Temporary, single-use"]
+        Verify["Verification<br/>code_challenge == SHA256(code_verifier)"]
     end
     
     CV --> CC
@@ -237,9 +238,9 @@ graph TB
     AC --> Verify
     
     subgraph "Security Benefits"
-        NoSecret[No Client Secret<br/>Required]
-        InterceptProof[Interception<br/>Protection]
-        ReplayProof[Replay Attack<br/>Prevention]
+        NoSecret["No Client Secret<br/>Required"]
+        InterceptProof["Interception<br/>Protection"]
+        ReplayProof["Replay Attack<br/>Prevention"]
     end
     
     Verify --> NoSecret
@@ -252,21 +253,22 @@ graph TB
     
     class CV,CC,AC,Verify flow
     class NoSecret,InterceptProof,ReplayProof security
-</div>
+```
 
 ### Token Security Model
-<div class="mermaid">
+
+```mermaid
 graph LR
     subgraph "Token Types & Security"
-        AT[Access Token<br/>Short-lived (15min)<br/>Bearer token]
-        RT[Refresh Token<br/>Long-lived (30 days)<br/>Secure storage only]
-        IT[ID Token<br/>JWT with user info<br/>Digitally signed]
+        AT["Access Token<br/>Short-lived (15min)<br/>Bearer token"]
+        RT["Refresh Token<br/>Long-lived (30 days)<br/>Secure storage only"]
+        IT["ID Token<br/>JWT with user info<br/>Digitally signed"]
     end
     
     subgraph "Security Measures"
-        Rotation[Token Rotation<br/>on each refresh]
-        Binding[Token Binding<br/>to client/device]
-        Revocation[Token Revocation<br/>immediate invalidation]
+        Rotation["Token Rotation<br/>on each refresh"]
+        Binding["Token Binding<br/>to client/device"]
+        Revocation["Token Revocation<br/>immediate invalidation"]
     end
     
     AT --> Rotation
@@ -274,9 +276,9 @@ graph LR
     IT --> Revocation
     
     subgraph "Storage Security"
-        Memory[Memory Only<br/>Access tokens]
-        Keychain[Secure Keychain<br/>Refresh tokens]
-        HttpOnly[HttpOnly Cookies<br/>Web applications]
+        Memory["Memory Only<br/>Access tokens"]
+        Keychain["Secure Keychain<br/>Refresh tokens"]
+        HttpOnly["HttpOnly Cookies<br/>Web applications"]
     end
     
     AT --> Memory
@@ -291,7 +293,7 @@ graph LR
     class AT,RT,IT tokens
     class Rotation,Binding,Revocation measures
     class Memory,Keychain,HttpOnly storage
-</div>
+```
 
 ## Flow Selection Guidelines
 

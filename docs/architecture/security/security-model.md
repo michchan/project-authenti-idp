@@ -23,14 +23,15 @@ The Identity Provider implements defense-in-depth security with multiple layers 
 ## Authentication Security
 
 ### Password Security
+
 ```mermaid
 graph TB
     subgraph "Password Protection"
-        Input[User Password Input]
-        Validation[Password Validation<br/>- Min 8 characters<br/>- Mixed case + numbers<br/>- Special characters]
-        Salt[Generate Salt<br/>Crypto.randomBytes(32)]
-        Hash[bcrypt Hash<br/>Cost factor: 12]
-        Store[Store Hash Only<br/>Never plaintext]
+        Input["User Password Input"]
+        Validation["Password Validation<br/>- Min 8 characters<br/>- Mixed case + numbers<br/>- Special characters"]
+        Salt["Generate Salt<br/>Crypto.randomBytes(32)"]
+        Hash["bcrypt Hash<br/>Cost factor: 12"]
+        Store["Store Hash Only<br/>Never plaintext"]
     end
     
     Input --> Validation
@@ -39,9 +40,9 @@ graph TB
     Hash --> Store
     
     subgraph "Attack Mitigation"
-        BruteForce[Brute Force Protection<br/>Account lockout after 5 attempts]
-        Rainbow[Rainbow Table Defense<br/>Unique salts per password]
-        Timing[Timing Attack Prevention<br/>Constant-time comparison]
+        BruteForce["Brute Force Protection<br/>Account lockout after 5 attempts"]
+        Rainbow["Rainbow Table Defense<br/>Unique salts per password"]
+        Timing["Timing Attack Prevention<br/>Constant-time comparison"]
     end
     
     Store --> BruteForce

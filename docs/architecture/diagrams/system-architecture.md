@@ -79,79 +79,7 @@ graph TB
     class EmailService,MonitorService,LogService external
 ```
 
-### High-Contrast Alternative (HTML Table Format)
 
-<table border="2" style="border-collapse: collapse; width: 100%; font-family: monospace;">
-<tr style="background-color: #000000; color: #FFFFFF; font-weight: bold;">
-  <td colspan="4" style="text-align: center; padding: 10px; font-size: 16px;">SYSTEM ARCHITECTURE OVERVIEW</td>
-</tr>
-<tr>
-  <td style="background-color: #1565C0; color: #FFFFFF; font-weight: bold; padding: 10px; text-align: center;">FRONTEND LAYER<br/>(Vercel Free Tier)</td>
-  <td style="background-color: #6A1B9A; color: #FFFFFF; font-weight: bold; padding: 10px; text-align: center;">EDGE LAYER<br/>(Vercel Edge Functions)</td>
-  <td style="background-color: #2E7D32; color: #FFFFFF; font-weight: bold; padding: 10px; text-align: center;">APPLICATION LAYER<br/>(Serverless Functions)</td>
-  <td style="background-color: #EF6C00; color: #FFFFFF; font-weight: bold; padding: 10px; text-align: center;">DATA LAYER<br/>(Supabase)</td>
-</tr>
-<tr>
-  <td style="background-color: #E3F2FD; padding: 10px; border: 2px solid #1565C0;">
-    <strong>Admin Dashboard</strong><br/>
-    • Next.js + React<br/>
-    • User Management<br/>
-    • System Config<br/><br/>
-    <strong>Landing Page</strong><br/>
-    • Static Site<br/>
-    • Documentation<br/>
-    • Client Registration
-  </td>
-  <td style="background-color: #F3E5F5; padding: 10px; border: 2px solid #6A1B9A;">
-    <strong>Edge Authentication</strong><br/>
-    • Rate Limiting<br/>
-    • CORS Handling<br/>
-    • Request Validation<br/><br/>
-    <strong>Edge API Gateway</strong><br/>
-    • Request Routing<br/>
-    • Response Caching<br/>
-    • Geographic Distribution
-  </td>
-  <td style="background-color: #E8F5E8; padding: 10px; border: 2px solid #2E7D32;">
-    <strong>Authentication Service</strong><br/>
-    • OAuth 2.0/OIDC<br/>
-    • Login/Logout Flows<br/><br/>
-    <strong>User Management</strong><br/>
-    • CRUD Operations<br/>
-    • Profile Management<br/><br/>
-    <strong>Token Service</strong><br/>
-    • JWT Gen/Validation<br/>
-    • Refresh Tokens<br/><br/>
-    <strong>Session Management</strong><br/>
-    • Server-side Sessions<br/>
-    • Security Policies
-  </td>
-  <td style="background-color: #FFF3E0; padding: 10px; border: 2px solid #EF6C00;">
-    <strong>PostgreSQL Database</strong><br/>
-    • User Data<br/>
-    • Applications<br/>
-    • Sessions<br/><br/>
-    <strong>Redis Cache</strong><br/>
-    • Session Storage<br/>
-    • Token Blacklist<br/>
-    • Rate Limiting<br/><br/>
-    <strong>File Storage</strong><br/>
-    • User Avatars<br/>
-    • App Logos<br/>
-    • Static Assets
-  </td>
-</tr>
-<tr>
-  <td colspan="4" style="background-color: #C62828; color: #FFFFFF; font-weight: bold; padding: 8px; text-align: center;">EXTERNAL INTEGRATIONS</td>
-</tr>
-<tr>
-  <td colspan="4" style="background-color: #FFEBEE; padding: 10px; border: 2px solid #C62828;">
-    <strong>Email Service:</strong> Resend/SendGrid (Free Tier) • 
-    <strong>Monitoring:</strong> UptimeRobot (Free) • 
-    <strong>Logging:</strong> Vercel Analytics
-  </td>
-</tr>
-</table>
 
 ## Component Responsibilities
 
@@ -209,73 +137,7 @@ sequenceDiagram
     Auth->>Client: Protected resource
 ```
 
-### High-Contrast Data Flow (Step-by-Step)
 
-<table border="3" style="border-collapse: collapse; width: 100%; font-family: monospace;">
-<tr style="background-color: #000000; color: #FFFFFF; font-weight: bold;">
-  <td style="padding: 10px; text-align: center;">STEP</td>
-  <td style="padding: 10px; text-align: center;">FROM</td>
-  <td style="padding: 10px; text-align: center;">TO</td>
-  <td style="padding: 10px; text-align: center;">ACTION</td>
-  <td style="padding: 10px; text-align: center;">PURPOSE</td>
-</tr>
-<tr style="background-color: #E3F2FD;">
-  <td style="padding: 8px; font-weight: bold; border: 2px solid #1565C0;">1</td>
-  <td style="padding: 8px; border: 2px solid #1565C0;">Client App</td>
-  <td style="padding: 8px; border: 2px solid #1565C0;">Edge Layer</td>
-  <td style="padding: 8px; border: 2px solid #1565C0;">GET /oauth/authorize</td>
-  <td style="padding: 8px; border: 2px solid #1565C0;">Start OAuth flow</td>
-</tr>
-<tr style="background-color: #F3E5F5;">
-  <td style="padding: 8px; font-weight: bold; border: 2px solid #6A1B9A;">2</td>
-  <td style="padding: 8px; border: 2px solid #6A1B9A;">Edge Layer</td>
-  <td style="padding: 8px; border: 2px solid #6A1B9A;">Auth Service</td>
-  <td style="padding: 8px; border: 2px solid #6A1B9A;">Route request</td>
-  <td style="padding: 8px; border: 2px solid #6A1B9A;">Forward to auth handler</td>
-</tr>
-<tr style="background-color: #E8F5E8;">
-  <td style="padding: 8px; font-weight: bold; border: 2px solid #2E7D32;">3</td>
-  <td style="padding: 8px; border: 2px solid #2E7D32;">Auth Service</td>
-  <td style="padding: 8px; border: 2px solid #2E7D32;">Database</td>
-  <td style="padding: 8px; border: 2px solid #2E7D32;">Validate client_id</td>
-  <td style="padding: 8px; border: 2px solid #2E7D32;">Verify client exists</td>
-</tr>
-<tr style="background-color: #FFF3E0;">
-  <td style="padding: 8px; font-weight: bold; border: 2px solid #EF6C00;">4</td>
-  <td style="padding: 8px; border: 2px solid #EF6C00;">Auth Service</td>
-  <td style="padding: 8px; border: 2px solid #EF6C00;">Client App</td>
-  <td style="padding: 8px; border: 2px solid #EF6C00;">Redirect to login</td>
-  <td style="padding: 8px; border: 2px solid #EF6C00;">Show authentication form</td>
-</tr>
-<tr style="background-color: #FFEBEE;">
-  <td style="padding: 8px; font-weight: bold; border: 2px solid #C62828;">5</td>
-  <td style="padding: 8px; border: 2px solid #C62828;">Client App</td>
-  <td style="padding: 8px; border: 2px solid #C62828;">Auth Service</td>
-  <td style="padding: 8px; border: 2px solid #C62828;">POST credentials</td>
-  <td style="padding: 8px; border: 2px solid #C62828;">Submit username/password</td>
-</tr>
-<tr style="background-color: #E1F5FE;">
-  <td style="padding: 8px; font-weight: bold; border: 2px solid #0277BD;">6</td>
-  <td style="padding: 8px; border: 2px solid #0277BD;">Auth Service</td>
-  <td style="padding: 8px; border: 2px solid #0277BD;">Database</td>
-  <td style="padding: 8px; border: 2px solid #0277BD;">Verify credentials</td>
-  <td style="padding: 8px; border: 2px solid #0277BD;">Authenticate user</td>
-</tr>
-<tr style="background-color: #F1F8E9;">
-  <td style="padding: 8px; font-weight: bold; border: 2px solid #558B2F;">7</td>
-  <td style="padding: 8px; border: 2px solid #558B2F;">Auth Service</td>
-  <td style="padding: 8px; border: 2px solid #558B2F;">Redis Cache</td>
-  <td style="padding: 8px; border: 2px solid #558B2F;">Store session</td>
-  <td style="padding: 8px; border: 2px solid #558B2F;">Create user session</td>
-</tr>
-<tr style="background-color: #FFF8E1;">
-  <td style="padding: 8px; font-weight: bold; border: 2px solid #F57F17;">8</td>
-  <td style="padding: 8px; border: 2px solid #F57F17;">Auth Service</td>
-  <td style="padding: 8px; border: 2px solid #F57F17;">Client App</td>
-  <td style="padding: 8px; border: 2px solid #F57F17;">Return auth code</td>
-  <td style="padding: 8px; border: 2px solid #F57F17;">Provide temporary code</td>
-</tr>
-</table>
 
 ## Deployment Architecture
 
