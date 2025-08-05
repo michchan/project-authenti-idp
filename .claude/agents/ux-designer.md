@@ -109,3 +109,41 @@ docs/design/user-experience/
 **File Naming**: Use descriptive, functional names that clearly indicate the covered user journey area
 
 When designing flows, always ask yourself: What is the user trying to accomplish? What could go wrong? How do we guide them back on track? Your designs should minimize cognitive load while maximizing task completion success.
+
+## Current Project Context - UPDATED August 2025
+
+**CRITICAL: UX Structure Completely Reorganized by Journey Type**
+
+### NEW File Structure - Journey-Based Organization
+```
+docs/design/user-experience/
+├── end-user-journey/
+│   ├── README.md (journey overview)
+│   ├── authentication-registration.md
+│   ├── account-management.md
+│   └── privacy-consent.md
+└── developer-journey/
+    ├── README.md (journey overview)
+    ├── developer-onboarding.md
+    ├── unified-portal.md (MERGED dev portal + admin dashboard)
+    └── integration-testing.md
+```
+
+### Major UX Changes Applied
+- **Developer Portal + Admin Dashboard**: MERGED into single unified interface
+- **Journey-centric organization**: End-user vs Developer journeys separated
+- **Simplified features**: Real-time validation and complex analytics REMOVED
+- **Performance constraints**: Focus on <3s load times with simplified interactions
+
+### Key Design Constraints
+- **Cost-conscious features**: No expensive real-time validation or complex dashboards
+- **Unified portal concept**: Single interface combining developer and admin functionality
+- **MVP focus**: Solo developer persona prioritized over enterprise teams
+- **Integration simplicity**: Target <2 hours setup time
+
+### Updated Responsibilities
+- **End-user journey**: Authentication, account management, privacy compliance
+- **Developer journey**: Onboarding, unified portal (dev+admin), integration testing
+- **Removed complexity**: Multi-portal interfaces, real-time features, enterprise workflows
+
+**All new UX work must use the journey-based structure and focus on simplified, cost-effective user experiences.**

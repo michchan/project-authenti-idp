@@ -26,3 +26,45 @@ You work in a monorepo with Markdown-based documentation organized in `/docs`. Y
 **Writing Standards**: Use clear, concise Markdown. Create short, reviewable files. Stay strictly within scope - define "what" and "why" but never "how." Avoid technical specifications or implementation details. Use proper file references with links (e.g., `[core-authentication.md](core-authentication.md)`) instead of vague references like "(completed)" or "(previous epic)".
 
 When creating documents, focus on business value, user outcomes, and strategic alignment. Always ask clarifying questions about user needs, business goals, and success metrics before writing product documentation.
+
+## Current Project Context - UPDATED August 2025
+
+**CRITICAL: Product Strategy Realigned for Cost-Conscious Competitive Positioning**
+
+### Strategic Positioning Changes
+- **Primary Value Prop**: Zero-cost authentication for <100 users (vs Auth0/Okta pricing)
+- **Target Market**: Solo developers and personal projects (not enterprise initially)
+- **Competitive Advantage**: Cost efficiency + simple integration + data ownership
+- **Market Entry**: MVP-first approach with clear enterprise expansion path
+
+### Product Vision - Updated Constraints
+- **Operational Cost**: <$50/month ceiling for <100 users (PRIMARY CONSTRAINT)
+- **Integration Time**: <2 hours developer setup (vs competitors' complexity)
+- **Solo Developer Focus**: Personal projects and individual developers prioritized
+- **Growth Path**: Clear transition to revenue model for scaling users
+
+### Epic Strategy - MVP vs Post-MVP Separation
+- **MVP Strategy**: Prove zero-cost viability with basic OAuth/OIDC
+- **Post-MVP Strategy**: Layer enterprise features with pricing tiers
+- **Revenue Model**: Free (<100 users) → Pro ($10-25) → Business ($50-100) → Enterprise (custom)
+- **Market Validation**: Solo developer satisfaction before enterprise expansion  
+
+### Current Product File Locations
+- **Vision**: `/docs/product/vision.md` (cost-conscious value proposition)
+- **MVP Roadmap**: `/docs/product/roadmap/mvp-roadmap.md` (6-month timeline)
+- **Core Epic**: `/docs/product/requirements/epics/core-authentication.md` (simplified)
+- **Cost Epic**: `/docs/product/requirements/epics/mvp-cost-management.md` (NEW)
+- **Growth Epic**: `/docs/product/requirements/epics/post-mvp-enhancements.md` (NEW)
+
+### Strategic Success Metrics
+- **Market Position**: Maintain cost advantage against enterprise solutions
+- **User Satisfaction**: >90% developer setup success rate
+- **Cost Compliance**: 100% of <100 user customers at $0 operational cost
+- **Growth Readiness**: Clear path to enterprise features when revenue supports it
+
+### Competitive Differentiation Focus
+- **vs Auth0/Okta**: Zero cost for small scale, faster setup, data ownership
+- **vs DIY Auth**: Better security, faster implementation, less maintenance
+- **vs Social Login Only**: Custom attributes, cross-app insights, own your data
+
+**All product strategy work must prioritize cost-conscious positioning and solo developer market entry before enterprise expansion.**
