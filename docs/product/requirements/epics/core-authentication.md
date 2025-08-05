@@ -2,14 +2,14 @@
 
 ## Problem Statement
 
-Small-scale application developers need a secure, reliable authentication system but lack the resources to implement enterprise-grade security measures themselves. Building authentication from scratch is time-consuming, error-prone, and diverts focus from core product features.
+Solo developers building multiple small applications need a cost-effective, secure authentication system that integrates quickly without requiring security expertise. Building authentication from scratch is time-consuming, error-prone, and diverts focus from core product features, while existing solutions are often too expensive or complex for personal projects.
 
 ## Business Value
 
 ### Primary Value
 - **Time Savings**: Eliminates 30-40% of typical application development time spent on authentication
-- **Security Assurance**: Provides enterprise-grade security without requiring security expertise
-- **Cost Efficiency**: Enables zero-cost authentication for small-scale applications
+- **Zero-Cost Operation**: Operates entirely within free-tier constraints (<$50/month for <100 users)
+- **Rapid Integration**: 2-hour integration time from start to working authentication
 
 ### Secondary Value
 - **Faster Time-to-Market**: Applications can launch sooner without authentication implementation delays
@@ -24,25 +24,26 @@ Small-scale application developers need a secure, reliable authentication system
 - Product managers seeking to optimize development resources
 
 ### User Needs
-- Secure user registration and login functionality
-- Protection against common security vulnerabilities
-- Simple integration with minimal configuration
-- Reliable session management across applications
+- Secure user registration and login functionality within budget constraints
+- Basic OAuth/OIDC compliance for modern web applications
+- Simple integration with minimal configuration and dependencies
+- Reliable session management across multiple personal projects
 
 ## Success Criteria
 
 ### Functional Success
 - Users can register new accounts with email verification
-- Secure login process with proper session management
-- Password reset functionality available
-- Basic user profile management capabilities
-- Protection against common attacks (brute force, SQL injection, XSS)
+- OAuth 2.0 authorization code flow with PKCE implemented
+- OpenID Connect ID token generation and validation
+- Password reset functionality via secure email flow
+- Basic user profile management (name, email, avatar)
+- Rate limiting and basic security headers implemented
 
 ### Performance Success
 - Authentication flow completes in <5 seconds
-- System handles 100 concurrent authentication requests
-- 99.9% uptime for authentication services
-- Zero security incidents during MVP period
+- System handles 50 concurrent authentication requests (MVP constraint)
+- 99% uptime target using free-tier infrastructure
+- Operational costs remain under $50/month for first 100 users
 
 ### Adoption Success
 - Integration time <2 hours for new applications
@@ -54,21 +55,24 @@ Small-scale application developers need a secure, reliable authentication system
 
 ### In Scope
 - Email/password based registration and login
-- Secure session token generation and validation
-- Password strength requirements and hashing
+- OAuth 2.0 authorization code flow with PKCE
+- OpenID Connect ID token generation
+- JWT access token and refresh token management
 - Email verification for new accounts
 - Password reset via email
-- Basic user profile data management
-- Rate limiting for authentication endpoints
-- HTTPS enforcement and security headers
+- Basic user profile data management (name, email, avatar)
+- Rate limiting using free-tier solutions
+- HTTPS enforcement and basic security headers
 
-### Out of Scope
-- Social login integration (future epic)
-- Multi-factor authentication (future epic)
-- Advanced user attributes beyond basic profile
-- Role-based access control (future epic)
-- User activity auditing (future epic)
-- Custom password policies (MVP uses standard policies)
+### Out of Scope (Post-MVP)
+- Social login integration (Google, GitHub, etc.)
+- Multi-factor authentication (MFA)
+- Advanced user attributes and custom fields
+- Role-based access control (RBAC)
+- User activity auditing and analytics
+- Custom password policies and advanced security features
+- Enterprise SSO protocols (SAML)
+- Advanced threat detection and prevention
 
 ## Key Assumptions
 
@@ -78,17 +82,18 @@ Small-scale application developers need a secure, reliable authentication system
 - Target applications will implement proper HTTPS and security practices
 
 ### Business Assumptions
-- Small-scale developers value simplicity over extensive customization
-- Zero-cost operation is possible using free tiers of existing services
-- Basic authentication features will satisfy 80% of initial use cases
+- Solo developers prioritize cost-effectiveness and integration speed
+- Free-tier infrastructure can support MVP requirements (<100 users)
+- Basic OAuth/OIDC implementation satisfies personal project needs
+- 2-hour integration target is achievable with simplified scope
 
 ## Dependencies
 
 ### Technical Dependencies
-- Email service provider for verification and password reset
-- Database solution for secure user data storage
-- SSL/TLS certificates for secure communication
-- Hosting platform with appropriate security capabilities
+- Email service provider with free tier (e.g., SendGrid, Mailgun free plans)
+- Database solution with free tier (e.g., Supabase, PlanetScale free plans)
+- SSL/TLS certificates (free via Let's Encrypt or platform-provided)
+- Hosting platform with OAuth compliance (e.g., Vercel, Netlify free tiers)
 
 ### Business Dependencies
 - Clear documentation and developer onboarding materials
@@ -98,12 +103,12 @@ Small-scale application developers need a secure, reliable authentication system
 ## Risks & Mitigation
 
 ### High-Risk Areas
-- **Security Implementation**: Risk of vulnerabilities in custom authentication code
-  - *Mitigation*: Use established authentication libraries and frameworks
-- **Scalability**: Risk of service degradation under load
-  - *Mitigation*: Performance testing and monitoring from day one
-- **Data Protection**: Risk of user data exposure or loss
-  - *Mitigation*: Encryption at rest and in transit, regular security audits
+- **Cost Overrun**: Risk of exceeding $50/month operational budget
+  - *Mitigation*: Strict monitoring of service usage and automatic scaling limits
+- **Free Tier Limitations**: Risk of hitting service limits unexpectedly
+  - *Mitigation*: Usage monitoring and graceful degradation strategies
+- **Security vs. Cost Balance**: Risk of compromising security for cost savings
+  - *Mitigation*: Focus on standard OAuth/OIDC implementation with proven libraries
 
 ### Medium-Risk Areas
 - **Email Deliverability**: Risk of verification/reset emails not reaching users

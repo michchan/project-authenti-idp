@@ -1,15 +1,15 @@
-# Epic: Sample Application & Demo Platform
+# Epic: Sample Application & Journey-Based Demo Experience
 
 ## Problem Statement
 
-Developers need to see the IDP service in action before committing to integration. Without a working example, it's difficult to understand the user experience, evaluate the integration effort, and validate that the solution meets their needs.
+Solo developers need to quickly evaluate if the IDP service fits their personal project workflow and budget constraints. Without a contextual demo that shows the complete developer journey from discovery to implementation, it's difficult to assess the true integration effort and ongoing cost implications.
 
 ## Business Value
 
 ### Primary Value
-- **Conversion Catalyst**: Demonstrates value proposition clearly to prospective users
-- **Onboarding Acceleration**: Provides working reference for integration patterns
-- **Trust Building**: Shows production-quality implementation and user experience
+- **Journey Validation**: Demonstrates complete developer workflow from idea to live application
+- **Cost Transparency**: Shows real resource usage and operational costs
+- **Integration Confidence**: Proves 2-hour integration target is achievable
 
 ### Secondary Value
 - **Marketing Asset**: Compelling demo for showcasing capabilities
@@ -19,63 +19,63 @@ Developers need to see the IDP service in action before committing to integratio
 ## Target Users
 
 ### Primary Users
-- Prospective developers evaluating the IDP service
-- Existing users seeking integration examples
-- Product managers assessing solution fit
+- Solo developers evaluating authentication options for personal projects
+- Independent developers building application portfolios
+- Small teams assessing cost-effective authentication solutions
 
 ### User Needs
-- Clear demonstration of authentication flow and user experience
-- Working code examples showing integration patterns
-- Ability to test functionality without committing to integration
-- Evidence that solution works reliably in practice
+- Complete developer journey from project idea to live authentication
+- Real-world cost and resource consumption transparency
+- Working examples that match their typical project constraints
+- Proof that personal projects can scale without surprise costs
 
 ## Success Criteria
 
 ### Functional Success
-- Complete authentication flow from login to application access
-- Multiple applications demonstrating cross-product single sign-on
-- User registration, login, logout, and profile management working
-- Integration code available and documented for reference
+- End-to-end developer journey from idea to deployed application
+- Real-time cost and usage monitoring visible throughout demo
+- Multiple applications showing portfolio-style authentication
+- Integration achieved within 2-hour target time
 
 ### Experience Success
-- Authentication flow completes smoothly without errors
-- User interface is professional and trustworthy
-- Cross-application navigation demonstrates seamless experience
-- Code examples are clear and well-documented
+- Developer journey feels realistic and achievable
+- Cost transparency builds confidence in long-term sustainability
+- Cross-application SSO demonstrates portfolio value
+- Integration process matches documentation exactly
 
 ### Business Success
-- Demo referenced in 90% of integration documentation usage
-- <5% of demo sessions encounter technical issues
-- Sample applications effectively demonstrate IDP value for personal projects
+- 90% of developers complete full demo journey in single session
+- Demo directly leads to 70% of successful integrations
+- Cost transparency increases confidence in service adoption
 
 ## Scope & Boundaries
 
 ### In Scope
-- Primary sample application with full IDP integration
-- Secondary sample application demonstrating cross-product SSO
-- User flows: registration, login, logout, profile editing
-- Developer-focused code examples and documentation
-- Responsive web design for desktop and mobile viewing
-- Basic application functionality to contextualize authentication
+- Journey-based demo experience from idea to deployment
+- Two realistic personal project applications with full integration
+- Real-time cost and usage monitoring throughout demo
+- Step-by-step developer workflow with actual time tracking
+- Mobile-optimized experience for developers on-the-go
+- Contextual help and documentation integrated within demo journey
 
-### Out of Scope
-- Complex application logic beyond authentication demonstration
-- Mobile applications (web-based demo only for MVP)
-- Advanced features not available in MVP (social login, MFA)
-- Production-scale application performance optimization
-- Custom branding or white-label capabilities
+### Out of Scope (Post-MVP)
+- Complex application logic beyond authentication context
+- Native mobile application demos
+- Advanced features not in MVP scope
+- Production-scale performance optimization demos
+- Custom branding or enterprise features
 
 ## Key Assumptions
 
 ### Technical Assumptions
-- Web-based demo will adequately represent integration patterns
-- Simple application functionality will effectively demonstrate authentication value
-- Developers will extrapolate demo patterns to their own applications
+- Journey-based approach will better represent real developer workflow
+- Cost transparency will differentiate demo from competitor offerings
+- Personal project context will resonate with target developer persona
 
 ### Business Assumptions
-- Working demo will significantly increase conversion rates
-- Code examples will reduce integration support burden
-- Demo applications will remain technically current with IDP service
+- Journey-based demo will increase conversion over traditional demos
+- Cost transparency will reduce pre-sales questions and objections
+- Realistic project examples will reduce post-integration support needs
 
 ## Dependencies
 
@@ -90,45 +90,51 @@ Developers need to see the IDP service in action before committing to integratio
 - Documentation platform for code examples
 - Feedback collection mechanism for demo improvements
 
-## User Journey
+## Developer Journey Experience
 
-### Discovery and Demo
-1. Developer discovers IDP service through marketing or referral
-2. Accesses demo applications through landing page
-3. Tests registration and login flows as end user
-4. Navigates between applications to experience SSO
-5. Reviews code examples and integration documentation
+### Complete Journey Demo (30-45 minutes)
+1. **Project Ideation**: Developer starts with "I want to build..." scenario
+2. **Service Discovery**: Guided introduction to IDP as authentication solution
+3. **Quick Registration**: Registers for developer account in under 2 minutes
+4. **Live Integration**: Follows along as demo implements authentication in real-time
+5. **Testing Experience**: Tests authentication flow as end user
+6. **Portfolio Expansion**: Sees how second application integrates with SSO
+7. **Cost Reality Check**: Reviews actual resource usage and projected costs
+8. **Deployment Workflow**: Watches complete deployment to production
 
-### Evaluation and Decision
-1. Compares demo experience to current authentication solutions
-2. Evaluates integration complexity through code examples
-3. Assesses fit for their specific use case and requirements
-4. Makes decision to proceed with integration or explore alternatives
+### Decision Making Phase
+1. Compares time investment vs. alternative solutions
+2. Evaluates cost trajectory for their project portfolio
+3. Assesses technical fit with their development preferences
+4. Makes informed decision with complete context
 
-## Demo Applications
+## Journey-Based Demo Applications
 
-### Primary Application: "TaskFlow" - Simple Project Management
-- **Purpose**: Demonstrate core authentication and user management
-- **Features**: User registration, login, basic project creation, profile editing
-- **Integration**: Full OAuth 2.0 flow with token management
+### Primary Application: "DevPortfolio" - Personal Developer Portfolio
+- **Journey Context**: "I want to showcase my projects with user authentication"
+- **Purpose**: Demonstrates authentication for content management and visitor interaction
+- **Features**: Project showcase, visitor comments, contact form, admin panel
+- **Cost Focus**: Shows resource usage for typical personal portfolio traffic
 
-### Secondary Application: "TimeTracker" - Simple Time Logging
-- **Purpose**: Demonstrate cross-application SSO experience where users can seamlessly move between applications
-- **Features**: Time entry with project selection, basic time reporting, shared user profile data from TaskFlow
-- **Integration**: Utilizes same user session as TaskFlow, demonstrating how users can navigate between applications without re-authentication
-- **SSO Demo**: Shows how project data from TaskFlow can inform time tracking options, creating a cohesive multi-application experience
+### Secondary Application: "ProjectTracker" - Simple Project Management
+- **Journey Context**: "I want to expand my portfolio with a useful tool"
+- **Purpose**: Demonstrates SSO between applications and data sharing
+- **Features**: Task management, project timeline, shared user profiles from DevPortfolio
+- **Cost Focus**: Shows incremental costs of adding applications to portfolio
+- **SSO Demo**: Seamless navigation between portfolio and project tools
 
 ## Definition of Done
 
 ### Technical Completion
-- Both demo applications deployed and accessible
-- All authentication flows working without errors
-- Code repositories available with documentation
-- Integration examples covering common scenarios
-- Performance acceptable for demo purposes
+- Complete journey-based demo experience deployed
+- Real-time cost monitoring integrated throughout demo
+- All authentication flows working within time targets
+- Step-by-step integration documentation matches demo exactly
+- Mobile-optimized experience functional across devices
 
 ### User Acceptance
-- User testing validates smooth authentication experience
-- Code examples effectively demonstrate integration patterns
-- Demo showcases personal project development workflows
-- All major browsers and devices supported for demo access
+- Journey-based approach validated through developer user testing
+- Cost transparency increases confidence and reduces objections
+- Demo workflow matches real developer integration experience
+- Mobile experience enables evaluation by developers anywhere
+- Integration time targets consistently achieved in demo sessions

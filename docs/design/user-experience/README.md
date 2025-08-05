@@ -2,63 +2,44 @@
 
 ## Overview
 
-This directory contains comprehensive user experience documentation for the Identity Provider platform. All UX flows, wireframes, and interaction patterns are organized by functional areas with visual HTML-based wireframes integrated directly into each document.
+This directory contains comprehensive user experience documentation for the Identity Provider platform, organized by user journey type. The design focuses on core MVP functionality with simplified flows that prioritize essential features and maintainable implementation.
 
-## Documentation Structure
+## Journey-Based Organization
 
-### 🗺️ [User Journey Overview](./01-user-journey-overview.md)
-Master reference showing how all user flows connect across the platform
-- Complete platform journey maps
-- Cross-journey integration points  
-- User type definitions and goals
-- Success metrics and optimization
+### 🔐 [End-User Journey](./end-user-journey/)
+Complete experience for users seeking secure authentication and account management
+- Authentication and registration flows
+- Account management and security settings  
+- Profile management and privacy controls
+- SSO authorization and consent flows
 
-### 🔐 [Authentication & Registration](./02-authentication-registration.md)
-Complete authentication experience from first-time signup to daily login
-- User registration flow with wireframes
-- Login processes and multi-factor authentication
-- SSO authorization with consent management
-- Mobile-optimized authentication patterns
+### 🛠️ [Developer Journey](./developer-journey/)
+Complete experience for developers integrating authentication services
+- Developer onboarding and registration
+- Unified development and admin portal
+- Application setup and management
+- API integration and testing tools
+- Analytics and monitoring (simplified)
 
-### 👤 [Account Management](./03-account-management.md)
-User account control, security settings, and connected applications
-- Account dashboard with security overview
-- Profile management and verification
-- Security settings and device management
-- Connected applications and permissions
-- Privacy controls and data management
+## Key Design Changes
 
-### 🛠️ [Developer Portal](./04-developer-portal.md)
-Developer onboarding, application management, and integration tools
-- Developer registration and onboarding
-- Application creation and configuration
-- API testing and debugging tools
-- Documentation and resource hub
-- Analytics and monitoring dashboards
+### Simplified Architecture
+- **Merged Portals**: Developer portal and admin dashboard combined into single unified interface
+- **Reduced Complexity**: Removed real-time validation features that create performance bottlenecks
+- **Streamlined Analytics**: Simplified dashboards focusing on essential metrics only
+- **MVP Focus**: Core flows that support minimum viable product requirements
 
-### ⚡ [Admin Dashboard](./05-admin-dashboard.md)
-Platform administration, user management, and system oversight
-- Platform health and performance monitoring
-- User directory and account administration
-- Security monitoring and compliance
-- Analytics and business intelligence
-- Support and operations management
+### Journey-Centric Design
+- **User Type Focus**: Clear separation between end-user and developer experiences
+- **Reduced Context Switching**: Each journey is self-contained with minimal cross-references
+- **Simplified Navigation**: Less complex information architecture
+- **Faster Development**: Reduced technical complexity enables faster implementation
 
-### 🚨 [Error Handling](./06-error-handling.md)
-Comprehensive error scenarios and recovery patterns
-- Authentication and registration errors
-- System and technical error handling
-- SSO and integration error recovery
-- Mobile-specific error scenarios
-- Prevention strategies and user education
-
-### 🔒 [Privacy & Consent](./07-privacy-consent.md)
-Privacy management, consent flows, and data rights
-- Initial consent collection during registration
-- Application authorization consent
-- Privacy dashboard and ongoing management
-- Data subject rights (access, correct, delete)
-- Regulatory compliance (GDPR, CCPA)
+### Performance-Optimized Flows
+- **Static Validation**: Form validation on submit rather than real-time
+- **Simplified Queries**: Reduced database complexity for analytics and reporting
+- **Essential Features Only**: Focus on core authentication, authorization, and management
+- **Efficient Caching**: Reduced dynamic content requirements
 
 ## Design Principles
 
@@ -68,100 +49,63 @@ Privacy management, consent flows, and data rights
 - **Accessibility**: WCAG 2.1 AA compliance throughout all flows
 - **Trust**: Transparent communication about security and privacy
 
-### Visual Design System
-- **HTML-based Wireframes**: Interactive, accessible wireframe representations
-- **Consistent Patterns**: Shared interaction patterns across all flows
-- **Responsive Design**: Mobile-first approach with progressive enhancement  
-- **Component Reuse**: Consistent UI elements and behaviors
-
-### Implementation Standards
-- **Performance**: <2.5s load times, progressive loading strategies
-- **Accessibility**: Screen reader compatibility, keyboard navigation
-- **Localization**: 12+ language support with cultural adaptations
-- **Security**: Privacy-by-design, secure data handling practices
-
-## Key Features Across All Flows
-
-### Authentication & Security
-- Multi-factor authentication with multiple options (SMS, authenticator, hardware keys)
-- Biometric authentication on supported devices
-- Session management with device trust controls
-- Real-time security monitoring and notifications
-
-### User Experience Excellence
-- Progressive disclosure to reduce complexity
-- Contextual help and guidance throughout flows
-- Comprehensive error handling with clear recovery paths
-- Seamless cross-device and cross-platform experiences
-
-### Privacy & Trust
-- Granular consent management with clear explanations
-- Complete data transparency and user control
-- Easy exercise of data rights (download, correct, delete)
-- Regulatory compliance (GDPR, CCPA, SOC 2)
-
-### Integration & Extensibility
-- Developer-friendly APIs with comprehensive documentation
-- Flexible authentication flows for various application types
-- Robust testing and debugging tools
-- Analytics and monitoring for optimization
-
-## Success Metrics
-
-### User Experience
-- **Registration**: 85%+ completion rate across all methods
-- **Login**: 98%+ first-attempt success rate
-- **SSO**: 90%+ authorization acceptance rate
-- **Support**: <2 hour average response time
-
-### Developer Experience
-- **Integration**: <10 minutes average setup time
-- **Documentation**: 85%+ self-service success rate
-- **API Reliability**: 99.9%+ uptime
-- **Community**: Active developer engagement
-
-### Security & Compliance
-- **Security**: Zero critical security breaches
-- **Privacy**: 100% regulatory compliance maintenance
-- **Trust**: High user confidence scores
-- **Incident Response**: <1 hour critical incident resolution
-
-## Implementation Guidelines
-
-### For Development Teams
-1. **Start with User Journey**: Reference the master journey map before implementing individual features
-2. **Follow Wireframes**: Use HTML-based wireframes as implementation blueprints
-3. **Accessibility First**: Implement WCAG 2.1 AA compliance from the beginning
-4. **Progressive Enhancement**: Build mobile-first, enhance for larger screens
-5. **Error Handling**: Implement comprehensive error scenarios and recovery paths
-
-### For Design Teams
-1. **Consistency**: Use established patterns and components across flows
-2. **User Testing**: Validate wireframes and flows with real users
-3. **Accessibility**: Design with assistive technology users in mind
-4. **Performance**: Consider loading states and perceived performance
-5. **Localization**: Design for text expansion and cultural adaptation
-
-### For Product Teams
-1. **Metrics Driven**: Use success metrics to guide feature prioritization
-2. **User Feedback**: Regularly collect and incorporate user insights
-3. **Competitive Analysis**: Benchmark against industry best practices
-4. **Regulatory Updates**: Stay current with privacy and security requirements
-5. **Continuous Improvement**: Iterate based on user behavior and feedback
+### Development Efficiency
+- **Maintainable Patterns**: Consistent interaction patterns across flows
+- **Component Reuse**: Shared UI elements and behaviors
+- **Technical Simplicity**: Avoid complex real-time features
+- **MVP Alignment**: Focus on features essential for platform launch
 
 ## File Organization
 
 ```
 user-experience/
-├── README.md                           # This overview document
-├── 01-user-journey-overview.md         # Master journey map and connections
-├── 02-authentication-registration.md   # Auth flows with wireframes
-├── 03-account-management.md           # User account control and settings
-├── 04-developer-portal.md             # Developer experience and tools
-├── 05-admin-dashboard.md              # Platform administration
-├── 06-error-handling.md               # Error scenarios and recovery
-└── 07-privacy-consent.md              # Privacy management and compliance
+├── README.md                          # This overview document
+├── end-user-journey/
+│   ├── README.md                      # End-user journey overview
+│   ├── authentication-registration.md # Auth flows and wireframes
+│   ├── account-management.md          # Profile and security settings
+│   └── privacy-consent.md             # Privacy controls and consent
+└── developer-journey/
+    ├── README.md                      # Developer journey overview
+    ├── developer-onboarding.md        # Registration and setup
+    ├── unified-portal.md              # Combined dev/admin interface
+    └── integration-testing.md         # API setup and testing
 ```
+
+## Success Metrics (Simplified)
+
+### End-User Experience
+- **Registration Completion**: 80%+ completion rate
+- **Login Success**: 95%+ first-attempt success
+- **SSO Conversion**: 85%+ authorization acceptance
+- **Support Resolution**: <4 hour average response time
+
+### Developer Experience
+- **Integration Speed**: <15 minutes average setup time
+- **Documentation Success**: 80%+ self-service completion
+- **API Reliability**: 99%+ uptime
+- **Portal Adoption**: Regular usage by 70%+ of developers
+
+### Platform Operations
+- **System Performance**: <3s page load times
+- **Error Rate**: <1% system error rate
+- **Security**: Zero critical security incidents
+- **Compliance**: Maintain regulatory compliance
+
+## Implementation Guidelines
+
+### For Development Teams
+1. **Start with Core Flows**: Implement authentication and basic account management first
+2. **Static-First Approach**: Use static validation and simplified analytics
+3. **Accessibility**: Implement WCAG compliance from the beginning
+4. **Progressive Enhancement**: Build essential features first, enhance later
+5. **Component Reuse**: Establish shared UI patterns early
+
+### For Product Teams
+1. **MVP Focus**: Prioritize core identity provider functionality
+2. **User Feedback**: Collect feedback on simplified flows before adding complexity
+3. **Performance Monitoring**: Track load times and user completion rates
+4. **Incremental Enhancement**: Add advanced features based on user demand
 
 ## Related Documentation
 
@@ -172,4 +116,4 @@ user-experience/
 
 ---
 
-*This user experience documentation provides the complete blueprint for building secure, accessible, and user-friendly identity provider experiences. Each document includes detailed wireframes, interaction patterns, and implementation guidance to ensure consistent, high-quality user experiences across all platform touchpoints.*
+*This simplified user experience documentation provides a focused blueprint for building secure, accessible, and maintainable identity provider experiences. The journey-based organization and simplified technical requirements enable faster development while maintaining high-quality user experiences.*

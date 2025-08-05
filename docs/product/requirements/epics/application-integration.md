@@ -2,14 +2,14 @@
 
 ## Problem Statement
 
-Developers need a simple way to integrate their applications with the IDP service, but OAuth 2.0 and OpenID Connect protocols can be complex to implement correctly. Without proper tooling and documentation, integration becomes a barrier to adoption rather than a time-saver.
+Solo developers need to integrate multiple personal applications with authentication in under 2 hours, but OAuth 2.0 complexity and lack of unified developer resources create integration barriers. Current solutions require expensive tooling or extensive configuration that exceeds personal project budgets.
 
 ## Business Value
 
 ### Primary Value
-- **Developer Productivity**: Reduces integration time from days to hours
-- **Adoption Enablement**: Lowers barrier to entry for using the IDP service
-- **Consistency**: Ensures uniform integration patterns across all applications
+- **Rapid Integration**: Achieves working authentication in under 2 hours
+- **Zero Additional Cost**: Provides all integration tools within free-tier constraints
+- **Unified Developer Experience**: Single portal for all integration needs
 
 ### Secondary Value
 - **Error Reduction**: Prevents common integration mistakes through guided setup
@@ -19,77 +19,77 @@ Developers need a simple way to integrate their applications with the IDP servic
 ## Target Users
 
 ### Primary Users
-- Application developers integrating with the IDP
-- Product managers overseeing multiple application integrations
-- Technical leads managing application portfolios
+- Solo developers building multiple personal applications
+- Small teams managing 2-5 applications
+- Independent developers transitioning from custom auth solutions
 
 ### User Needs
-- Clear, step-by-step integration guidance
-- Tools to register and configure applications
-- Testing capabilities to verify integration
-- Ongoing management of application settings
+- Single source for registration, documentation, and testing
+- Copy-paste code examples for immediate implementation
+- Self-service application management without support tickets
+- Cost-transparent integration with no hidden fees
 
 ## Success Criteria
 
 ### Functional Success
-- Developers can register new applications through self-service dashboard
-- Complete OAuth 2.0 authorization flow working end-to-end
-- SDKs available for popular programming languages and frameworks
-- Application owners can view and manage their integrations
+- Unified developer portal combining registration, docs, and testing
+- Complete OAuth 2.0 + OIDC flow with PKCE working end-to-end
+- JavaScript/TypeScript SDK covering 80% of use cases
+- Self-service application management with usage monitoring
 
 ### Performance Success
-- Application registration completes in <2 minutes
-- Authorization flow completes in <10 seconds
-- SDKs reduce integration code by >80% vs. manual implementation
-- Dashboard loads and responds in <3 seconds
+- Complete integration (register + implement + test) in <2 hours
+- Authorization flow completes in <5 seconds
+- SDK reduces integration to <20 lines of code
+- Developer portal loads in <2 seconds on mobile
 
 ### Adoption Success
 - 90% of developers complete integration within 2 hours
-- <10% of integrations require support assistance
-- 85% of registered applications go live within 1 week
-- Developer satisfaction with integration process >4.5/5
+- <5% of integrations require any external support
+- 90% of registered applications go live within 48 hours
+- Developer satisfaction with unified portal experience >4.5/5
 
 ## Scope & Boundaries
 
 ### In Scope
-- Developer dashboard for application registration and management
-- OAuth 2.0 authorization server implementation
-- OpenID Connect provider capabilities
-- JavaScript/Node.js SDK for web applications and backend services
-- React SDK with hooks for Create-React-App and SPA integration
-- Next.js SDK with server-side rendering support
-- Support for multiple package managers (npm, yarn, pnpm, bun)
-- Integration documentation and tutorials
-- Testing tools for verifying integration
-- Basic application analytics (user counts, login frequency)
+- Unified developer portal (registration + docs + testing)
+- OAuth 2.0 authorization server with PKCE support
+- OpenID Connect provider with ID token generation
+- Single JavaScript/TypeScript SDK for web applications
+- Framework-agnostic vanilla JS integration
+- npm package with TypeScript definitions
+- Comprehensive integration documentation
+- Built-in testing tools within developer portal
+- Basic usage monitoring (active users, request counts)
 
-### Out of Scope
-- Mobile SDKs (iOS/Android) - future epic
-- Advanced analytics and reporting - future epic
-- Webhook notifications - future epic
-- Advanced OAuth flows (PKCE, device flow) - future epic
-- Enterprise SSO protocols (SAML) - future epic
-- Custom branding for authorization screens - future epic
+### Out of Scope (Post-MVP)
+- Framework-specific SDKs (React, Vue, Angular)
+- Mobile SDKs (iOS/Android/React Native)
+- Advanced analytics and detailed reporting
+- Webhook notifications and real-time events
+- Enterprise SSO protocols (SAML)
+- Custom branding and white-label options
+- Advanced OAuth flows beyond authorization code + PKCE
 
 ## Key Assumptions
 
 ### Technical Assumptions
-- Developers will use standard OAuth 2.0 libraries in their applications
-- Most integrations will be web-based applications initially
-- Standard redirect-based OAuth flow will satisfy majority of use cases
+- Developers prefer vanilla JavaScript over framework-specific solutions
+- Single-page applications and simple websites represent 80% of use cases
+- Copy-paste integration approach will satisfy rapid integration goals
 
 ### Business Assumptions
-- Self-service application registration will reduce support burden
-- Good documentation and SDKs will minimize integration support needs
-- Basic application management features will satisfy initial requirements
+- Unified portal approach will reduce context-switching and confusion
+- Comprehensive self-service capabilities will minimize support needs
+- Single SDK approach will reduce maintenance overhead and complexity
 
 ## Dependencies
 
 ### Technical Dependencies
 - Core authentication system (see [core-authentication.md](core-authentication.md))
-- Database for storing application configurations
-- Web framework for developer dashboard
-- Documentation platform for integration guides
+- Database for application configurations (shared with core auth)
+- Unified web platform for developer portal
+- Static site generation for documentation (cost-effective)
 
 ### Business Dependencies
 - Developer onboarding strategy and communication
@@ -99,44 +99,45 @@ Developers need a simple way to integrate their applications with the IDP servic
 ## Risks & Mitigation
 
 ### High-Risk Areas
-- **OAuth Security**: Risk of insecure implementations exposing user data
-  - *Mitigation*: Follow OAuth 2.0 security best practices, regular security reviews
-- **Integration Complexity**: Risk of developers struggling with integration despite tooling
-  - *Mitigation*: Extensive testing with real developers, iterative documentation improvement
+- **Portal Complexity**: Risk of unified approach becoming overwhelming
+  - *Mitigation*: Progressive disclosure and task-oriented workflow design
+- **SDK Limitations**: Risk of single SDK not meeting diverse framework needs
+  - *Mitigation*: Focus on vanilla JS compatibility and comprehensive examples
 
 ### Medium-Risk Areas
-- **SDK Maintenance**: Risk of SDKs becoming outdated or incompatible
-  - *Mitigation*: Automated testing, semantic versioning, clear deprecation policies
-- **Dashboard Reliability**: Risk of registration/management interface downtime
-  - *Mitigation*: Monitoring and alerting, graceful degradation design
+- **Free Tier Limitations**: Risk of portal features exceeding hosting constraints
+  - *Mitigation*: Static generation and edge caching where possible
+- **Integration Support**: Risk of support burden from unified approach
+  - *Mitigation*: Comprehensive self-service capabilities and clear error messages
 
 ## User Journey
 
-### Application Registration
-1. Developer accesses registration dashboard
-2. Provides application details (name, description, redirect URLs)
-3. Receives client ID and secret for OAuth integration
-4. Downloads appropriate SDK and documentation
-5. Completes integration following step-by-step guide
+### Complete Integration Flow
+1. Developer accesses unified developer portal
+2. Registers application with basic details (name, redirect URLs)
+3. Receives client ID and copies integration code snippets
+4. Tests OAuth flow directly in portal before implementation
+5. Implements authentication using provided code examples
+6. Validates integration using portal testing tools
 
 ### Ongoing Management
-1. Monitor application usage through dashboard
-2. Update configuration as application evolves
-3. Manage user permissions and access control
-4. Access basic analytics and usage metrics
+1. Monitor application health and usage through portal dashboard
+2. Update configuration and test changes in sandbox mode
+3. Access basic metrics and troubleshooting information
+4. Manage multiple applications from single interface
 
 ## Definition of Done
 
 ### Technical Completion
-- OAuth 2.0 authorization server fully functional
-- Developer dashboard deployed and accessible
-- SDKs published and available for download
-- Integration testing suite validates all flows
-- Documentation covers all integration scenarios
+- Unified developer portal deployed with all features
+- OAuth 2.0 + OIDC server with PKCE fully functional
+- JavaScript SDK published to npm with TypeScript support
+- Built-in testing tools validate integration flows
+- Comprehensive documentation integrated within portal
 
 ### User Acceptance
-- Beta developers complete integration within time targets
-- All OAuth flows tested with real applications
-- Dashboard usability validated through user testing
-- SDK functionality verified across target platforms
-- Integration documentation reviewed and approved by technical writers
+- Beta developers complete end-to-end integration within 2 hours
+- OAuth + OIDC flows tested with diverse application types
+- Portal usability validated with solo developer persona
+- SDK compatibility verified across major browsers and Node.js versions
+- All integration scenarios covered by portal-integrated documentation
