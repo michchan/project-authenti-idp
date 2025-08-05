@@ -25,51 +25,38 @@ Every error message should include:
 
 ### Registration Error Scenarios
 
-<div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
-<h3 style="margin-top: 0;">🖼️ Registration Error Handling Wireframe</h3>
+### Registration Error Screen
 
-<div style="border: 2px solid #dee2e6; padding: 20px; background: white; font-family: monospace; max-width: 600px; margin: 20px auto;">
-<div style="background: #f8d7da; border: 1px solid #f5c6cb; padding: 15px; border-radius: 6px; margin-bottom: 20px;">
-<div style="display: flex; align-items: flex-start;">
-<span style="color: #dc3545; margin-right: 10px; font-size: 18px;">⚠️</span>
-<div style="flex: 1;">
-<div style="font-weight: bold; color: #721c24; margin-bottom: 8px;">Account Already Exists</div>
-<div style="color: #721c24; margin-bottom: 15px;">An account with this email address already exists.</div>
-<div style="color: #721c24; font-size: 14px; margin-bottom: 15px;">
-<strong>What you can do:</strong>
-</div>
-<div style="display: flex; flex-wrap: wrap; gap: 10px;">
-<button style="padding: 8px 16px; background: #0066cc; color: white; border: none; border-radius: 4px; font-size: 14px;">Sign In Instead</button>
-<button style="padding: 8px 16px; border: 1px solid #6c757d; border-radius: 4px; background: white; color: #6c757d; font-size: 14px;">Reset Password</button>
-<button style="padding: 8px 16px; border: 1px solid #17a2b8; border-radius: 4px; background: white; color: #17a2b8; font-size: 14px;">Use Different Email</button>
-</div>
-<div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid #f5c6cb;">
-<div style="font-size: 12px; color: #6c757d;">
-If this is unexpected, <a href="#" style="color: #0066cc;">contact our support team</a>
-</div>
-</div>
-</div>
-</div>
-</div>
-
-<form>
-<div style="margin-bottom: 15px;">
-<label style="display: block; margin-bottom: 5px; font-weight: bold;">Email Address</label>
-<input type="email" value="john@example.com" style="width: 100%; padding: 10px; border: 2px solid #dc3545; border-radius: 4px; box-sizing: border-box;">
-<div style="font-size: 12px; color: #dc3545; margin-top: 5px;">This email is already registered</div>
-</div>
-
-<div style="margin-bottom: 15px;">
-<label style="display: block; margin-bottom: 5px; font-weight: bold;">Password</label>
-<input type="password" style="width: 100%; padding: 10px; border: 1px solid #dee2e6; border-radius: 4px; box-sizing: border-box;">
-</div>
-
-<button style="width: 100%; padding: 12px; background: #6c757d; color: white; border: none; border-radius: 4px; font-weight: bold;" disabled>
-Create Account
-</button>
-</form>
-</div>
-</div>
+```
++----------------------------------------------------------+
+|  [Logo]                      Registration Error         |
++----------------------------------------------------------+
+|                                                          |
+|  ┌────────────────────────────────────────────────────┐   |
+|  │ ⚠️  Account Already Exists                      │   |
+|  │                                                  │   |
+|  │ An account with this email address already     │   |
+|  │ exists.                                         │   |
+|  │                                                  │   |
+|  │ What you can do:                                │   |
+|  │ [Sign In Instead] [Reset Password]              │   |
+|  │ [Use Different Email]                           │   |
+|  │                                                  │   |
+|  │ If unexpected, contact our support team         │   |
+|  └────────────────────────────────────────────────────┘   |
+|                                                          |
+|  Email Address                                           |
+|  [john@example.com                      ] ❌ Error      |
+|  ⚠️ This email is already registered                  |
+|                                                          |
+|  Password                                                |
+|  [********************                  ]               |
+|                                                          |
+|  +----------------------------------------------------+   |
+|  |         [CREATE ACCOUNT] (disabled)                |   |
+|  +----------------------------------------------------+   |
++----------------------------------------------------------+
+```
 
 ### Common Registration Errors
 
@@ -95,53 +82,45 @@ Create Account
 
 ### Login Error Scenarios
 
-<div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
-<h3 style="margin-top: 0;">🖼️ Login Error Handling Wireframe</h3>
+### Login Error Screen
 
-<div style="border: 2px solid #dee2e6; padding: 20px; background: white; font-family: monospace; max-width: 600px; margin: 20px auto;">
-<div style="background: #fff3cd; border: 1px solid #ffeaa7; padding: 15px; border-radius: 6px; margin-bottom: 20px;">
-<div style="display: flex; align-items: flex-start;">
-<span style="color: #856404; margin-right: 10px; font-size: 18px;">⚠️</span>
-<div style="flex: 1;">
-<div style="font-weight: bold; color: #856404; margin-bottom: 8px;">Account Temporarily Locked</div>
-<div style="color: #856404; margin-bottom: 10px;">Your account has been temporarily locked for security after multiple failed login attempts.</div>
-<div style="color: #856404; font-size: 14px; margin-bottom: 15px;">
-<strong>This lock will be automatically removed in:</strong><br/>
-<span style="font-size: 18px; font-weight: bold;">14 minutes and 32 seconds</span>
-</div>
-<div style="color: #856404; font-size: 14px; margin-bottom: 15px;">
-<strong>What you can do:</strong>
-</div>
-<div style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 15px;">
-<button style="padding: 8px 16px; background: #0066cc; color: white; border: none; border-radius: 4px; font-size: 14px;">Reset Password to Unlock Now</button>
-<button style="padding: 8px 16px; border: 1px solid #6c757d; border-radius: 4px; background: white; color: #6c757d; font-size: 14px;">Wait and Try Again</button>
-</div>
-<div style="background: #f8f9fa; padding: 12px; border-radius: 4px; border: 1px solid #dee2e6;">
-<div style="font-weight: bold; margin-bottom: 5px; color: #dc3545;">This wasn't you?</div>
-<div style="font-size: 12px; color: #6c757d; margin-bottom: 8px;">If you didn't try to sign in, your account may be under attack.</div>
-<button style="padding: 6px 12px; border: 1px solid #dc3545; border-radius: 4px; background: white; color: #dc3545; font-size: 12px;">Report Suspicious Activity</button>
-</div>
-</div>
-</div>
-</div>
-
-<form>
-<div style="margin-bottom: 15px;">
-<label style="display: block; margin-bottom: 5px; font-weight: bold;">Email Address</label>
-<input type="email" value="john@example.com" readonly style="width: 100%; padding: 10px; border: 1px solid #dee2e6; border-radius: 4px; box-sizing: border-box; background: #f8f9fa;">
-</div>
-
-<div style="margin-bottom: 15px;">
-<label style="display: block; margin-bottom: 5px; font-weight: bold;">Password</label>
-<input type="password" style="width: 100%; padding: 10px; border: 1px solid #dee2e6; border-radius: 4px; box-sizing: border-box;" disabled>
-</div>
-
-<button style="width: 100%; padding: 12px; background: #6c757d; color: white; border: none; border-radius: 4px; font-weight: bold;" disabled>
-Sign In (Account Locked)
-</button>
-</form>
-</div>
-</div>
+```
++----------------------------------------------------------+
+|  [Logo]                        Login Error              |
++----------------------------------------------------------+
+|                                                          |
+|  ┌────────────────────────────────────────────────────┐   |
+|  │ ⚠️  Account Temporarily Locked                     │   |
+|  │                                                    │   |
+|  │ Your account has been temporarily locked for       │   |
+|  │ security after multiple failed login attempts.     │   |
+|  │                                                    │   |
+|  │ This lock will be automatically removed in:        │   |
+|  │ ⏰ 14 minutes and 32 seconds                       │   |
+|  │                                                    │   |
+|  │ What you can do:                                   │   |
+|  │ [Reset Password to Unlock Now]                     │   |
+|  │ [Wait and Try Again]                               │   |
+|  │                                                    │   |
+|  │ ┌────────────────────────────────────────────────┐ │   |
+|  │ │ This wasn't you?                               │ │   |
+|  │ │ If you didn't try to sign in, your account    │ │   |
+|  │ │ may be under attack.                           │ │   |
+|  │ │ [Report Suspicious Activity]                   │ │   |
+|  │ └────────────────────────────────────────────────┘ │   |
+|  └────────────────────────────────────────────────────┘   |
+|                                                          |
+|  Email Address                                           |
+|  [john@example.com                      ] (readonly)     |
+|                                                          |
+|  Password                                                |
+|  [********************                  ] (disabled)    |
+|                                                          |
+|  +----------------------------------------------------+   |
+|  |         [SIGN IN] (Account Locked)                 |   |
+|  +----------------------------------------------------+   |
++----------------------------------------------------------+
+```
 
 ### Common Login Errors
 
@@ -169,51 +148,48 @@ Sign In (Account Locked)
 
 ### Service Unavailable
 
-<div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
-<h3 style="margin-top: 0;">🖼️ System Error Page Wireframe</h3>
+### System Error Page
 
-<div style="border: 2px solid #dee2e6; padding: 30px; background: white; font-family: monospace; max-width: 700px; margin: 20px auto; text-align: center;">
-<div style="font-size: 64px; margin-bottom: 20px;">⚠️</div>
-<h2 style="margin: 0 0 15px 0; color: #dc3545;">Oops! Something went wrong</h2>
-<div style="color: #6c757d; margin-bottom: 25px; font-size: 16px;">
-We're experiencing technical difficulties.<br/>
-Please try again in a few minutes.
-</div>
-
-<div style="background: #f8f9fa; padding: 15px; border-radius: 6px; margin-bottom: 25px; font-size: 14px; color: #6c757d;">
-<strong>Error ID:</strong> ERR-12345-67890<br/>
-<small>(Include this ID when contacting support)</small>
-</div>
-
-<div style="margin-bottom: 30px;">
-<h3 style="margin: 0 0 15px 0; font-size: 18px;">What you can do:</h3>
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
-<button style="padding: 12px 20px; background: #0066cc; color: white; border: none; border-radius: 4px; font-weight: bold;">Try Again</button>
-<button style="padding: 12px 20px; border: 1px solid #6c757d; border-radius: 4px; background: white; color: #6c757d;">Return to Homepage</button>
-<button style="padding: 12px 20px; border: 1px solid #17a2b8; border-radius: 4px; background: white; color: #17a2b8;">Check Service Status</button>
-<button style="padding: 12px 20px; border: 1px solid #28a745; border-radius: 4px; background: white; color: #28a745;">Contact Support</button>
-</div>
-</div>
-
-<div style="text-align: left; background: #f8f9fa; padding: 20px; border-radius: 6px; margin-bottom: 25px;">
-<h4 style="margin: 0 0 15px 0; font-size: 16px;">Common solutions:</h4>
-<ul style="margin: 0; padding-left: 20px; color: #6c757d;">
-<li>Check your internet connection</li>
-<li>Clear browser cache and cookies</li>
-<li>Try using a different browser</li>
-<li>Disable browser extensions temporarily</li>
-</ul>
-</div>
-
-<div style="border-top: 1px solid #dee2e6; padding-top: 20px; color: #6c757d;">
-<strong>Still having trouble?</strong><br/>
-<div style="margin-top: 10px;">
-<button style="padding: 8px 16px; border: 1px solid #0066cc; border-radius: 4px; background: white; color: #0066cc; margin-right: 10px;">Chat with Support</button>
-<button style="padding: 8px 16px; border: 1px solid #17a2b8; border-radius: 4px; background: white; color: #17a2b8;">Email Us</button>
-</div>
-</div>
-</div>
-</div>
+```
++----------------------------------------------------------+
+|                                                          |
+|                        ⚠️                                 |
+|                                                          |
+|            Oops! Something went wrong                    |
+|                                                          |
+|        We're experiencing technical difficulties.        |
+|           Please try again in a few minutes.            |
+|                                                          |
+|  ┌────────────────────────────────────────────────────┐   |
+|  │ Error ID: ERR-12345-67890                          │   |
+|  │ (Include this ID when contacting support)          │   |
+|  └────────────────────────────────────────────────────┘   |
+|                                                          |
+|                  What you can do:                        |
+|                                                          |
+|  ┌─────────────────────┬─────────────────────────────┐   |
+|  │ [Try Again]         │ [Return to Homepage]        │   |
+|  └─────────────────────┴─────────────────────────────┘   |
+|  ┌─────────────────────┬─────────────────────────────┐   |
+|  │ [Check Service      │ [Contact Support]           │   |
+|  │  Status]            │                             │   |
+|  └─────────────────────┴─────────────────────────────┘   |
+|                                                          |
+|  ┌────────────────────────────────────────────────────┐   |
+|  │ Common solutions:                                  │   |
+|  │ • Check your internet connection                   │   |
+|  │ • Clear browser cache and cookies                 │   |
+|  │ • Try using a different browser                   │   |
+|  │ • Disable browser extensions temporarily          │   |
+|  └────────────────────────────────────────────────────┘   |
+|                                                          |
+|  ────────────────────────────────────────────────────    |
+|                                                          |
+|                Still having trouble?                     |
+|                                                          |
+|          [Chat with Support]  [Email Us]                |
++----------------------------------------------------------+
+```
 
 ### Common System Errors
 
@@ -239,41 +215,47 @@ Please try again in a few minutes.
 
 ### Authorization Errors
 
-<div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
-<h3 style="margin-top: 0;">🖼️ SSO Error Handling Wireframe</h3>
+### SSO Error Screen
 
-<div style="border: 2px solid #dee2e6; padding: 20px; background: white; font-family: monospace; max-width: 600px; margin: 20px auto;">
-<div style="background: #f8d7da; border: 1px solid #f5c6cb; padding: 20px; border-radius: 6px; margin-bottom: 20px; text-align: center;">
-<div style="font-size: 48px; margin-bottom: 15px;">🔒</div>
-<h3 style="margin: 0 0 10px 0; color: #721c24;">Security Error: Invalid Redirect</h3>
-<div style="color: #721c24; margin-bottom: 20px;">
-The application attempted an unauthorized redirect destination.
-</div>
-<div style="background: #721c24; color: white; padding: 8px 12px; border-radius: 4px; display: inline-block; font-size: 12px; margin-bottom: 20px;">
-SECURITY VIOLATION BLOCKED
-</div>
-<div style="color: #721c24; font-size: 14px; margin-bottom: 20px;">
-<strong>For your security, this request has been blocked.</strong>
-</div>
-<div style="display: flex; flex-direction: column; gap: 10px;">
-<button style="padding: 12px 20px; background: #0066cc; color: white; border: none; border-radius: 4px; font-weight: bold;">Return to Identity Provider Homepage</button>
-<button style="padding: 10px 16px; border: 1px solid #17a2b8; border-radius: 4px; background: white; color: #17a2b8;">Report This Issue</button>
-</div>
-</div>
-
-<div style="background: #e2e3e5; padding: 15px; border-radius: 6px; text-align: center; color: #6c757d;">
-<div style="font-size: 14px; margin-bottom: 10px;">
-<strong>What happened?</strong>
-</div>
-<div style="font-size: 12px; margin-bottom: 15px;">
-The application "MyApp" tried to redirect you to an unauthorized location. This could indicate a security issue or misconfiguration.
-</div>
-<div style="font-size: 12px;">
-If you trust this application, please contact the app developer at support@myapp.com
-</div>
-</div>
-</div>
-</div>
+```
++----------------------------------------------------------+
+|  [Logo]                      Security Error             |
++----------------------------------------------------------+
+|                                                          |
+|                          🔒                              |
+|                                                          |
+|           Security Error: Invalid Redirect              |
+|                                                          |
+|    The application attempted an unauthorized redirect    |
+|                     destination.                         |
+|                                                          |
+|  ┌────────────────────────────────────────────────────┐   |
+|  │       SECURITY VIOLATION BLOCKED                   │   |
+|  └────────────────────────────────────────────────────┘   |
+|                                                          |
+|      For your security, this request has been           |
+|                     blocked.                             |
+|                                                          |
+|  +----------------------------------------------------+   |
+|  |        [Return to Identity Provider Homepage]      |   |
+|  +----------------------------------------------------+   |
+|                                                          |
+|  +----------------------------------------------------+   |
+|  |                [Report This Issue]                 |   |
+|  +----------------------------------------------------+   |
+|                                                          |
+|  ┌────────────────────────────────────────────────────┐   |
+|  │                What happened?                      │   |
+|  │                                                    │   |
+|  │ The application "MyApp" tried to redirect you to  │   |
+|  │ an unauthorized location. This could indicate a    │   |
+|  │ security issue or misconfiguration.               │   |
+|  │                                                    │   |
+|  │ If you trust this application, please contact the │   |
+|  │ app developer at support@myapp.com                │   |
+|  └────────────────────────────────────────────────────┘   |
++----------------------------------------------------------+
+```
 
 ### Common SSO Errors
 
@@ -296,40 +278,39 @@ If you trust this application, please contact the app developer at support@myapp
 
 ### App-Specific Issues
 
-<div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
-<h3 style="margin-top: 0;">📱 Mobile Error Handling</h3>
+### Mobile Error Screens
 
-<div style="border: 2px solid #dee2e6; padding: 15px; background: white; font-family: monospace; max-width: 320px; margin: 20px auto;">
-<div style="background: #fff3cd; border: 1px solid #ffeaa7; padding: 15px; border-radius: 6px; margin-bottom: 15px;">
-<div style="display: flex; align-items: center; margin-bottom: 10px;">
-<span style="margin-right: 10px; font-size: 20px;">📱</span>
-<div style="font-weight: bold; color: #856404;">Biometric Authentication Unavailable</div>
-</div>
-<div style="color: #856404; font-size: 14px; margin-bottom: 15px;">
-Face ID is not available on this device or not set up.
-</div>
-<div style="display: flex; flex-direction: column; gap: 8px;">
-<button style="width: 100%; padding: 10px; background: #0066cc; color: white; border: none; border-radius: 4px; font-size: 14px;">Use Password Instead</button>
-<button style="width: 100%; padding: 10px; border: 1px solid #28a745; border-radius: 4px; background: white; color: #28a745; font-size: 14px;">Set Up Face ID</button>
-<button style="width: 100%; padding: 10px; border: 1px solid #6c757d; border-radius: 4px; background: white; color: #6c757d; font-size: 14px;">Check Settings</button>
-</div>
-</div>
-
-<div style="background: #f8d7da; border: 1px solid #f5c6cb; padding: 15px; border-radius: 6px;">
-<div style="display: flex; align-items: center; margin-bottom: 10px;">
-<span style="margin-right: 10px; font-size: 20px;">📶</span>
-<div style="font-weight: bold; color: #721c24;">No Network Connection</div>
-</div>
-<div style="color: #721c24; font-size: 14px; margin-bottom: 15px;">
-Please check your internet connection and try again.
-</div>
-<div style="display: flex; flex-direction: column; gap: 8px;">
-<button style="width: 100%; padding: 10px; background: #0066cc; color: white; border: none; border-radius: 4px; font-size: 14px;">Try Again</button>
-<button style="width: 100%; padding: 10px; border: 1px solid #17a2b8; border-radius: 4px; background: white; color: #17a2b8; font-size: 14px;">Use Cached Data</button>
-</div>
-</div>
-</div>
-</div>
+```
++--------------------------------+
+|  [≡]     MyApp      [Profile]  |
++--------------------------------+
+|                                |
+|  ┌──────────────────────────┐   |
+|  │ 📱 Biometric Auth        │   |
+|  │    Unavailable           │   |
+|  │                          │   |
+|  │ Face ID is not available │   |
+|  │ on this device or not    │   |
+|  │ set up.                  │   |
+|  │                          │   |
+|  │ [Use Password Instead]   │   |
+|  │ [Set Up Face ID]         │   |
+|  │ [Check Settings]         │   |
+|  └──────────────────────────┘   |
+|                                |
+|  ┌──────────────────────────┐   |
+|  │ 📶 No Network Connection │   |
+|  │                          │   |
+|  │ Please check your        │   |
+|  │ internet connection and  │   |
+|  │ try again.               │   |
+|  │                          │   |
+|  │ [Try Again]              │   |
+|  │ [Use Cached Data]        │   |
+|  └──────────────────────────┘   |
+|                                |
++--------------------------------+
+```
 
 ### Common Mobile Errors
 
