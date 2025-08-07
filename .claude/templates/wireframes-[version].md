@@ -1,4 +1,6 @@
-# 🖼️ ASCII Wireframes Template
+# 🖼️ ASCII Wireframes [Version] (Template)
+
+**Version**: 1.0 (should be aligned with PRD)
 
 This template provides a higher-fidelity structure for documenting wireframes using ASCII art. Each wireframe corresponds to a key screen or state in the user journey flows, with more detail and advanced ASCII box-drawing for clarity. Use arrows, labels, or notes to show how users move between screens.
 

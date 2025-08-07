@@ -1,4 +1,4 @@
-# 🛒 E-Commerce Platform Wireframes
+# 🛒 E-Commerce Platform Wireframes v1.0
 
 This document contains wireframes for "ShopCraft" - an online marketplace for handmade crafts and artisan goods. The wireframes show the key user flows from discovery to purchase completion.
 

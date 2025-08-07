@@ -1,5 +1,5 @@
 
-# 📈 User Journey Flowchart (Template)
+# 📈 User Journey Flowchart [Version] (Template)
 
 This document provides reusable templates for documenting user flows using ASCII diagrams. Each flow represents how a user gets from **A → B**, and flows may be linked between journeys when users switch context or move to a related flow.
 
