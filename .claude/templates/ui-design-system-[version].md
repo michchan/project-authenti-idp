@@ -1,7 +1,6 @@
+# 🎨 UI Design System `[Version]`
 
-# 🎨 UI Design System [Version] (Template)
-
-This template is for UI designers to document a foundational visual language and reusable design tokens for use in design tools and codebases.
+Document your product's visual language and design tokens for consistent implementation.
 
 ---
 
@@ -13,118 +12,137 @@ This template is for UI designers to document a foundational visual language and
 4. [Iconography](#iconography)
 5. [Elevation / Shadows](#elevation--shadows)
 6. [Border Radius](#border-radius)
+7. [Component Sizing](#component-sizing)
+8. [Usage Examples](#usage-examples)
 
 ---
 
 ## 🎨 Color Palette
 
-| Role            | Token              | Color     | Notes                  |
-|-----------------|--------------------|-----------|-------------------------|
-| Primary         | --color-primary    | #3366FF   | Buttons, links          |
-| Secondary       | --color-secondary  | #00C8A0   | Highlights, badges      |
-| Background      | --color-bg         | #FFFFFF   | Page background         |
-| Surface         | --color-surface    | #F7F8FA   | Card backgrounds        |
-| Text (Primary)  | --color-text       | #1A1A1A   | Main text color         |
-| Text (Muted)    | --color-muted      | #6B6B6B   | Captions, placeholders  |
-| Border          | --color-border     | #E0E0E0   | Dividers, outlines      |
-| Error           | --color-error      | #FF4D4F   | Form errors             |
-| Success         | --color-success    | #52C41A   | Success messages        |
+### `[Category Name]` Colors
+`[Create visual color swatches for each color category]`
+
+### `[Category Name]` Colors  
+`[Create visual color swatches for each color category]`
+
+### `[Category Name]` Colors
+`[Create visual color swatches for each color category]`
+
+**Usage Notes**: `[When and where to use different color categories]`
 
 ---
 
 ## 🔤 Typography
 
-| Role           | Token             | Font               | Size | Weight | Line Height |
-|----------------|-------------------|--------------------|------|--------|-------------|
-| Headline 1     | --text-h1         | Inter, sans-serif  | 32px | 700    | 40px        |
-| Headline 2     | --text-h2         | Inter, sans-serif  | 24px | 600    | 32px        |
-| Body Text      | --text-body       | Inter, sans-serif  | 16px | 400    | 24px        |
-| Caption        | --text-caption    | Inter, sans-serif  | 12px | 400    | 16px        |
+### Font Hierarchy
+
+**`[H1 Style Name]`**: `[Sample text showing actual font rendering]`
+
+**`[H2 Style Name]`**: `[Sample text showing actual font rendering]`
+
+**`[H3 Style Name]`**: `[Sample text showing actual font rendering]`
+
+**`[Body Text Style]`**: `[Sample paragraph showing actual font rendering with realistic product content]`
+
+**`[Caption Style]`**: `[Sample caption text showing actual font rendering]`
+
+### Font Specifications
+- **Primary Font**: `[Font family name and fallbacks]`
+- **Secondary Font**: `[Font family name and fallbacks]` 
+- **Base Size**: `[Base font size in px/rem]`
+- **Line Height**: `[Default line height ratio]`
 
 ---
 
 ## 📏 Spacing System
 
-Use a 4px base scale:
+### Spacing Scale
 
-| Token          | Value |
-|----------------|--------|
-| --spacing-1    | 4px    |
-| --spacing-2    | 8px    |
-| --spacing-3    | 12px   |
-| --spacing-4    | 16px   |
-| --spacing-6    | 24px   |
-| --spacing-8    | 32px   |
-| --spacing-10   | 40px   |
-| --spacing-12   | 48px   |
+`[Create visual spacing bars showing actual spacing values]`
+
+### Usage Examples
+- **Component Padding**: `[When to use different spacing values]`
+- **Layout Margins**: `[When to use different spacing values]`
+- **Content Spacing**: `[When to use different spacing values]`
 
 ---
 
 ## 🧩 Iconography
 
-- Use a consistent icon set (e.g. Feather, Material, FontAwesome)
-- Style:
-  - Stroke-based
-  - 24x24 px default size
-  - Monochrome (`--color-text`)
-- Naming convention: `icon-[name]` (e.g., `icon-check`, `icon-alert`)
+### `[Icon Category Name]`
+`[Show actual icons from this category]`
+
+### `[Icon Category Name]`
+`[Show actual icons from this category]`
+
+### `[Icon Category Name]`
+`[Show actual icons from this category]`
+
+### Icon Specifications
+- **Icon Library**: `[Source: Heroicons, Feather, Custom, etc.]`
+- **Standard Sizes**: `[16px, 24px, 32px, etc.]`
+- **Style**: `[Outline, filled, stroke weight, etc.]`
 
 ---
 
 ## 🪟 Elevation / Shadows
 
-| Level         | Token                   | Shadow                                 |
-|---------------|--------------------------|----------------------------------------|
-| 0 (Flat)      | --shadow-none            | none                                   |
-| 1 (Card)      | --shadow-elevation-1     | 0 1px 3px rgba(0,0,0,0.1)              |
-| 2 (Modal)     | --shadow-elevation-2     | 0 4px 12px rgba(0,0,0,0.15)            |
+`[Create side-by-side shadow examples showing different elevation levels]`
+
+### Shadow Levels
+- **Level 0**: `[CSS box-shadow value]` - `[Usage context]`
+- **Level 1**: `[CSS box-shadow value]` - `[Usage context]`  
+- **Level 2**: `[CSS box-shadow value]` - `[Usage context]`
+- **Level 3**: `[CSS box-shadow value]` - `[Usage context]`
 
 ---
 
 ## 🟦 Border Radius
 
-| Use Case         | Token              | Value |
-|------------------|--------------------|-------|
-| Small elements   | --radius-sm        | 4px   |
-| Default buttons  | --radius-md        | 8px   |
-| Cards/modals     | --radius-lg        | 12px  |
-| Full round       | --radius-full      | 9999px|
+`[Show visual examples of different border radius values on actual components]`
+
+### Radius Scale
+- **Small**: `[2-4px]` - `[Usage: form inputs, small buttons]`
+- **Medium**: `[6-8px]` - `[Usage: cards, modals]`
+- **Large**: `[12-16px]` - `[Usage: major containers]`
+- **Full**: `[50% or 9999px]` - `[Usage: avatars, pills]`
 
 ---
 
 ## 📐 Component Sizing
 
-| Component        | Width | Height | Notes                        |
-|------------------|-------|--------|------------------------------|
-| Button (small)   | auto  | 32px   | Padding: 8px 12px            |
-| Button (medium)  | auto  | 40px   | Padding: 12px 16px           |
-| Input (default)  | 100%  | 40px   | Border-radius: 8px           |
-| Modal            | 600px | auto   | Use elevation-2              |
+`[Show rendered components at different standard sizes]`
+
+### Size Standards
+- **Touch Targets**: `[Minimum 44px for mobile interactions]`
+- **Form Elements**: `[Standard heights for inputs, buttons, selects]`
+- **Content Containers**: `[Standard widths and max-widths]`
 
 ---
 
 ## ✅ Usage Examples
 
+### CSS Implementation
 ```css
-.button-primary {
-  background-color: var(--color-primary);
-  color: #fff;
-  padding: var(--spacing-2) var(--spacing-4);
-  border-radius: var(--border-radius);
-  box-shadow: var(--shadow-elevation-1);
+/* `[Example of how to use design tokens in CSS]` */
+.example-component {
+  color: `[color-token-name]`;
+  font-size: `[font-size-token]`;
+  padding: `[spacing-token]`;
+  border-radius: `[radius-token]`;
+  box-shadow: `[shadow-token]`;
 }
 ```
 
-```html
-<!-- Icon usage example -->
-<i class="icon-check" style="color: var(--color-success); width: 24px; height: 24px;"></i>
-```
+### Design Token Reference
+`[List of all design tokens and their values for developer use]`
 
 ---
 
-## 📎 Notes
+## 📋 Implementation Notes
 
-- All values should follow design token standards for code export.
-- Document updates to the system using version control or changelogs.
-- Integrate this with Figma styles & tokens plugins for consistency.
+**Framework Integration**: `[How to use with React, Vue, Angular, etc.]`
 
+**Build Process**: `[How design tokens integrate with development workflow]`
+
+**Maintenance**: `[How to update and version design system changes]`

@@ -1,115 +1,63 @@
-# 🚀 [Version] Epic: Enable Single Sign-On (SSO) for All Applications (Template)
+# 🚀 `[Version]` Epic: `[Epic Title]`
 
-**As an** IT administrator,  
-**I want** users to log in using SSO (e.g., Google Workspace),  
-**So that** authentication is streamlined and more secure.
+**As an** `[user role]`,  
+**I want** `[goal/desire]`,  
+**So that** `[benefit/value]`.
 
 ---
 
 ### 🧭 Description
-This Epic enables Single Sign-On (SSO) across all internal-facing applications to improve security and simplify user access management.
+`[Brief description of what this epic accomplishes and why it's valuable]`
 
 ### 🎯 Acceptance Criteria
-- [ ] Users can authenticate via Google Workspace SSO
-- [ ] Admin can enable or disable SSO
-- [ ] Login activity is logged for auditing
-- [ ] Logout terminates all sessions across systems
+- [ ] `[Primary outcome 1]`
+- [ ] `[Primary outcome 2]`  
+- [ ] `[Primary outcome 3]`
+- [ ] `[Quality/performance criteria]`
 
 ---
 
-## 📋 Related User Stories
+## 📋 User Stories
 
 | ID      | Title                             | Status       | Estimate |
 |---------|-----------------------------------|--------------|----------|
-| [US-001](#us-001-enable-google-sso-login)   | Enable Google SSO Login         | 🟢 To Do     | 3 SP     |
-| [US-002](#us-002-admin-setup-for-sso)       | Admin Setup for SSO             | 🔧 In Progress | 5 SP     |
-| [US-003](#us-003-track-sso-login-attempts)  | Track SSO Login Attempts        | ✅ Done      | 2 SP     |
-| [US-004](#us-004-global-logout-functionality) | Global Logout Functionality     | 🟢 To Do     | 3 SP     |
+| `[US-001]` | `[User Story Title 1]`         | 🟢 To Do     | `[SP]`   |
+| `[US-002]` | `[User Story Title 2]`         | 🔧 In Progress | `[SP]`   |
+| `[US-003]` | `[User Story Title 3]`         | ✅ Done      | `[SP]`   |
+| `[US-004]` | `[User Story Title 4]`         | 🟢 To Do     | `[SP]`   |
 
 ---
 
-## 📘 User Stories
+## 📘 Story Details
 
----
+### 🧩 `[US-ID]`: `[User Story Title]`
 
-### 🧩 US-001: Enable Google SSO Login
-
-**As a** user,  
-**I want** to log in using my Google account,  
-**So that** I don’t need to remember separate credentials.
+**As a** `[user type]`,  
+**I want** `[specific functionality]`,  
+**So that** `[specific benefit]`.
 
 **Acceptance Criteria:**
-- [ ] User can click “Login with Google”
-- [ ] OAuth2 flow is completed successfully
-- [ ] New users are auto-provisioned
+- [ ] `[Specific testable outcome 1]`
+- [ ] `[Specific testable outcome 2]`
+- [ ] `[Specific testable outcome 3]`
 
-**Status**: `🟢 To Do`  
-**Estimate**: `3 story points`
+**Status**: `[Current status]`  
+**Estimate**: `[Story points]`  
+**Reference**: `[Link to designs/specs]`
 
-**Reference**: [`/docs/auth/SSO-flow.md`](./docs/auth/SSO-flow.md)
-
-**Notes**:
-- Reuse existing OAuth2 client credentials used in the admin portal
-- Frontend should use popup flow, not redirect
+**Notes**: `[Implementation details or dependencies]`
 
 ---
 
-### 🧩 US-002: Admin Setup for SSO
+## 📊 Success Metrics
 
-**As an** admin,  
-**I want** to configure SSO with Google Workspace,  
-**So that** all users can log in through it without individual setup.
-
-**Acceptance Criteria:**
-- [ ] Admin can toggle SSO on/off
-- [ ] It applies to all users
-- [ ] Admin can upload metadata file or connect via discovery URL
-
-**Status**: `🔧 In Progress`  
-**Estimate**: `5 story points`
-
-**Reference**: [`/designs/admin-sso-settings.png`](./designs/admin-sso-settings.png)
-
-**Notes**:
-- Admin settings should be added under `/settings/auth`
-- Requires permissions model update to separate SSO-only vs password users
+- **`[Metric Name]`**: `[Current baseline]` → `[Target]`
+- **`[Metric Name]`**: `[Current baseline]` → `[Target]`
 
 ---
 
-### 🧩 US-003: Track SSO Login Attempts
+## 🔗 Dependencies
 
-**As a** security auditor,  
-**I want** login events to be logged,  
-**So that** I can review suspicious access activity.
+**Internal**: `[Other teams, systems, or epics this depends on]`
 
-**Acceptance Criteria:**
-- [ ] Log includes timestamp, email, IP, and method
-- [ ] Logs accessible via audit dashboard
-- [ ] Retain logs for 90 days
-
-**Status**: `✅ Done`  
-**Estimate**: `2 story points`
-
-**Notes**:
-- Logging already exists for username/password — extend same model for OAuth logins
-- Align with compliance requirement from InfoSec team
-
----
-
-### 🧩 US-004: Global Logout Functionality
-
-**As a** user,  
-**I want** to log out from all systems at once,  
-**So that** I feel secure after logging out.
-
-**Acceptance Criteria:**
-- [ ] Clicking “Logout” ends all active sessions
-- [ ] Works across browser tabs and mobile
-- [ ] Session invalidation happens server-side
-
-**Status**: `🟢 To Do`  
-**Estimate**: `3 story points`
-
-**Notes**:
-- Might require Redis pub/sub to notify active sessions
-- UX consistency needed with existing logout flow
+**External**: `[Third-party services, compliance, or infrastructure needs]`

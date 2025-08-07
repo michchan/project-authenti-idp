@@ -1,172 +1,104 @@
+# 📈 User Journey Flowchart `[Version]`
 
-# 📈 User Journey Flowchart [Version] (Template)
-
-This document provides reusable templates for documenting user flows using ASCII diagrams. Each flow represents how a user gets from **A → B**, and flows may be linked between journeys when users switch context or move to a related flow.
+Document user flows using ASCII diagrams to visualize navigation through your product.
 
 ---
 
 ## 🧭 Index of User Journeys
 
-1. [New User Onboarding](#1-new-user-onboarding)
-2. [Login & Authentication](#2-login--authentication)
-3. [Product Browsing & Search](#3-product-browsing--search)
-4. [Checkout Process](#4-checkout-process)
-5. [Password Reset Flow](#5-password-reset-flow)
+List your main user flows:
+
+1. [`[Critical Flow Name]`](#1-critical-flow-name) - `[Brief description]`
+2. [`[Authentication Flow]`](#2-authentication-flow) - `[Brief description]`
+3. [`[Core User Flow]`](#3-core-user-flow) - `[Brief description]`
+4. [`[Error/Edge Case Flow]`](#4-erroredge-case-flow) - `[Brief description]`
+5. [`[Onboarding Flow]`](#5-onboarding-flow) - `[Brief description]`
 
 ---
 
-## 1. New User Onboarding
+## `[Number]`. `[Flow Name]`
+
+### Flow Purpose
+**Goal**: `[What this user journey accomplishes]`
+
+**Success Criteria**: `[What success looks like for this flow]`
+
+### ASCII Flow Diagram
 
 ```
-[Start]
+`[Starting Point]`
    |
    v
-[Visit Landing Page]
+`[User Action/Decision Point]`
+   |
+   +---> `[Branch Option A]` --> `[Outcome A]`
+   |
+   +---> `[Branch Option B]` --> `[Outcome B]`
    |
    v
-[Click Sign Up]
+`[Next Step]`
    |
    v
-[Fill Registration Form]
-   |
-   v
-[Email Verification Sent] ----+
-   |                          |
-   v                          |
-[User Verifies Email] <-------+
-   |
-   v
-[Welcome Tour Begins] --> (Leads to: Product Browsing)
+`[End State]` --> (Leads to: `[Next Flow Name]`)
 ```
+
+### Key Screens/States
+
+**`[Screen Name]`**: `[What users see and can do on this screen]`
+
+**`[Screen Name]`**: `[What users see and can do on this screen]`
+
+**`[Screen Name]`**: `[What users see and can do on this screen]`
+
+### Pain Points & Optimizations
+
+**Current Friction**: `[Where users typically drop off or struggle]`
+
+**Optimization Ideas**: `[Potential improvements to reduce friction]`
+
+**Success Metrics**: `[How you measure flow performance]`
+
+### Error Handling
+
+**Validation Errors**: `[Form field errors, invalid inputs]`
+
+**System Errors**: `[Network issues, server problems]`
+
+**Recovery Paths**: `[How users can get back on track]`
 
 ---
 
-## 2. Login & Authentication
+## `[Number]`. `[Flow Name]`
+
+### Flow Purpose
+**Goal**: `[What this user journey accomplishes]`
+
+**Success Criteria**: `[What success looks like]`
+
+### ASCII Flow Diagram
 
 ```
-[Start]
-   |
-   v
-[Visit Login Page]
-   |
-   +--> [Forgot Password?] --> (Leads to: Password Reset)
-   |
-   v
-[Enter Credentials]
-   |
-   v
-[2FA Prompt (if enabled)]?
-   |     |
-  Yes    No
-   |     |
-   v     v
-[Verify 2FA] [Login Success]
-      |         |
-      +---->----+
-               v
-          [Redirect to Dashboard]
+`[Create ASCII diagram showing this flow's path]`
 ```
+
+### Key Screens/States
+`[List main screens and their purpose]`
+
+### Pain Points & Optimizations
+`[Document friction points and improvement ideas]`
+
+### Error Handling
+`[Document error scenarios and recovery paths]`
 
 ---
 
-## 3. Product Browsing & Search
+## 🔗 Inter-Flow Connections
 
-```
-[User on Dashboard or Homepage]
-   |
-   +--> [Search Products]
-   |
-   +--> [Browse by Category]
-   |
-   v
-[View Product Detail]
-   |
-   +--> [Add to Cart]
-   |
-   +--> [Save to Wishlist]
-   |
-   v
-[Continue Browsing] --> (Loops back to: Search or Browse)
-```
+Show how different user journeys connect:
 
----
+| From Flow | Leads To | Trigger/Context |
+|-----------|----------|-----------------|
+| `[Flow A]` | `[Flow B]` | `[When this happens]` |
+| `[Flow B]` | `[Flow C]` | `[Completion trigger]` |
 
-## 4. Checkout Process
-
-```
-[Cart Page]
-   |
-   v
-[Click Checkout]
-   |
-   v
-[Enter Shipping Info]
-   |
-   v
-[Select Payment Method]
-   |
-   v
-[Review Order]
-   |
-   v
-[Confirm & Pay]
-   |
-   v
-[Order Confirmation Page]
-   |
-   +--> [Send Receipt Email]
-   |
-   v
-(Leads to: Post-Purchase Survey or Returns)
-```
-
----
-
-## 5. Password Reset Flow
-
-```
-[Login Page]
-   |
-   v
-[Click 'Forgot Password']
-   |
-   v
-[Enter Email Address]
-   |
-   v
-[Reset Email Sent] ----+
-   |                   |
-   v                   |
-[Click Link in Email] <+
-   |
-   v
-[Enter New Password]
-   |
-   v
-[Password Updated]
-   |
-   v
-[Return to Login Page] --> (Leads to: Login & Authentication)
-```
-
----
-
-## 🔗 Inter-Flow Connections Summary
-
-| From Flow                  | Leads To                   |
-|---------------------------|----------------------------|
-| New User Onboarding       | Product Browsing           |
-| Login & Authentication    | Dashboard / Browsing       |
-| Product Browsing          | Checkout                   |
-| Password Reset            | Login                      |
-| Checkout Confirmation     | Post-Purchase / Account    |
-
----
-
-## 📝 Usage Tips
-
-- Each flow should be easily parsable in monospaced text editors.
-- Maintain consistent direction (top-down preferred).
-- Use `(Leads to: XYZ)` to mark flow interlinking.
-- Link actual screens if paired with wireframes or prototypes.
-
+**Connection Notes**: `[Additional context about how flows link together]`

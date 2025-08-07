@@ -1,175 +1,146 @@
+# 🧩 UI Component Library `[Version]`
 
-# 🧩 UI Component Library [Version] (Template)
-
-This document serves as a foundational template for defining reusable UI components using a structured format with embedded HTML.
+Document reusable UI components with specifications, usage guidelines, and live examples.
 
 ---
 
 ## 📁 Index
 
-1. [Button](#button)
-2. [Input Field](#input-field)
-3. [Select Dropdown](#select-dropdown)
-4. [Checkbox](#checkbox)
-5. [Modal](#modal)
-6. [Card](#card)
-7. [Tooltip](#tooltip)
-8. [Tabs](#tabs)
+1. [`[Component Name 1]`](#component-name-1)
+2. [`[Component Name 2]`](#component-name-2)
+3. [`[Component Name 3]`](#component-name-3)
+4. [`[Component Name 4]`](#component-name-4)
+5. [`[Component Name 5]`](#component-name-5)
+
+Add/remove components based on your actual needs.
 
 ---
 
-## 🔘 Button
+## 🔘 `[Component Name]`
 
 ### HTML Preview
 
-<button class="btn btn-primary">Primary Button</button>
+`[Include inline-styled HTML that renders the component directly in markdown preview]`
 
 ### Variants
 
-- `btn-primary`
-- `btn-secondary`
-- `btn-outline`
-- `btn-disabled`
+- **`[variant-name]`** - `[Usage context: when to use this variant]`
+- **`[variant-name]`** - `[Usage context: when to use this variant]`  
+- **`[variant-name]`** - `[Usage context: when to use this variant]`
 
 ### States
 
-- Normal
-- Hover
-- Focus
-- Disabled
-- Loading
-
----
-
-## 📝 Input Field
-
-### HTML Preview
-
-<label for="email">Email</label>
-<input type="email" id="email" class="input input-default" placeholder="you@example.com" />
-
-### States
-
-- Default
-- Focus
-- Error
-- Disabled
-
----
-
-## ⬇️ Select Dropdown
-
-### HTML Preview
-
-<label for="options">Choose an option</label>
-<select id="options" class="select">
-  <option value="1">Option 1</option>
-  <option value="2">Option 2</option>
-</select>
-
-### States
-
-- Default
-- Focus
-- Disabled
-
----
-
-## ☑️ Checkbox
-
-### HTML Preview
-
-<label class="checkbox">
-  <input type="checkbox" />
-  Accept Terms
-</label>
-
-### States
-
-- Unchecked
-- Checked
-- Indeterminate
-- Disabled
-
----
-
-## 🪟 Modal
-
-### HTML Preview
-
-<div class="modal">
-  <div class="modal-content">
-    <h2>Modal Title</h2>
-    <p>This is a modal message</p>
-    <button class="btn btn-primary">OK</button>
-  </div>
-</div>
+- **Default** - `[Normal appearance]`
+- **Hover** - `[Hover state appearance and behavior]`
+- **Focus** - `[Focus state for keyboard navigation]`
+- **Active** - `[Pressed/active state]`
+- **Disabled** - `[Disabled state appearance]`
+- **Loading** - `[Loading state if applicable]`
 
 ### Behavior
+`[For interactive components, describe interaction behavior, animations, keyboard support]`
 
-- Open on trigger
-- Close on overlay click or escape key
-- Focus trap within modal
+### Accessibility
+- **ARIA**: `[Required ARIA attributes and roles]`
+- **Keyboard**: `[Keyboard navigation requirements]`
+- **Screen Reader**: `[What gets announced]`
+- **Touch Targets**: `[Minimum size requirements]`
 
 ---
 
-## 🃏 Card
+## 📝 `[Component Name]`
 
 ### HTML Preview
 
-<div class="card">
-  <img src="image.jpg" alt="Preview" class="card-img">
-  <div class="card-body">
-    <h3 class="card-title">Card Title</h3>
-    <p class="card-text">Card description and content.</p>
-    <button class="btn btn-secondary">Action</button>
-  </div>
-</div>
+`[Include inline-styled HTML showing all states: default, error, success]`
 
 ### Variants
 
-- Default
-- With image
-- With footer actions
+- **`[variant-name]`** - `[Usage context]`
+- **`[variant-name]`** - `[Usage context]`
+
+### States
+
+- **Default** - `[Normal input state]`
+- **Focus** - `[Active input with focus ring]`
+- **Error** - `[Validation error state with message]`
+- **Success** - `[Valid input confirmation]`
+- **Disabled** - `[Non-interactive state]`
+
+### Accessibility
+- **Labels**: `[Associated label requirements]`
+- **Validation**: `[Error message accessibility]`
+- **Keyboard**: `[Tab navigation, Enter/Space behavior]`
 
 ---
 
-## 💬 Tooltip
+## ⬇️ `[Component Name]`
 
 ### HTML Preview
 
-<button class="tooltip" data-tooltip="More info">Hover me</button>
+`[Include inline-styled HTML showing component with realistic options]`
 
-### Behavior
+### States
 
-- Shows on hover/focus
-- Position: top | right | bottom | left
+- **Default** - `[Closed dropdown state]`
+- **Open** - `[Expanded with options visible]`
+- **Focus** - `[Keyboard focus state]`
+- **Disabled** - `[Non-interactive state]`
+
+### Accessibility
+- **ARIA**: `[Required attributes for dropdown accessibility]`
+- **Keyboard**: `[Arrow key navigation, Enter/Escape behavior]`
 
 ---
 
-## 🧷 Tabs
+## ☑️ `[Component Name]`
 
 ### HTML Preview
 
-<div class="tabs">
-  <button class="tab active">Tab 1</button>
-  <button class="tab">Tab 2</button>
-</div>
-<div class="tab-content">
-  <p>Content for active tab</p>
-</div>
+`[Include inline-styled HTML showing checked, unchecked, and disabled states]`
 
-### Behavior
+### States
 
-- Active state styling
-- Tab-to-content mapping
-- Keyboard navigation support
+- **Unchecked** - `[Empty checkbox]`
+- **Checked** - `[Selected checkbox]`
+- **Indeterminate** - `[Partial selection if applicable]`
+- **Disabled** - `[Non-interactive state]`
 
 ---
 
-## 📎 Notes
+## 🪟 `[Component Name]`
 
-- Components must support dark mode where applicable.
-- All interactive components must be accessible via keyboard and meet WCAG AA.
-- Use design tokens for colors, spacing, and typography.
+### HTML Preview
 
+`[Include inline-styled HTML in a preview container to avoid floating modals]`
+
+### Behavior
+
+- **Open Animation** - `[How modal appears]`
+- **Close Triggers** - `[Overlay click, escape key, close button]`
+- **Focus Management** - `[Focus trap behavior]`
+- **Body Scroll** - `[Prevent background scrolling]`
+
+### Accessibility
+- **Focus Trap** - `[Keep focus within modal]`
+- **ARIA** - `[Modal role, labeling, description]`
+- **Keyboard** - `[Escape to close, tab navigation]`
+
+---
+
+## 📎 Implementation Guidelines
+
+### Development Standards
+- **HTML Structure**: `[Semantic HTML requirements]`
+- **CSS Classes**: `[Class naming conventions]`
+- **JavaScript**: `[Interaction behavior requirements]`
+
+### Quality Checklist
+- [ ] Visual design matches design system
+- [ ] All variants and states implemented
+- [ ] Accessibility requirements met
+- [ ] Responsive behavior correct
+- [ ] Cross-browser compatibility verified
+
+### Usage Notes
+`[Additional guidance for implementing and using components consistently]`
