@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users - AuthentiIDP</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Colors - Following AuthentiIDP Design System */
+            --color-primary: #2563EB;
+            --color-primary-hover: #1D4ED8;
+            --color-secondary: #059669;
+            --color-accent: #7C3AED;
+            --color-error: #DC2626;
+            --color-warning: #D97706;
+            --color-success: #059669;
+            
+            --color-bg: #FFFFFF;
+            --color-surface: #F8FAFC;
+            --color-border: #E2E8F0;
+            --color-text-primary: #0F172A;
+            --color-text-muted: #64748B;
+            
+            /* Spacing System */
+            --spacing-1: 4px;
+            --spacing-2: 8px;
+            --spacing-3: 12px;
+            --spacing-4: 16px;
+            --spacing-5: 24px;
+            --spacing-6: 32px;
+            --spacing-8: 64px;
+            
+            /* Border Radius */
+            --radius-sm: 4px;
+            --radius-md: 6px;
+            --radius-lg: 8px;
+            --radius-full: 9999px;
+            
+            /* Shadows */
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.12);
+            --shadow-md: 0 4px 6px rgba(0,0,0,0.10);
+            --shadow-lg: 0 10px 15px rgba(0,0,0,0.10);
+            
+            /* Typography */
+            --font-base: 'Inter', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+        
+        /* Dark mode styles */
+        @media (prefers-color-scheme: dark) {
+            .dark-mode {
+                --color-bg: #0F172A;
+                --color-surface: #1E293B;
+                --color-border: #334155;
+                --color-text-primary: #F8FAFC;
+                --color-text-muted: #94A3B8;
+            }
+        }
+        
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            margin: 0;
+            font-family: var(--font-base);
+            background: var(--color-surface);
+            color: var(--color-text-primary);
+            line-height: 1.5;
+        }
+        
+        /* Header */
+        .header {
+            background: var(--color-bg);
+            border-bottom: 1px solid var(--color-border);
+            padding: 0 var(--spacing-5);
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-5);
+        }
+        
+        .logo {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--color-primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-2);
+        }
+        
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-4);
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .nav-link {
+            color: var(--color-text-muted);
+            text-decoration: none;
+            font-weight: 500;
+            padding: var(--spacing-2) var(--spacing-3);
+            border-radius: var(--radius-md);
+            transition: all 0.2s ease;
+        }
+        
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--color-primary);
+            background: rgba(37, 99, 235, 0.1);
+        }
+        
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-3);
+        }
+        
+        .search-container {
+            position: relative;
+        }
+        
+        .search-input {
+            width: 300px;
+            height: 36px;
+            padding: var(--spacing-2) var(--spacing-3) var(--spacing-2) 40px;
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-full);
+            background: var(--color-surface);
+            color: var(--color-text-primary);
+            font-size: 14px;
+        }
+        
+        .search-input:focus {
+            outline: none;
+            border-color: var(--color-primary);
+        }
+        
+        .search-icon {
+            position: absolute;
+            left: var(--spacing-3);
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--color-text-muted);
+        }
+        
+        .user-menu {
+            position: relative;
+        }
+        
+        .user-button {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-2);
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: var(--spacing-2);
+            border-radius: var(--radius-md);
+            transition: all 0.2s ease;
+        }
+        
+        .user-button:hover {
+            background: var(--color-surface);
+        }
+        
+        .avatar {
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, #667EEA 0%, #764BA2 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            font-size: 14px;
+        }
+        
+        /* Main layout */
+        .main-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--spacing-6) var(--spacing-5);
+        }
+        
+        .page-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: var(--spacing-6);
+        }
+        
+        .page-title-section {
+            flex: 1;
+        }
+        
+        .page-title {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--color-text-primary);
+            margin: 0 0 var(--spacing-2) 0;
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-3);
+        }
+        
+        .page-subtitle {
+            color: var(--color-text-muted);
+            font-size: 16px;
+            margin: 0;
+        }
+        
+        .page-actions {
+            display: flex;
+            gap: var(--spacing-3);
+            align-items: center;
+        }
+        
+        /* Buttons */
+        .btn-primary {
+            background: var(--color-primary);
+            color: white;
+            border: none;
+            border-radius: var(--radius-md);
+            padding: var(--spacing-3) var(--spacing-4);
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-2);
+        }
+        
+        .btn-primary:hover {
+            background: var(--color-primary-hover);
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .btn-secondary {
+            background: var(--color-bg);
+            color: var(--color-text-primary);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-3) var(--spacing-4);
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .btn-secondary:hover {
+            border-color: var(--color-primary);
+            color: var(--color-primary);
+        }
+        
+        /* Filters and controls */
+        .controls-section {
+            background: var(--color-bg);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-5);
+            margin-bottom: var(--spacing-6);
+        }
+        
+        .controls-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: var(--spacing-4);
+        }
+        
+        .filters-group {
+            display: flex;
+            gap: var(--spacing-3);
+            align-items: center;
+        }
+        
+        .filter-select {
+            padding: var(--spacing-2) var(--spacing-3);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-md);
+            background: var(--color-bg);
+            color: var(--color-text-primary);
+            cursor: pointer;
+        }
+        
+        .results-info {
+            color: var(--color-text-muted);
+            font-size: 14px;
+        }
+        
+        /* Users table */
+        .users-table-container {
+            background: var(--color-bg);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .users-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .users-table th {
+            background: var(--color-surface);
+            padding: var(--spacing-4);
+            text-align: left;
+            font-weight: 600;
+            color: var(--color-text-primary);
+            border-bottom: 1px solid var(--color-border);
+            font-size: 14px;
+        }
+        
+        .users-table td {
+            padding: var(--spacing-4);
+            border-bottom: 1px solid var(--color-border);
+            vertical-align: middle;
+        }
+        
+        .users-table tbody tr:hover {
+            background: var(--color-surface);
+        }
+        
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-3);
+        }
+        
+        .user-details {
+            flex: 1;
+        }
+        
+        .user-name {
+            font-weight: 600;
+            color: var(--color-text-primary);
+            margin: 0 0 2px 0;
+        }
+        
+        .user-email {
+            color: var(--color-text-muted);
+            font-size: 14px;
+            margin: 0;
+        }
+        
+        .status-badge {
+            padding: var(--spacing-1) var(--spacing-3);
+            border-radius: var(--radius-full);
+            font-size: 12px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .status-active {
+            background: #D1FAE5;
+            color: #065F46;
+        }
+        
+        .status-pending {
+            background: #FEF3C7;
+            color: #92400E;
+        }
+        
+        .status-suspended {
+            background: #FEE2E2;
+            color: #991B1B;
+        }
+        
+        .role-badge {
+            background: rgba(37, 99, 235, 0.1);
+            color: var(--color-primary);
+            padding: 2px var(--spacing-2);
+            border-radius: var(--radius-sm);
+            font-size: 12px;
+            font-weight: 500;
+        }
+        
+        .security-indicators {
+            display: flex;
+            gap: var(--spacing-2);
+        }
+        
+        .security-indicator {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+        }
+        
+        .sso-enabled {
+            background: rgba(5, 150, 105, 0.1);
+            color: var(--color-success);
+        }
+        
+        .twofa-enabled {
+            background: rgba(124, 58, 237, 0.1);
+            color: var(--color-accent);
+        }
+        
+        .actions-menu {
+            position: relative;
+        }
+        
+        .actions-button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: var(--spacing-2);
+            border-radius: var(--radius-md);
+            color: var(--color-text-muted);
+            transition: all 0.2s ease;
+        }
+        
+        .actions-button:hover {
+            background: var(--color-surface);
+            color: var(--color-primary);
+        }
+        
+        /* Theme toggle */
+        .theme-toggle {
+            background: transparent;
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-full);
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-size: 16px;
+        }
+        
+        .theme-toggle:hover {
+            border-color: var(--color-primary);
+            color: var(--color-primary);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .search-input {
+                width: 200px;
+            }
+            
+            .page-header {
+                flex-direction: column;
+                align-items: stretch;
+                gap: var(--spacing-4);
+            }
+            
+            .controls-row {
+                flex-direction: column;
+                align-items: stretch;
+                gap: var(--spacing-3);
+            }
+            
+            .users-table-container {
+                overflow-x: auto;
+            }
+            
+            .header {
+                padding: 0 var(--spacing-4);
+            }
+            
+            .main-container {
+                padding: var(--spacing-4);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-left">
+            <a href="02-dashboard.html" class="logo">
+                🔐 AuthentiIDP
+            </a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="02-dashboard.html" class="nav-link">🏠 Dashboard</a></li>
+                    <li><a href="#" class="nav-link active">👥 Users</a></li>
+                    <li><a href="04-security.html" class="nav-link">🛡️ Security</a></li>
+                    <li><a href="05-api-keys.html" class="nav-link">🔑 API Keys</a></li>
+                    <li><a href="06-analytics.html" class="nav-link">📊 Analytics</a></li>
+                </ul>
+            </nav>
+        </div>
+        
+        <div class="header-right">
+            <div class="search-container">
+                <span class="search-icon">🔍</span>
+                <input type="text" class="search-input" placeholder="Search users by name or email..." />
+            </div>
+            
+            <button class="theme-toggle" onclick="toggleTheme()" title="Toggle dark mode">
+                🌙
+            </button>
+            
+            <div class="user-menu">
+                <button class="user-button" onclick="toggleUserMenu()">
+                    <div class="avatar">JD</div>
+                    <span>John Doe</span>
+                    <span style="font-size: 12px;">▼</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-container">
+        <!-- Page Header -->
+        <div class="page-header">
+            <div class="page-title-section">
+                <h1 class="page-title">
+                    👥 User Management
+                </h1>
+                <p class="page-subtitle">
+                    Manage user accounts, permissions, and authentication settings
+                </p>
+            </div>
+            
+            <div class="page-actions">
+                <button class="btn-secondary" onclick="exportUsers()">
+                    📊 Export Users
+                </button>
+                <button class="btn-primary" onclick="inviteUser()">
+                    ➕ Invite User
+                </button>
+            </div>
+        </div>
+
+        <!-- Controls and Filters -->
+        <div class="controls-section">
+            <div class="controls-row">
+                <div class="filters-group">
+                    <select class="filter-select">
+                        <option>All Status</option>
+                        <option>Active</option>
+                        <option>Pending</option>
+                        <option>Suspended</option>
+                    </select>
+                    
+                    <select class="filter-select">
+                        <option>All Roles</option>
+                        <option>Super Admin</option>
+                        <option>Organization Admin</option>
+                        <option>Identity Manager</option>
+                        <option>Standard User</option>
+                        <option>Read-Only Viewer</option>
+                    </select>
+                    
+                    <select class="filter-select">
+                        <option>All Security</option>
+                        <option>SSO Enabled</option>
+                        <option>2FA Enabled</option>
+                        <option>Security Issues</option>
+                    </select>
+                </div>
+                
+                <div class="results-info">
+                    Showing 1-10 of 247 users
+                </div>
+            </div>
+        </div>
+
+        <!-- Users Table -->
+        <div class="users-table-container">
+            <table class="users-table">
+                <thead>
+                    <tr>
+                        <th>User</th>
+                        <th>Role</th>
+                        <th>Status</th>
+                        <th>Security</th>
+                        <th>Last Active</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="user-info">
+                                <div class="avatar" style="background: linear-gradient(135deg, #667EEA 0%, #764BA2 100%);">SC</div>
+                                <div class="user-details">
+                                    <div class="user-name">Sarah Chen</div>
+                                    <div class="user-email">sarah.chen@company.com</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <span class="role-badge">Organization Admin</span>
+                        </td>
+                        <td>
+                            <span class="status-badge status-active">Active</span>
+                        </td>
+                        <td>
+                            <div class="security-indicators">
+                                <span class="security-indicator sso-enabled" title="SSO Enabled">🏢</span>
+                                <span class="security-indicator twofa-enabled" title="2FA Active">📱</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div style="color: var(--color-text-muted); font-size: 14px;">2 hours ago</div>
+                        </td>
+                        <td>
+                            <div class="actions-menu">
+                                <button class="actions-button" onclick="showUserActions('sarah.chen@company.com')">
+                                    ⚙️
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <div class="user-info">
+                                <div class="avatar" style="background: linear-gradient(135deg, #F093FB 0%, #F5576C 100%);">MR</div>
+                                <div class="user-details">
+                                    <div class="user-name">Michael Rodriguez</div>
+                                    <div class="user-email">m.rodriguez@company.com</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <span class="role-badge">Identity Manager</span>
+                        </td>
+                        <td>
+                            <span class="status-badge status-active">Active</span>
+                        </td>
+                        <td>
+                            <div class="security-indicators">
+                                <span class="security-indicator twofa-enabled" title="2FA Active">📱</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div style="color: var(--color-text-muted); font-size: 14px;">1 day ago</div>
+                        </td>
+                        <td>
+                            <div class="actions-menu">
+                                <button class="actions-button" onclick="showUserActions('m.rodriguez@company.com')">
+                                    ⚙️
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <div class="user-info">
+                                <div class="avatar" style="background: linear-gradient(135deg, #4FACFE 0%, #00F2FE 100%);">AJ</div>
+                                <div class="user-details">
+                                    <div class="user-name">Anna Johnson</div>
+                                    <div class="user-email">anna.johnson@company.com</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <span class="role-badge">Standard User</span>
+                        </td>
+                        <td>
+                            <span class="status-badge status-pending">Pending</span>
+                        </td>
+                        <td>
+                            <div class="security-indicators">
+                                <span style="color: var(--color-text-muted); font-size: 12px;">No security setup</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div style="color: var(--color-text-muted); font-size: 14px;">Never</div>
+                        </td>
+                        <td>
+                            <div class="actions-menu">
+                                <button class="actions-button" onclick="showUserActions('anna.johnson@company.com')">
+                                    ⚙️
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <div class="user-info">
+                                <div class="avatar" style="background: linear-gradient(135deg, #A8EDEA 0%, #FED6E3 100%);">DL</div>
+                                <div class="user-details">
+                                    <div class="user-name">David Lee</div>
+                                    <div class="user-email">david.lee@company.com</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <span class="role-badge">Read-Only Viewer</span>
+                        </td>
+                        <td>
+                            <span class="status-badge status-active">Active</span>
+                        </td>
+                        <td>
+                            <div class="security-indicators">
+                                <span class="security-indicator sso-enabled" title="SSO Enabled">🏢</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div style="color: var(--color-text-muted); font-size: 14px;">3 days ago</div>
+                        </td>
+                        <td>
+                            <div class="actions-menu">
+                                <button class="actions-button" onclick="showUserActions('david.lee@company.com')">
+                                    ⚙️
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <div class="user-info">
+                                <div class="avatar" style="background: linear-gradient(135deg, #FFD89B 0%, #19547B 100%);">KW</div>
+                                <div class="user-details">
+                                    <div class="user-name">Karen Williams</div>
+                                    <div class="user-email">karen.williams@company.com</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <span class="role-badge">Super Admin</span>
+                        </td>
+                        <td>
+                            <span class="status-badge status-suspended">Suspended</span>
+                        </td>
+                        <td>
+                            <div class="security-indicators">
+                                <span class="security-indicator sso-enabled" title="SSO Enabled">🏢</span>
+                                <span class="security-indicator twofa-enabled" title="2FA Active">📱</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div style="color: var(--color-text-muted); font-size: 14px;">2 weeks ago</div>
+                        </td>
+                        <td>
+                            <div class="actions-menu">
+                                <button class="actions-button" onclick="showUserActions('karen.williams@company.com')">
+                                    ⚙️
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <div class="user-info">
+                                <div class="avatar" style="background: linear-gradient(135deg, #667EEA 0%, #764BA2 100%);">JB</div>
+                                <div class="user-details">
+                                    <div class="user-name">James Brown</div>
+                                    <div class="user-email">james.brown@company.com</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <span class="role-badge">Standard User</span>
+                        </td>
+                        <td>
+                            <span class="status-badge status-active">Active</span>
+                        </td>
+                        <td>
+                            <div class="security-indicators">
+                                <span class="security-indicator twofa-enabled" title="2FA Active">📱</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div style="color: var(--color-text-muted); font-size: 14px;">5 hours ago</div>
+                        </td>
+                        <td>
+                            <div class="actions-menu">
+                                <button class="actions-button" onclick="showUserActions('james.brown@company.com')">
+                                    ⚙️
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Pagination would go here -->
+        <div style="margin-top: var(--spacing-5); text-align: center;">
+            <button class="btn-secondary" onclick="loadMoreUsers()">
+                Load More Users
+            </button>
+        </div>
+    </main>
+
+    <script src="auth-common.js"></script>
+    <script>
+        // Theme and authentication handled by auth-common.js
+        
+        // User actions
+        function showUserActions(email) {
+            alert(`User actions for ${email}:\n- Edit Profile\n- Change Role\n- Reset Password\n- Enable/Disable 2FA\n- Suspend User\n- View Activity Log`);
+        }
+        
+        function inviteUser() {
+            alert('Invite user modal would open with:\n- Email address field\n- Role selection\n- Custom welcome message\n- Send invitation button');
+        }
+        
+        function exportUsers() {
+            alert('Export options:\n- CSV format\n- Excel format\n- JSON format\n- Filter by status/role');
+        }
+        
+        function loadMoreUsers() {
+            alert('Loading next 10 users...\nThis would implement pagination or infinite scroll.');
+        }
+        
+        // Search functionality
+        document.querySelector('.search-input').addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            console.log('Searching for:', searchTerm);
+            // In real implementation, this would filter the table or make API calls
+        });
+        
+        // Filter functionality
+        document.querySelectorAll('.filter-select').forEach(select => {
+            select.addEventListener('change', function(e) {
+                console.log('Filter changed:', e.target.value);
+                // In real implementation, this would filter users and update the table
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics - AuthentiIDP</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Colors - Following AuthentiIDP Design System */
+            --color-primary: #2563EB;
+            --color-primary-hover: #1D4ED8;
+            --color-secondary: #059669;
+            --color-accent: #7C3AED;
+            --color-error: #DC2626;
+            --color-warning: #D97706;
+            --color-success: #059669;
+            
+            --color-bg: #FFFFFF;
+            --color-surface: #F8FAFC;
+            --color-border: #E2E8F0;
+            --color-text-primary: #0F172A;
+            --color-text-muted: #64748B;
+            
+            /* Spacing System */
+            --spacing-1: 4px;
+            --spacing-2: 8px;
+            --spacing-3: 12px;
+            --spacing-4: 16px;
+            --spacing-5: 24px;
+            --spacing-6: 32px;
+            --spacing-8: 64px;
+            
+            /* Border Radius */
+            --radius-sm: 4px;
+            --radius-md: 6px;
+            --radius-lg: 8px;
+            --radius-full: 9999px;
+            
+            /* Shadows */
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.12);
+            --shadow-md: 0 4px 6px rgba(0,0,0,0.10);
+            --shadow-lg: 0 10px 15px rgba(0,0,0,0.10);
+            
+            /* Typography */
+            --font-base: 'Inter', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+        
+        /* Dark mode styles */
+        @media (prefers-color-scheme: dark) {
+            .dark-mode {
+                --color-bg: #0F172A;
+                --color-surface: #1E293B;
+                --color-border: #334155;
+                --color-text-primary: #F8FAFC;
+                --color-text-muted: #94A3B8;
+            }
+        }
+        
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            margin: 0;
+            font-family: var(--font-base);
+            background: var(--color-surface);
+            color: var(--color-text-primary);
+            line-height: 1.5;
+        }
+        
+        /* Header */
+        .header {
+            background: var(--color-bg);
+            border-bottom: 1px solid var(--color-border);
+            padding: 0 var(--spacing-5);
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-5);
+        }
+        
+        .logo {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--color-primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-2);
+        }
+        
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-4);
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .nav-link {
+            color: var(--color-text-muted);
+            text-decoration: none;
+            font-weight: 500;
+            padding: var(--spacing-2) var(--spacing-3);
+            border-radius: var(--radius-md);
+            transition: all 0.2s ease;
+        }
+        
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--color-primary);
+            background: rgba(37, 99, 235, 0.1);
+        }
+        
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-3);
+        }
+        
+        .user-menu {
+            position: relative;
+        }
+        
+        .user-button {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-2);
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: var(--spacing-2);
+            border-radius: var(--radius-md);
+            transition: all 0.2s ease;
+        }
+        
+        .user-button:hover {
+            background: var(--color-surface);
+        }
+        
+        .avatar {
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, #667EEA 0%, #764BA2 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            font-size: 14px;
+        }
+        
+        /* Main layout */
+        .main-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: var(--spacing-6) var(--spacing-5);
+        }
+        
+        .page-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: var(--spacing-6);
+        }
+        
+        .page-title-section {
+            flex: 1;
+        }
+        
+        .page-title {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--color-text-primary);
+            margin: 0 0 var(--spacing-2) 0;
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-3);
+        }
+        
+        .page-subtitle {
+            color: var(--color-text-muted);
+            font-size: 16px;
+            margin: 0;
+        }
+        
+        .page-actions {
+            display: flex;
+            gap: var(--spacing-3);
+            align-items: center;
+        }
+        
+        /* Date Range Picker */
+        .date-range-picker {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-2);
+            padding: var(--spacing-2) var(--spacing-3);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-md);
+            background: var(--color-bg);
+            cursor: pointer;
+        }
+        
+        /* Buttons */
+        .btn-primary {
+            background: var(--color-primary);
+            color: white;
+            border: none;
+            border-radius: var(--radius-md);
+            padding: var(--spacing-3) var(--spacing-4);
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-2);
+        }
+        
+        .btn-primary:hover {
+            background: var(--color-primary-hover);
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .btn-secondary {
+            background: var(--color-bg);
+            color: var(--color-text-primary);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-3) var(--spacing-4);
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .btn-secondary:hover {
+            border-color: var(--color-primary);
+            color: var(--color-primary);
+        }
+        
+        /* Analytics Grid */
+        .analytics-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: var(--spacing-5);
+            margin-bottom: var(--spacing-8);
+        }
+        
+        /* KPI Cards */
+        .kpi-cards {
+            grid-column: span 12;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-4);
+            margin-bottom: var(--spacing-6);
+        }
+        
+        .kpi-card {
+            background: var(--color-bg);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-5);
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .kpi-header {
+            display: flex;
+            align-items: center;
+            justify-content: between;
+            margin-bottom: var(--spacing-3);
+        }
+        
+        .kpi-title {
+            font-weight: 500;
+            color: var(--color-text-muted);
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .kpi-value {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--color-text-primary);
+            margin-bottom: var(--spacing-2);
+        }
+        
+        .kpi-change {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-1);
+            font-size: 14px;
+        }
+        
+        .kpi-change.positive {
+            color: var(--color-success);
+        }
+        
+        .kpi-change.negative {
+            color: var(--color-error);
+        }
+        
+        /* Chart Containers */
+        .chart-container {
+            background: var(--color-bg);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-5);
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .chart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: var(--spacing-4);
+        }
+        
+        .chart-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--color-text-primary);
+            margin: 0;
+        }
+        
+        .chart-placeholder {
+            height: 300px;
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, rgba(124, 58, 237, 0.1) 100%);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-text-muted);
+            font-size: 18px;
+            border: 2px dashed var(--color-border);
+        }
+        
+        /* Data Tables */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: var(--spacing-4);
+        }
+        
+        .data-table th {
+            background: var(--color-surface);
+            padding: var(--spacing-3);
+            text-align: left;
+            font-weight: 600;
+            color: var(--color-text-primary);
+            border-bottom: 1px solid var(--color-border);
+            font-size: 14px;
+        }
+        
+        .data-table td {
+            padding: var(--spacing-3);
+            border-bottom: 1px solid var(--color-border);
+            vertical-align: middle;
+        }
+        
+        .data-table tbody tr:hover {
+            background: var(--color-surface);
+        }
+        
+        /* Progress Bars */
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: var(--color-border);
+            border-radius: var(--radius-full);
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            border-radius: var(--radius-full);
+            transition: width 0.3s ease;
+        }
+        
+        .progress-fill.primary {
+            background: var(--color-primary);
+        }
+        
+        .progress-fill.success {
+            background: var(--color-success);
+        }
+        
+        .progress-fill.warning {
+            background: var(--color-warning);
+        }
+        
+        /* Theme toggle */
+        .theme-toggle {
+            background: transparent;
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-full);
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-size: 16px;
+        }
+        
+        .theme-toggle:hover {
+            border-color: var(--color-primary);
+            color: var(--color-primary);
+        }
+        
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .analytics-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .chart-container {
+                grid-column: span 1;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .page-header {
+                flex-direction: column;
+                align-items: stretch;
+                gap: var(--spacing-4);
+            }
+            
+            .kpi-cards {
+                grid-template-columns: 1fr;
+            }
+            
+            .chart-placeholder {
+                height: 200px;
+                font-size: 16px;
+            }
+            
+            .header {
+                padding: 0 var(--spacing-4);
+            }
+            
+            .main-container {
+                padding: var(--spacing-4);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-left">
+            <a href="02-dashboard.html" class="logo">
+                🔐 AuthentiIDP
+            </a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="02-dashboard.html" class="nav-link">🏠 Dashboard</a></li>
+                    <li><a href="03-users.html" class="nav-link">👥 Users</a></li>
+                    <li><a href="04-security.html" class="nav-link">🛡️ Security</a></li>
+                    <li><a href="05-api-keys.html" class="nav-link">🔑 API Keys</a></li>
+                    <li><a href="#" class="nav-link active">📊 Analytics</a></li>
+                </ul>
+            </nav>
+        </div>
+        
+        <div class="header-right">
+            <button class="theme-toggle" onclick="toggleTheme()" title="Toggle dark mode">
+                🌙
+            </button>
+            
+            <div class="user-menu">
+                <button class="user-button" onclick="toggleUserMenu()">
+                    <div class="avatar">JD</div>
+                    <span>John Doe</span>
+                    <span style="font-size: 12px;">▼</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-container">
+        <!-- Page Header -->
+        <div class="page-header">
+            <div class="page-title-section">
+                <h1 class="page-title">
+                    📊 Analytics Dashboard
+                </h1>
+                <p class="page-subtitle">
+                    Track authentication patterns, usage metrics, and security insights
+                </p>
+            </div>
+            
+            <div class="page-actions">
+                <div class="date-range-picker" onclick="openDatePicker()">
+                    📅 Last 30 days ▼
+                </div>
+                <button class="btn-secondary" onclick="exportReport()">
+                    📄 Export Report
+                </button>
+                <button class="btn-primary" onclick="scheduleReport()">
+                    ⏰ Schedule Report
+                </button>
+            </div>
+        </div>
+
+        <!-- KPI Cards -->
+        <div class="kpi-cards">
+            <div class="kpi-card">
+                <div class="kpi-title">Total Authentications</div>
+                <div class="kpi-value">24,847</div>
+                <div class="kpi-change positive">
+                    ↗️ +15.2% from last month
+                </div>
+            </div>
+            
+            <div class="kpi-card">
+                <div class="kpi-title">Success Rate</div>
+                <div class="kpi-value">97.3%</div>
+                <div class="kpi-change positive">
+                    ↗️ +0.8% from last month
+                </div>
+            </div>
+            
+            <div class="kpi-card">
+                <div class="kpi-title">Average Response Time</div>
+                <div class="kpi-value">245ms</div>
+                <div class="kpi-change negative">
+                    ↘️ +12ms from last month
+                </div>
+            </div>
+            
+            <div class="kpi-card">
+                <div class="kpi-title">Active SSO Integrations</div>
+                <div class="kpi-value">8</div>
+                <div class="kpi-change positive">
+                    ↗️ +2 from last month
+                </div>
+            </div>
+        </div>
+
+        <!-- Analytics Grid -->
+        <div class="analytics-grid">
+            <!-- Authentication Volume Chart -->
+            <div class="chart-container" style="grid-column: span 8;">
+                <div class="chart-header">
+                    <h3 class="chart-title">Authentication Volume</h3>
+                    <div style="display: flex; gap: var(--spacing-3);">
+                        <button class="btn-secondary" onclick="changeTimeframe('24h')">24h</button>
+                        <button class="btn-secondary" onclick="changeTimeframe('7d')">7d</button>
+                        <button class="btn-primary" onclick="changeTimeframe('30d')">30d</button>
+                        <button class="btn-secondary" onclick="changeTimeframe('90d')">90d</button>
+                    </div>
+                </div>
+                <div class="chart-placeholder">
+                    📈 Authentication requests over time<br>
+                    <small style="opacity: 0.7;">Line chart showing daily authentication volume trends</small>
+                </div>
+            </div>
+
+            <!-- Authentication Methods Breakdown -->
+            <div class="chart-container" style="grid-column: span 4;">
+                <div class="chart-header">
+                    <h3 class="chart-title">Authentication Methods</h3>
+                </div>
+                <div class="chart-placeholder" style="height: 250px;">
+                    🥧 Method distribution<br>
+                    <small style="opacity: 0.7;">Pie chart showing SSO vs password vs 2FA</small>
+                </div>
+                
+                <div style="margin-top: var(--spacing-4);">
+                    <div style="display: flex; justify-content: space-between; margin-bottom: var(--spacing-2);">
+                        <span>SSO Login</span>
+                        <span>64%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill primary" style="width: 64%;"></div>
+                    </div>
+                    
+                    <div style="display: flex; justify-content: space-between; margin: var(--spacing-3) 0 var(--spacing-2) 0;">
+                        <span>Password + 2FA</span>
+                        <span>28%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill success" style="width: 28%;"></div>
+                    </div>
+                    
+                    <div style="display: flex; justify-content: space-between; margin: var(--spacing-3) 0 var(--spacing-2) 0;">
+                        <span>Password Only</span>
+                        <span>8%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill warning" style="width: 8%;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Geographic Distribution -->
+            <div class="chart-container" style="grid-column: span 6;">
+                <div class="chart-header">
+                    <h3 class="chart-title">Geographic Distribution</h3>
+                </div>
+                <div class="chart-placeholder">
+                    🗺️ World map with authentication hotspots<br>
+                    <small style="opacity: 0.7;">Heat map showing user login locations</small>
+                </div>
+                
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Country</th>
+                            <th>Users</th>
+                            <th>Authentications</th>
+                            <th>Success Rate</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>🇺🇸 United States</td>
+                            <td>847</td>
+                            <td>12,234</td>
+                            <td>98.1%</td>
+                        </tr>
+                        <tr>
+                            <td>🇨🇦 Canada</td>
+                            <td>234</td>
+                            <td>3,421</td>
+                            <td>97.8%</td>
+                        </tr>
+                        <tr>
+                            <td>🇬🇧 United Kingdom</td>
+                            <td>156</td>
+                            <td>2,187</td>
+                            <td>96.9%</td>
+                        </tr>
+                        <tr>
+                            <td>🇩🇪 Germany</td>
+                            <td>123</td>
+                            <td>1,843</td>
+                            <td>97.2%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Security Events -->
+            <div class="chart-container" style="grid-column: span 6;">
+                <div class="chart-header">
+                    <h3 class="chart-title">Security Events</h3>
+                </div>
+                
+                <div style="margin-bottom: var(--spacing-4);">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--spacing-3);">
+                        <div>
+                            <div style="font-weight: 600; color: var(--color-text-primary);">Failed Login Attempts</div>
+                            <div style="color: var(--color-text-muted); font-size: 14px;">Last 24 hours</div>
+                        </div>
+                        <div style="font-size: 24px; font-weight: 700; color: var(--color-warning);">127</div>
+                    </div>
+                    
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--spacing-3);">
+                        <div>
+                            <div style="font-weight: 600; color: var(--color-text-primary);">Suspicious IPs Blocked</div>
+                            <div style="color: var(--color-text-muted); font-size: 14px;">Automatic protection</div>
+                        </div>
+                        <div style="font-size: 24px; font-weight: 700; color: var(--color-error);">23</div>
+                    </div>
+                    
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--spacing-3);">
+                        <div>
+                            <div style="font-weight: 600; color: var(--color-text-primary);">2FA Challenges</div>
+                            <div style="color: var(--color-text-muted); font-size: 14px;">Additional verification required</div>
+                        </div>
+                        <div style="font-size: 24px; font-weight: 700; color: var(--color-accent);">342</div>
+                    </div>
+                    
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <div>
+                            <div style="font-weight: 600; color: var(--color-text-primary);">Account Lockouts</div>
+                            <div style="color: var(--color-text-muted); font-size: 14px;">Temporary security measure</div>
+                        </div>
+                        <div style="font-size: 24px; font-weight: 700; color: var(--color-error);">8</div>
+                    </div>
+                </div>
+                
+                <div class="chart-placeholder" style="height: 180px;">
+                    📊 Security events timeline<br>
+                    <small style="opacity: 0.7;">Bar chart showing security incidents over time</small>
+                </div>
+            </div>
+
+            <!-- API Usage Stats -->
+            <div class="chart-container" style="grid-column: span 12;">
+                <div class="chart-header">
+                    <h3 class="chart-title">API Usage Statistics</h3>
+                </div>
+                
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Endpoint</th>
+                            <th>Requests (24h)</th>
+                            <th>Success Rate</th>
+                            <th>Avg Response Time</th>
+                            <th>Rate Limit Hits</th>
+                            <th>Top Client</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>/auth/login</code></td>
+                            <td>8,234</td>
+                            <td><span style="color: var(--color-success);">97.8%</span></td>
+                            <td>124ms</td>
+                            <td>12</td>
+                            <td>Production App</td>
+                        </tr>
+                        <tr>
+                            <td><code>/auth/validate</code></td>
+                            <td>15,672</td>
+                            <td><span style="color: var(--color-success);">99.2%</span></td>
+                            <td>89ms</td>
+                            <td>3</td>
+                            <td>Mobile App</td>
+                        </tr>
+                        <tr>
+                            <td><code>/users/profile</code></td>
+                            <td>4,521</td>
+                            <td><span style="color: var(--color-success);">98.5%</span></td>
+                            <td>167ms</td>
+                            <td>8</td>
+                            <td>Web Dashboard</td>
+                        </tr>
+                        <tr>
+                            <td><code>/auth/refresh</code></td>
+                            <td>2,891</td>
+                            <td><span style="color: var(--color-warning);">95.3%</span></td>
+                            <td>203ms</td>
+                            <td>24</td>
+                            <td>Legacy System</td>
+                        </tr>
+                        <tr>
+                            <td><code>/admin/users</code></td>
+                            <td>456</td>
+                            <td><span style="color: var(--color-success);">99.8%</span></td>
+                            <td>312ms</td>
+                            <td>0</td>
+                            <td>Admin Panel</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <script src="auth-common.js"></script>
+    <script>
+        // Theme and authentication handled by auth-common.js
+        
+        // Analytics Functions
+        function openDatePicker() {
+            alert('Date Range Picker would open with options:\n- Last 24 hours\n- Last 7 days\n- Last 30 days\n- Last 90 days\n- Custom range\n- Compare to previous period');
+        }
+        
+        function exportReport() {
+            alert('Export Report options:\n- PDF Executive Summary\n- CSV Raw Data\n- Excel Workbook\n- JSON API Data\n- Email scheduled report\n- Include charts and visualizations');
+        }
+        
+        function scheduleReport() {
+            alert('Schedule Report configuration:\n- Daily/Weekly/Monthly frequency\n- Email recipients\n- Report format (PDF/Excel)\n- Data included (KPIs, charts, tables)\n- Delivery time preferences');
+        }
+        
+        function changeTimeframe(timeframe) {
+            // Remove active state from all buttons
+            document.querySelectorAll('.chart-header button').forEach(btn => {
+                btn.className = 'btn-secondary';
+            });
+            
+            // Add active state to clicked button
+            event.target.className = 'btn-primary';
+            
+            alert(`Changing analytics timeframe to: ${timeframe}\n\nThis would update all charts and data tables to show:\n- Authentication volume for ${timeframe}\n- Comparative metrics vs previous period\n- Trend analysis and insights`);
+        }
+        
+        // Simulate real-time updates
+        function updateMetrics() {
+            const kpiValues = document.querySelectorAll('.kpi-value');
+            
+            // Simulate updating authentication count
+            if (kpiValues[0]) {
+                const currentValue = parseInt(kpiValues[0].textContent.replace(/,/g, ''));
+                const newValue = currentValue + Math.floor(Math.random() * 10);
+                kpiValues[0].textContent = newValue.toLocaleString();
+            }
+            
+            console.log('Updated real-time metrics');
+        }
+        
+        // Update metrics every 30 seconds
+        setInterval(updateMetrics, 30000);
+        
+        // Simulate chart interactions
+        document.addEventListener('click', function(e) {
+            if (e.target.closest('.chart-placeholder')) {
+                const chartTitle = e.target.closest('.chart-container').querySelector('.chart-title').textContent;
+                alert(`Interactive ${chartTitle} Chart:\n\nIn a real implementation, this would show:\n- Detailed tooltips on hover\n- Drill-down capabilities\n- Data point filtering\n- Export chart as image\n- Zoom and pan functionality`);
+            }
+        });
+    </script>
+</body>
+</html>
