@@ -241,89 +241,12 @@ TaskMaster embodies **simplicity, focus, and productivity**. The design should f
   <div style="font-size: 12px; color: #737373;">CAPTION - 12PX, MEDIUM, UPPERCASE</div>
 </div>
 
-### Typography Classes
-
-```css
-/* Heading styles */
-.heading-1 {
-  font-size: var(--text-3xl);
-  font-weight: var(--font-bold);
-  line-height: var(--leading-tight);
-  color: var(--color-gray-900);
-}
-
-.heading-2 {
-  font-size: var(--text-2xl);
-  font-weight: var(--font-semibold);
-  line-height: var(--leading-tight);
-  color: var(--color-gray-800);
-}
-
-.heading-3 {
-  font-size: var(--text-xl);
-  font-weight: var(--font-semibold);
-  line-height: var(--leading-normal);
-  color: var(--color-gray-800);
-}
-
-/* Body text styles */
-.body-large {
-  font-size: var(--text-lg);
-  font-weight: var(--font-normal);
-  line-height: var(--leading-normal);
-  color: var(--color-gray-700);
-}
-
-.body-normal {
-  font-size: var(--text-base);
-  font-weight: var(--font-normal);
-  line-height: var(--leading-normal);
-  color: var(--color-gray-700);
-}
-
-.body-small {
-  font-size: var(--text-sm);
-  font-weight: var(--font-normal);
-  line-height: var(--leading-normal);
-  color: var(--color-gray-600);
-}
-
-.caption {
-  font-size: var(--text-xs);
-  font-weight: var(--font-medium);
-  line-height: var(--leading-normal);
-  color: var(--color-gray-500);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-```
 
 ---
 
 ## Spacing & Layout
 
 ### Spacing Scale
-
-```css
-:root {
-  /* Consistent spacing scale based on 4px base unit */
-  --space-px: 1px;
-  --space-0: 0;
-  --space-1: 0.25rem;  /* 4px */
-  --space-2: 0.5rem;   /* 8px */
-  --space-3: 0.75rem;  /* 12px */
-  --space-4: 1rem;     /* 16px */
-  --space-5: 1.25rem;  /* 20px */
-  --space-6: 1.5rem;   /* 24px */
-  --space-8: 2rem;     /* 32px */
-  --space-10: 2.5rem;  /* 40px */
-  --space-12: 3rem;    /* 48px */
-  --space-16: 4rem;    /* 64px */
-  --space-20: 5rem;    /* 80px */
-  --space-24: 6rem;    /* 96px */
-  --space-32: 8rem;    /* 128px */
-}
-```
 
 ### Spacing Examples
 
@@ -452,53 +375,6 @@ TaskMaster embodies **simplicity, focus, and productivity**. The design should f
   </div>
 </div>
 
-### Shadow Scale
-
-```css
-:root {
-  /* Elevation shadows for depth hierarchy */
-  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-  
-  /* Focus and interaction shadows */
-  --shadow-focus: 0 0 0 3px rgba(49, 130, 206, 0.1);
-  --shadow-primary-focus: 0 0 0 3px rgba(49, 130, 206, 0.2);
-  --shadow-danger-focus: 0 0 0 3px rgba(239, 68, 68, 0.2);
-}
-```
-
-### Component Elevation
-
-```css
-/* Card elevation levels */
-.elevation-0 { box-shadow: none; }
-.elevation-1 { box-shadow: var(--shadow-sm); }
-.elevation-2 { box-shadow: var(--shadow-md); }
-.elevation-3 { box-shadow: var(--shadow-lg); }
-.elevation-4 { box-shadow: var(--shadow-xl); }
-.elevation-5 { box-shadow: var(--shadow-2xl); }
-
-/* Interactive shadows */
-.shadow-hover {
-  transition: box-shadow 0.15s ease-in-out;
-}
-
-.shadow-hover:hover {
-  box-shadow: var(--shadow-lg);
-}
-
-.focus-ring {
-  transition: box-shadow 0.15s ease-in-out;
-}
-
-.focus-ring:focus {
-  outline: none;
-  box-shadow: var(--shadow-focus);
-}
-```
 
 ---
 
@@ -648,18 +524,6 @@ TaskMaster embodies **simplicity, focus, and productivity**. The design should f
 </div>
 
 ### Icon System
-
-```css
-:root {
-  /* Icon sizes */
-  --icon-xs: 0.75rem;   /* 12px */
-  --icon-sm: 1rem;      /* 16px */
-  --icon-md: 1.25rem;   /* 20px */
-  --icon-lg: 1.5rem;    /* 24px */
-  --icon-xl: 2rem;      /* 32px */
-  --icon-2xl: 3rem;     /* 48px */
-}
-```
 
 ### Task Priority Icons
 - **High Priority**: 🔴 Red circle or ⬆️ arrow up
@@ -831,103 +695,307 @@ TaskMaster embodies **simplicity, focus, and productivity**. The design should f
 
 ## Component States
 
-### Interactive States
+### Interactive Button States
 
-```css
-/* Button states */
-.btn {
-  transition: var(--transition-colors);
-}
+<div style="background: white; padding: 24px; border-radius: 12px; border: 1px solid #E5E5E5; margin: 20px 0;">
+<h4 style="margin: 0 0 16px 0; font-size: 16px; font-weight: 600;">🔲 Button State Examples</h4>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px;">
+<div style="text-align: center;">
+<div style="font-size: 12px; font-weight: 500; color: #737373; margin-bottom: 8px;">Default State</div>
+<button style="background: #4299E1; color: white; border: none; padding: 12px 24px; border-radius: 6px; font-size: 14px; font-weight: 500; cursor: pointer; transition: all 0.15s;">Create Task</button>
+</div>
+<div style="text-align: center;">
+<div style="font-size: 12px; font-weight: 500; color: #737373; margin-bottom: 8px;">Hover State</div>
+<button style="background: #3182CE; color: white; border: none; padding: 12px 24px; border-radius: 6px; font-size: 14px; font-weight: 500; cursor: pointer; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(66, 153, 225, 0.3);">Create Task</button>
+</div>
+<div style="text-align: center;">
+<div style="font-size: 12px; font-weight: 500; color: #737373; margin-bottom: 8px;">Active State</div>
+<button style="background: #2C5282; color: white; border: none; padding: 12px 24px; border-radius: 6px; font-size: 14px; font-weight: 500; cursor: pointer; transform: translateY(0px);">Create Task</button>
+</div>
+<div style="text-align: center;">
+<div style="font-size: 12px; font-weight: 500; color: #737373; margin-bottom: 8px;">Disabled State</div>
+<button style="background: #CBD5E0; color: #A0AEC0; border: none; padding: 12px 24px; border-radius: 6px; font-size: 14px; font-weight: 500; cursor: not-allowed; opacity: 0.6;">Create Task</button>
+</div>
+<div style="text-align: center;">
+<div style="font-size: 12px; font-weight: 500; color: #737373; margin-bottom: 8px;">Loading State</div>
+<button style="background: #4299E1; color: white; border: none; padding: 12px 24px; border-radius: 6px; font-size: 14px; font-weight: 500; cursor: not-allowed; display: flex; align-items: center; justify-content: center; gap: 8px; margin: 0 auto;"><div style="width: 16px; height: 16px; border: 2px solid white; border-top: 2px solid transparent; border-radius: 50%; animation: spin 1s linear infinite;"></div>Creating...</button>
+</div>
+</div>
+</div>
 
-.btn:hover {
-  opacity: 0.9;
-  transform: translateY(-1px);
-}
+### Form Input States
 
-.btn:active {
-  transform: translateY(0);
-}
+<div style="background: white; padding: 24px; border-radius: 12px; border: 1px solid #E5E5E5; margin: 20px 0;">
+<h4 style="margin: 0 0 16px 0; font-size: 16px; font-weight: 600;">📝 Input Field State Examples</h4>
+<div style="display: flex; flex-direction: column; gap: 16px;">
+<div>
+<label style="display: block; font-size: 12px; font-weight: 500; color: #737373; margin-bottom: 4px;">Default State</label>
+<input type="text" placeholder="Enter task title..." style="width: 100%; max-width: 400px; padding: 10px 12px; border: 2px solid #E5E5E5; border-radius: 6px; font-size: 14px; transition: all 0.15s;">
+</div>
+<div>
+<label style="display: block; font-size: 12px; font-weight: 500; color: #737373; margin-bottom: 4px;">Focus State</label>
+<input type="text" value="Quarterly presentation" style="width: 100%; max-width: 400px; padding: 10px 12px; border: 2px solid #4299E1; border-radius: 6px; font-size: 14px; box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.1);">
+</div>
+<div>
+<label style="display: block; font-size: 12px; font-weight: 500; color: #737373; margin-bottom: 4px;">Error State</label>
+<input type="text" value="a" style="width: 100%; max-width: 400px; padding: 10px 12px; border: 2px solid #F56565; border-radius: 6px; font-size: 14px; box-shadow: 0 0 0 3px rgba(245, 101, 101, 0.1);">
+<div style="font-size: 12px; color: #F56565; margin-top: 4px;">Title must be at least 3 characters</div>
+</div>
+<div>
+<label style="display: block; font-size: 12px; font-weight: 500; color: #737373; margin-bottom: 4px;">Success State</label>
+<input type="text" value="Complete project documentation" style="width: 100%; max-width: 400px; padding: 10px 12px; border: 2px solid #48BB78; border-radius: 6px; font-size: 14px; box-shadow: 0 0 0 3px rgba(72, 187, 120, 0.1);">
+<div style="font-size: 12px; color: #48BB78; margin-top: 4px;">✓ Task title looks good</div>
+</div>
+</div>
+</div>
 
-.btn:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-  transform: none;
-}
+### Task Item States
 
-/* Input states */
-.input {
-  border: 2px solid var(--border-primary);
-  transition: var(--transition-colors);
-}
-
-.input:focus {
-  border-color: var(--color-primary-500);
-  box-shadow: var(--shadow-primary-focus);
-}
-
-.input:invalid {
-  border-color: var(--color-danger-500);
-  box-shadow: var(--shadow-danger-focus);
-}
-
-/* Card states */
-.card-interactive {
-  transition: var(--transition-all);
-  cursor: pointer;
-}
-
-.card-interactive:hover {
-  box-shadow: var(--shadow-lg);
-  transform: translateY(-2px);
-}
-
-/* Task states */
-.task-item {
-  transition: var(--transition-all);
-}
-
-.task-item.completed {
-  opacity: 0.7;
-}
-
-.task-item.completed .task-title {
-  text-decoration: line-through;
-  color: var(--text-tertiary);
-}
-
-.task-item.overdue {
-  border-left: 4px solid var(--color-danger-500);
-  background-color: var(--color-danger-50);
-}
-```
+<div style="background: white; padding: 24px; border-radius: 12px; border: 1px solid #E5E5E5; margin: 20px 0;">
+<h4 style="margin: 0 0 16px 0; font-size: 16px; font-weight: 600;">📋 Task State Examples</h4>
+<div style="display: flex; flex-direction: column; gap: 12px;">
+<div>
+<div style="font-size: 12px; font-weight: 500; color: #737373; margin-bottom: 8px;">Active Task</div>
+<div style="display: flex; align-items: flex-start; gap: 12px; padding: 16px; background: #F7FAFC; border-radius: 8px; border: 1px solid #E2E8F0; transition: all 0.15s; cursor: pointer;">
+<input type="checkbox" style="margin-top: 2px; width: 16px; height: 16px; accent-color: #4299E1;">
+<div style="flex: 1;">
+<div style="font-size: 14px; font-weight: 500; color: #2D3748; margin-bottom: 4px;">Prepare quarterly presentation slides</div>
+<div style="display: flex; gap: 8px; align-items: center; margin-bottom: 4px;">
+<span style="background: #4299E1; color: white; padding: 2px 8px; border-radius: 12px; font-size: 11px; font-weight: 500;">💼 Work</span>
+<span style="background: #F56565; color: white; padding: 2px 8px; border-radius: 12px; font-size: 11px; font-weight: 500;">🔴 High</span>
+</div>
+<div style="font-size: 12px; color: #718096;">📅 Due: Today 2:00 PM</div>
+</div>
+</div>
+</div>
+<div>
+<div style="font-size: 12px; font-weight: 500; color: #737373; margin-bottom: 8px;">Completed Task</div>
+<div style="display: flex; align-items: flex-start; gap: 12px; padding: 16px; background: #F0FFF4; border-radius: 8px; border: 1px solid #C6F6D5; opacity: 0.8;">
+<input type="checkbox" checked style="margin-top: 2px; width: 16px; height: 16px; accent-color: #48BB78;">
+<div style="flex: 1;">
+<div style="font-size: 14px; font-weight: 500; color: #2D3748; margin-bottom: 4px; text-decoration: line-through; opacity: 0.7;">Review team feedback documents</div>
+<div style="display: flex; gap: 8px; align-items: center; margin-bottom: 4px;">
+<span style="background: #48BB78; color: white; padding: 2px 8px; border-radius: 12px; font-size: 11px; font-weight: 500;">🏠 Personal</span>
+<span style="background: #48BB78; color: white; padding: 2px 8px; border-radius: 12px; font-size: 11px; font-weight: 500;">🟢 Low</span>
+</div>
+<div style="font-size: 12px; color: #48BB78;">✅ Completed 2 hours ago</div>
+</div>
+</div>
+</div>
+<div>
+<div style="font-size: 12px; font-weight: 500; color: #737373; margin-bottom: 8px;">Overdue Task</div>
+<div style="display: flex; align-items: flex-start; gap: 12px; padding: 16px; background: #FED7D7; border-radius: 8px; border-left: 4px solid #F56565; border-top: 1px solid #FEB2B2; border-right: 1px solid #FEB2B2; border-bottom: 1px solid #FEB2B2;">
+<input type="checkbox" style="margin-top: 2px; width: 16px; height: 16px; accent-color: #F56565;">
+<div style="flex: 1;">
+<div style="font-size: 14px; font-weight: 500; color: #2D3748; margin-bottom: 4px;">Submit budget proposal</div>
+<div style="display: flex; gap: 8px; align-items: center; margin-bottom: 4px;">
+<span style="background: #4299E1; color: white; padding: 2px 8px; border-radius: 12px; font-size: 11px; font-weight: 500;">💼 Work</span>
+<span style="background: #F56565; color: white; padding: 2px 8px; border-radius: 12px; font-size: 11px; font-weight: 500;">🔴 High</span>
+</div>
+<div style="font-size: 12px; color: #F56565; font-weight: 500;">⚠️ Overdue by 3 days</div>
+</div>
+</div>
+</div>
+<div>
+<div style="font-size: 12px; font-weight: 500; color: #737373; margin-bottom: 8px;">Hover State (Interactive)</div>
+<div style="display: flex; align-items: flex-start; gap: 12px; padding: 16px; background: #EDF2F7; border-radius: 8px; border: 1px solid #CBD5E0; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); cursor: pointer;">
+<input type="checkbox" style="margin-top: 2px; width: 16px; height: 16px; accent-color: #4299E1;">
+<div style="flex: 1;">
+<div style="font-size: 14px; font-weight: 500; color: #2D3748; margin-bottom: 4px;">Update project timeline</div>
+<div style="display: flex; gap: 8px; align-items: center; margin-bottom: 4px;">
+<span style="background: #805AD5; color: white; padding: 2px 8px; border-radius: 12px; font-size: 11px; font-weight: 500;">📊 Planning</span>
+<span style="background: #F6AD55; color: white; padding: 2px 8px; border-radius: 12px; font-size: 11px; font-weight: 500;">🟡 Medium</span>
+</div>
+<div style="font-size: 12px; color: #718096;">📅 Due: Tomorrow 10:00 AM</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 
 ---
 
 ## Responsive Breakpoints
 
-```css
-:root {
-  /* Breakpoint values */
-  --breakpoint-sm: 640px;
-  --breakpoint-md: 768px;
-  --breakpoint-lg: 1024px;
-  --breakpoint-xl: 1280px;
-  --breakpoint-2xl: 1536px;
-}
+### Breakpoint Scale
 
-/* Media query mixins usage examples */
-@media (min-width: 640px) {
-  .sm\:text-lg { font-size: var(--text-lg); }
-}
+<div style="background: white; padding: 24px; border-radius: 12px; border: 1px solid #E5E5E5; margin: 20px 0;">
+<h4 style="margin: 0 0 16px 0; font-size: 16px; font-weight: 600;">📱 Breakpoint Reference</h4>
+<div style="display: flex; flex-direction: column; gap: 12px;">
+<div style="display: flex; align-items: center; gap: 12px; padding: 12px; background: #F7FAFC; border-radius: 6px;">
+<div style="width: 20px; height: 20px; background: #4299E1; border-radius: 4px;"></div>
+<div style="flex: 1;"><strong>Mobile</strong> (320px - 639px)</div>
+<div style="font-size: 12px; color: #737373; font-family: monospace;">max-width: 639px</div>
+</div>
+<div style="display: flex; align-items: center; gap: 12px; padding: 12px; background: #F0FFF4; border-radius: 6px;">
+<div style="width: 20px; height: 20px; background: #48BB78; border-radius: 4px;"></div>
+<div style="flex: 1;"><strong>Small</strong> (640px - 767px)</div>
+<div style="font-size: 12px; color: #737373; font-family: monospace;">min-width: 640px</div>
+</div>
+<div style="display: flex; align-items: center; gap: 12px; padding: 12px; background: #FFF5F5; border-radius: 6px;">
+<div style="width: 20px; height: 20px; background: #F56565; border-radius: 4px;"></div>
+<div style="flex: 1;"><strong>Medium</strong> (768px - 1023px)</div>
+<div style="font-size: 12px; color: #737373; font-family: monospace;">min-width: 768px</div>
+</div>
+<div style="display: flex; align-items: center; gap: 12px; padding: 12px; background: #FFFBEB; border-radius: 6px;">
+<div style="width: 20px; height: 20px; background: #F6AD55; border-radius: 4px;"></div>
+<div style="flex: 1;"><strong>Large</strong> (1024px - 1279px)</div>
+<div style="font-size: 12px; color: #737373; font-family: monospace;">min-width: 1024px</div>
+</div>
+<div style="display: flex; align-items: center; gap: 12px; padding: 12px; background: #F7FAFC; border-radius: 6px;">
+<div style="width: 20px; height: 20px; background: #805AD5; border-radius: 4px;"></div>
+<div style="flex: 1;"><strong>Extra Large</strong> (1280px+)</div>
+<div style="font-size: 12px; color: #737373; font-family: monospace;">min-width: 1280px</div>
+</div>
+</div>
+</div>
 
-@media (min-width: 768px) {
-  .md\:text-xl { font-size: var(--text-xl); }
-}
+### Task List Responsiveness
 
-@media (min-width: 1024px) {
-  .lg\:text-2xl { font-size: var(--text-2xl); }
-}
-```
+<div style="background: white; padding: 24px; border-radius: 12px; border: 1px solid #E5E5E5; margin: 20px 0;">
+<h4 style="margin: 0 0 16px 0; font-size: 16px; font-weight: 600;">📋 Task List at Different Breakpoints</h4>
+<div style="display: flex; flex-direction: column; gap: 24px;">
+<div>
+<div style="font-size: 12px; font-weight: 500; color: #737373; margin-bottom: 8px; display: flex; align-items: center; gap: 8px;"><div style="width: 12px; height: 12px; background: #4299E1; border-radius: 2px;"></div>Mobile View (320px - 639px)</div>
+<div style="max-width: 400px; border: 2px solid #4299E1; border-radius: 8px; padding: 16px; background: #F7FAFC;">
+<div style="display: flex; flex-direction: column; gap: 12px;">
+<div style="display: flex; align-items: center; gap: 8px; padding: 12px; background: white; border-radius: 6px; border: 1px solid #E2E8F0;">
+<input type="checkbox" style="width: 16px; height: 16px; accent-color: #4299E1;">
+<div style="flex: 1; font-size: 14px; font-weight: 500;">Review documents</div>
+</div>
+<div style="display: flex; align-items: center; gap: 8px; padding: 12px; background: white; border-radius: 6px; border: 1px solid #E2E8F0;">
+<input type="checkbox" checked style="width: 16px; height: 16px; accent-color: #48BB78;">
+<div style="flex: 1; font-size: 14px; font-weight: 500; text-decoration: line-through; opacity: 0.7;">Team meeting</div>
+</div>
+<div style="font-size: 12px; color: #737373; text-align: center; margin-top: 8px;">Simple layout, minimal details</div>
+</div>
+</div>
+</div>
+<div>
+<div style="font-size: 12px; font-weight: 500; color: #737373; margin-bottom: 8px; display: flex; align-items: center; gap: 8px;"><div style="width: 12px; height: 12px; background: #48BB78; border-radius: 2px;"></div>Tablet View (640px - 1023px)</div>
+<div style="max-width: 600px; border: 2px solid #48BB78; border-radius: 8px; padding: 16px; background: #F0FFF4;">
+<div style="display: flex; flex-direction: column; gap: 12px;">
+<div style="display: flex; align-items: flex-start; gap: 12px; padding: 12px; background: white; border-radius: 6px; border: 1px solid #E2E8F0;">
+<input type="checkbox" style="margin-top: 2px; width: 16px; height: 16px; accent-color: #4299E1;">
+<div style="flex: 1;">
+<div style="font-size: 14px; font-weight: 500; margin-bottom: 4px;">Review quarterly documents</div>
+<div style="display: flex; gap: 8px; margin-bottom: 4px;">
+<span style="background: #4299E1; color: white; padding: 2px 8px; border-radius: 12px; font-size: 10px;">💼 Work</span>
+<span style="background: #F6AD55; color: white; padding: 2px 8px; border-radius: 12px; font-size: 10px;">🟡 Med</span>
+</div>
+</div>
+</div>
+<div style="display: flex; align-items: flex-start; gap: 12px; padding: 12px; background: white; border-radius: 6px; border: 1px solid #E2E8F0;">
+<input type="checkbox" checked style="margin-top: 2px; width: 16px; height: 16px; accent-color: #48BB78;">
+<div style="flex: 1;">
+<div style="font-size: 14px; font-weight: 500; margin-bottom: 4px; text-decoration: line-through; opacity: 0.7;">Team standup meeting</div>
+<div style="display: flex; gap: 8px; margin-bottom: 4px;">
+<span style="background: #48BB78; color: white; padding: 2px 8px; border-radius: 12px; font-size: 10px;">🏠 Personal</span>
+<span style="background: #48BB78; color: white; padding: 2px 8px; border-radius: 12px; font-size: 10px;">🟢 Low</span>
+</div>
+</div>
+</div>
+<div style="font-size: 12px; color: #737373; text-align: center; margin-top: 8px;">Shows categories and priority, more compact</div>
+</div>
+</div>
+</div>
+<div>
+<div style="font-size: 12px; font-weight: 500; color: #737373; margin-bottom: 8px; display: flex; align-items: center; gap: 8px;"><div style="width: 12px; height: 12px; background: #F6AD55; border-radius: 2px;"></div>Desktop View (1024px+)</div>
+<div style="border: 2px solid #F6AD55; border-radius: 8px; padding: 16px; background: #FFFBEB;">
+<div style="display: flex; flex-direction: column; gap: 12px;">
+<div style="display: flex; align-items: flex-start; gap: 12px; padding: 16px; background: white; border-radius: 8px; border: 1px solid #E2E8F0;">
+<input type="checkbox" style="margin-top: 2px; width: 16px; height: 16px; accent-color: #4299E1;">
+<div style="flex: 1;">
+<div style="font-size: 14px; font-weight: 500; margin-bottom: 4px;">Review quarterly presentation documents</div>
+<div style="display: flex; gap: 8px; align-items: center; margin-bottom: 4px;">
+<span style="background: #4299E1; color: white; padding: 2px 8px; border-radius: 12px; font-size: 11px; font-weight: 500;">💼 Work</span>
+<span style="background: #F6AD55; color: white; padding: 2px 8px; border-radius: 12px; font-size: 11px; font-weight: 500;">🟡 Medium</span>
+</div>
+<div style="font-size: 12px; color: #718096;">📅 Due: Today 3:00 PM • 👤 Assigned by Sarah Johnson</div>
+</div>
+<div style="display: flex; gap: 8px;">
+<button style="background: #4299E1; color: white; border: none; padding: 6px 12px; border-radius: 4px; font-size: 12px; cursor: pointer;">✏️ Edit</button>
+<button style="background: #F56565; color: white; border: none; padding: 6px 12px; border-radius: 4px; font-size: 12px; cursor: pointer;">🗑️ Delete</button>
+</div>
+</div>
+<div style="display: flex; align-items: flex-start; gap: 12px; padding: 16px; background: white; border-radius: 8px; border: 1px solid #E2E8F0; opacity: 0.8;">
+<input type="checkbox" checked style="margin-top: 2px; width: 16px; height: 16px; accent-color: #48BB78;">
+<div style="flex: 1;">
+<div style="font-size: 14px; font-weight: 500; margin-bottom: 4px; text-decoration: line-through; opacity: 0.7;">Attend weekly team standup meeting</div>
+<div style="display: flex; gap: 8px; align-items: center; margin-bottom: 4px;">
+<span style="background: #48BB78; color: white; padding: 2px 8px; border-radius: 12px; font-size: 11px; font-weight: 500;">🏠 Personal</span>
+<span style="background: #48BB78; color: white; padding: 2px 8px; border-radius: 12px; font-size: 11px; font-weight: 500;">🟢 Low</span>
+</div>
+<div style="font-size: 12px; color: #48BB78;">✅ Completed 2 hours ago • 👥 With Development Team</div>
+</div>
+<div style="display: flex; gap: 8px; opacity: 0.5;">
+<button style="background: #E5E5E5; color: #737373; border: none; padding: 6px 12px; border-radius: 4px; font-size: 12px;">↩️ Undo</button>
+<button style="background: #E5E5E5; color: #737373; border: none; padding: 6px 12px; border-radius: 4px; font-size: 12px;">🗑️ Delete</button>
+</div>
+</div>
+<div style="font-size: 12px; color: #737373; text-align: center; margin-top: 8px;">Full details with actions, assignments, and metadata</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+### Navigation Responsiveness
+
+<div style="background: white; padding: 24px; border-radius: 12px; border: 1px solid #E5E5E5; margin: 20px 0;">
+<h4 style="margin: 0 0 16px 0; font-size: 16px; font-weight: 600;">🧭 Navigation Patterns</h4>
+<div style="display: flex; flex-direction: column; gap: 20px;">
+<div>
+<div style="font-size: 12px; font-weight: 500; color: #737373; margin-bottom: 8px;">Mobile: Hamburger Menu</div>
+<div style="max-width: 320px; background: #F7FAFC; border: 1px solid #E2E8F0; border-radius: 8px; padding: 12px;">
+<div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;">
+<div style="font-size: 18px; font-weight: 600; color: #2D3748;">TaskMaster</div>
+<div style="width: 24px; height: 20px; display: flex; flex-direction: column; justify-content: space-between; cursor: pointer;">
+<div style="width: 100%; height: 3px; background: #4299E1; border-radius: 1px;"></div>
+<div style="width: 100%; height: 3px; background: #4299E1; border-radius: 1px;"></div>
+<div style="width: 100%; height: 3px; background: #4299E1; border-radius: 1px;"></div>
+</div>
+</div>
+<div style="background: white; border-radius: 6px; padding: 8px; border: 1px solid #E5E5E5;">
+<div style="font-size: 14px; color: #2D3748;">📋 My Tasks (12)</div>
+</div>
+</div>
+</div>
+<div>
+<div style="font-size: 12px; font-weight: 500; color: #737373; margin-bottom: 8px;">Tablet: Tab Navigation</div>
+<div style="max-width: 500px; background: #F7FAFC; border: 1px solid #E2E8F0; border-radius: 8px; padding: 12px;">
+<div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;">
+<div style="font-size: 20px; font-weight: 600; color: #2D3748;">TaskMaster</div>
+<div style="display: flex; gap: 16px;">
+<div style="padding: 8px 12px; background: #4299E1; color: white; border-radius: 6px; font-size: 14px; font-weight: 500;">📋 Tasks</div>
+<div style="padding: 8px 12px; color: #737373; font-size: 14px; font-weight: 500; cursor: pointer;">📊 Projects</div>
+<div style="padding: 8px 12px; color: #737373; font-size: 14px; font-weight: 500; cursor: pointer;">⚙️ Settings</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div style="font-size: 12px; font-weight: 500; color: #737373; margin-bottom: 8px;">Desktop: Full Navigation</div>
+<div style="background: #F7FAFC; border: 1px solid #E2E8F0; border-radius: 8px; padding: 16px;">
+<div style="display: flex; align-items: center; justify-content: space-between;">
+<div style="display: flex; align-items: center; gap: 32px;">
+<div style="font-size: 20px; font-weight: 600; color: #2D3748;">TaskMaster</div>
+<nav style="display: flex; gap: 24px;">
+<div style="display: flex; align-items: center; gap: 8px; padding: 8px 12px; background: #4299E1; color: white; border-radius: 6px; font-size: 14px; font-weight: 500;">📋 My Tasks <span style="background: rgba(255,255,255,0.3); color: white; padding: 2px 6px; border-radius: 10px; font-size: 12px;">12</span></div>
+<div style="display: flex; align-items: center; gap: 8px; padding: 8px 12px; color: #737373; font-size: 14px; font-weight: 500; cursor: pointer;">📊 Projects <span style="background: #E5E5E5; color: #737373; padding: 2px 6px; border-radius: 10px; font-size: 12px;">3</span></div>
+<div style="display: flex; align-items: center; gap: 8px; padding: 8px 12px; color: #737373; font-size: 14px; font-weight: 500; cursor: pointer;">📈 Analytics</div>
+<div style="display: flex; align-items: center; gap: 8px; padding: 8px 12px; color: #737373; font-size: 14px; font-weight: 500; cursor: pointer;">⚙️ Settings</div>
+</nav>
+</div>
+<div style="display: flex; align-items: center; gap: 12px;">
+<button style="background: #4299E1; color: white; border: none; padding: 8px 16px; border-radius: 6px; font-size: 14px; font-weight: 500; cursor: pointer;">+ New Task</button>
+<div style="width: 32px; height: 32px; background: #48BB78; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; cursor: pointer;">SJ</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 
 ---
 
@@ -935,30 +1003,150 @@ TaskMaster embodies **simplicity, focus, and productivity**. The design should f
 
 ### Focus Management
 
-```css
-/* Focus indicators */
-.focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 2px var(--color-primary-500);
-}
+<div style="background: white; padding: 24px; border-radius: 12px; border: 1px solid #E5E5E5; margin: 20px 0;">
+<h4 style="margin: 0 0 16px 0; font-size: 16px; font-weight: 600;">♿ Focus Indicators & Keyboard Navigation</h4>
+<div style="display: flex; flex-direction: column; gap: 20px;">
+<div>
+<div style="font-size: 12px; font-weight: 500; color: #737373; margin-bottom: 8px;">Button Focus States</div>
+<div style="display: flex; gap: 16px; align-items: center; flex-wrap: wrap;">
+<button style="background: #4299E1; color: white; border: none; padding: 12px 24px; border-radius: 6px; font-size: 14px; font-weight: 500; cursor: pointer;">Default</button>
+<button style="background: #4299E1; color: white; border: none; padding: 12px 24px; border-radius: 6px; font-size: 14px; font-weight: 500; cursor: pointer; box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.4);">Focused</button>
+<button style="background: #F56565; color: white; border: none; padding: 12px 24px; border-radius: 6px; font-size: 14px; font-weight: 500; cursor: pointer; box-shadow: 0 0 0 3px rgba(245, 101, 101, 0.4);">Delete Focused</button>
+</div>
+</div>
+<div>
+<div style="font-size: 12px; font-weight: 500; color: #737373; margin-bottom: 8px;">Input Field Focus</div>
+<div style="display: flex; gap: 16px; align-items: center; flex-wrap: wrap;">
+<input type="text" placeholder="Task title" style="padding: 10px 12px; border: 2px solid #E5E5E5; border-radius: 6px; font-size: 14px; min-width: 200px;">
+<input type="text" placeholder="Task title" style="padding: 10px 12px; border: 2px solid #4299E1; border-radius: 6px; font-size: 14px; min-width: 200px; box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.2);">
+</div>
+</div>
+<div>
+<div style="font-size: 12px; font-weight: 500; color: #737373; margin-bottom: 8px;">Tab Navigation Order</div>
+<div style="border: 2px dashed #CBD5E0; border-radius: 8px; padding: 16px; background: #F7FAFC;">
+<div style="display: flex; flex-direction: column; gap: 12px;">
+<div style="display: flex; align-items: center; gap: 8px;">
+<div style="width: 20px; height: 20px; background: #4299E1; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600;">1</div>
+<button style="background: #4299E1; color: white; border: none; padding: 8px 16px; border-radius: 4px; font-size: 12px; font-weight: 500;">+ New Task</button>
+</div>
+<div style="display: flex; align-items: center; gap: 8px;">
+<div style="width: 20px; height: 20px; background: #48BB78; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600;">2</div>
+<input type="text" placeholder="Task title..." style="padding: 8px 12px; border: 2px solid #E5E5E5; border-radius: 4px; font-size: 12px; flex: 1; max-width: 200px;">
+</div>
+<div style="display: flex; align-items: center; gap: 8px;">
+<div style="width: 20px; height: 20px; background: #F6AD55; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600;">3</div>
+<input type="checkbox" style="width: 16px; height: 16px; accent-color: #4299E1;">
+<span style="font-size: 12px; color: #2D3748;">Mark as completed</span>
+</div>
+<div style="display: flex; align-items: center; gap: 8px;">
+<div style="width: 20px; height: 20px; background: #F56565; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600;">4</div>
+<button style="background: #F56565; color: white; border: none; padding: 6px 12px; border-radius: 4px; font-size: 12px; font-weight: 500;">🗑️ Delete</button>
+</div>
+</div>
+<div style="font-size: 11px; color: #737373; text-align: center; margin-top: 8px;">Press Tab to navigate through elements in order</div>
+</div>
+</div>
+</div>
+</div>
 
-/* Skip links */
-.skip-link {
-  position: absolute;
-  top: -40px;
-  left: 6px;
-  background: var(--color-primary-600);
-  color: white;
-  padding: 8px;
-  text-decoration: none;
-  border-radius: var(--radius-md);
-  z-index: 1000;
-}
+### Skip Links & Keyboard Shortcuts
 
-.skip-link:focus {
-  top: 6px;
-}
-```
+<div style="background: white; padding: 24px; border-radius: 12px; border: 1px solid #E5E5E5; margin: 20px 0;">
+<h4 style="margin: 0 0 16px 0; font-size: 16px; font-weight: 600;">⌨️ Keyboard Navigation Features</h4>
+<div style="display: flex; flex-direction: column; gap: 16px;">
+<div>
+<div style="font-size: 12px; font-weight: 500; color: #737373; margin-bottom: 8px;">Skip Link (Press Tab to reveal)</div>
+<div style="position: relative; background: #F7FAFC; border: 2px dashed #CBD5E0; border-radius: 8px; padding: 16px; min-height: 60px;">
+<div style="position: absolute; top: 8px; left: 8px; background: #2C5282; color: white; padding: 8px 12px; border-radius: 4px; font-size: 12px; font-weight: 500; text-decoration: none; display: inline-block;">Skip to main content</div>
+<div style="font-size: 11px; color: #737373; text-align: center; margin-top: 24px;">Hidden until focused with Tab key</div>
+</div>
+</div>
+<div>
+<div style="font-size: 12px; font-weight: 500; color: #737373; margin-bottom: 8px;">Keyboard Shortcuts</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px;">
+<div style="display: flex; align-items: center; gap: 8px; padding: 8px; background: #F7FAFC; border-radius: 4px; border: 1px solid #E2E8F0;">
+<div style="background: #2D3748; color: white; padding: 2px 6px; border-radius: 3px; font-size: 11px; font-family: monospace; font-weight: 600;">N</div>
+<span style="font-size: 12px; color: #2D3748;">New Task</span>
+</div>
+<div style="display: flex; align-items: center; gap: 8px; padding: 8px; background: #F7FAFC; border-radius: 4px; border: 1px solid #E2E8F0;">
+<div style="background: #2D3748; color: white; padding: 2px 6px; border-radius: 3px; font-size: 11px; font-family: monospace; font-weight: 600;">ENTER</div>
+<span style="font-size: 12px; color: #2D3748;">Complete Task</span>
+</div>
+<div style="display: flex; align-items: center; gap: 8px; padding: 8px; background: #F7FAFC; border-radius: 4px; border: 1px solid #E2E8F0;">
+<div style="background: #2D3748; color: white; padding: 2px 6px; border-radius: 3px; font-size: 11px; font-family: monospace; font-weight: 600;">DEL</div>
+<span style="font-size: 12px; color: #2D3748;">Delete Task</span>
+</div>
+<div style="display: flex; align-items: center; gap: 8px; padding: 8px; background: #F7FAFC; border-radius: 4px; border: 1px solid #E2E8F0;">
+<div style="background: #2D3748; color: white; padding: 2px 6px; border-radius: 3px; font-size: 11px; font-family: monospace; font-weight: 600;">ESC</div>
+<span style="font-size: 12px; color: #2D3748;">Cancel/Close</span>
+</div>
+<div style="display: flex; align-items: center; gap: 8px; padding: 8px; background: #F7FAFC; border-radius: 4px; border: 1px solid #E2E8F0;">
+<div style="background: #2D3748; color: white; padding: 2px 6px; border-radius: 3px; font-size: 11px; font-family: monospace; font-weight: 600;">↑↓</div>
+<span style="font-size: 12px; color: #2D3748;">Navigate Tasks</span>
+</div>
+<div style="display: flex; align-items: center; gap: 8px; padding: 8px; background: #F7FAFC; border-radius: 4px; border: 1px solid #E2E8F0;">
+<div style="background: #2D3748; color: white; padding: 2px 6px; border-radius: 3px; font-size: 11px; font-family: monospace; font-weight: 600;">/</div>
+<span style="font-size: 12px; color: #2D3748;">Search Tasks</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+### Screen Reader Support
+
+<div style="background: white; padding: 24px; border-radius: 12px; border: 1px solid #E5E5E5; margin: 20px 0;">
+<h4 style="margin: 0 0 16px 0; font-size: 16px; font-weight: 600;">🔊 Screen Reader Friendly Elements</h4>
+<div style="display: flex; flex-direction: column; gap: 16px;">
+<div>
+<div style="font-size: 12px; font-weight: 500; color: #737373; margin-bottom: 8px;">Task with ARIA Labels</div>
+<div style="display: flex; align-items: flex-start; gap: 12px; padding: 16px; background: #F7FAFC; border-radius: 8px; border: 1px solid #E2E8F0;">
+<input type="checkbox" aria-label="Mark task complete" style="margin-top: 2px; width: 16px; height: 16px; accent-color: #4299E1;">
+<div style="flex: 1;">
+<div style="font-size: 14px; font-weight: 500; color: #2D3748; margin-bottom: 4px;">Prepare quarterly presentation</div>
+<div style="display: flex; gap: 8px; align-items: center; margin-bottom: 4px;">
+<span style="background: #4299E1; color: white; padding: 2px 8px; border-radius: 12px; font-size: 11px; font-weight: 500;" aria-label="Category: Work">💼 Work</span>
+<span style="background: #F56565; color: white; padding: 2px 8px; border-radius: 12px; font-size: 11px; font-weight: 500;" aria-label="Priority: High">🔴 High</span>
+</div>
+<div style="font-size: 12px; color: #718096;" aria-label="Due date">📅 Due: Today 2:00 PM</div>
+</div>
+<button aria-label="Edit task: Prepare quarterly presentation" style="background: #4299E1; color: white; border: none; padding: 6px 8px; border-radius: 4px; font-size: 12px; cursor: pointer;">✏️</button>
+</div>
+<div style="font-size: 11px; color: #737373; margin-top: 8px; padding: 8px; background: #EDF2F7; border-radius: 4px; border-left: 3px solid #4299E1;">
+<strong>Screen reader announces:</strong> "Checkbox, not checked, Mark task complete, Prepare quarterly presentation, Category: Work, Priority: High, Due: Today 2:00 PM, Edit task button"
+</div>
+</div>
+<div>
+<div style="font-size: 12px; font-weight: 500; color: #737373; margin-bottom: 8px;">Form with Descriptive Labels</div>
+<div style="background: #F7FAFC; border: 1px solid #E2E8F0; border-radius: 8px; padding: 16px;">
+<div style="display: flex; flex-direction: column; gap: 12px;">
+<div>
+<label style="display: block; font-size: 12px; font-weight: 500; color: #2D3748; margin-bottom: 4px;">Task Title *</label>
+<input type="text" placeholder="Enter a clear, specific task title" aria-describedby="title-help" style="width: 100%; padding: 10px 12px; border: 2px solid #E5E5E5; border-radius: 6px; font-size: 14px;">
+<div id="title-help" style="font-size: 11px; color: #737373;">This will be the main description shown in your task list</div>
+</div>
+<div>
+<label style="display: block; font-size: 12px; font-weight: 500; color: #2D3748; margin-bottom: 4px;">Priority Level</label>
+<div role="radiogroup" aria-labelledby="priority-label" style="display: flex; gap: 12px;">
+<label style="display: flex; align-items: center; gap: 4px; font-size: 12px; cursor: pointer;">
+<input type="radio" name="priority" value="low" style="accent-color: #48BB78;">
+🟢 Low
+</label>
+<label style="display: flex; align-items: center; gap: 4px; font-size: 12px; cursor: pointer;">
+<input type="radio" name="priority" value="medium" style="accent-color: #F6AD55;">
+🟡 Medium
+</label>
+<label style="display: flex; align-items: center; gap: 4px; font-size: 12px; cursor: pointer;">
+<input type="radio" name="priority" value="high" style="accent-color: #F56565;">
+🔴 High
+</label>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 
 ### Color Contrast
 
@@ -969,32 +1157,6 @@ All color combinations meet **WCAG AA** standards:
 
 ### Screen Reader Support
 
-```css
-/* Screen reader only text */
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
-}
-
-/* Screen reader only text that becomes visible on focus */
-.sr-only-focusable:focus {
-  position: static;
-  width: auto;
-  height: auto;
-  padding: inherit;
-  margin: inherit;
-  overflow: visible;
-  clip: auto;
-  white-space: normal;
-}
-```
 
 ---
 
@@ -1182,86 +1344,6 @@ All color combinations meet **WCAG AA** standards:
   
 </div>
 
-### CSS Implementation Examples
-
-```css
-/* TaskMaster Button Styles */
-.taskmaster-btn-primary {
-  background-color: var(--color-primary-500);
-  color: #fff;
-  padding: var(--space-3) var(--space-6);
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-sm);
-  font-family: var(--font-primary);
-  font-weight: 500;
-  border: none;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.taskmaster-btn-primary:hover {
-  background-color: var(--color-primary-600);
-  box-shadow: var(--shadow-md);
-  transform: translateY(-1px);
-}
-
-/* TaskMaster Input Styles */
-.taskmaster-input {
-  width: 100%;
-  height: 44px;
-  padding: var(--space-3) var(--space-4);
-  border: 2px solid var(--color-gray-200);
-  border-radius: var(--radius-md);
-  font-family: var(--font-primary);
-  font-size: 16px;
-  background-color: white;
-  transition: border-color 0.2s;
-}
-
-.taskmaster-input:focus {
-  border-color: var(--color-primary-500);
-  box-shadow: var(--shadow-primary-focus);
-  outline: none;
-}
-
-/* TaskMaster Badge Styles */
-.taskmaster-badge-work {
-  background-color: var(--color-category-work-light);
-  color: var(--color-category-work);
-  padding: var(--space-1) var(--space-3);
-  border-radius: var(--radius-full);
-  font-size: 12px;
-  font-weight: 500;
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-}
-
-.taskmaster-alert-success {
-  display: flex;
-  align-items: center;
-  padding: var(--space-3) var(--space-4);
-  background-color: #F0FDF4;
-  border: 1px solid #BBF7D0;
-  border-radius: var(--radius-md);
-  color: #14532D;
-  gap: var(--space-2);
-}
-
-.taskmaster-task-card {
-  background: white;
-  border: 1px solid var(--color-gray-200);
-  border-radius: var(--radius-lg);
-  padding: var(--space-4);
-  box-shadow: var(--shadow-sm);
-  transition: var(--transition-all);
-}
-
-.taskmaster-task-card:hover {
-  box-shadow: var(--shadow-md);
-  transform: translateY(-1px);
-}
-```
 
 ---
 
