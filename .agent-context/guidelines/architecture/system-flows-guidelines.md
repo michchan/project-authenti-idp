@@ -1,28 +1,62 @@
-# 📘 System flows guidelines
+# 📘 System Flows Guidelines
 
 ## 🧭 Purpose
-Capture how the system handles specific user journeys or backend-triggered workflows.
+Document high-level system flows for user journeys and key system workflows without implementation details. Flow documents should be organized in the `/architecture/flows` subdirectory.
 
 ## ✅ Must Include
-- Trigger (user action, timer, webhook, event)
-- Sequence of actions across services
-- API calls, pub/sub messages, DB updates
-- Error and retry handling
-- Observability points (logging, metrics)
+- **Flow Trigger**: User action or system event that initiates the flow
+- **Step-by-Step Timeline**: High-level sequence of actions across services
+- **Service Coordination**: Which services participate and their roles
+- **Sequence Diagram**: Visual representation of service interactions
+- **Error Scenarios**: High-level failure cases and recovery approaches
+
+## ❌ Avoid Including
+- **Implementation Code**: No actual code snippets or algorithms
+- **Detailed Performance Metrics**: Specific timing requirements or optimization details
+- **Testing Scenarios**: Test cases and testing procedures
+- **Observability Implementation**: Specific logging, monitoring, or metrics implementation
+- **Technology-Specific Details**: Database schemas, API endpoints, or tool configurations
 
 ## 🤔 Why It Matters
-- Aligns system behavior with UX expectations
-- Helps engineers plan coordination between components
-- Highlights where latency or failure may occur
+- **Architectural Understanding**: Shows how services work together to fulfill user needs
+- **Service Coordination**: Clarifies responsibilities and interaction patterns
+- **Flow Validation**: Ensures user journeys are properly supported by system design
+- **Error Planning**: Identifies potential failure points and recovery strategies
 
 ## 📐 How To Structure It
-1. **Trigger** – e.g., “user clicks ‘Buy Now’”
-2. **Step-by-Step Timeline** – include conditionals
-3. **Service Roles** – which services act and how
-4. **Diagram (Mermaid)** – sequence diagram preferred
-5. **Failure Scenarios** – what if A or B fails?
+
+### 1. **Flow Trigger**
+- Clear description of what initiates the flow
+- User actions, system events, or external triggers
+
+### 2. **Sequence Diagram** (Overview First)
+- Mermaid sequence diagram showing service interactions
+- Clear participant identification
+- Message flows between services
+- Include conditional flows and error paths
+- **Provides high-level overview before diving into details**
+
+### 3. **Step-by-Step Timeline** (Detailed Breakdown)
+- Numbered sequence of high-level actions
+- Service responsibilities for each step
+- Success responses and failure scenarios
+- Focus on "what happens" not "how it's implemented"
+
+### 4. **Service Roles**
+- Primary and secondary responsibilities for each service
+- Data flow descriptions between services
+- Coordination patterns and dependencies
+
+### 5. **Error Scenarios**
+- High-level failure cases and system responses
+- Recovery strategies and user experience
+- Service resilience and graceful degradation
 
 ## 🛠 Tips
-- Use simple language – avoid pseudo-code
-- Use real entity names (e.g., Order, Cart, Token)
-- List variants: retries, async handling, timeouts
+- **Focus on flow logic** rather than implementation details
+- **Use business language** that non-technical stakeholders can understand  
+- **Show service coordination** and responsibility boundaries clearly
+- **Include alternative paths** for different user choices or conditions
+- **Keep diagrams simple** and focused on major interactions
+- **Emphasize user experience** throughout the flow
+- **Plan for failures** with appropriate error handling approaches

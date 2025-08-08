@@ -1,36 +1,36 @@
 # 📘 System architecture guidelines
 
 ## 🧭 Purpose
-To define the high-level architecture that meets product and UX goals while providing a foundation for scalable, reliable implementation. This file helps align backend, frontend, and DevOps teams around core decisions.
+To define the high-level architecture that meets current product and UX requirements while remaining extendable and scalable. Focus on present needs rather than speculative future features. This file helps align backend, frontend, and DevOps teams around core decisions.
 
 ## ✅ Must Include
-- Overview of clients, services, databases, external dependencies
-- Key decisions about architecture style (monolith vs microservices, etc.)
-- High-level data flow and system boundaries
-- Communication types: sync/async, protocols, queues, brokers
-- Justification for major decisions, including rejected alternatives
+- System-level architecture diagram (frontend apps, backend services, databases, infrastructure)
+- Key architectural decisions based on current requirements
+- Brief explanation of component interactions and data flow
+- Justification for major decisions addressing present needs
 
 ## 🤔 Why It Matters
-- Prevents misalignment on system shape and scalability
-- Reduces risk of incompatible assumptions between teams
-- Informs tech stack selection and service decomposition
+- Prevents misalignment on current system requirements and boundaries
+- Reduces risk of overengineering for hypothetical future needs
+- Informs present tech stack selection and service design
+- Ensures architecture addresses actual user and business requirements
 
 ## 📐 How To Structure It
 1. **Context Overview**  
    - Summarize product goals and expected scale
-2. **Component Map**  
-   - List all major system parts (frontend apps, APIs, DBs, third-party services)
-3. **Communication Plan**  
-   - Detail how components talk (REST, RPC, events)
-4. **Justification Notes**  
-   - Why this structure, trade-offs considered
-5. **Risks & Uncertainties**  
-   - Open questions, assumptions made
-6. **Diagrams**  
-   - Include Mermaid/system diagrams for clarity
+2. **Architecture Diagram**  
+   - System-level architecture diagram focusing on system component/service level (web application, backend services, database, cache instances)
+   - Should showcase frontend application and backend services with appropriate complexity
+   - Focus on system architecture rather than internal implementation details
+3. **Architecture Explanation**  
+   - Brief explanation of how components interact, describing the architecture diagram
+   - Focus on system-level interactions and data flow
 
 ## 🛠 Tips
-- When unsure, model with the simplest architecture and evolve
-- Include “future evolution” if decisions may change with scale
-- Document architectural constraints from stakeholders (e.g., compliance, cost)
+- Focus on current requirements rather than speculative future needs
+- Choose the simplest architecture that meets present requirements while remaining extendable
+- Avoid overengineering for hypothetical scaling scenarios
+- Base decisions on actual user needs and business requirements
+- Keep architecture explanations concise and focused on current system interactions
+- Document architectural constraints based on present stakeholder requirements
 

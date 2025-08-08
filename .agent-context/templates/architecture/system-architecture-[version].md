@@ -19,29 +19,49 @@ Summarize the overall system architecture to help frontend and backend engineers
 | | | |
 | | | |
 
-## Architecture Diagram (Placeholder)
+## Architecture Diagram
 
-> Add a mermaid diagram or embed an SVG image here
+> System-level architecture diagram focusing on system component/service level (web application, backend services, database, cache instances). Should showcase frontend application and backend services with simplified architecture.
 
 ```mermaid
-graph LR
-  subgraph Clients
-    WebApp[Web Client]
-    MobileApp[Mobile App]
-    AdminPanel[Admin Portal]
-  end
+graph TB
+    subgraph "Client Tier"
+        WebApp[Web Application - PWA]
+    end
+    
+    subgraph "Backend Services"
+        subgraph "API Layer"
+            Gateway[API Gateway]
+        end
+        
+        subgraph "Application Services"
+            AuthService[Authentication Service]
+            CoreAPI[Core API Service]
+        end
+        
+        subgraph "Data Layer"
+            Database[(Primary Database)]
+            Cache[(Redis Cache)]
+        end
+    end
+    
+    subgraph "Infrastructure"
+        CDN[Content Delivery Network]
+        Monitoring[Monitoring & Logging]
+    end
+    
+    WebApp --> CDN
+    WebApp --> Gateway
+    
+    Gateway --> AuthService
+    Gateway --> CoreAPI
+    
+    AuthService --> Database
+    CoreAPI --> Database
+    CoreAPI --> Cache
+    
+    AuthService --> Monitoring
+    CoreAPI --> Monitoring
+```
 
-  subgraph Backend
-    APIGateway[API Gateway]
-    AuthService[Auth Service]
-    CoreService[Core Business Service]
-    SecondaryService[Secondary Service]
-  end
-
-  WebApp --> APIGateway
-  AdminPanel --> APIGateway
-  MobileApp --> APIGateway
-
-  APIGateway --> AuthService
-  APIGateway --> CoreService
-  APIGateway --> SecondaryService
+> Brief explanation of how components interact, describing the architecture diagram. Focus on system-level interactions and data flow.
