@@ -68,6 +68,7 @@ Comprehensive guidance for creating effective component libraries using the UI c
 - **Include ARIA attributes**: Required roles, labels, states for accessibility
 - **Follow naming conventions**: Consistent class naming (BEM, utility-first, etc.)
 - **Provide clean markup**: Well-formatted, readable HTML examples
+- **No space lines in HTML**: HTML rendered in markdown should not contain whole space lines (empty lines) within HTML blocks
 
 ### CSS Standards
 - **Use design system tokens**: Consistent colors, spacing, typography

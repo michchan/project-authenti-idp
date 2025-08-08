@@ -263,22 +263,16 @@ TaskMaster embodies **simplicity, focus, and productivity**. The design should f
 <div style="margin: 20px 0; padding: 20px; background: white; border: 1px solid #E5E5E5; border-radius: 8px;">
   <h1 style="font-size: 1.875rem; font-weight: 700; line-height: 1.25; color: #171717; margin: 0 0 16px 0;">TaskMaster Dashboard</h1>
   <div style="font-size: 12px; color: #737373; margin-bottom: 16px;">HEADING 1 - 30PX, BOLD</div>
-  
   <h2 style="font-size: 1.5rem; font-weight: 600; line-height: 1.25; color: #262626; margin: 0 0 12px 0;">Today's Tasks</h2>
   <div style="font-size: 12px; color: #737373; margin-bottom: 16px;">HEADING 2 - 24PX, SEMIBOLD</div>
-  
   <h3 style="font-size: 1.25rem; font-weight: 600; line-height: 1.5; color: #262626; margin: 0 0 8px 0;">Work Category</h3>
   <div style="font-size: 12px; color: #737373; margin-bottom: 16px;">HEADING 3 - 20PX, SEMIBOLD</div>
-  
   <p style="font-size: 1.125rem; font-weight: 400; line-height: 1.5; color: #404040; margin: 0 0 8px 0;">Complete your quarterly presentation for the team meeting on Friday.</p>
   <div style="font-size: 12px; color: #737373; margin-bottom: 16px;">BODY LARGE - 18PX, NORMAL</div>
-  
   <p style="font-size: 1rem; font-weight: 400; line-height: 1.5; color: #404040; margin: 0 0 8px 0;">This is the standard body text used throughout the TaskMaster interface for descriptions and content.</p>
   <div style="font-size: 12px; color: #737373; margin-bottom: 16px;">BODY NORMAL - 16PX, NORMAL</div>
-  
   <p style="font-size: 0.875rem; font-weight: 400; line-height: 1.5; color: #525252; margin: 0 0 8px 0;">Small text for secondary information, metadata, and form helper text.</p>
   <div style="font-size: 12px; color: #737373; margin-bottom: 16px;">BODY SMALL - 14PX, NORMAL</div>
-  
   <div style="font-size: 0.75rem; font-weight: 500; line-height: 1.5; color: #737373; text-transform: uppercase; letter-spacing: 0.05em; margin: 0 0 4px 0;">TASK CATEGORY</div>
   <div style="font-size: 12px; color: #737373;">CAPTION - 12PX, MEDIUM, UPPERCASE</div>
 </div>
@@ -370,7 +364,6 @@ TaskMaster embodies **simplicity, focus, and productivity**. The design should f
 ### Spacing Examples
 
 <div style="background: white; padding: 24px; border-radius: 12px; border: 1px solid #E5E5E5; margin: 20px 0;">
-  
   <div style="margin-bottom: 16px;">
     <div style="display: flex; align-items: center; margin-bottom: 8px;">
       <div style="width: 4px; height: 20px; background: #3182CE; margin-right: 12px;"></div>
@@ -378,7 +371,6 @@ TaskMaster embodies **simplicity, focus, and productivity**. The design should f
     </div>
     <div style="font-size: 12px; color: #737373; margin-left: 28px;">Used for: Icon gaps, border width</div>
   </div>
-  
   <div style="margin-bottom: 16px;">
     <div style="display: flex; align-items: center; margin-bottom: 8px;">
       <div style="width: 8px; height: 20px; background: #3182CE; margin-right: 12px;"></div>
@@ -386,7 +378,6 @@ TaskMaster embodies **simplicity, focus, and productivity**. The design should f
     </div>
     <div style="font-size: 12px; color: #737373; margin-left: 28px;">Used for: Button groups, small gaps</div>
   </div>
-  
   <div style="margin-bottom: 16px;">
     <div style="display: flex; align-items: center; margin-bottom: 8px;">
       <div style="width: 16px; height: 20px; background: #3182CE; margin-right: 12px;"></div>
@@ -394,7 +385,6 @@ TaskMaster embodies **simplicity, focus, and productivity**. The design should f
     </div>
     <div style="font-size: 12px; color: #737373; margin-left: 28px;">Used for: Form fields, task item padding</div>
   </div>
-  
   <div style="margin-bottom: 16px;">
     <div style="display: flex; align-items: center; margin-bottom: 8px;">
       <div style="width: 24px; height: 20px; background: #3182CE; margin-right: 12px;"></div>
@@ -402,7 +392,6 @@ TaskMaster embodies **simplicity, focus, and productivity**. The design should f
     </div>
     <div style="font-size: 12px; color: #737373; margin-left: 28px;">Used for: Card padding, section gaps</div>
   </div>
-  
   <div style="margin-bottom: 0;">
     <div style="display: flex; align-items: center; margin-bottom: 8px;">
       <div style="width: 32px; height: 20px; background: #3182CE; margin-right: 12px;"></div>
@@ -491,35 +480,30 @@ TaskMaster embodies **simplicity, focus, and productivity**. The design should f
 
 <div style="background: #FAFAFA; padding: 24px; border-radius: 12px; margin: 20px 0;">
   <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
-    
     <!-- Small Shadow -->
     <div style="text-align: center;">
       <div style="width: 120px; height: 80px; background: white; border-radius: 8px; box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); margin: 0 auto 12px auto; display: flex; align-items: center; justify-content: center; font-size: 14px; color: #737373;">Small</div>
       <div style="font-size: 14px; font-weight: 500; margin-bottom: 4px;">shadow-sm</div>
       <div style="font-size: 12px; color: #737373;">Task items, badges</div>
     </div>
-    
     <!-- Medium Shadow -->
     <div style="text-align: center;">
       <div style="width: 120px; height: 80px; background: white; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); margin: 0 auto 12px auto; display: flex; align-items: center; justify-content: center; font-size: 14px; color: #737373;">Medium</div>
       <div style="font-size: 14px; font-weight: 500; margin-bottom: 4px;">shadow-md</div>
       <div style="font-size: 12px; color: #737373;">Cards, dropdowns</div>
     </div>
-    
     <!-- Large Shadow -->
     <div style="text-align: center;">
       <div style="width: 120px; height: 80px; background: white; border-radius: 8px; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); margin: 0 auto 12px auto; display: flex; align-items: center; justify-content: center; font-size: 14px; color: #737373;">Large</div>
       <div style="font-size: 14px; font-weight: 500; margin-bottom: 4px;">shadow-lg</div>
       <div style="font-size: 12px; color: #737373;">Hover states, popups</div>
     </div>
-    
     <!-- Modal Shadow -->
     <div style="text-align: center;">
       <div style="width: 120px; height: 80px; background: white; border-radius: 8px; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); margin: 0 auto 12px auto; display: flex; align-items: center; justify-content: center; font-size: 14px; color: #737373;">Modal</div>
       <div style="font-size: 14px; font-weight: 500; margin-bottom: 4px;">shadow-2xl</div>
       <div style="font-size: 12px; color: #737373;">Modals, overlays</div>
     </div>
-    
   </div>
 </div>
 
@@ -579,43 +563,36 @@ TaskMaster embodies **simplicity, focus, and productivity**. The design should f
 
 <div style="background: white; padding: 24px; border-radius: 12px; border: 1px solid #E5E5E5; margin: 20px 0;">
   <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 20px;">
-    
     <div style="text-align: center;">
       <div style="width: 80px; height: 60px; background: #EBF8FF; border: 2px solid #3182CE; border-radius: 0; margin: 0 auto 12px auto; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #3182CE;">None</div>
       <div style="font-size: 14px; font-weight: 500; margin-bottom: 4px;">0px</div>
       <div style="font-size: 12px; color: #737373;">Sharp edges</div>
     </div>
-    
     <div style="text-align: center;">
       <div style="width: 80px; height: 60px; background: #EBF8FF; border: 2px solid #3182CE; border-radius: 4px; margin: 0 auto 12px auto; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #3182CE;">Small</div>
       <div style="font-size: 14px; font-weight: 500; margin-bottom: 4px;">4px</div>
       <div style="font-size: 12px; color: #737373;">Badges, tags</div>
     </div>
-    
     <div style="text-align: center;">
       <div style="width: 80px; height: 60px; background: #EBF8FF; border: 2px solid #3182CE; border-radius: 6px; margin: 0 auto 12px auto; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #3182CE;">Medium</div>
       <div style="font-size: 14px; font-weight: 500; margin-bottom: 4px;">6px</div>
       <div style="font-size: 12px; color: #737373;">Buttons, inputs</div>
     </div>
-    
     <div style="text-align: center;">
       <div style="width: 80px; height: 60px; background: #EBF8FF; border: 2px solid #3182CE; border-radius: 8px; margin: 0 auto 12px auto; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #3182CE;">Large</div>
       <div style="font-size: 14px; font-weight: 500; margin-bottom: 4px;">8px</div>
       <div style="font-size: 12px; color: #737373;">Cards, modals</div>
     </div>
-    
     <div style="text-align: center;">
       <div style="width: 80px; height: 60px; background: #EBF8FF; border: 2px solid #3182CE; border-radius: 12px; margin: 0 auto 12px auto; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #3182CE;">XL</div>
       <div style="font-size: 14px; font-weight: 500; margin-bottom: 4px;">12px</div>
       <div style="font-size: 12px; color: #737373;">Large cards</div>
     </div>
-    
     <div style="text-align: center;">
       <div style="width: 80px; height: 60px; background: #EBF8FF; border: 2px solid #3182CE; border-radius: 9999px; margin: 0 auto 12px auto; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #3182CE;">Full</div>
       <div style="font-size: 14px; font-weight: 500; margin-bottom: 4px;">∞</div>
       <div style="font-size: 12px; color: #737373;">Pills, avatars</div>
     </div>
-    
   </div>
 </div>
 
@@ -655,7 +632,6 @@ TaskMaster embodies **simplicity, focus, and productivity**. The design should f
 ### Icon Examples
 
 <div style="background: white; padding: 24px; border-radius: 12px; border: 1px solid #E5E5E5; margin: 20px 0;">
-  
   <div style="margin-bottom: 24px;">
     <h4 style="margin: 0 0 16px 0; font-size: 16px; font-weight: 600; color: #171717;">🎯 Task Management Icons</h4>
     <div style="display: flex; gap: 24px; flex-wrap: wrap;">

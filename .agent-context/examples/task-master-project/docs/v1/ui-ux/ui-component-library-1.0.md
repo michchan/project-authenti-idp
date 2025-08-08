@@ -99,7 +99,6 @@ This document defines reusable UI components for TaskMaster, a personal task man
       <p style="margin: 0; font-size: 14px; color: #A3A3A3;">✅ Completed 2 hours ago</p>
     </div>
   </div>
-  
   <!-- Active Task -->
   <div style="background: white; border: 1px solid #E5E5E5; border-radius: 8px; padding: 16px; margin-bottom: 12px; display: flex; align-items: flex-start; gap: 12px; transition: all 0.2s; box-shadow: 0 1px 2px rgba(0,0,0,0.05);">
     <input type="checkbox" style="margin-top: 2px; width: 18px; height: 18px; accent-color: #3182CE; cursor: pointer;" />
@@ -117,7 +116,6 @@ This document defines reusable UI components for TaskMaster, a personal task man
       <button style="background: none; border: none; padding: 4px; cursor: pointer; color: #737373; font-size: 18px;" title="More actions">⋮</button>
     </div>
   </div>
-  
   <!-- Overdue Task -->
   <div style="background: #FEF2F2; border: 1px solid #FECACA; border-left: 4px solid #EF4444; border-radius: 8px; padding: 16px; display: flex; align-items: flex-start; gap: 12px; box-shadow: 0 1px 2px rgba(0,0,0,0.05);">
     <input type="checkbox" style="margin-top: 2px; width: 18px; height: 18px; accent-color: #EF4444; cursor: pointer;" />
@@ -161,7 +159,6 @@ This document defines reusable UI components for TaskMaster, a personal task man
     </div>
     <p style="margin: 0; font-size: 14px; color: #525252; line-height: 1.5;">Plan Q2 objectives, allocate resources, and schedule team meetings for upcoming project milestones.</p>
   </div>
-  
   <div style="padding: 16px 24px;">
     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
       <span style="font-size: 14px; color: #737373; font-weight: 500;">Progress</span>
@@ -175,7 +172,6 @@ This document defines reusable UI components for TaskMaster, a personal task man
       <span style="color: #F59E0B; font-weight: 500;">⏰ 2 days left</span>
     </div>
   </div>
-  
   <div style="padding: 16px 24px 20px 24px; background-color: #FAFAFA; display: flex; gap: 8px;">
     <button style="background-color: #3182CE; color: white; border: none; padding: 8px 16px; border-radius: 6px; font-weight: 500; cursor: pointer; font-size: 14px; flex: 1;">Open Task</button>
     <button style="background-color: #22C55E; color: white; border: none; padding: 8px 16px; border-radius: 6px; font-weight: 500; cursor: pointer; font-size: 14px;">✓ Complete</button>
@@ -291,12 +287,10 @@ This document defines reusable UI components for TaskMaster, a personal task man
     <div style="width: 12px; height: 12px; background-color: #EF4444; border-radius: 50%;"></div>
     <span style="font-size: 14px; font-weight: 500; color: #171717;">High Priority</span>
   </div>
-  
   <div style="display: flex; align-items: center; gap: 8px;">
     <div style="width: 12px; height: 12px; background-color: #F59E0B; border-radius: 50%;"></div>
     <span style="font-size: 14px; font-weight: 500; color: #171717;">Medium Priority</span>
   </div>
-  
   <div style="display: flex; align-items: center; gap: 8px;">
     <div style="width: 12px; height: 12px; background-color: #22C55E; border-radius: 50%;"></div>
     <span style="font-size: 14px; font-weight: 500; color: #171717;">Low Priority</span>
@@ -332,7 +326,6 @@ This document defines reusable UI components for TaskMaster, a personal task man
   <div style="background-color: #E5E5E5; border-radius: 8px; height: 12px; overflow: hidden; margin-bottom: 16px;">
     <div style="background: linear-gradient(90deg, #22C55E 0%, #16A34A 100%); height: 100%; width: 75%; border-radius: 8px; transition: width 0.3s ease;"></div>
   </div>
-  
   <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
     <span style="font-size: 14px; color: #404040; font-weight: 500;">Weekly Goal</span>
     <span style="font-size: 14px; color: #737373;">24 of 35 tasks</span>
@@ -340,7 +333,6 @@ This document defines reusable UI components for TaskMaster, a personal task man
   <div style="background-color: #E5E5E5; border-radius: 8px; height: 12px; overflow: hidden; margin-bottom: 16px;">
     <div style="background: linear-gradient(90deg, #3182CE 0%, #4299E1 100%); height: 100%; width: 69%; border-radius: 8px; transition: width 0.3s ease;"></div>
   </div>
-  
   <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
     <span style="font-size: 14px; color: #404040; font-weight: 500;">Project Completion</span>
     <span style="font-size: 14px; color: #737373;">3 of 7 subtasks</span>
@@ -471,7 +463,6 @@ This document defines reusable UI components for TaskMaster, a personal task man
       <span style="font-size: 16px; color: #171717; font-weight: 500;">Enable dark mode</span>
     </label>
   </div>
-  
   <!-- Disabled Toggle -->
   <div style="margin-bottom: 16px;">
     <label style="display: flex; align-items: center; cursor: pointer; gap: 12px;">
@@ -482,7 +473,6 @@ This document defines reusable UI components for TaskMaster, a personal task man
       <span style="font-size: 16px; color: #171717;">Show completed tasks</span>
     </label>
   </div>
-  
   <!-- With Description -->
   <div style="margin-bottom: 16px;">
     <label style="display: flex; align-items: flex-start; cursor: pointer; gap: 12px;">

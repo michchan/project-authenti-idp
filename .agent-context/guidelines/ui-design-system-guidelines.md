@@ -142,6 +142,7 @@ Comprehensive guidance for creating effective design systems using the UI design
 - **Real component examples**: Shadows on actual buttons, cards, modals
 - **Interactive states**: How shadows change on hover or focus
 - **Background considerations**: How shadows look on different backgrounds
+- **No space lines in HTML**: HTML rendered in markdown should not contain whole space lines (empty lines) within HTML blocks
 
 ### Implementation Details
 - **CSS specifications**: Exact box-shadow values for each level
