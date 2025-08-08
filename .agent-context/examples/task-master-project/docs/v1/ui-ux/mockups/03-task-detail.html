@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Details: Prepare quarterly presentation - TaskMaster</title>
+    <meta name="description" content="View and edit detailed information for your TaskMaster tasks including subtasks, progress, and activity history.">
+    <link rel="stylesheet" href="assets/css/taskmaster.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="page-wrapper">
+    <!-- Skip Link for Accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- Header -->
+    <header class="header" role="banner">
+        <div class="container header-container">
+            <a href="01-landing.html" class="logo" aria-label="TaskMaster Home">
+                🎯 TaskMaster
+            </a>
+            
+            <nav class="nav" role="navigation" aria-label="Main navigation">
+                <a href="02-dashboard.html" class="nav-link">
+                    🏠 Dashboard
+                </a>
+                <a href="04-analytics.html" class="nav-link">
+                    📊 Analytics
+                </a>
+                <a href="05-settings.html" class="nav-link">
+                    ⚙️ Settings
+                </a>
+            </nav>
+            
+            <div class="user-menu">
+                <button class="btn btn-secondary theme-toggle" aria-label="Switch to dark mode">
+                    <span class="theme-icon">🌙</span>
+                </button>
+                <div class="user-profile" style="display: flex; align-items: center; gap: 8px; padding: 8px 12px; background: var(--color-surface); border-radius: var(--radius-md); border: 1px solid var(--color-border);">
+                    <div style="width: 32px; height: 32px; background: linear-gradient(135deg, #4299E1, #805AD5); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; font-size: 14px;">
+                        SJ
+                    </div>
+                    <div style="text-align: left;">
+                        <div style="font-size: 14px; font-weight: 500; color: var(--color-text-primary);">Sarah Johnson</div>
+                        <div style="font-size: 12px; color: var(--color-text-muted);">Productivity Champion</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main id="main-content" class="main-content" role="main">
+        <div class="container">
+            
+            <!-- Back Navigation -->
+            <nav aria-label="Breadcrumb" style="margin-bottom: 20px;">
+                <div style="display: flex; align-items: center; gap: 8px; color: var(--color-text-muted); font-size: 14px;">
+                    <a href="02-dashboard.html" class="nav-link" style="color: var(--color-primary); text-decoration: none;">← Back to Dashboard</a>
+                    <span>/</span>
+                    <span>Task Details</span>
+                </div>
+            </nav>
+            
+            <!-- Task Header -->
+            <section class="task-header" style="margin-bottom: 30px;">
+                <div class="card" style="padding: 30px;">
+                    <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; margin-bottom: 20px;">
+                        <div style="flex: 1;">
+                            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+                                <input type="checkbox" class="task-checkbox" style="width: 24px; height: 24px;">
+                                <h1 style="font-size: 28px; font-weight: 600; color: var(--color-text-primary); margin: 0;">
+                                    Prepare quarterly presentation slides
+                                </h1>
+                            </div>
+                            
+                            <div style="display: flex; align-items: center; gap: 16px; flex-wrap: wrap; margin-bottom: 16px;">
+                                <div class="task-status" style="display: flex; align-items: center; gap: 8px; padding: 6px 12px; background: rgba(246, 173, 85, 0.1); border-radius: var(--radius-md); font-size: 14px; font-weight: 500; color: var(--color-warning);">
+                                    ⏳ In Progress
+                                </div>
+                                <span class="category-badge category-work" style="font-size: 14px;">💼 Work</span>
+                                <span class="priority-badge priority-high" style="font-size: 14px;">🔴 High Priority</span>
+                            </div>
+                            
+                            <div style="display: flex; align-items: center; gap: 24px; flex-wrap: wrap; color: var(--color-text-muted); font-size: 14px;">
+                                <div style="display: flex; align-items: center; gap: 6px;">
+                                    <span>📅</span>
+                                    <span><strong>Due:</strong> Today, March 20, 2024 at 2:00 PM</span>
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 6px;">
+                                    <span>📝</span>
+                                    <span><strong>Created:</strong> March 8, 2024</span>
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 6px;">
+                                    <span>👤</span>
+                                    <span><strong>Assigned to:</strong> Sarah Johnson</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div style="display: flex; gap: 8px; align-items: flex-start;">
+                            <button class="btn btn-secondary" data-modal="edit-task-modal">
+                                ✏️ Edit
+                            </button>
+                            <div class="dropdown" style="position: relative;">
+                                <button class="btn btn-secondary" onclick="toggleDropdown('task-actions')">
+                                    ⋮ More
+                                </button>
+                                <div id="task-actions" class="dropdown-menu" style="position: absolute; top: 100%; right: 0; background: var(--color-bg); border: 1px solid var(--color-border); border-radius: var(--radius-md); box-shadow: var(--shadow-lg); padding: 8px; min-width: 160px; z-index: 10; display: none;">
+                                    <button class="dropdown-item" style="width: 100%; text-align: left; padding: 8px 12px; border: none; background: none; cursor: pointer; border-radius: var(--radius-sm);">🔄 Mark Complete</button>
+                                    <button class="dropdown-item" style="width: 100%; text-align: left; padding: 8px 12px; border: none; background: none; cursor: pointer; border-radius: var(--radius-sm);">🗂️ Duplicate Task</button>
+                                    <button class="dropdown-item" style="width: 100%; text-align: left; padding: 8px 12px; border: none; background: none; cursor: pointer; border-radius: var(--radius-sm);">📤 Share Task</button>
+                                    <hr style="border: none; border-top: 1px solid var(--color-border); margin: 8px 0;">
+                                    <button class="dropdown-item" style="width: 100%; text-align: left; padding: 8px 12px; border: none; background: none; cursor: pointer; border-radius: var(--radius-sm); color: var(--color-error);">🗑️ Delete Task</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Tags -->
+                    <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                        <span class="tag" style="background: var(--color-surface); color: var(--color-text-secondary); padding: 4px 8px; border-radius: var(--radius-sm); font-size: 12px; border: 1px solid var(--color-border);">#presentation</span>
+                        <span class="tag" style="background: var(--color-surface); color: var(--color-text-secondary); padding: 4px 8px; border-radius: var(--radius-sm); font-size: 12px; border: 1px solid var(--color-border);">#quarterly</span>
+                        <span class="tag" style="background: var(--color-surface); color: var(--color-text-secondary); padding: 4px 8px; border-radius: var(--radius-sm); font-size: 12px; border: 1px solid var(--color-border);">#team-meeting</span>
+                        <span class="tag" style="background: var(--color-surface); color: var(--color-text-secondary); padding: 4px 8px; border-radius: var(--radius-sm); font-size: 12px; border: 1px solid var(--color-border);">#revenue</span>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Task Content -->
+            <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 30px;">
+                
+                <!-- Main Content Column -->
+                <div>
+                    
+                    <!-- Description -->
+                    <section class="task-description" style="margin-bottom: 30px;">
+                        <div class="card">
+                            <div class="card-header">
+                                <h2 class="card-title">📝 Description</h2>
+                                <button class="btn btn-sm btn-secondary">✏️ Edit</button>
+                            </div>
+                            <div style="line-height: 1.6; color: var(--color-text-secondary);">
+                                <p style="margin-bottom: 16px;">Create comprehensive presentation covering Q1 performance and Q2 strategic initiatives for the quarterly team meeting. This presentation will be delivered to the leadership team and should include:</p>
+                                <ul style="margin: 0 0 16px 20px;">
+                                    <li>Q1 performance metrics and key KPIs</li>
+                                    <li>Team accomplishments and major milestones</li>
+                                    <li>Challenges faced and solutions implemented</li>
+                                    <li>Q2 goals and strategic initiatives</li>
+                                    <li>Resource requirements and budget requests</li>
+                                    <li>Risk assessment and mitigation strategies</li>
+                                </ul>
+                                <p style="margin: 0;"><strong>Expected Duration:</strong> 45 minutes presentation + 15 minutes Q&A</p>
+                            </div>
+                        </div>
+                    </section>
+                    
+                    <!-- Subtasks -->
+                    <section class="subtasks" style="margin-bottom: 30px;">
+                        <div class="card">
+                            <div class="card-header">
+                                <h2 class="card-title">
+                                    ✅ Subtasks
+                                    <span style="font-size: 14px; font-weight: normal; color: var(--color-text-muted);">(3 of 5 complete)</span>
+                                </h2>
+                                <button class="btn btn-sm btn-primary" data-modal="new-subtask-modal">+ Add Subtask</button>
+                            </div>
+                            
+                            <div class="task-list" style="margin-top: 16px;">
+                                <div class="task-item" style="padding: 12px 0; border: none; background: none;">
+                                    <input type="checkbox" class="task-checkbox" checked>
+                                    <div class="task-content">
+                                        <div class="task-title completed">Gather Q1 performance data from analytics dashboard</div>
+                                        <div style="font-size: 12px; color: var(--color-text-muted); margin-top: 4px;">
+                                            Completed on March 12, 2024
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="task-item" style="padding: 12px 0; border: none; background: none;">
+                                    <input type="checkbox" class="task-checkbox" checked>
+                                    <div class="task-content">
+                                        <div class="task-title completed">Interview team leads for accomplishments and challenges</div>
+                                        <div style="font-size: 12px; color: var(--color-text-muted); margin-top: 4px;">
+                                            Completed on March 15, 2024
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="task-item" style="padding: 12px 0; border: none; background: none;">
+                                    <input type="checkbox" class="task-checkbox" checked>
+                                    <div class="task-content">
+                                        <div class="task-title completed">Create slide deck template and structure</div>
+                                        <div style="font-size: 12px; color: var(--color-text-muted); margin-top: 4px;">
+                                            Completed on March 16, 2024
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="task-item" style="padding: 12px 0; border: none; background: none; border-left: 3px solid var(--color-warning); padding-left: 12px;">
+                                    <input type="checkbox" class="task-checkbox">
+                                    <div class="task-content">
+                                        <div class="task-title">Prepare Q2 goals and strategic initiatives section</div>
+                                        <div style="font-size: 12px; color: var(--color-text-muted); margin-top: 4px;">
+                                            In progress - Due today by 1:00 PM
+                                        </div>
+                                    </div>
+                                    <div class="task-actions">
+                                        <button class="btn btn-sm btn-secondary">✏️</button>
+                                    </div>
+                                </div>
+                                
+                                <div class="task-item" style="padding: 12px 0; border: none; background: none;">
+                                    <input type="checkbox" class="task-checkbox">
+                                    <div class="task-content">
+                                        <div class="task-title">Practice presentation timing and flow</div>
+                                        <div style="font-size: 12px; color: var(--color-text-muted); margin-top: 4px;">
+                                            Scheduled for today at 1:30 PM
+                                        </div>
+                                    </div>
+                                    <div class="task-actions">
+                                        <button class="btn btn-sm btn-secondary">✏️</button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Progress Bar -->
+                            <div style="margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--color-border);">
+                                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                                    <span style="font-size: 14px; font-weight: 500;">Subtask Progress</span>
+                                    <span style="font-size: 14px; color: var(--color-text-muted);">60%</span>
+                                </div>
+                                <div style="width: 100%; height: 8px; background: var(--color-surface); border-radius: var(--radius-full); overflow: hidden;">
+                                    <div style="width: 60%; height: 100%; background: var(--color-success); border-radius: var(--radius-full);"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    
+                    <!-- Comments/Notes -->
+                    <section class="task-comments" style="margin-bottom: 30px;">
+                        <div class="card">
+                            <div class="card-header">
+                                <h2 class="card-title">💬 Notes & Comments</h2>
+                            </div>
+                            
+                            <div style="margin-top: 16px;">
+                                <div class="comment" style="display: flex; gap: 12px; margin-bottom: 20px;">
+                                    <div style="width: 36px; height: 36px; background: linear-gradient(135deg, #4299E1, #805AD5); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; font-size: 14px; flex-shrink: 0;">
+                                        SJ
+                                    </div>
+                                    <div style="flex: 1;">
+                                        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px;">
+                                            <span style="font-weight: 500; color: var(--color-text-primary);">Sarah Johnson</span>
+                                            <span style="font-size: 12px; color: var(--color-text-muted);">March 18, 2024 at 2:30 PM</span>
+                                        </div>
+                                        <p style="margin: 0; color: var(--color-text-secondary); line-height: 1.5;">
+                                            Just finished the team interviews. Key insight: We exceeded our customer satisfaction targets by 15% this quarter! This should be highlighted in the presentation.
+                                        </p>
+                                    </div>
+                                </div>
+                                
+                                <div class="comment" style="display: flex; gap: 12px; margin-bottom: 20px;">
+                                    <div style="width: 36px; height: 36px; background: linear-gradient(135deg, #48BB78, #38A169); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; font-size: 14px; flex-shrink: 0;">
+                                        MK
+                                    </div>
+                                    <div style="flex: 1;">
+                                        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px;">
+                                            <span style="font-weight: 500; color: var(--color-text-primary);">Mike Kim</span>
+                                            <span style="font-size: 12px; color: var(--color-text-muted);">March 19, 2024 at 10:15 AM</span>
+                                        </div>
+                                        <p style="margin: 0; color: var(--color-text-secondary); line-height: 1.5;">
+                                            Don't forget to include the new client acquisition metrics. We signed 3 major clients this quarter worth $2.5M ARR total.
+                                        </p>
+                                    </div>
+                                </div>
+                                
+                                <!-- Add Comment Form -->
+                                <div style="border-top: 1px solid var(--color-border); padding-top: 16px;">
+                                    <div style="display: flex; gap: 12px;">
+                                        <div style="width: 36px; height: 36px; background: linear-gradient(135deg, #4299E1, #805AD5); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; font-size: 14px; flex-shrink: 0;">
+                                            SJ
+                                        </div>
+                                        <div style="flex: 1;">
+                                            <textarea class="form-textarea" placeholder="Add a comment or note..." rows="2" style="margin-bottom: 8px;"></textarea>
+                                            <div style="display: flex; justify-content: flex-end;">
+                                                <button class="btn btn-sm btn-primary">💬 Add Comment</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    
+                </div>
+                
+                <!-- Sidebar Column -->
+                <div>
+                    
+                    <!-- Quick Actions -->
+                    <section class="quick-actions" style="margin-bottom: 30px;">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">⚡ Quick Actions</h3>
+                            </div>
+                            <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 16px;">
+                                <button class="btn btn-secondary" style="justify-content: flex-start;">
+                                    ✅ Mark as Complete
+                                </button>
+                                <button class="btn btn-secondary" style="justify-content: flex-start;">
+                                    ⏸️ Pause Task
+                                </button>
+                                <button class="btn btn-secondary" style="justify-content: flex-start;">
+                                    📅 Reschedule
+                                </button>
+                                <button class="btn btn-secondary" style="justify-content: flex-start;">
+                                    🔄 Set Recurring
+                                </button>
+                                <hr style="border: none; border-top: 1px solid var(--color-border); margin: 8px 0;">
+                                <button class="btn btn-danger" style="justify-content: flex-start;">
+                                    🗑️ Delete Task
+                                </button>
+                            </div>
+                        </div>
+                    </section>
+                    
+                    <!-- Task Statistics -->
+                    <section class="task-stats" style="margin-bottom: 30px;">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">📊 Task Statistics</h3>
+                            </div>
+                            <div style="margin-top: 16px;">
+                                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                                    <span style="color: var(--color-text-secondary); font-size: 14px;">Time spent</span>
+                                    <span style="font-weight: 500;">4h 25m</span>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                                    <span style="color: var(--color-text-secondary); font-size: 14px;">Days active</span>
+                                    <span style="font-weight: 500;">12 days</span>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                                    <span style="color: var(--color-text-secondary); font-size: 14px;">Comments</span>
+                                    <span style="font-weight: 500;">2</span>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; align-items: center;">
+                                    <span style="color: var(--color-text-secondary); font-size: 14px;">Last updated</span>
+                                    <span style="font-weight: 500;">2 hours ago</span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    
+                    <!-- Related Tasks -->
+                    <section class="related-tasks" style="margin-bottom: 30px;">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">🔗 Related Tasks</h3>
+                            </div>
+                            <div class="task-list" style="margin-top: 16px;">
+                                <div class="task-item" style="padding: 8px 0; border: none; background: none;">
+                                    <input type="checkbox" class="task-checkbox" checked>
+                                    <div class="task-content">
+                                        <div class="task-title completed" style="font-size: 14px;">Q1 team performance review</div>
+                                        <div style="font-size: 12px; color: var(--color-text-muted);">Completed March 10</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="task-item" style="padding: 8px 0; border: none; background: none;">
+                                    <input type="checkbox" class="task-checkbox">
+                                    <div class="task-content">
+                                        <div class="task-title" style="font-size: 14px;">Schedule Q2 planning meeting</div>
+                                        <div style="font-size: 12px; color: var(--color-text-muted);">Due March 25</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="task-item" style="padding: 8px 0; border: none; background: none;">
+                                    <input type="checkbox" class="task-checkbox">
+                                    <div class="task-content">
+                                        <div class="task-title" style="font-size: 14px;">Update team goal tracking dashboard</div>
+                                        <div style="font-size: 12px; color: var(--color-text-muted);">Due March 30</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    
+                    <!-- Activity Log -->
+                    <section class="activity-log">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">📋 Activity Log</h3>
+                            </div>
+                            <div style="margin-top: 16px;">
+                                <div class="activity-item" style="display: flex; gap: 8px; margin-bottom: 12px; padding-bottom: 12px; border-bottom: 1px solid var(--color-border-light);">
+                                    <div style="color: var(--color-text-muted); font-size: 20px; line-height: 1;">💬</div>
+                                    <div style="flex: 1;">
+                                        <div style="font-size: 13px; color: var(--color-text-secondary); margin-bottom: 2px;">
+                                            <strong>Mike Kim</strong> added a comment
+                                        </div>
+                                        <div style="font-size: 12px; color: var(--color-text-muted);">March 19, 10:15 AM</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="activity-item" style="display: flex; gap: 8px; margin-bottom: 12px; padding-bottom: 12px; border-bottom: 1px solid var(--color-border-light);">
+                                    <div style="color: var(--color-text-muted); font-size: 20px; line-height: 1;">✅</div>
+                                    <div style="flex: 1;">
+                                        <div style="font-size: 13px; color: var(--color-text-secondary); margin-bottom: 2px;">
+                                            <strong>Sarah Johnson</strong> completed subtask "Create slide deck template"
+                                        </div>
+                                        <div style="font-size: 12px; color: var(--color-text-muted);">March 18, 4:20 PM</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="activity-item" style="display: flex; gap: 8px; margin-bottom: 12px; padding-bottom: 12px; border-bottom: 1px solid var(--color-border-light);">
+                                    <div style="color: var(--color-text-muted); font-size: 20px; line-height: 1;">💬</div>
+                                    <div style="flex: 1;">
+                                        <div style="font-size: 13px; color: var(--color-text-secondary); margin-bottom: 2px;">
+                                            <strong>Sarah Johnson</strong> added a comment
+                                        </div>
+                                        <div style="font-size: 12px; color: var(--color-text-muted);">March 18, 2:30 PM</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="activity-item" style="display: flex; gap: 8px; margin-bottom: 12px; padding-bottom: 12px; border-bottom: 1px solid var(--color-border-light);">
+                                    <div style="color: var(--color-text-muted); font-size: 20px; line-height: 1;">📅</div>
+                                    <div style="flex: 1;">
+                                        <div style="font-size: 13px; color: var(--color-text-secondary); margin-bottom: 2px;">
+                                            <strong>Sarah Johnson</strong> moved due date to Today 2:00 PM
+                                        </div>
+                                        <div style="font-size: 12px; color: var(--color-text-muted);">March 17, 3:45 PM</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="activity-item" style="display: flex; gap: 8px; margin-bottom: 12px;">
+                                    <div style="color: var(--color-text-muted); font-size: 20px; line-height: 1;">📋</div>
+                                    <div style="flex: 1;">
+                                        <div style="font-size: 13px; color: var(--color-text-secondary); margin-bottom: 2px;">
+                                            <strong>Sarah Johnson</strong> created this task
+                                        </div>
+                                        <div style="font-size: 12px; color: var(--color-text-muted);">March 8, 10:00 AM</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    
+                </div>
+                
+            </div>
+            
+        </div>
+    </main>
+    
+    <!-- Edit Task Modal -->
+    <div id="edit-task-modal" class="modal-overlay">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 class="modal-title">✏️ Edit Task</h3>
+                <button class="modal-close" aria-label="Close modal">✕</button>
+            </div>
+            
+            <form class="task-form" id="edit-task-form">
+                <div class="form-group">
+                    <label for="edit-task-title" class="form-label">Task Title *</label>
+                    <input type="text" id="edit-task-title" name="title" class="form-input" value="Prepare quarterly presentation slides" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="edit-task-description" class="form-label">Description</label>
+                    <textarea id="edit-task-description" name="description" class="form-textarea" rows="4">Create comprehensive presentation covering Q1 performance and Q2 strategic initiatives...</textarea>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                    <div class="form-group">
+                        <label for="edit-task-category" class="form-label">Category</label>
+                        <select id="edit-task-category" name="category" class="form-select">
+                            <option value="work" selected>💼 Work</option>
+                            <option value="personal">🏠 Personal</option>
+                            <option value="shopping">🛒 Shopping</option>
+                            <option value="health">🏥 Health</option>
+                            <option value="finance">💰 Finance</option>
+                            <option value="hobbies">🎨 Hobbies</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="edit-task-priority" class="form-label">Priority</label>
+                        <select id="edit-task-priority" name="priority" class="form-select">
+                            <option value="low">🟢 Low</option>
+                            <option value="medium">🟡 Medium</option>
+                            <option value="high" selected>🔴 High</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="edit-task-tags" class="form-label">Tags</label>
+                    <input type="text" id="edit-task-tags" name="tags" class="form-input" value="presentation, quarterly, team-meeting, revenue">
+                </div>
+                
+                <div style="display: flex; justify-content: flex-end; gap: 12px; margin-top: 30px;">
+                    <button type="button" class="btn btn-secondary modal-close">Cancel</button>
+                    <button type="submit" class="btn btn-primary">
+                        💾 Save Changes
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <!-- New Subtask Modal -->
+    <div id="new-subtask-modal" class="modal-overlay">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 class="modal-title">✅ Add Subtask</h3>
+                <button class="modal-close" aria-label="Close modal">✕</button>
+            </div>
+            
+            <form class="task-form" id="new-subtask-form">
+                <div class="form-group">
+                    <label for="subtask-title" class="form-label">Subtask Title *</label>
+                    <input type="text" id="subtask-title" name="title" class="form-input" placeholder="What needs to be done?" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="subtask-description" class="form-label">Description (optional)</label>
+                    <textarea id="subtask-description" name="description" class="form-textarea" placeholder="Add more details..." rows="2"></textarea>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                    <div class="form-group">
+                        <label for="subtask-due-date" class="form-label">Due Date</label>
+                        <input type="date" id="subtask-due-date" name="dueDate" class="form-input">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subtask-due-time" class="form-label">Due Time</label>
+                        <input type="time" id="subtask-due-time" name="dueTime" class="form-input">
+                    </div>
+                </div>
+                
+                <div style="display: flex; justify-content: flex-end; gap: 12px; margin-top: 30px;">
+                    <button type="button" class="btn btn-secondary modal-close">Cancel</button>
+                    <button type="submit" class="btn btn-primary">
+                        ✅ Add Subtask
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <script src="assets/js/taskmaster.js"></script>
+    <script>
+        // Toggle dropdown menu
+        function toggleDropdown(id) {
+            const dropdown = document.getElementById(id);
+            dropdown.style.display = dropdown.style.display === 'none' ? 'block' : 'none';
+        }
+        
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.dropdown')) {
+                document.querySelectorAll('.dropdown-menu').forEach(menu => {
+                    menu.style.display = 'none';
+                });
+            }
+        });
+        
+        // Dropdown item hover effects
+        document.querySelectorAll('.dropdown-item').forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                this.style.background = 'var(--color-surface)';
+            });
+            item.addEventListener('mouseleave', function() {
+                this.style.background = 'none';
+            });
+        });
+    </script>
+</body>
+</html>
