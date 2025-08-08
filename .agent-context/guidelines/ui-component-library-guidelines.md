@@ -20,7 +20,7 @@ Comprehensive guidance for creating effective component libraries using the UI c
 ## 🧱 Component Documentation Structure
 
 ### HTML Preview Section
-- **Show actual rendered components**: Not just code, but visual output
+- **Show actual rendered components**: Not just code, but visual output (Do not wrap that html with "```html ... ```" code block)
 - **Use inline styles**: Ensures components render correctly in markdown
 - **Apply your real styling**: Colors, fonts, spacing from your actual design system
 - **Use realistic content**: Product-specific text, not generic placeholders

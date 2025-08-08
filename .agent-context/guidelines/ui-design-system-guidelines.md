@@ -17,6 +17,34 @@ Comprehensive guidance for creating effective design systems using the UI design
 
 ---
 
+## 📋 Visual Presentation Requirements
+
+### Essential Visual Elements
+Every design system section must include comprehensive visual presentations, not just text descriptions or CSS code:
+
+- **Rendered HTML Examples**: Use HTML with inline styles to show actual visual output (Do not wrap HTML with "```html" code block)
+- **No space lines in HTML**: HTML rendered in markdown should not contain whole space lines (empty lines) within HTML blocks  
+- **Realistic Content**: Use product-specific text, colors, and examples that reflect the actual application
+- **Interactive States**: Show hover, focus, active, and disabled states for interactive elements
+- **Component Sizing**: Include a dedicated section with live examples showing actual measurements and dimensions
+- **Usage Examples**: Include comprehensive live component previews with realistic styling and content
+
+### Required Sections
+All design systems should include these visual presentation sections:
+1. **Component Sizing**: Interactive examples of buttons, inputs, cards, modals with actual measurements
+2. **Usage Examples**: Live component previews showing primary actions, forms, alerts, badges, and interactive elements
+3. **Visual swatches**: For colors, spacing, shadows, and border radius
+4. **Typography examples**: With actual rendered text at different hierarchy levels
+5. **Icon displays**: Organized in visual grids with categorization and context
+
+### Implementation Standards  
+- Use inline CSS styles for consistent rendering across markdown viewers
+- Ensure all examples are touch-friendly and accessible
+- Include measurements and specifications alongside visual examples
+- Show components in realistic application contexts, not just in isolation
+
+---
+
 ## 🎨 Color Palette Guidelines
 
 ### Color Organization
@@ -26,10 +54,11 @@ Comprehensive guidance for creating effective design systems using the UI design
 - **Show usage context**: When and where to use each color
 
 ### Visual Representation
-- **Create actual color swatches**: Don't just list hex codes
+- **Create actual color swatches**: Don't just list hex codes (Do not wrap HTML with "```html" code block)
 - **Use realistic sizing**: Show colors at sizes they'll actually be used
 - **Include hover/active states**: Show how colors change during interactions
 - **Demonstrate combinations**: Show colors working together in realistic layouts
+- **Render actual visual examples**: Use HTML with inline styles to show actual rendered colors, not just descriptions
 
 ### Technical Implementation
 - **Provide CSS custom properties**: `--color-primary: #2563EB;`
@@ -143,6 +172,10 @@ Comprehensive guidance for creating effective design systems using the UI design
 - **Interactive states**: How shadows change on hover or focus
 - **Background considerations**: How shadows look on different backgrounds
 - **No space lines in HTML**: HTML rendered in markdown should not contain whole space lines (empty lines) within HTML blocks
+- **Create visual presentations for each section**: Every major design system section should include rendered HTML examples showing the actual visual output, not just CSS code
+- **Component Sizing section**: Include a dedicated section with interactive size examples showing buttons, inputs, cards, modals, and progress bars with actual measurements
+- **Usage Examples section**: Include a comprehensive section with live component previews showing primary actions, form elements, status indicators, alerts, and interactive elements
+- **Live component previews**: Show actual rendered buttons, inputs, badges, alerts, and other components with realistic TaskMaster-specific content and styling
 
 ### Implementation Details
 - **CSS specifications**: Exact box-shadow values for each level

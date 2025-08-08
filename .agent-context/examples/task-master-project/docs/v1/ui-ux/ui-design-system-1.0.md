@@ -16,6 +16,8 @@ This document defines the visual design foundation for TaskMaster, a personal ta
 8. [Motion & Animation](#motion--animation)
 9. [Dark Mode Support](#dark-mode-support)
 10. [Component States](#component-states)
+11. [Component Sizing](#component-sizing)
+12. [Usage Examples](#usage-examples)
 
 ---
 
@@ -61,21 +63,21 @@ TaskMaster embodies **simplicity, focus, and productivity**. The design should f
   </div>
 </div>
 
-```css
-:root {
-  /* Primary Blue - Main brand color, primary buttons, links */
-  --color-primary-50: #EBF8FF;
-  --color-primary-100: #BEE3F8;
-  --color-primary-200: #90CDF4;
-  --color-primary-300: #63B3ED;
-  --color-primary-400: #4299E1;
-  --color-primary-500: #3182CE;  /* Main primary */
-  --color-primary-600: #2B77CB;
-  --color-primary-700: #2C5282;
-  --color-primary-800: #2A4365;
-  --color-primary-900: #1A365D;
-}
-```
+<div style="background: white; padding: 20px; border-radius: 8px; border: 1px solid #E5E5E5; margin: 16px 0;">
+<h4 style="margin: 0 0 16px 0; font-size: 16px; font-weight: 600;">🎯 Primary Blue Scale</h4>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 12px;">
+<div style="text-align: center;"><div style="width: 100%; height: 60px; background-color: #EBF8FF; border-radius: 4px; border: 1px solid #E5E5E5; margin-bottom: 8px;"></div><div style="font-size: 12px; font-weight: 500; color: #171717;">50</div><div style="font-size: 11px; color: #737373;">#EBF8FF</div></div>
+<div style="text-align: center;"><div style="width: 100%; height: 60px; background-color: #BEE3F8; border-radius: 4px; margin-bottom: 8px;"></div><div style="font-size: 12px; font-weight: 500; color: #171717;">100</div><div style="font-size: 11px; color: #737373;">#BEE3F8</div></div>
+<div style="text-align: center;"><div style="width: 100%; height: 60px; background-color: #90CDF4; border-radius: 4px; margin-bottom: 8px;"></div><div style="font-size: 12px; font-weight: 500; color: #171717;">200</div><div style="font-size: 11px; color: #737373;">#90CDF4</div></div>
+<div style="text-align: center;"><div style="width: 100%; height: 60px; background-color: #63B3ED; border-radius: 4px; margin-bottom: 8px;"></div><div style="font-size: 12px; font-weight: 500; color: #171717;">300</div><div style="font-size: 11px; color: #737373;">#63B3ED</div></div>
+<div style="text-align: center;"><div style="width: 100%; height: 60px; background-color: #4299E1; border-radius: 4px; margin-bottom: 8px;"></div><div style="font-size: 12px; font-weight: 500; color: #171717;">400</div><div style="font-size: 11px; color: #737373;">#4299E1</div></div>
+<div style="text-align: center; border: 3px solid #3182CE;"><div style="width: 100%; height: 60px; background-color: #3182CE; border-radius: 4px; margin-bottom: 8px;"></div><div style="font-size: 12px; font-weight: 600; color: #3182CE;">500 ⭐</div><div style="font-size: 11px; color: #737373;">#3182CE</div><div style="font-size: 10px; color: #3182CE; margin-top: 2px;">Main Primary</div></div>
+<div style="text-align: center;"><div style="width: 100%; height: 60px; background-color: #2B77CB; border-radius: 4px; margin-bottom: 8px;"></div><div style="font-size: 12px; font-weight: 500; color: #171717;">600</div><div style="font-size: 11px; color: #737373;">#2B77CB</div></div>
+<div style="text-align: center;"><div style="width: 100%; height: 60px; background-color: #2C5282; border-radius: 4px; margin-bottom: 8px;"></div><div style="font-size: 12px; font-weight: 500; color: white;">700</div><div style="font-size: 11px; color: #737373;">#2C5282</div></div>
+<div style="text-align: center;"><div style="width: 100%; height: 60px; background-color: #2A4365; border-radius: 4px; margin-bottom: 8px;"></div><div style="font-size: 12px; font-weight: 500; color: white;">800</div><div style="font-size: 11px; color: #737373;">#2A4365</div></div>
+<div style="text-align: center;"><div style="width: 100%; height: 60px; background-color: #1A365D; border-radius: 4px; margin-bottom: 8px;"></div><div style="font-size: 12px; font-weight: 500; color: white;">900</div><div style="font-size: 11px; color: #737373;">#1A365D</div></div>
+</div>
+</div>
 
 ### Secondary Colors
 
@@ -100,117 +102,97 @@ TaskMaster embodies **simplicity, focus, and productivity**. The design should f
   </div>
 </div>
 
-```css
-:root {
-  /* Success Green - Completed tasks, success messages */
-  --color-success-50: #F0FDF4;
-  --color-success-100: #DCFCE7;
-  --color-success-200: #BBF7D0;
-  --color-success-300: #86EFAC;
-  --color-success-400: #4ADE80;
-  --color-success-500: #22C55E;  /* Main success */
-  --color-success-600: #16A34A;
-  --color-success-700: #15803D;
-  --color-success-800: #166534;
-  --color-success-900: #14532D;
-
-  /* Warning Orange - Medium priority, upcoming deadlines */
-  --color-warning-50: #FFFBEB;
-  --color-warning-100: #FEF3C7;
-  --color-warning-200: #FDE68A;
-  --color-warning-300: #FCD34D;
-  --color-warning-400: #FBBF24;
-  --color-warning-500: #F59E0B;  /* Main warning */
-  --color-warning-600: #D97706;
-  --color-warning-700: #B45309;
-  --color-warning-800: #92400E;
-  --color-warning-900: #78350F;
-
-  /* Danger Red - High priority, overdue tasks, errors */
-  --color-danger-50: #FEF2F2;
-  --color-danger-100: #FEE2E2;
-  --color-danger-200: #FECACA;
-  --color-danger-300: #FCA5A5;
-  --color-danger-400: #F87171;
-  --color-danger-500: #EF4444;  /* Main danger */
-  --color-danger-600: #DC2626;
-  --color-danger-700: #B91C1C;
-  --color-danger-800: #991B1B;
-  --color-danger-900: #7F1D1D;
-}
-```
+<div style="background: white; padding: 20px; border-radius: 8px; border: 1px solid #E5E5E5; margin: 16px 0;">
+<div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+<div><h4 style="margin: 0 0 12px 0; font-size: 14px; font-weight: 600; color: #22C55E;">✅ Success Green Scale</h4>
+<div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px;">
+<div style="text-align: center;"><div style="width: 100%; height: 40px; background-color: #F0FDF4; border-radius: 4px; border: 1px solid #E5E5E5; margin-bottom: 4px;"></div><div style="font-size: 10px; color: #737373;">50</div></div>
+<div style="text-align: center;"><div style="width: 100%; height: 40px; background-color: #DCFCE7; border-radius: 4px; margin-bottom: 4px;"></div><div style="font-size: 10px; color: #737373;">100</div></div>
+<div style="text-align: center;"><div style="width: 100%; height: 40px; background-color: #BBF7D0; border-radius: 4px; margin-bottom: 4px;"></div><div style="font-size: 10px; color: #737373;">200</div></div>
+<div style="text-align: center;"><div style="width: 100%; height: 40px; background-color: #86EFAC; border-radius: 4px; margin-bottom: 4px;"></div><div style="font-size: 10px; color: #737373;">300</div></div>
+<div style="text-align: center;"><div style="width: 100%; height: 40px; background-color: #4ADE80; border-radius: 4px; margin-bottom: 4px;"></div><div style="font-size: 10px; color: #737373;">400</div></div>
+<div style="text-align: center; border: 2px solid #22C55E;"><div style="width: 100%; height: 40px; background-color: #22C55E; border-radius: 4px; margin-bottom: 4px;"></div><div style="font-size: 10px; font-weight: 600; color: #22C55E;">500 ⭐</div></div>
+<div style="text-align: center;"><div style="width: 100%; height: 40px; background-color: #16A34A; border-radius: 4px; margin-bottom: 4px;"></div><div style="font-size: 10px; color: white;">600</div></div>
+<div style="text-align: center;"><div style="width: 100%; height: 40px; background-color: #15803D; border-radius: 4px; margin-bottom: 4px;"></div><div style="font-size: 10px; color: white;">700</div></div>
+<div style="text-align: center;"><div style="width: 100%; height: 40px; background-color: #166534; border-radius: 4px; margin-bottom: 4px;"></div><div style="font-size: 10px; color: white;">800</div></div>
+</div>
+</div>
+<div><h4 style="margin: 0 0 12px 0; font-size: 14px; font-weight: 600; color: #F59E0B;">⚠️ Warning Orange Scale</h4>
+<div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px;">
+<div style="text-align: center;"><div style="width: 100%; height: 40px; background-color: #FFFBEB; border-radius: 4px; border: 1px solid #E5E5E5; margin-bottom: 4px;"></div><div style="font-size: 10px; color: #737373;">50</div></div>
+<div style="text-align: center;"><div style="width: 100%; height: 40px; background-color: #FEF3C7; border-radius: 4px; margin-bottom: 4px;"></div><div style="font-size: 10px; color: #737373;">100</div></div>
+<div style="text-align: center;"><div style="width: 100%; height: 40px; background-color: #FDE68A; border-radius: 4px; margin-bottom: 4px;"></div><div style="font-size: 10px; color: #737373;">200</div></div>
+<div style="text-align: center;"><div style="width: 100%; height: 40px; background-color: #FCD34D; border-radius: 4px; margin-bottom: 4px;"></div><div style="font-size: 10px; color: #737373;">300</div></div>
+<div style="text-align: center;"><div style="width: 100%; height: 40px; background-color: #FBBF24; border-radius: 4px; margin-bottom: 4px;"></div><div style="font-size: 10px; color: #737373;">400</div></div>
+<div style="text-align: center; border: 2px solid #F59E0B;"><div style="width: 100%; height: 40px; background-color: #F59E0B; border-radius: 4px; margin-bottom: 4px;"></div><div style="font-size: 10px; font-weight: 600; color: #F59E0B;">500 ⭐</div></div>
+<div style="text-align: center;"><div style="width: 100%; height: 40px; background-color: #D97706; border-radius: 4px; margin-bottom: 4px;"></div><div style="font-size: 10px; color: white;">600</div></div>
+<div style="text-align: center;"><div style="width: 100%; height: 40px; background-color: #B45309; border-radius: 4px; margin-bottom: 4px;"></div><div style="font-size: 10px; color: white;">700</div></div>
+<div style="text-align: center;"><div style="width: 100%; height: 40px; background-color: #92400E; border-radius: 4px; margin-bottom: 4px;"></div><div style="font-size: 10px; color: white;">800</div></div>
+</div>
+</div>
+<div><h4 style="margin: 0 0 12px 0; font-size: 14px; font-weight: 600; color: #EF4444;">🚨 Danger Red Scale</h4>
+<div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px;">
+<div style="text-align: center;"><div style="width: 100%; height: 40px; background-color: #FEF2F2; border-radius: 4px; border: 1px solid #E5E5E5; margin-bottom: 4px;"></div><div style="font-size: 10px; color: #737373;">50</div></div>
+<div style="text-align: center;"><div style="width: 100%; height: 40px; background-color: #FEE2E2; border-radius: 4px; margin-bottom: 4px;"></div><div style="font-size: 10px; color: #737373;">100</div></div>
+<div style="text-align: center;"><div style="width: 100%; height: 40px; background-color: #FECACA; border-radius: 4px; margin-bottom: 4px;"></div><div style="font-size: 10px; color: #737373;">200</div></div>
+<div style="text-align: center;"><div style="width: 100%; height: 40px; background-color: #FCA5A5; border-radius: 4px; margin-bottom: 4px;"></div><div style="font-size: 10px; color: #737373;">300</div></div>
+<div style="text-align: center;"><div style="width: 100%; height: 40px; background-color: #F87171; border-radius: 4px; margin-bottom: 4px;"></div><div style="font-size: 10px; color: #737373;">400</div></div>
+<div style="text-align: center; border: 2px solid #EF4444;"><div style="width: 100%; height: 40px; background-color: #EF4444; border-radius: 4px; margin-bottom: 4px;"></div><div style="font-size: 10px; font-weight: 600; color: #EF4444;">500 ⭐</div></div>
+<div style="text-align: center;"><div style="width: 100%; height: 40px; background-color: #DC2626; border-radius: 4px; margin-bottom: 4px;"></div><div style="font-size: 10px; color: white;">600</div></div>
+<div style="text-align: center;"><div style="width: 100%; height: 40px; background-color: #B91C1C; border-radius: 4px; margin-bottom: 4px;"></div><div style="font-size: 10px; color: white;">700</div></div>
+<div style="text-align: center;"><div style="width: 100%; height: 40px; background-color: #991B1B; border-radius: 4px; margin-bottom: 4px;"></div><div style="font-size: 10px; color: white;">800</div></div>
+</div>
+</div>
+</div>
+</div>
 
 ### Neutral Colors
 
-```css
-:root {
-  /* Gray Scale - Backgrounds, text, borders */
-  --color-gray-50: #FAFAFA;
-  --color-gray-100: #F5F5F5;
-  --color-gray-200: #E5E5E5;
-  --color-gray-300: #D4D4D4;
-  --color-gray-400: #A3A3A3;
-  --color-gray-500: #737373;  /* Mid-gray */
-  --color-gray-600: #525252;
-  --color-gray-700: #404040;
-  --color-gray-800: #262626;
-  --color-gray-900: #171717;
-
-  /* Semantic neutrals */
-  --color-white: #FFFFFF;
-  --color-black: #000000;
-}
-```
+<div style="background: white; padding: 20px; border-radius: 8px; border: 1px solid #E5E5E5; margin: 16px 0;">
+<h4 style="margin: 0 0 16px 0; font-size: 16px; font-weight: 600;">⚫ Neutral Gray Scale</h4>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); gap: 12px;">
+<div style="text-align: center;"><div style="width: 100%; height: 50px; background-color: #FAFAFA; border-radius: 4px; border: 1px solid #E5E5E5; margin-bottom: 6px;"></div><div style="font-size: 11px; font-weight: 500; color: #171717;">50</div><div style="font-size: 10px; color: #737373;">#FAFAFA</div></div>
+<div style="text-align: center;"><div style="width: 100%; height: 50px; background-color: #F5F5F5; border-radius: 4px; border: 1px solid #E5E5E5; margin-bottom: 6px;"></div><div style="font-size: 11px; font-weight: 500; color: #171717;">100</div><div style="font-size: 10px; color: #737373;">#F5F5F5</div></div>
+<div style="text-align: center;"><div style="width: 100%; height: 50px; background-color: #E5E5E5; border-radius: 4px; margin-bottom: 6px;"></div><div style="font-size: 11px; font-weight: 500; color: #171717;">200</div><div style="font-size: 10px; color: #737373;">#E5E5E5</div></div>
+<div style="text-align: center;"><div style="width: 100%; height: 50px; background-color: #D4D4D4; border-radius: 4px; margin-bottom: 6px;"></div><div style="font-size: 11px; font-weight: 500; color: #171717;">300</div><div style="font-size: 10px; color: #737373;">#D4D4D4</div></div>
+<div style="text-align: center;"><div style="width: 100%; height: 50px; background-color: #A3A3A3; border-radius: 4px; margin-bottom: 6px;"></div><div style="font-size: 11px; font-weight: 500; color: white;">400</div><div style="font-size: 10px; color: #737373;">#A3A3A3</div></div>
+<div style="text-align: center; border: 2px solid #737373;"><div style="width: 100%; height: 50px; background-color: #737373; border-radius: 4px; margin-bottom: 6px;"></div><div style="font-size: 11px; font-weight: 600; color: #737373;">500 ⭐</div><div style="font-size: 10px; color: #737373;">#737373</div></div>
+<div style="text-align: center;"><div style="width: 100%; height: 50px; background-color: #525252; border-radius: 4px; margin-bottom: 6px;"></div><div style="font-size: 11px; font-weight: 500; color: white;">600</div><div style="font-size: 10px; color: #737373;">#525252</div></div>
+<div style="text-align: center;"><div style="width: 100%; height: 50px; background-color: #404040; border-radius: 4px; margin-bottom: 6px;"></div><div style="font-size: 11px; font-weight: 500; color: white;">700</div><div style="font-size: 10px; color: #737373;">#404040</div></div>
+<div style="text-align: center;"><div style="width: 100%; height: 50px; background-color: #262626; border-radius: 4px; margin-bottom: 6px;"></div><div style="font-size: 11px; font-weight: 500; color: white;">800</div><div style="font-size: 10px; color: #737373;">#262626</div></div>
+<div style="text-align: center;"><div style="width: 100%; height: 50px; background-color: #171717; border-radius: 4px; margin-bottom: 6px;"></div><div style="font-size: 11px; font-weight: 500; color: white;">900</div><div style="font-size: 10px; color: #737373;">#171717</div></div>
+</div>
+<div style="display: flex; gap: 16px; margin-top: 16px;">
+<div style="display: flex; align-items: center; gap: 8px;"><div style="width: 24px; height: 24px; background-color: #FFFFFF; border: 2px solid #E5E5E5; border-radius: 4px;"></div><span style="font-size: 12px; color: #171717; font-weight: 500;">White #FFFFFF</span></div>
+<div style="display: flex; align-items: center; gap: 8px;"><div style="width: 24px; height: 24px; background-color: #000000; border-radius: 4px;"></div><span style="font-size: 12px; color: #171717; font-weight: 500;">Black #000000</span></div>
+</div>
+</div>
 
 ### Category Colors
 
-```css
-:root {
-  /* Work Category - Professional blue */
-  --color-category-work: #3B82F6;
-  --color-category-work-light: #DBEAFE;
-  
-  /* Personal Category - Warm green */
-  --color-category-personal: #10B981;
-  --color-category-personal-light: #D1FAE5;
-  
-  /* Shopping Category - Purple */
-  --color-category-shopping: #8B5CF6;
-  --color-category-shopping-light: #EDE9FE;
-  
-  /* Health Category - Teal */
-  --color-category-health: #14B8A6;
-  --color-category-health-light: #CCFBF1;
-  
-  /* Finance Category - Indigo */
-  --color-category-finance: #6366F1;
-  --color-category-finance-light: #E0E7FF;
-  
-  /* Learning Category - Orange */
-  --color-category-learning: #F97316;
-  --color-category-learning-light: #FED7AA;
-  
-  /* Hobbies Category - Pink */
-  --color-category-hobbies: #EC4899;
-  --color-category-hobbies-light: #FCE7F3;
-}
-```
+<div style="background: white; padding: 20px; border-radius: 8px; border: 1px solid #E5E5E5; margin: 16px 0;">
+<h4 style="margin: 0 0 16px 0; font-size: 16px; font-weight: 600;">📂 Task Category Colors</h4>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 16px;">
+<div style="text-align: center;"><div style="display: flex; gap: 4px; margin-bottom: 8px;"><div style="width: 50%; height: 50px; background-color: #3B82F6; border-radius: 4px;"></div><div style="width: 50%; height: 50px; background-color: #DBEAFE; border-radius: 4px;"></div></div><div style="font-size: 12px; font-weight: 600; color: #3B82F6; margin-bottom: 2px;">💼 Work</div><div style="font-size: 10px; color: #737373;">#3B82F6 / #DBEAFE</div></div>
+<div style="text-align: center;"><div style="display: flex; gap: 4px; margin-bottom: 8px;"><div style="width: 50%; height: 50px; background-color: #10B981; border-radius: 4px;"></div><div style="width: 50%; height: 50px; background-color: #D1FAE5; border-radius: 4px;"></div></div><div style="font-size: 12px; font-weight: 600; color: #10B981; margin-bottom: 2px;">🏠 Personal</div><div style="font-size: 10px; color: #737373;">#10B981 / #D1FAE5</div></div>
+<div style="text-align: center;"><div style="display: flex; gap: 4px; margin-bottom: 8px;"><div style="width: 50%; height: 50px; background-color: #8B5CF6; border-radius: 4px;"></div><div style="width: 50%; height: 50px; background-color: #EDE9FE; border-radius: 4px;"></div></div><div style="font-size: 12px; font-weight: 600; color: #8B5CF6; margin-bottom: 2px;">🛒 Shopping</div><div style="font-size: 10px; color: #737373;">#8B5CF6 / #EDE9FE</div></div>
+<div style="text-align: center;"><div style="display: flex; gap: 4px; margin-bottom: 8px;"><div style="width: 50%; height: 50px; background-color: #14B8A6; border-radius: 4px;"></div><div style="width: 50%; height: 50px; background-color: #CCFBF1; border-radius: 4px;"></div></div><div style="font-size: 12px; font-weight: 600; color: #14B8A6; margin-bottom: 2px;">🏥 Health</div><div style="font-size: 10px; color: #737373;">#14B8A6 / #CCFBF1</div></div>
+<div style="text-align: center;"><div style="display: flex; gap: 4px; margin-bottom: 8px;"><div style="width: 50%; height: 50px; background-color: #6366F1; border-radius: 4px;"></div><div style="width: 50%; height: 50px; background-color: #E0E7FF; border-radius: 4px;"></div></div><div style="font-size: 12px; font-weight: 600; color: #6366F1; margin-bottom: 2px;">💰 Finance</div><div style="font-size: 10px; color: #737373;">#6366F1 / #E0E7FF</div></div>
+<div style="text-align: center;"><div style="display: flex; gap: 4px; margin-bottom: 8px;"><div style="width: 50%; height: 50px; background-color: #F97316; border-radius: 4px;"></div><div style="width: 50%; height: 50px; background-color: #FED7AA; border-radius: 4px;"></div></div><div style="font-size: 12px; font-weight: 600; color: #F97316; margin-bottom: 2px;">📚 Learning</div><div style="font-size: 10px; color: #737373;">#F97316 / #FED7AA</div></div>
+<div style="text-align: center;"><div style="display: flex; gap: 4px; margin-bottom: 8px;"><div style="width: 50%; height: 50px; background-color: #EC4899; border-radius: 4px;"></div><div style="width: 50%; height: 50px; background-color: #FCE7F3; border-radius: 4px;"></div></div><div style="font-size: 12px; font-weight: 600; color: #EC4899; margin-bottom: 2px;">🎨 Hobbies</div><div style="font-size: 10px; color: #737373;">#EC4899 / #FCE7F3</div></div>
+</div>
+</div>
 
 ### Priority Colors
 
-```css
-:root {
-  /* Priority levels with consistent semantics */
-  --priority-high: var(--color-danger-500);      /* #EF4444 - Red */
-  --priority-high-bg: var(--color-danger-50);    /* #FEF2F2 */
-  
-  --priority-medium: var(--color-warning-500);   /* #F59E0B - Orange */
-  --priority-medium-bg: var(--color-warning-50); /* #FFFBEB */
-  
-  --priority-low: var(--color-success-500);      /* #22C55E - Green */
-  --priority-low-bg: var(--color-success-50);    /* #F0FDF4 */
-}
-```
+<div style="background: white; padding: 20px; border-radius: 8px; border: 1px solid #E5E5E5; margin: 16px 0;">
+<h4 style="margin: 0 0 16px 0; font-size: 16px; font-weight: 600;">🎯 Priority Level Colors</h4>
+<div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+<div style="text-align: center;"><div style="display: flex; gap: 4px; margin-bottom: 8px;"><div style="width: 50%; height: 60px; background-color: #EF4444; border-radius: 4px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600;">🔴</div><div style="width: 50%; height: 60px; background-color: #FEF2F2; border-radius: 4px; display: flex; align-items: center; justify-content: center; color: #EF4444; font-weight: 600;">BG</div></div><div style="font-size: 14px; font-weight: 600; color: #EF4444; margin-bottom: 4px;">High Priority</div><div style="font-size: 11px; color: #737373;">Urgent & Important</div><div style="font-size: 10px; color: #737373; margin-top: 2px;">#EF4444 / #FEF2F2</div></div>
+<div style="text-align: center;"><div style="display: flex; gap: 4px; margin-bottom: 8px;"><div style="width: 50%; height: 60px; background-color: #F59E0B; border-radius: 4px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600;">🟡</div><div style="width: 50%; height: 60px; background-color: #FFFBEB; border-radius: 4px; display: flex; align-items: center; justify-content: center; color: #F59E0B; font-weight: 600;">BG</div></div><div style="font-size: 14px; font-weight: 600; color: #F59E0B; margin-bottom: 4px;">Medium Priority</div><div style="font-size: 11px; color: #737373;">Moderate Importance</div><div style="font-size: 10px; color: #737373; margin-top: 2px;">#F59E0B / #FFFBEB</div></div>
+<div style="text-align: center;"><div style="display: flex; gap: 4px; margin-bottom: 8px;"><div style="width: 50%; height: 60px; background-color: #22C55E; border-radius: 4px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600;">🟢</div><div style="width: 50%; height: 60px; background-color: #F0FDF4; border-radius: 4px; display: flex; align-items: center; justify-content: center; color: #22C55E; font-weight: 600;">BG</div></div><div style="font-size: 14px; font-weight: 600; color: #22C55E; margin-bottom: 4px;">Low Priority</div><div style="font-size: 11px; color: #737373;">Nice to Have</div><div style="font-size: 10px; color: #737373; margin-top: 2px;">#22C55E / #F0FDF4</div></div>
+</div>
+</div>
 
 ---
 
@@ -218,45 +200,27 @@ TaskMaster embodies **simplicity, focus, and productivity**. The design should f
 
 ### Font Families
 
-```css
-:root {
-  /* Primary font for headings and UI elements */
-  --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  
-  /* Secondary font for body text */
-  --font-secondary: 'Inter', system-ui, sans-serif;
-  
-  /* Monospace for code or data */
-  --font-mono: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', 'Consolas', monospace;
-}
-```
+<div style="background: white; padding: 20px; border-radius: 8px; border: 1px solid #E5E5E5; margin: 16px 0;">
+<div style="display: grid; grid-template-columns: 1fr; gap: 16px;">
+<div><div style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 18px; font-weight: 600; margin-bottom: 8px; color: #171717;">Primary Font: Inter</div><div style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 14px; color: #525252; margin-bottom: 4px;">Used for headings, UI elements, and interface text</div><div style="font-size: 12px; color: #737373;">Fallbacks: system fonts, Helvetica, Arial</div></div>
+<div><div style="font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', 'Consolas', monospace; font-size: 16px; font-weight: 500; margin-bottom: 8px; color: #171717; background: #F5F5F5; padding: 8px 12px; border-radius: 4px;">Monospace Font: SF Mono</div><div style="font-size: 14px; color: #525252; margin-bottom: 4px;">Used for task IDs, timestamps, and data display</div><div style="font-size: 12px; color: #737373;">Fallbacks: Monaco, Inconsolata, Consolas</div></div>
+</div>
+</div>
 
 ### Type Scale
 
-```css
-:root {
-  /* Font sizes following a consistent scale */
-  --text-xs: 0.75rem;    /* 12px - Captions, labels */
-  --text-sm: 0.875rem;   /* 14px - Small text, meta info */
-  --text-base: 1rem;     /* 16px - Body text, default */
-  --text-lg: 1.125rem;   /* 18px - Large body text */
-  --text-xl: 1.25rem;    /* 20px - Subheadings */
-  --text-2xl: 1.5rem;    /* 24px - Section headers */
-  --text-3xl: 1.875rem;  /* 30px - Page titles */
-  --text-4xl: 2.25rem;   /* 36px - Hero headings */
-
-  /* Line heights */
-  --leading-tight: 1.25;
-  --leading-normal: 1.5;
-  --leading-relaxed: 1.75;
-
-  /* Font weights */
-  --font-normal: 400;
-  --font-medium: 500;
-  --font-semibold: 600;
-  --font-bold: 700;
-}
-```
+<div style="background: white; padding: 20px; border-radius: 8px; border: 1px solid #E5E5E5; margin: 16px 0;">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px;">
+<div><div style="font-size: 36px; font-weight: 700; color: #171717; line-height: 1.1; margin-bottom: 4px;">Hero</div><div style="font-size: 11px; color: #737373;">36px • Bold • 1.1 line height</div></div>
+<div><div style="font-size: 30px; font-weight: 700; color: #171717; line-height: 1.2; margin-bottom: 4px;">H1 Title</div><div style="font-size: 11px; color: #737373;">30px • Bold • 1.2 line height</div></div>
+<div><div style="font-size: 24px; font-weight: 600; color: #262626; line-height: 1.3; margin-bottom: 4px;">H2 Section</div><div style="font-size: 11px; color: #737373;">24px • Semibold • 1.3 line height</div></div>
+<div><div style="font-size: 20px; font-weight: 600; color: #262626; line-height: 1.4; margin-bottom: 4px;">H3 Heading</div><div style="font-size: 11px; color: #737373;">20px • Semibold • 1.4 line height</div></div>
+<div><div style="font-size: 18px; font-weight: 400; color: #404040; line-height: 1.5; margin-bottom: 4px;">Large Body</div><div style="font-size: 11px; color: #737373;">18px • Normal • 1.5 line height</div></div>
+<div><div style="font-size: 16px; font-weight: 400; color: #404040; line-height: 1.5; margin-bottom: 4px;">Body Text</div><div style="font-size: 11px; color: #737373;">16px • Normal • 1.5 line height</div></div>
+<div><div style="font-size: 14px; font-weight: 400; color: #525252; line-height: 1.4; margin-bottom: 4px;">Small Text</div><div style="font-size: 11px; color: #737373;">14px • Normal • 1.4 line height</div></div>
+<div><div style="font-size: 12px; font-weight: 500; color: #737373; text-transform: uppercase; letter-spacing: 0.05em; line-height: 1.3; margin-bottom: 4px;">CAPTION</div><div style="font-size: 11px; color: #737373;">12px • Medium • Uppercase</div></div>
+</div>
+</div>
 
 ### Typography Examples
 
@@ -403,74 +367,55 @@ TaskMaster embodies **simplicity, focus, and productivity**. The design should f
 
 ### Component Spacing
 
-```css
-:root {
-  /* Common component spacing patterns */
-  --padding-btn-sm: var(--space-2) var(--space-3);      /* 8px 12px */
-  --padding-btn-md: var(--space-3) var(--space-4);      /* 12px 16px */
-  --padding-btn-lg: var(--space-4) var(--space-6);      /* 16px 24px */
-  
-  --padding-input: var(--space-3) var(--space-4);       /* 12px 16px */
-  --padding-card: var(--space-6);                       /* 24px */
-  --padding-modal: var(--space-8);                      /* 32px */
-  
-  --gap-form-field: var(--space-4);                     /* 16px */
-  --gap-button-group: var(--space-2);                   /* 8px */
-  --gap-card-grid: var(--space-6);                      /* 24px */
-}
-```
+<div style="background: white; padding: 24px; border-radius: 12px; border: 1px solid #E5E5E5; margin: 20px 0;">
+<h4 style="margin: 0 0 20px 0; font-size: 16px; font-weight: 600;">📦 Component Internal Spacing</h4>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+<div><h5 style="margin: 0 0 12px 0; font-size: 14px; font-weight: 600; color: #3182CE;">Button Padding</h5>
+<div style="display: flex; flex-direction: column; gap: 12px;">
+<div style="display: flex; align-items: center; gap: 12px;"><button style="background: #737373; color: white; border: none; padding: 8px 12px; border-radius: 4px; font-size: 12px; cursor: pointer;">Small</button><span style="font-size: 12px; color: #737373;">8px ↕ 12px ↔</span></div>
+<div style="display: flex; align-items: center; gap: 12px;"><button style="background: #3182CE; color: white; border: none; padding: 12px 16px; border-radius: 4px; font-size: 14px; cursor: pointer;">Medium</button><span style="font-size: 12px; color: #737373;">12px ↕ 16px ↔</span></div>
+<div style="display: flex; align-items: center; gap: 12px;"><button style="background: #22C55E; color: white; border: none; padding: 16px 24px; border-radius: 4px; font-size: 16px; cursor: pointer;">Large</button><span style="font-size: 12px; color: #737373;">16px ↕ 24px ↔</span></div>
+</div>
+</div>
+<div><h5 style="margin: 0 0 12px 0; font-size: 14px; font-weight: 600; color: #10B981;">Input & Form Spacing</h5>
+<div style="display: flex; flex-direction: column; gap: 12px;">
+<input type="text" placeholder="12px ↕ 16px ↔" style="width: 100%; padding: 12px 16px; border: 2px solid #E5E5E5; border-radius: 4px; font-size: 14px;" />
+<div style="background: #F5F5F5; padding: 24px; border-radius: 4px; border: 2px dashed #D4D4D4;"><div style="font-size: 12px; color: #737373; text-align: center;">Card Padding: 24px all sides</div></div>
+</div>
+</div>
+</div>
+<h4 style="margin: 20px 0 12px 0; font-size: 16px; font-weight: 600;">🔗 Component Gaps & Relationships</h4>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px;">
+<div><div style="font-size: 12px; font-weight: 600; color: #525252; margin-bottom: 8px;">Form Fields</div><div style="display: flex; flex-direction: column; gap: 16px; background: #FAFAFA; padding: 16px; border-radius: 4px;"><div style="height: 20px; background: #E5E5E5; border-radius: 2px;"></div><div style="height: 20px; background: #E5E5E5; border-radius: 2px;"></div></div><div style="font-size: 11px; color: #737373; margin-top: 4px; text-align: center;">16px gaps</div></div>
+<div><div style="font-size: 12px; font-weight: 600; color: #525252; margin-bottom: 8px;">Button Groups</div><div style="display: flex; gap: 8px; background: #FAFAFA; padding: 12px; border-radius: 4px;"><div style="width: 60px; height: 24px; background: #3182CE; border-radius: 2px;"></div><div style="width: 60px; height: 24px; background: #737373; border-radius: 2px;"></div></div><div style="font-size: 11px; color: #737373; margin-top: 4px; text-align: center;">8px gaps</div></div>
+<div><div style="font-size: 12px; font-weight: 600; color: #525252; margin-bottom: 8px;">Task Grid</div><div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; background: #FAFAFA; padding: 16px; border-radius: 4px;"><div style="height: 40px; background: #E5E5E5; border-radius: 2px;"></div><div style="height: 40px; background: #E5E5E5; border-radius: 2px;"></div></div><div style="font-size: 11px; color: #737373; margin-top: 4px; text-align: center;">24px gaps</div></div>
+</div>
+</div>
 
 ### Layout Containers
 
-```css
-.container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 var(--space-4);
-}
-
-.container-sm {
-  max-width: 640px;
-}
-
-.container-md {
-  max-width: 768px;
-}
-
-.container-lg {
-  max-width: 1024px;
-}
-
-.container-xl {
-  max-width: 1280px;
-}
-```
+<div style="background: white; padding: 24px; border-radius: 12px; border: 1px solid #E5E5E5; margin: 20px 0;">
+<h4 style="margin: 0 0 20px 0; font-size: 16px; font-weight: 600;">📱 Container Sizes for TaskMaster</h4>
+<div style="display: flex; flex-direction: column; gap: 16px;">
+<div><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 8px;"><div style="font-size: 12px; font-weight: 600; color: #171717;">Extra Large (1280px)</div><div style="font-size: 11px; color: #737373;">- Dashboard, Analytics</div></div><div style="width: 100%; height: 20px; background: linear-gradient(90deg, #3182CE 0%, #4299E1 100%); border-radius: 4px; position: relative;"><div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 10px; color: white; font-weight: 600;">Full Desktop Experience</div></div></div>
+<div><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 8px;"><div style="font-size: 12px; font-weight: 600; color: #171717;">Large (1024px)</div><div style="font-size: 11px; color: #737373;">- Main Task Views</div></div><div style="width: 80%; height: 20px; background: linear-gradient(90deg, #10B981 0%, #34D399 100%); border-radius: 4px; position: relative;"><div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 10px; color: white; font-weight: 600;">Desktop</div></div></div>
+<div><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 8px;"><div style="font-size: 12px; font-weight: 600; color: #171717;">Medium (768px)</div><div style="font-size: 11px; color: #737373;">- Tablet Layout</div></div><div style="width: 60%; height: 20px; background: linear-gradient(90deg, #F59E0B 0%, #FBBF24 100%); border-radius: 4px; position: relative;"><div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 10px; color: white; font-weight: 600;">Tablet</div></div></div>
+<div><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 8px;"><div style="font-size: 12px; font-weight: 600; color: #171717;">Small (640px)</div><div style="font-size: 11px; color: #737373;">- Mobile Landscape</div></div><div style="width: 50%; height: 20px; background: linear-gradient(90deg, #EF4444 0%, #F87171 100%); border-radius: 4px; position: relative;"><div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 10px; color: white; font-weight: 600;">Mobile L</div></div></div>
+<div><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 8px;"><div style="font-size: 12px; font-weight: 600; color: #171717;">Full Width</div><div style="font-size: 11px; color: #737373;">- Mobile Portrait</div></div><div style="width: 35%; height: 20px; background: linear-gradient(90deg, #8B5CF6 0%, #A78BFA 100%); border-radius: 4px; position: relative;"><div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 10px; color: white; font-weight: 600;">Mobile</div></div></div>
+</div>
+</div>
 
 ### Grid System
 
-```css
-.grid {
-  display: grid;
-  gap: var(--space-6);
-}
-
-.grid-cols-1 { grid-template-columns: repeat(1, 1fr); }
-.grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
-.grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
-.grid-cols-4 { grid-template-columns: repeat(4, 1fr); }
-
-/* Responsive grid utilities */
-@media (min-width: 768px) {
-  .md\:grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
-  .md\:grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
-}
-
-@media (min-width: 1024px) {
-  .lg\:grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
-  .lg\:grid-cols-4 { grid-template-columns: repeat(4, 1fr); }
-}
-```
+<div style="background: white; padding: 24px; border-radius: 12px; border: 1px solid #E5E5E5; margin: 20px 0;">
+<h4 style="margin: 0 0 20px 0; font-size: 16px; font-weight: 600;">🔲 Task Grid Layouts</h4>
+<div style="display: flex; flex-direction: column; gap: 20px;">
+<div><h5 style="margin: 0 0 12px 0; font-size: 14px; font-weight: 600; color: #525252;">Single Column (Mobile)</h5><div style="display: grid; grid-template-columns: 1fr; gap: 12px; padding: 16px; background: #F9FAFB; border-radius: 6px;"><div style="height: 40px; background: #DBEAFE; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #1D4ED8;">Task Card</div><div style="height: 40px; background: #D1FAE5; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #065F46;">Task Card</div><div style="height: 40px; background: #FEF2F2; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #991B1B;">Task Card</div></div></div>
+<div><h5 style="margin: 0 0 12px 0; font-size: 14px; font-weight: 600; color: #525252;">Two Columns (Tablet)</h5><div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; padding: 16px; background: #F9FAFB; border-radius: 6px;"><div style="height: 40px; background: #DBEAFE; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #1D4ED8;">Work Task</div><div style="height: 40px; background: #D1FAE5; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #065F46;">Personal</div><div style="height: 40px; background: #FEF2F2; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #991B1B;">High Priority</div><div style="height: 40px; background: #FFFBEB; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #92400E;">Medium</div></div></div>
+<div><h5 style="margin: 0 0 12px 0; font-size: 14px; font-weight: 600; color: #525252;">Three Columns (Desktop)</h5><div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; padding: 16px; background: #F9FAFB; border-radius: 6px;"><div style="height: 40px; background: #DBEAFE; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #1D4ED8;">To Do</div><div style="height: 40px; background: #FFFBEB; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #92400E;">In Progress</div><div style="height: 40px; background: #D1FAE5; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #065F46;">Complete</div></div></div>
+<div><h5 style="margin: 0 0 12px 0; font-size: 14px; font-weight: 600; color: #525252;">Four Columns (Large Desktop)</h5><div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; padding: 16px; background: #F9FAFB; border-radius: 6px;"><div style="height: 40px; background: #EDE9FE; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 11px; color: #7C3AED;">Shopping</div><div style="height: 40px; background: #CCFBF1; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 11px; color: #0F766E;">Health</div><div style="height: 40px; background: #FED7AA; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 11px; color: #C2410C;">Learning</div><div style="height: 40px; background: #FCE7F3; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 11px; color: #BE1264;">Hobbies</div></div></div>
+</div>
+</div>
 
 ---
 
@@ -596,34 +541,6 @@ TaskMaster embodies **simplicity, focus, and productivity**. The design should f
   </div>
 </div>
 
-### Radius Scale
-
-```css
-:root {
-  /* Border radius scale for different component types */
-  --radius-none: 0;
-  --radius-sm: 0.25rem;   /* 4px - Small elements, badges */
-  --radius-md: 0.375rem;  /* 6px - Buttons, inputs */
-  --radius-lg: 0.5rem;    /* 8px - Cards, modals */
-  --radius-xl: 0.75rem;   /* 12px - Large cards */
-  --radius-2xl: 1rem;     /* 16px - Hero sections */
-  --radius-full: 9999px;  /* Pills, avatars */
-}
-```
-
-### Component Radius
-
-```css
-/* Standard component radius assignments */
-.btn { border-radius: var(--radius-md); }
-.card { border-radius: var(--radius-lg); }
-.modal { border-radius: var(--radius-xl); }
-.badge { border-radius: var(--radius-full); }
-.avatar { border-radius: var(--radius-full); }
-.input { border-radius: var(--radius-md); }
-.alert { border-radius: var(--radius-md); }
-.tooltip { border-radius: var(--radius-sm); }
-```
 
 ---
 
@@ -768,155 +685,147 @@ TaskMaster embodies **simplicity, focus, and productivity**. The design should f
 
 ## Motion & Animation
 
-### Timing Functions
+### TaskMaster Animation Timing
 
-```css
-:root {
-  /* Easing curves for natural motion */
-  --ease-out: cubic-bezier(0.0, 0.0, 0.2, 1);
-  --ease-in: cubic-bezier(0.4, 0.0, 1, 1);
-  --ease-in-out: cubic-bezier(0.4, 0.0, 0.2, 1);
-  --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  
-  /* Duration scales */
-  --duration-fast: 150ms;
-  --duration-normal: 200ms;
-  --duration-slow: 300ms;
-  --duration-slower: 500ms;
-}
-```
+<div style="background: white; padding: 24px; border-radius: 12px; border: 1px solid #E5E5E5; margin: 20px 0;">
+<h4 style="margin: 0 0 20px 0; font-size: 16px; font-weight: 600;">⏱️ Animation Durations</h4>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px;">
+<div><div style="font-size: 14px; font-weight: 600; color: #525252; margin-bottom: 8px;">Fast (150ms)</div><div style="height: 8px; background: linear-gradient(90deg, #22C55E 0%, #22C55E 30%, #F5F5F5 30%); border-radius: 4px; margin-bottom: 4px;"></div><div style="font-size: 11px; color: #737373;">Color changes, hover states</div></div>
+<div><div style="font-size: 14px; font-weight: 600; color: #525252; margin-bottom: 8px;">Normal (200ms)</div><div style="height: 8px; background: linear-gradient(90deg, #3182CE 0%, #3182CE 50%, #F5F5F5 50%); border-radius: 4px; margin-bottom: 4px;"></div><div style="font-size: 11px; color: #737373;">Button presses, transitions</div></div>
+<div><div style="font-size: 14px; font-weight: 600; color: #525252; margin-bottom: 8px;">Slow (300ms)</div><div style="height: 8px; background: linear-gradient(90deg, #F59E0B 0%, #F59E0B 70%, #F5F5F5 70%); border-radius: 4px; margin-bottom: 4px;"></div><div style="font-size: 11px; color: #737373;">Modal appearances, slides</div></div>
+<div><div style="font-size: 14px; font-weight: 600; color: #525252; margin-bottom: 8px;">Celebration (500ms)</div><div style="height: 8px; background: linear-gradient(90deg, #EF4444 0%, #EF4444 100%); border-radius: 4px; margin-bottom: 4px;"></div><div style="font-size: 11px; color: #737373;">Task completion, success</div></div>
+</div>
+</div>
 
-### Animation Classes
+### Interactive Animation Examples
 
-```css
-/* Hover and interaction animations */
-.animate-fade-in {
-  animation: fadeIn var(--duration-normal) var(--ease-out);
-}
+<div style="background: white; padding: 24px; border-radius: 12px; border: 1px solid #E5E5E5; margin: 20px 0;">
+<h4 style="margin: 0 0 20px 0; font-size: 16px; font-weight: 600;">🎬 TaskMaster Interactions</h4>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+<div><h5 style="margin: 0 0 12px 0; font-size: 14px; font-weight: 600; color: #3182CE;">Button Hover Effects</h5><div style="display: flex; flex-direction: column; gap: 8px;"><button style="background: #3182CE; color: white; border: none; padding: 12px 20px; border-radius: 6px; font-size: 14px; font-weight: 500; cursor: pointer; transition: all 0.15s ease;" onmouseover="this.style.transform='translateY(-1px)'; this.style.boxShadow='0 4px 12px rgba(49, 130, 206, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">Hover me</button><div style="font-size: 11px; color: #737373;">Lifts up with shadow</div></div></div>
+<div><h5 style="margin: 0 0 12px 0; font-size: 14px; font-weight: 600; color: #22C55E;">Task Completion</h5><div style="display: flex; align-items: center; gap: 12px; padding: 12px; background: #F0FDF4; border-radius: 6px;"><input type="checkbox" style="width: 18px; height: 18px; accent-color: #22C55E;" onchange="this.parentNode.style.transform='scale(1.02)'; setTimeout(() => this.parentNode.style.transform='scale(1)', 200)"><span style="font-size: 14px; color: #14532D;">Click to see celebration</span></div><div style="font-size: 11px; color: #737373; margin-top: 4px;">Subtle scale + feedback</div></div>
+<div><h5 style="margin: 0 0 12px 0; font-size: 14px; font-weight: 600; color: #F59E0B;">Loading States</h5><div style="display: flex; align-items: center; gap: 12px; padding: 12px; background: #FFFBEB; border-radius: 6px;"><div style="width: 16px; height: 16px; border: 2px solid #F59E0B; border-top: 2px solid transparent; border-radius: 50%; animation: spin 1s linear infinite;"></div><span style="font-size: 14px; color: #92400E;">Saving task...</span></div><div style="font-size: 11px; color: #737373; margin-top: 4px;">Spinner rotation</div><style>@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }</style></div>
+<div><h5 style="margin: 0 0 12px 0; font-size: 14px; font-weight: 600; color: #8B5CF6;">Slide Transitions</h5><div style="overflow: hidden; border-radius: 6px; background: #EDE9FE; position: relative; height: 60px;"><div style="position: absolute; width: 100%; height: 100%; background: #8B5CF6; color: white; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 500; cursor: pointer; transition: transform 0.3s ease;" onclick="this.style.transform = this.style.transform === 'translateX(-100%)' ? 'translateX(0)' : 'translateX(-100%)'">← Click to slide</div></div><div style="font-size: 11px; color: #737373; margin-top: 4px;">Smooth slide reveal</div></div>
+</div>
+</div>
 
-.animate-slide-up {
-  animation: slideUp var(--duration-normal) var(--ease-out);
-}
+### Task-Specific Animations
 
-.animate-bounce {
-  animation: bounce var(--duration-slow) var(--ease-bounce);
-}
-
-/* Transition utilities */
-.transition-all {
-  transition: all var(--duration-normal) var(--ease-in-out);
-}
-
-.transition-colors {
-  transition: color var(--duration-fast) var(--ease-in-out),
-              background-color var(--duration-fast) var(--ease-in-out),
-              border-color var(--duration-fast) var(--ease-in-out);
-}
-
-.transition-transform {
-  transition: transform var(--duration-normal) var(--ease-in-out);
-}
-
-/* Keyframe animations */
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-5px); }
-}
-
-/* Task completion celebration */
-@keyframes taskComplete {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.1); }
-  100% { transform: scale(1); }
-}
-
-.task-complete-animation {
-  animation: taskComplete var(--duration-slow) var(--ease-bounce);
-}
-```
+<div style="background: white; padding: 24px; border-radius: 12px; border: 1px solid #E5E5E5; margin: 20px 0;">
+<h4 style="margin: 0 0 16px 0; font-size: 16px; font-weight: 600;">✨ Delight Animations</h4>
+<div style="display: flex; gap: 16px; flex-wrap: wrap; align-items: start;">
+<div style="text-align: center; padding: 16px; background: #F0FDF4; border-radius: 8px; border: 1px solid #BBF7D0;"><div style="font-size: 32px; margin-bottom: 8px; cursor: pointer; transition: transform 0.2s ease;" onclick="this.style.animation = 'bounce 0.6s ease'; setTimeout(() => this.style.animation = '', 600)">🎉</div><div style="font-size: 12px; font-weight: 600; color: #14532D; margin-bottom: 2px;">Task Complete</div><div style="font-size: 10px; color: #16A34A;">Click to celebrate</div><style>@keyframes bounce { 0%, 100% { transform: scale(1) rotate(0deg); } 25% { transform: scale(1.2) rotate(-5deg); } 75% { transform: scale(1.1) rotate(5deg); } }</style></div>
+<div style="text-align: center; padding: 16px; background: #FEF2F2; border-radius: 8px; border: 1px solid #FECACA;"><div style="font-size: 32px; margin-bottom: 8px; cursor: pointer; transition: transform 0.15s ease;" onclick="this.style.transform = 'scale(0.9)'; setTimeout(() => this.style.transform = 'scale(1)', 150)">⚠️</div><div style="font-size: 12px; font-weight: 600; color: #991B1B; margin-bottom: 2px;">Overdue Alert</div><div style="font-size: 10px; color: #DC2626;">Click for feedback</div></div>
+<div style="text-align: center; padding: 16px; background: #EBF8FF; border-radius: 8px; border: 1px solid #BFDBFE;"><div style="font-size: 32px; margin-bottom: 8px; cursor: pointer;" onclick="this.style.animation = 'pulse 1s ease-in-out'; setTimeout(() => this.style.animation = '', 1000)">💡</div><div style="font-size: 12px; font-weight: 600; color: #1D4ED8; margin-bottom: 2px;">New Idea</div><div style="font-size: 10px; color: #3B82F6;">Click to highlight</div><style>@keyframes pulse { 0%, 100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.1); opacity: 0.8; } }</style></div>
+</div>
+</div>
 
 ---
 
 ## Dark Mode Support
 
-### Dark Mode Colors
+### Light vs Dark Mode Comparison
 
-```css
-:root {
-  /* Light mode (default) */
-  --bg-primary: var(--color-white);
-  --bg-secondary: var(--color-gray-50);
-  --bg-tertiary: var(--color-gray-100);
-  
-  --text-primary: var(--color-gray-900);
-  --text-secondary: var(--color-gray-700);
-  --text-tertiary: var(--color-gray-500);
-  
-  --border-primary: var(--color-gray-200);
-  --border-secondary: var(--color-gray-300);
-}
+<div style="background: white; padding: 24px; border-radius: 12px; border: 1px solid #E5E5E5; margin: 20px 0;">
+<h4 style="margin: 0 0 20px 0; font-size: 16px; font-weight: 600;">🌓 TaskMaster Theme Toggle</h4>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
+<div><h5 style="margin: 0 0 12px 0; font-size: 14px; font-weight: 600; color: #525252;">☀️ Light Mode</h5>
+<div style="background: #FFFFFF; border: 2px solid #E5E5E5; border-radius: 8px; padding: 16px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+<div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid #E5E5E5;">
+<div style="width: 8px; height: 8px; background: #22C55E; border-radius: 50%;"></div>
+<span style="font-size: 14px; color: #171717; font-weight: 600;">TaskMaster</span>
+</div>
+<div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+<input type="checkbox" checked style="width: 16px; height: 16px; accent-color: #3182CE;">
+<span style="font-size: 13px; color: #404040;">Complete project presentation</span>
+</div>
+<div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+<input type="checkbox" style="width: 16px; height: 16px; accent-color: #3182CE;">
+<span style="font-size: 13px; color: #404040;">Review team feedback</span>
+</div>
+<button style="background: #3182CE; color: white; border: none; padding: 6px 12px; border-radius: 4px; font-size: 12px; margin-top: 8px;">Add Task</button>
+</div>
+</div>
+<div><h5 style="margin: 0 0 12px 0; font-size: 14px; font-weight: 600; color: #525252;">🌙 Dark Mode</h5>
+<div style="background: #171717; border: 2px solid #404040; border-radius: 8px; padding: 16px; box-shadow: 0 4px 8px rgba(0,0,0,0.3);">
+<div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid #404040;">
+<div style="width: 8px; height: 8px; background: #22C55E; border-radius: 50%;"></div>
+<span style="font-size: 14px; color: #F5F5F5; font-weight: 600;">TaskMaster</span>
+</div>
+<div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+<input type="checkbox" checked style="width: 16px; height: 16px; accent-color: #4299E1;">
+<span style="font-size: 13px; color: #D4D4D4;">Complete project presentation</span>
+</div>
+<div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+<input type="checkbox" style="width: 16px; height: 16px; accent-color: #4299E1;">
+<span style="font-size: 13px; color: #D4D4D4;">Review team feedback</span>
+</div>
+<button style="background: #4299E1; color: white; border: none; padding: 6px 12px; border-radius: 4px; font-size: 12px; margin-top: 8px;">Add Task</button>
+</div>
+</div>
+</div>
+</div>
 
-/* Dark mode overrides */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg-primary: var(--color-gray-900);
-    --bg-secondary: var(--color-gray-800);
-    --bg-tertiary: var(--color-gray-700);
-    
-    --text-primary: var(--color-gray-100);
-    --text-secondary: var(--color-gray-300);
-    --text-tertiary: var(--color-gray-400);
-    
-    --border-primary: var(--color-gray-700);
-    --border-secondary: var(--color-gray-600);
-  }
-}
+### Dark Mode Color Palette
 
-/* Manual dark mode class */
-.dark {
-  --bg-primary: var(--color-gray-900);
-  --bg-secondary: var(--color-gray-800);
-  --bg-tertiary: var(--color-gray-700);
-  
-  --text-primary: var(--color-gray-100);
-  --text-secondary: var(--color-gray-300);
-  --text-tertiary: var(--color-gray-400);
-  
-  --border-primary: var(--color-gray-700);
-  --border-secondary: var(--color-gray-600);
-}
-```
+<div style="background: white; padding: 24px; border-radius: 12px; border: 1px solid #E5E5E5; margin: 20px 0;">
+<h4 style="margin: 0 0 16px 0; font-size: 16px; font-weight: 600;">🎨 Dark Theme Colors</h4>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px;">
+<div><h5 style="margin: 0 0 8px 0; font-size: 12px; font-weight: 600; color: #525252;">Background Colors</h5>
+<div style="display: flex; gap: 4px;">
+<div style="flex: 1; text-align: center;"><div style="width: 100%; height: 40px; background: #171717; border-radius: 4px; margin-bottom: 4px;"></div><div style="font-size: 9px; color: #737373;">Primary<br>#171717</div></div>
+<div style="flex: 1; text-align: center;"><div style="width: 100%; height: 40px; background: #262626; border-radius: 4px; margin-bottom: 4px;"></div><div style="font-size: 9px; color: #737373;">Secondary<br>#262626</div></div>
+<div style="flex: 1; text-align: center;"><div style="width: 100%; height: 40px; background: #404040; border-radius: 4px; margin-bottom: 4px;"></div><div style="font-size: 9px; color: white;">Cards<br>#404040</div></div>
+</div>
+</div>
+<div><h5 style="margin: 0 0 8px 0; font-size: 12px; font-weight: 600; color: #525252;">Text Colors</h5>
+<div style="display: flex; gap: 4px;">
+<div style="flex: 1; text-align: center;"><div style="width: 100%; height: 40px; background: #F5F5F5; border-radius: 4px; margin-bottom: 4px;"></div><div style="font-size: 9px; color: #737373;">Primary<br>#F5F5F5</div></div>
+<div style="flex: 1; text-align: center;"><div style="width: 100%; height: 40px; background: #D4D4D4; border-radius: 4px; margin-bottom: 4px;"></div><div style="font-size: 9px; color: #737373;">Secondary<br>#D4D4D4</div></div>
+<div style="flex: 1; text-align: center;"><div style="width: 100%; height: 40px; background: #A3A3A3; border-radius: 4px; margin-bottom: 4px;"></div><div style="font-size: 9px; color: white;">Muted<br>#A3A3A3</div></div>
+</div>
+</div>
+<div><h5 style="margin: 0 0 8px 0; font-size: 12px; font-weight: 600; color: #525252;">Accent Colors</h5>
+<div style="display: flex; gap: 4px;">
+<div style="flex: 1; text-align: center;"><div style="width: 100%; height: 40px; background: #4299E1; border-radius: 4px; margin-bottom: 4px;"></div><div style="font-size: 9px; color: #737373;">Primary<br>#4299E1</div></div>
+<div style="flex: 1; text-align: center;"><div style="width: 100%; height: 40px; background: #34D399; border-radius: 4px; margin-bottom: 4px;"></div><div style="font-size: 9px; color: #737373;">Success<br>#34D399</div></div>
+<div style="flex: 1; text-align: center;"><div style="width: 100%; height: 40px; background: #F87171; border-radius: 4px; margin-bottom: 4px;"></div><div style="font-size: 9px; color: white;">Error<br>#F87171</div></div>
+</div>
+</div>
+</div>
+</div>
 
-### Dark Mode Shadows
+### Dark Mode Task Cards
 
-```css
-/* Dark mode shadow adjustments */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
-    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
-    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.3);
-    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.3);
-    --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
-  }
-}
-```
+<div style="background: white; padding: 24px; border-radius: 12px; border: 1px solid #E5E5E5; margin: 20px 0;">
+<h4 style="margin: 0 0 16px 0; font-size: 16px; font-weight: 600;">📋 Dark Mode Task Examples</h4>
+<div style="background: #171717; padding: 20px; border-radius: 8px; border: 2px solid #404040;">
+<div style="display: flex; flex-direction: column; gap: 12px;">
+<div style="display: flex; align-items: flex-start; gap: 12px; padding: 12px; background: #262626; border-radius: 6px; border: 1px solid #525252;">
+<input type="checkbox" style="margin-top: 2px; width: 16px; height: 16px; accent-color: #4299E1;">
+<div style="flex: 1;">
+<div style="font-size: 14px; font-weight: 500; color: #F5F5F5; margin-bottom: 4px;">Prepare quarterly presentation</div>
+<div style="display: flex; gap: 8px; align-items: center; margin-bottom: 4px;">
+<span style="background: #1E40AF; color: #DBEAFE; padding: 2px 8px; border-radius: 12px; font-size: 11px;">💼 Work</span>
+<span style="background: #DC2626; color: #FEF2F2; padding: 2px 8px; border-radius: 12px; font-size: 11px;">🔴 High</span>
+</div>
+<div style="font-size: 12px; color: #A3A3A3;">📅 Due: Friday 2:00 PM</div>
+</div>
+</div>
+<div style="display: flex; align-items: flex-start; gap: 12px; padding: 12px; background: #262626; border-radius: 6px; border: 1px solid #525252;">
+<input type="checkbox" checked style="margin-top: 2px; width: 16px; height: 16px; accent-color: #34D399;">
+<div style="flex: 1; opacity: 0.7;">
+<div style="font-size: 14px; font-weight: 500; color: #F5F5F5; margin-bottom: 4px; text-decoration: line-through;">Review team feedback</div>
+<div style="display: flex; gap: 8px; align-items: center; margin-bottom: 4px;">
+<span style="background: #059669; color: #D1FAE5; padding: 2px 8px; border-radius: 12px; font-size: 11px;">🏠 Personal</span>
+<span style="background: #059669; color: #D1FAE5; padding: 2px 8px; border-radius: 12px; font-size: 11px;">🟢 Low</span>
+</div>
+<div style="font-size: 12px; color: #A3A3A3;">✅ Completed</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 
 ---
 
@@ -1084,6 +993,273 @@ All color combinations meet **WCAG AA** standards:
   overflow: visible;
   clip: auto;
   white-space: normal;
+}
+```
+
+---
+
+## 📐 Component Sizing
+
+### Interactive Size Examples
+
+<div style="padding: 24px; background: #FAFAFA; border-radius: 12px; border: 1px solid #E5E5E5; margin: 20px 0;">
+
+#### Buttons
+<div style="margin-bottom: 20px;">
+  <p style="margin: 0 0 12px 0; font-weight: bold;">Button Sizes (auto width):</p>
+  <div style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap;">
+    <button style="background: #737373; color: white; border: none; padding: 8px 12px; border-radius: 6px; font-size: 12px; height: 36px; cursor: pointer;">🔄 Quick Action</button>
+    <span style="font-size: 12px; color: #737373;">36px height (small)</span>
+  </div>
+  <div style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap; margin-top: 8px;">
+    <button style="background: #3182CE; color: white; border: none; padding: 12px 24px; border-radius: 6px; font-size: 16px; height: 44px; cursor: pointer;">+ Add New Task</button>
+    <span style="font-size: 12px; color: #737373;">44px height (medium)</span>
+  </div>
+</div>
+
+#### Input Fields
+<div style="margin-bottom: 20px;">
+  <p style="margin: 0 0 12px 0; font-weight: bold;">Task Input Field (100% width, 44px height):</p>
+  <input type="text" placeholder="What needs to be done?" style="width: 100%; max-width: 400px; height: 44px; padding: 12px 16px; border: 2px solid #E5E5E5; border-radius: 6px; font-size: 16px;" />
+</div>
+
+#### Task Card
+<div style="margin-bottom: 20px;">
+  <p style="margin: 0 0 12px 0; font-weight: bold;">Task Card (400px width):</p>
+  <div style="width: 400px; background: white; border: 1px solid #E5E5E5; border-radius: 8px; padding: 16px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+    <div style="display: flex; align-items: flex-start; gap: 12px;">
+      <input type="checkbox" style="margin-top: 2px; width: 18px; height: 18px; accent-color: #3182CE;" />
+      <div style="flex: 1;">
+        <h4 style="margin: 0 0 4px 0; font-size: 16px; color: #171717; font-weight: 500;">Prepare quarterly presentation</h4>
+        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px;">
+          <span style="background-color: #DBEAFE; color: #1D4ED8; padding: 2px 8px; border-radius: 12px; font-size: 12px; font-weight: 500;">💼 Work</span>
+          <span style="background-color: #FEF2F2; color: #991B1B; padding: 2px 8px; border-radius: 12px; font-size: 12px; font-weight: 500;">🔴 High</span>
+        </div>
+        <p style="margin: 0; font-size: 14px; color: #525252;">📅 Due: Friday 2:00 PM</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+#### Progress Bar
+<div style="margin-bottom: 20px;">
+  <p style="margin: 0 0 12px 0; font-weight: bold;">Progress Bar (100% width, 12px height):</p>
+  <div style="max-width: 400px;">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+      <span style="font-size: 14px; color: #404040; font-weight: 500;">Today's Progress</span>
+      <span style="font-size: 14px; color: #737373;">6 of 8 tasks</span>
+    </div>
+    <div style="background-color: #E5E5E5; border-radius: 8px; height: 12px; overflow: hidden;">
+      <div style="background: linear-gradient(90deg, #22C55E 0%, #16A34A 100%); height: 100%; width: 75%; border-radius: 8px;"></div>
+    </div>
+  </div>
+</div>
+
+#### Modal Preview
+<div style="margin-bottom: 0;">
+  <p style="margin: 0 0 12px 0; font-weight: bold;">Task Creation Modal (500px width, auto height):</p>
+  <div style="border: 2px dashed #D1D5DB; background: #F9FAFB; padding: 16px; border-radius: 8px;">
+    <p style="margin: 0 0 12px 0; font-size: 12px; color: #737373;">Modal Preview (Static)</p>
+    <div style="width: 500px; max-width: 100%; background: white; border-radius: 12px; box-shadow: 0 25px 50px rgba(0,0,0,0.25); overflow: hidden; margin: 0 auto;">
+      <div style="padding: 20px; border-bottom: 1px solid #E5E5E5;">
+        <h3 style="margin: 0; font-size: 18px; font-weight: 600;">✏️ Create New Task</h3>
+      </div>
+      <div style="padding: 20px;">
+        <div style="margin-bottom: 16px;">
+          <label style="display: block; margin-bottom: 6px; font-weight: 500; color: #404040; font-size: 14px;">Task Title *</label>
+          <input type="text" placeholder="What needs to be done?" style="width: 100%; padding: 12px 16px; border: 2px solid #E5E5E5; border-radius: 6px; font-size: 16px;" />
+        </div>
+        <div style="display: flex; gap: 12px;">
+          <div style="flex: 1;">
+            <label style="display: block; margin-bottom: 6px; font-weight: 500; color: #404040; font-size: 14px;">Category</label>
+            <select style="width: 100%; padding: 12px 16px; border: 2px solid #E5E5E5; border-radius: 6px; font-size: 16px; background: white;">
+              <option>💼 Work</option>
+              <option>🏠 Personal</option>
+            </select>
+          </div>
+          <div style="flex: 1;">
+            <label style="display: block; margin-bottom: 6px; font-weight: 500; color: #404040; font-size: 14px;">Priority</label>
+            <select style="width: 100%; padding: 12px 16px; border: 2px solid #E5E5E5; border-radius: 6px; font-size: 16px; background: white;">
+              <option>🔴 High</option>
+              <option>🟡 Medium</option>
+              <option>🟢 Low</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div style="padding: 16px 20px; background: #FAFAFA; display: flex; gap: 8px; justify-content: flex-end;">
+        <button style="background: #F5F5F5; color: #404040; border: none; padding: 12px 24px; border-radius: 6px; cursor: pointer;">Cancel</button>
+        <button style="background: #3182CE; color: white; border: none; padding: 12px 24px; border-radius: 6px; cursor: pointer;">Create Task</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+### Size Guidelines
+
+| Component        | Dimensions        | Usage Notes                          |
+|------------------|-------------------|--------------------------------------|
+| Button (small)   | auto × 36px       | Secondary actions, icon buttons      |
+| Button (medium)  | auto × 44px       | Primary actions, task creation       |
+| Input Fields     | 100% × 44px       | Touch-friendly, accessible height    |
+| Task Cards       | 400px × auto      | Task displays, task listings         |
+| Modals           | 500px × auto      | Task creation, settings, dialogs     |
+| Progress Bars    | 100% × 12px       | Progress tracking, completion status |
+
+---
+
+## ✅ Usage Examples
+
+### Live TaskMaster Components Preview
+
+<div style="background: #FAFAFA; padding: 24px; border-radius: 12px; margin: 16px 0; border: 1px solid #E5E5E5;">
+  <h4 style="margin: 0 0 20px 0; color: #171717; font-size: 18px;">TaskMaster Interface Elements</h4>
+  
+  <div style="margin-bottom: 24px;">
+    <p style="margin: 0 0 12px 0; font-weight: 600; color: #525252;">Primary Actions</p>
+    <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+      <button style="background-color: #3182CE; color: white; border: none; padding: 12px 24px; border-radius: 6px; font-weight: 500; cursor: pointer; font-family: 'Inter', sans-serif;">+ Add New Task</button>
+      <button style="background-color: #22C55E; color: white; border: none; padding: 12px 24px; border-radius: 6px; font-weight: 500; cursor: pointer; font-family: 'Inter', sans-serif;">✓ Mark Complete</button>
+      <button style="background-color: transparent; color: #3182CE; border: 2px solid #3182CE; padding: 10px 22px; border-radius: 6px; font-weight: 500; cursor: pointer; font-family: 'Inter', sans-serif;">Cancel</button>
+    </div>
+  </div>
+  
+  <div style="margin-bottom: 24px;">
+    <p style="margin: 0 0 12px 0; font-weight: 600; color: #525252;">Form Elements</p>
+    <div style="display: flex; flex-direction: column; gap: 12px; max-width: 400px;">
+      <input type="text" placeholder="Search tasks..." style="padding: 12px 16px; border: 2px solid #E5E5E5; border-radius: 6px; font-size: 16px; font-family: 'Inter', sans-serif;" />
+      <select style="padding: 12px 16px; border: 2px solid #E5E5E5; border-radius: 6px; font-size: 16px; background: white; font-family: 'Inter', sans-serif;">
+        <option>All Categories</option>
+        <option>💼 Work</option>
+        <option>🏠 Personal</option>
+        <option>🛒 Shopping</option>
+      </select>
+    </div>
+  </div>
+  
+  <div style="margin-bottom: 24px;">
+    <p style="margin: 0 0 12px 0; font-weight: 600; color: #525252;">Status Indicators & Badges</p>
+    <div style="display: flex; gap: 8px; flex-wrap: wrap; align-items: center;">
+      <span style="background-color: #DBEAFE; color: #1D4ED8; padding: 4px 12px; border-radius: 16px; font-size: 12px; font-weight: 500;">💼 Work</span>
+      <span style="background-color: #D1FAE5; color: #065F46; padding: 4px 12px; border-radius: 16px; font-size: 12px; font-weight: 500;">🏠 Personal</span>
+      <span style="background-color: #FEF2F2; color: #991B1B; padding: 4px 12px; border-radius: 16px; font-size: 12px; font-weight: 500;">🔴 High Priority</span>
+      <span style="background-color: #FFFBEB; color: #92400E; padding: 4px 12px; border-radius: 16px; font-size: 12px; font-weight: 500;">🟡 Medium Priority</span>
+      <span style="background-color: #F0FDF4; color: #14532D; padding: 4px 12px; border-radius: 16px; font-size: 12px; font-weight: 500;">🟢 Low Priority</span>
+    </div>
+  </div>
+  
+  <div style="margin-bottom: 24px;">
+    <p style="margin: 0 0 12px 0; font-weight: 600; color: #525252;">Alert Messages</p>
+    <div style="display: flex; flex-direction: column; gap: 12px; max-width: 500px;">
+      <div style="display: flex; align-items: center; padding: 12px 16px; background-color: #F0FDF4; border: 1px solid #BBF7D0; border-radius: 6px; color: #14532D;">
+        <span style="margin-right: 8px;">✅</span>
+        <span>Task completed successfully!</span>
+      </div>
+      <div style="display: flex; align-items: center; padding: 12px 16px; background-color: #FFFBEB; border: 1px solid #FDE68A; border-radius: 6px; color: #92400E;">
+        <span style="margin-right: 8px;">⚠️</span>
+        <span>You have 3 tasks due today</span>
+      </div>
+      <div style="display: flex; align-items: center; padding: 12px 16px; background-color: #FEF2F2; border: 1px solid #FECACA; border-radius: 6px; color: #991B1B;">
+        <span style="margin-right: 8px;">❌</span>
+        <span>Task deadline has passed</span>
+      </div>
+    </div>
+  </div>
+  
+  <div style="margin-bottom: 0;">
+    <p style="margin: 0 0 12px 0; font-weight: 600; color: #525252;">Interactive Elements</p>
+    <div style="display: flex; align-items: center; gap: 16px; flex-wrap: wrap;">
+      <label style="display: flex; align-items: center; cursor: pointer; gap: 12px;">
+        <div style="position: relative; width: 48px; height: 24px; background-color: #3182CE; border-radius: 24px;">
+          <div style="position: absolute; top: 2px; right: 2px; width: 20px; height: 20px; background-color: white; border-radius: 50%; box-shadow: 0 2px 4px rgba(0,0,0,0.2);"></div>
+        </div>
+        <span style="font-size: 16px; color: #171717;">Show completed tasks</span>
+      </label>
+    </div>
+  </div>
+  
+</div>
+
+### CSS Implementation Examples
+
+```css
+/* TaskMaster Button Styles */
+.taskmaster-btn-primary {
+  background-color: var(--color-primary-500);
+  color: #fff;
+  padding: var(--space-3) var(--space-6);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  font-family: var(--font-primary);
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.taskmaster-btn-primary:hover {
+  background-color: var(--color-primary-600);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+}
+
+/* TaskMaster Input Styles */
+.taskmaster-input {
+  width: 100%;
+  height: 44px;
+  padding: var(--space-3) var(--space-4);
+  border: 2px solid var(--color-gray-200);
+  border-radius: var(--radius-md);
+  font-family: var(--font-primary);
+  font-size: 16px;
+  background-color: white;
+  transition: border-color 0.2s;
+}
+
+.taskmaster-input:focus {
+  border-color: var(--color-primary-500);
+  box-shadow: var(--shadow-primary-focus);
+  outline: none;
+}
+
+/* TaskMaster Badge Styles */
+.taskmaster-badge-work {
+  background-color: var(--color-category-work-light);
+  color: var(--color-category-work);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-full);
+  font-size: 12px;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.taskmaster-alert-success {
+  display: flex;
+  align-items: center;
+  padding: var(--space-3) var(--space-4);
+  background-color: #F0FDF4;
+  border: 1px solid #BBF7D0;
+  border-radius: var(--radius-md);
+  color: #14532D;
+  gap: var(--space-2);
+}
+
+.taskmaster-task-card {
+  background: white;
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-all);
+}
+
+.taskmaster-task-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
 }
 ```
 
