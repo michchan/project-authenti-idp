@@ -1,7 +1,7 @@
 # Service Responsibilities - TaskMaster v1.0
 
 ## Purpose
-Define clear boundaries and responsibilities for each service/component in the TaskMaster system architecture to ensure clean separation of concerns, scalability, and maintainable code across frontend application and backend services.
+Define clear service boundaries and responsibilities for TaskMaster system architecture ensuring separation of concerns, scalability, and maintainable code.
 
 ## Overview Table
 
@@ -17,46 +17,46 @@ Define clear boundaries and responsibilities for each service/component in the T
 ## Detailed Service Definitions
 
 ### Web Application (PWA)
-**Summary**: Progressive web application that provides the complete user interface for TaskMaster with cross-platform compatibility and offline functionality.
+**Summary**: Progressive web application providing complete TaskMaster UI with cross-platform compatibility and offline functionality.
 
 **Primary Responsibilities**:
-- Render all UI components (dashboard, forms, charts, modals)
+- Render UI components (dashboard, forms, charts, modals)
 - Handle user interactions and client-side routing
 - Implement offline functionality with service workers
 - Manage client-side state and local caching
-- Provide responsive design for desktop, tablet, and mobile
+- Provide responsive design for all devices
 - Implement accessibility features (WCAG 2.1 AA)
 - Handle real-time UI updates
 
 **Non-Responsibilities**:
-- Server-side business logic or data validation
-- User authentication beyond token management
-- Direct database operations
-- Cross-device synchronization logic
+- Server-side business logic or validation
+- Authentication beyond token management
+- Database operations
+- Cross-device synchronization
 - Server-side search indexing
 
 **Key Interactions**:
-- **Calls**: All backend services via API Gateway
-- **Receives**: HTTP responses, authentication tokens, data updates
-- **Dependencies**: API Gateway for all backend communication
+- **Calls**: Backend services via API Gateway
+- **Receives**: HTTP responses, auth tokens, data updates
+- **Dependencies**: API Gateway for backend communication
 
-**Justification**: Single application approach reduces complexity while providing cross-platform compatibility through responsive design and PWA capabilities.
+**Justification**: Single application reduces complexity while providing cross-platform compatibility through responsive design and PWA.
 
 ---
 
 ### API Gateway
-**Summary**: Central entry point that handles request routing, load balancing, and basic authentication validation for all backend services.
+**Summary**: Central entry point handling request routing, load balancing, and authentication validation for backend services.
 
 **Primary Responsibilities**:
-- Route requests to appropriate backend services
-- Implement load balancing and basic health checks
+- Route requests to backend services
+- Implement load balancing and health checks
 - Validate authentication tokens
-- Provide rate limiting and basic throttling
+- Provide rate limiting and throttling
 - Implement CORS and security headers
 - Centralized request/response logging
 
 **Non-Responsibilities**:
-- Business logic or domain-specific operations
+- Business logic or domain operations
 - Data persistence or database operations
 - Complex authentication logic
 - Data transformation beyond routing
@@ -65,17 +65,17 @@ Define clear boundaries and responsibilities for each service/component in the T
 **Key Interactions**:
 - **Calls**: Authentication Service, Core API Service
 - **Receives**: HTTP requests from web application
-- **Dependencies**: Backend services for request routing
+- **Dependencies**: Backend services for routing
 
-**Justification**: Centralizes cross-cutting concerns while keeping the implementation simple and focused on current needs.
+**Justification**: Centralizes cross-cutting concerns with simple implementation focused on current needs.
 
 ---
 
 ### Authentication Service
-**Summary**: Dedicated service responsible for user authentication, authorization, and session management.
+**Summary**: Dedicated service for user authentication, authorization, and session management.
 
 **Primary Responsibilities**:
-- User registration and login functionality
+- User registration and login
 - JWT token generation and validation
 - Password management and security policies
 - Session management and token refresh
@@ -91,20 +91,20 @@ Define clear boundaries and responsibilities for each service/component in the T
 
 **Key Interactions**:
 - **Calls**: Primary Database for user data
-- **Receives**: Authentication requests from API Gateway
+- **Receives**: Auth requests from API Gateway
 - **Dependencies**: Primary Database for user storage
 
-**Justification**: Security concerns require specialized focus and isolation from business logic, but kept simple for current requirements.
+**Justification**: Security concerns require specialized focus and isolation from business logic, kept simple for current requirements.
 
 ---
 
 ### Core API Service
-**Summary**: Main business logic service that handles all task-related operations, search functionality, and core application features.
+**Summary**: Main business logic service handling task operations, search functionality, and core features.
 
 **Primary Responsibilities**:
 - Task and subtask CRUD operations
 - Business rule validation (due dates, priorities, categories)
-- Full-text search functionality across tasks
+- Full-text search across tasks
 - Data validation and integrity checks
 - Batch operations and bulk updates
 - Progress tracking and analytics
@@ -113,27 +113,27 @@ Define clear boundaries and responsibilities for each service/component in the T
 **Non-Responsibilities**:
 - User authentication or session management
 - User interface or presentation logic
-- Direct database schema management
+- Database schema management
 - Infrastructure concerns
 - External service integrations
 
 **Key Interactions**:
-- **Calls**: Primary Database for data operations, Redis Cache for performance
+- **Calls**: Primary Database for data, Redis Cache for performance
 - **Receives**: Business requests from API Gateway
 - **Dependencies**: Primary Database for persistence, Redis Cache for optimization
 
-**Justification**: Consolidates core business logic into a single service to reduce complexity while maintaining clear separation from authentication and infrastructure concerns.
+**Justification**: Consolidates core business logic into single service reducing complexity while maintaining separation from authentication and infrastructure.
 
 ---
 
 ### Primary Database
-**Summary**: Transactional database system providing persistent storage for all application data with ACID guarantees.
+**Summary**: Transactional database providing persistent storage for application data with ACID guarantees.
 
 **Primary Responsibilities**:
 - Store user accounts and profile data
 - Persist task and subtask information
 - Maintain data consistency and integrity
-- Provide backup and recovery capabilities
+- Provide backup and recovery
 - Handle transactions and concurrency
 - Support full-text search queries
 
@@ -145,21 +145,21 @@ Define clear boundaries and responsibilities for each service/component in the T
 - Authentication logic
 
 **Key Interactions**:
-- **Calls**: None (passive storage system)
-- **Receives**: Database queries from Authentication Service and Core API Service
+- **Calls**: None (passive storage)
+- **Receives**: Database queries from Authentication and Core API Services
 - **Dependencies**: Database infrastructure and backup systems
 
-**Justification**: Centralized storage ensures data consistency and simplifies the data architecture for current requirements.
+**Justification**: Centralized storage ensures data consistency and simplifies data architecture for current requirements.
 
 ---
 
 ### Redis Cache
-**Summary**: High-performance in-memory cache providing fast data access and session storage for the application.
+**Summary**: High-performance in-memory cache providing fast data access and session storage.
 
 **Primary Responsibilities**:
 - Cache frequently accessed task data
 - Store user sessions and temporary data
-- Provide fast key-value operations for performance optimization
+- Provide fast key-value operations for performance
 - Handle cache expiration and eviction policies
 - Support search result caching
 - Improve API response times
@@ -172,27 +172,27 @@ Define clear boundaries and responsibilities for each service/component in the T
 - Search indexing
 
 **Key Interactions**:
-- **Calls**: None (passive storage system)
+- **Calls**: None (passive storage)
 - **Receives**: Cache operations from Core API Service
 - **Dependencies**: Redis infrastructure
 
-**Justification**: Performance optimization through caching improves user experience while keeping the caching layer simple and focused.
+**Justification**: Performance optimization through caching improves user experience while keeping caching layer simple and focused.
 
 ## Service Interaction Rules
 
 ### Data Flow Principles
-1. **Request-response flow**: Web application communicates with backend services via API Gateway
-2. **Simple communication**: Direct API calls without complex messaging patterns
+1. **Request-response flow**: Web application communicates with backend via API Gateway
+2. **Simple communication**: Direct API calls without complex messaging
 3. **Single responsibility**: Each service owns its domain without overlap
-4. **Service independence**: Services can be deployed and scaled independently
+4. **Service independence**: Services deployed and scaled independently
 
 ### Cross-Service Communication
-- **Web Application** → **API Gateway** → **Backend Services**: All requests flow through gateway
+- **Web Application** → **API Gateway** → **Backend Services**: All requests through gateway
 - **Core API Service** → **Authentication Service**: Token validation when needed
 - **All Services** → **Database/Cache**: Direct data layer access
 
 ### Error Handling Boundaries
-- Each service handles its own errors and provides meaningful responses
+- Each service handles own errors and provides meaningful responses
 - API Gateway provides basic error response formatting
 - Web application handles user-friendly error presentation
 - Database services handle data integrity and recovery
@@ -200,7 +200,7 @@ Define clear boundaries and responsibilities for each service/component in the T
 ## Scalability and Performance Considerations
 
 ### Service Scaling Strategies
-- **Stateless services**: Core API Service and Authentication Service can scale horizontally
+- **Stateless services**: Core API and Authentication Services scale horizontally
 - **Database scaling**: Read replicas and connection pooling
 - **Cache distribution**: Redis clustering for high availability
 - **Frontend scaling**: CDN distribution for static assets
@@ -213,4 +213,4 @@ Define clear boundaries and responsibilities for each service/component in the T
 
 ---
 
-*This simplified service responsibility definition ensures clear boundaries while reducing architectural complexity and focusing on current requirements.*
+*This service responsibility definition ensures clear boundaries while reducing architectural complexity and focusing on current requirements.*
