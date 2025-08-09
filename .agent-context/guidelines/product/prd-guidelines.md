@@ -1,302 +1,227 @@
 # 📋 Product Requirements Document (PRD) Guidelines
 
-Comprehensive guidance for creating effective Product Requirements Documents using the PRD template.
+Guidelines for creating effective PRDs using the PRD template.
 
 ---
 
 ## 🎯 Purpose & When to Use
 
-**Purpose**: Define what you're building, why you're building it, who it's for, and how success will be measured - serving as the single source of truth for product development.
+**Purpose**: Define what, why, who, and how to measure success - the single source of truth for product development.
 
 **When to use**:
-- Starting development on a new product or major feature
-- Aligning stakeholders on product vision and scope
-- Communicating requirements to engineering, design, and other teams
-- Getting formal approval before significant development investment
-- Documenting decisions for future reference and onboarding
+- New product or major feature development
+- Stakeholder alignment on vision and scope
+- Requirements communication to engineering/design teams
+- Formal approval before significant investment
+- Decision documentation for future reference
 
 ---
 
-## 📝 PRD Writing Process
+## 📝 Writing Process
 
 ### Before You Start
-1. **Conduct user research**: Understand actual user needs and pain points
-2. **Validate the problem**: Ensure the problem is real and worth solving
-3. **Define success metrics**: Know how you'll measure if the solution works
-4. **Gather stakeholder input**: Include perspectives from all relevant teams
-5. **Review competitive landscape**: Understand existing solutions and opportunities
+1. **User research**: Understand actual needs and pain points
+2. **Problem validation**: Ensure it's real and worth solving
+3. **Success metrics**: Know how you'll measure success
+4. **Stakeholder input**: Gather all team perspectives
+5. **Competitive review**: Understand existing solutions
 
-### Draft → Review → Final Cycle
-1. **Draft stage**: Focus on getting ideas down, expect incompleteness
-2. **Stakeholder review**: Circulate for feedback from key team members
-3. **Refinement**: Address feedback, fill gaps, resolve open questions
-4. **Final approval**: Get sign-off from all required approvers
-5. **Living document**: Update as requirements evolve during development
+### Process
+1. **Draft**: Get ideas down, expect incompleteness
+2. **Review**: Circulate for stakeholder feedback
+3. **Refine**: Address feedback and resolve questions
+4. **Approve**: Get required sign-offs
+5. **Maintain**: Update as requirements evolve
 
 ---
 
-## 📋 Section-by-Section Guidelines
+## 📋 Section Guidelines
 
 ### 1. Overview
-**Purpose**: Provide essential document metadata and approval tracking.
+**Purpose**: Document metadata and approval tracking.
 
 **Best practices**:
-- **Product Name**: Use the actual product/feature name, not codenames
-- **Author**: Include primary author and contributors if multiple people involved
-- **Date**: Update date when making significant revisions
-- **Status**: Be clear about document maturity (Draft/In Review/Final)
-- **Version**: Use semantic versioning (1.0, 1.1, 2.0) for major vs. minor changes
+- **Product Name**: Use actual name, not codenames
+- **Author**: Include primary author and contributors
+- **Date**: Update on significant revisions
+- **Status**: Draft/In Review/Final
+- **Version**: Semantic versioning (1.0, 1.1, 2.0)
 
-**Approvals Checklist**:
-- Customize roles based on your organization (may include: Engineering Lead, Design Lead, Legal, Security, etc.)
-- Get actual sign-offs before marking as "Final"
-- Use checkboxes to track approval progress
+**Approvals**: Customize for your organization (Engineering, Design, Legal, etc.). Get actual sign-offs before "Final" status.
 
 ### 2. Objective  
-**Purpose**: Provide a clear, concise summary of what you're building and why.
+**Purpose**: Clear, concise summary of what and why.
 
-**Writing guidelines**:
-- **Keep it concise**: 1-2 sentences maximum
-- **Focus on user value**: What problem does this solve for users?
-- **Avoid technical jargon**: Should be understandable by any stakeholder
-- **Be specific**: Vague objectives lead to scope creep
+**Guidelines**:
+- 1-2 sentences maximum
+- Focus on user value
+- Avoid jargon, be specific
 
-**Good example**: "FocusFlow is a productivity browser extension that helps users reduce digital distractions by blocking specific websites, using a Pomodoro-style timer, and visualizing focus time through a dashboard."
+**Good**: "FocusFlow blocks distracting websites, uses Pomodoro timers, and visualizes focus time to help users reduce digital distractions."
 
-**Poor example**: "Build a productivity tool that makes users more productive."
+**Poor**: "Build a productivity tool that makes users more productive."
 
 ### 3. Problem Statement
-**Purpose**: Clearly articulate the problem you're solving and for whom.
+**Purpose**: Articulate the problem and for whom.
 
 **Include**:
-- **Who has the problem**: Specific user segments or personas
-- **What the problem is**: Concrete pain points, not assumptions
-- **How it's currently addressed**: Existing workarounds or solutions
-- **Why current solutions are inadequate**: Gaps that justify building something new
+- Who has the problem (specific segments)
+- What the problem is (concrete pain points)
+- Current solutions and their gaps
 
-**Research-backed approach**:
-- Support with user research data, analytics, or market research
-- Include user quotes when possible
-- Quantify the problem if you have data (e.g., "Users spend 2.5 hours daily on distracting websites")
+**Research-backed**: Support with data, user quotes, and quantified problems.
 
 ### 4. Goals & Non-goals
-**Purpose**: Define scope boundaries to prevent feature creep and misaligned expectations.
+**Purpose**: Define scope boundaries to prevent feature creep.
 
-**Goals section**:
-- **Prioritize ruthlessly**: List most important outcomes first
-- **Be specific**: Vague goals lead to misaligned development
-- **Focus on outcomes**: What users will be able to accomplish, not what you'll build
-- **Make them measurable**: Connect to success metrics when possible
+**Goals**: Prioritize ruthlessly, be specific, focus on user outcomes, make measurable.
 
-**Non-goals section**:
-- **Prevent scope creep**: Explicitly state what's out of scope
-- **Address obvious questions**: Anticipate what stakeholders might expect
-- **Include future considerations**: "Not in v1 but potentially later" items
-- **Be diplomatic**: Explain why certain features aren't included
+**Non-goals**: Prevent scope creep, address obvious questions, include future considerations.
 
 ### 5. Success Metrics / KPIs
-**Purpose**: Define how you'll measure if the product achieves its intended outcomes.
+**Purpose**: Define success measurement.
 
-**Metric selection**:
-- **Align with business goals**: Connect to broader company objectives
-- **Mix leading and lagging indicators**: Both predictive and outcome metrics
-- **Be realistic**: Ambitious but achievable targets
-- **Include timeframes**: When you expect to see results
+**Selection criteria**: Align with business goals, mix leading/lagging indicators, be realistic, include timeframes.
 
-**Common metric categories**:
-- **Adoption**: Download rates, sign-up rates, activation rates
-- **Engagement**: Daily/weekly active users, session duration, feature usage
-- **Retention**: Return usage, churn rates, long-term engagement
-- **Business impact**: Revenue, cost savings, operational efficiency
-- **Quality**: User satisfaction, support ticket volume, error rates
+**Categories**: Adoption, Engagement, Retention, Business impact, Quality.
 
 ### 6. Target Users
-**Purpose**: Define who will use this product and how they differ from each other.
+**Purpose**: Define user segments and their differences.
 
-**User definition**:
-- **Primary vs. secondary**: Focus on primary users but acknowledge others
-- **Demographics and psychographics**: Age, role, behavior patterns, motivations
-- **Use cases**: How different user types will interact with the product
-- **Pain points**: Specific problems each user segment experiences
+**Include**: Primary vs. secondary users, demographics/psychographics, use cases, pain points.
 
-**Avoid generic users**: "Anyone who wants to be productive" is too broad. "Remote knowledge workers who struggle with social media distractions" is specific and actionable.
+**Be specific**: "Remote knowledge workers struggling with social media distractions" vs. "Anyone who wants to be productive."
 
 ### 7. Features / Requirements
-**Purpose**: Break down the product into specific, implementable features.
+**Purpose**: Break down into specific, implementable features.
 
-**Feature documentation structure**:
-- **User story format**: "As a [user type], I want [capability] so that [benefit]"
-- **Acceptance criteria**: Specific, testable conditions that define "done"
-- **Implementation notes**: Technical constraints, business rules, edge cases
+**Structure**:
+- **User stories**: "As [user type], I want [capability] so that [benefit]"
+- **Acceptance criteria**: Testable conditions defining "done"
+- **Implementation notes**: Constraints, rules, edge cases
 
-**Writing effective user stories**:
-- **Focus on user value**: Why does the user want this capability?
-- **Be specific about the user**: Different user types may have different needs
-- **Avoid solution bias**: Focus on what users need, not how to implement it
-
-**Acceptance criteria best practices**:
-- **Make them testable**: QA should be able to verify each criterion
-- **Cover edge cases**: What happens when things go wrong?
-- **Include non-functional requirements**: Performance, accessibility, security
-- **Be complete**: Don't leave gaps that lead to assumptions
+**Best practices**: Focus on user value, be user-specific, avoid solution bias, make criteria testable, cover edge cases.
 
 ### 8. UX Design
-**Purpose**: Connect product requirements to design deliverables.
+**Purpose**: Connect requirements to design deliverables.
 
-**Status tracking**:
-- **Pending**: Design work hasn't started
-- **In Progress**: Actively being worked on
-- **Complete**: Designs are finalized and approved
+**Status**: Pending/In Progress/Complete
 
-**Design integration**:
-- **Link to actual designs**: Wireframes, mockups, prototypes
-- **Reference user journeys**: How designs connect to user flows
-- **Include design rationale**: Why certain design decisions were made
-- **Note responsive considerations**: How designs work across devices
+**Include**: Links to designs, user journeys, design rationale, responsive considerations.
 
 ### 9. Open Questions / Risks
-**Purpose**: Track unresolved issues and potential problems.
+**Purpose**: Track unresolved issues and problems.
 
-**Open questions**:
-- **Technical feasibility**: Can this be built within constraints?
-- **User behavior**: Will users actually use this feature as intended?
-- **Business model**: How does this connect to revenue or cost savings?
-- **Resource availability**: Do we have the right people and time?
+**Questions**: Technical feasibility, user behavior, business model, resource availability.
 
-**Risk management**:
-- **Technical risks**: Dependencies, performance, scalability concerns
-- **Market risks**: Competition, user adoption, market changes
-- **Resource risks**: Team capacity, skill gaps, budget constraints
-- **Regulatory risks**: Legal, security, privacy considerations
+**Risks**: Technical, Market, Resource, Regulatory concerns.
 
 ### 10. Appendix
-**Purpose**: Provide supporting documentation and definitions.
+**Purpose**: Supporting documentation and definitions.
 
-**Supporting documentation**:
-- **Research findings**: User interviews, surveys, analytics
-- **Competitive analysis**: How similar products work
-- **Technical specifications**: Architecture decisions, API requirements
-- **Design files**: Links to Figma, Sketch, or other design tools
-
-**Glossary**:
-- **Technical terms**: Definitions for domain-specific language
-- **Business terms**: Company-specific terminology
-- **User terms**: How users refer to concepts vs. internal naming
+**Include**: Research findings, competitive analysis, technical specs, design files, glossary.
 
 ---
 
-## 📊 PRD Quality Assessment
+## 📊 Quality Assessment
 
-### Content Quality Checklist
-- [ ] Problem is clearly defined and research-backed
-- [ ] Success metrics are specific and measurable
-- [ ] Target users are well-defined with specific pain points
-- [ ] Features include complete user stories and acceptance criteria
-- [ ] Scope boundaries are clear (goals vs. non-goals)
+### Content Quality
+- [ ] Problem clearly defined and research-backed
+- [ ] Success metrics specific and measurable
+- [ ] Target users well-defined with pain points
+- [ ] Features include complete user stories and criteria
+- [ ] Scope boundaries clear (goals vs. non-goals)
 
-### Stakeholder Alignment Checklist  
-- [ ] All required stakeholders have reviewed and provided input
-- [ ] Open questions have been resolved or have clear owners
-- [ ] Technical feasibility has been validated by engineering
-- [ ] Design implications have been considered and planned
-- [ ] Business impact and resource requirements are understood
+### Stakeholder Alignment
+- [ ] Required stakeholders reviewed and provided input
+- [ ] Open questions resolved or assigned owners
+- [ ] Technical feasibility validated by engineering
+- [ ] Design implications considered and planned
+- [ ] Business impact and resources understood
 
-### Documentation Quality Checklist
-- [ ] Writing is clear and jargon-free
-- [ ] All sections are complete and well-reasoned
-- [ ] Links to supporting documentation are current and accessible
-- [ ] Document version and approval status are current
-- [ ] Format is consistent and professional
+### Documentation Quality
+- [ ] Writing clear and jargon-free
+- [ ] All sections complete and well-reasoned
+- [ ] Links current and accessible
+- [ ] Version and approval status current
+- [ ] Format consistent and professional
 
 ---
 
-## 🚨 Common PRD Pitfalls to Avoid
+## 🚨 Common Pitfalls
 
 ### Content Issues
-- **Solution bias**: Prescribing implementation details instead of focusing on user needs
-- **Scope creep**: Adding features without clear justification or priority
-- **Vague requirements**: Acceptance criteria that can't be objectively tested
-- **Missing edge cases**: Not considering error states, empty states, or unusual scenarios
+- **Solution bias**: Focus on implementation vs. user needs
+- **Scope creep**: Adding features without justification
+- **Vague requirements**: Untestable acceptance criteria
+- **Missing edge cases**: Ignoring error/empty/unusual states
 
 ### Process Issues
-- **Inadequate research**: Building based on assumptions rather than user evidence
-- **Poor stakeholder alignment**: Moving forward without proper buy-in
-- **Outdated documentation**: PRD doesn't reflect current understanding or decisions
-- **No success measurement**: Launching without clear metrics to evaluate effectiveness
+- **Inadequate research**: Building on assumptions vs. evidence
+- **Poor alignment**: Moving forward without buy-in
+- **Outdated docs**: PRD doesn't reflect current decisions
+- **No measurement**: Launching without success metrics
 
 ### Communication Issues
-- **Too technical**: Using jargon that non-technical stakeholders can't understand
-- **Too generic**: Requirements so broad they provide no useful guidance
-- **Inconsistent terminology**: Using different terms for the same concepts
-- **Missing context**: Not explaining why certain decisions were made
+- **Too technical**: Jargon non-technical stakeholders can't understand
+- **Too generic**: Requirements too broad for useful guidance
+- **Inconsistent terms**: Different words for same concepts
+- **Missing context**: No explanation for decisions
 
 ---
 
-## 💡 PRD Success Tips
+## 💡 Success Tips
 
-1. **Start with the problem**: Don't lead with your solution idea
-2. **Write for your audience**: Consider who will read and use this document
-3. **Be ruthlessly specific**: Vague requirements lead to misaligned implementations
-4. **Use real examples**: Concrete scenarios are clearer than abstract descriptions
-5. **Update regularly**: Keep the PRD current as you learn and iterate
-6. **Get early feedback**: Share drafts for input before finalizing
-7. **Connect to user research**: Ground requirements in actual user data
-8. **Plan for measurement**: Include instrumentation and analytics requirements
-9. **Consider all user types**: Primary, secondary, and edge case users
-10. **Document decisions**: Record why certain choices were made for future reference
+1. **Start with the problem**, not solution
+2. **Write for your audience**
+3. **Be ruthlessly specific**
+4. **Use concrete examples**
+5. **Update regularly**
+6. **Get early feedback**
+7. **Ground in user research**
+8. **Plan for measurement**
+9. **Consider all user types**
+10. **Document decisions**
 
 ---
 
-## 🔄 PRD Lifecycle Management
+## 🔄 Lifecycle Management
 
 ### Draft Stage
-- **Focus on completeness**: Get all ideas and requirements documented
-- **Expect iteration**: Early drafts should be rough and incomplete
-- **Gather broad input**: Cast a wide net for stakeholder feedback
-- **Research thoroughly**: Validate assumptions with data and user research
+- Focus on completeness and thorough research
+- Expect iteration and gather broad stakeholder input
 
 ### Review Stage  
-- **Structured feedback**: Use specific review criteria and deadlines
-- **Address conflicts**: Resolve disagreements about scope or approach
-- **Technical validation**: Confirm feasibility with engineering team
-- **Business alignment**: Ensure connection to company goals and strategy
+- Use structured feedback with deadlines
+- Address conflicts and validate technical feasibility
+- Ensure business alignment
 
 ### Final Stage
-- **Formal approval**: Get documented sign-offs from required stakeholders
-- **Baseline established**: Approved PRD becomes the development baseline
-- **Change control**: Process for handling scope changes after approval
-- **Regular reviews**: Scheduled check-ins to ensure PRD remains accurate
+- Get formal approval and establish baseline
+- Set up change control process and regular reviews
 
 ### Maintenance
-- **Version control**: Track significant changes with version updates
-- **Impact assessment**: Evaluate how changes affect timeline and resources
-- **Stakeholder communication**: Keep all parties informed of important updates
-- **Post-launch review**: Compare actual results to PRD predictions for learning
+- Track changes with version updates
+- Assess impact on timeline/resources
+- Communicate updates and conduct post-launch review
 
-### ⚠️ Important: PRD File Management
-**Don't create multiple copies for status updates**: When updating PRD status from Draft → In Review → Final, update the same file rather than creating new copies. Maintain only ONE PRD file per product version (e.g., `docs/v1/PRD-1.0.md`).
+### ⚠️ File Management
+**Don't create multiple copies**: Update the same file through Draft → Review → Final stages. Maintain ONE PRD file per version (e.g., `docs/v1/PRD-1.0.md`).
 
-**Why this matters**:
-- Prevents confusion about which document is current
-- Maintains single source of truth for requirements
-- Keeps document history in one place
-- Reduces storage and maintenance overhead
-- Ensures all stakeholders reference the same document
+**Why**: Prevents confusion, maintains single source of truth, keeps history in one place, reduces overhead.
 
 ---
 
-## 📚 PRD Templates and Examples
+## 📚 Templates and Examples
 
 ### Template Usage
-- **PRD-[version].md template**: Provides structure and prompts for each section
-- **Fill in all sections**: Even if brief, every section provides value
-- **Customize for your context**: Adapt sections based on product type and organization
-- **Maintain consistency**: Use the same format across all PRDs in your organization
+- Use PRD-[version].md template structure
+- Fill in all sections (even if brief)
+- Customize for your context and maintain consistency
 
 ### Learning from Examples
-- **Draft vs. Final comparison**: See how PRDs evolve through the review process
-- **Study successful PRDs**: Learn from products that achieved their goals
-- **Analyze scope decisions**: Understand how goals and non-goals drive focus
-- **Review metric achievement**: How did actual results compare to predicted success metrics?
+- Compare draft vs. final versions
+- Study successful PRDs and scope decisions
+- Review actual vs. predicted metrics
 
-Remember: A great PRD doesn't guarantee product success, but it significantly increases the odds by ensuring everyone is aligned on what success looks like and how to achieve it.
+Remember: Great PRDs significantly increase success odds by ensuring alignment on what success looks like and how to achieve it.

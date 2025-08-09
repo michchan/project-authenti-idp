@@ -1,12 +1,12 @@
 # 📐 ASCII Wireframes Guidelines
 
-Comprehensive guidance for creating effective ASCII wireframes using the wireframes template.
+Guidance for creating ASCII wireframes using the wireframes template.
 
 ---
 
 ## 🎯 Purpose & When to Use
 
-**Purpose**: Document key interface layouts using ASCII art for rapid design communication and developer handoff.
+**Purpose**: Document interface layouts using ASCII art for rapid design communication and developer handoff.
 
 **When to use**: 
 - Designing new features or major UI changes
@@ -30,8 +30,8 @@ Comprehensive guidance for creating effective ASCII wireframes using the wirefra
 - **Spacing**: Include adequate whitespace for readability and visual hierarchy
 - **Alignment**: Ensure all ASCII elements align properly in monospace
 
-### Symbol Usage Best Practices
-- Use the standard legend consistently across all wireframes
+### Symbol Usage
+- Use standard legend consistently across all wireframes
 - Create additional product-specific symbols as needed
 - Document any custom symbols in your legend
 - Maintain consistent spacing around interactive elements
@@ -43,13 +43,13 @@ Comprehensive guidance for creating effective ASCII wireframes using the wirefra
 ### Realistic Content
 - **Use actual product text**, not generic placeholders like "Lorem ipsum"
 - Show realistic data volumes and content types
-- Include actual button labels, form field names, and error messages
+- Include actual button labels, form field names, error messages
 - Demonstrate real content length patterns (short vs. long text)
 
 ### State Coverage
 Include all relevant interface states:
 - **Normal state**: Default appearance
-- **Loading state**: Show loading indicators, disabled elements
+- **Loading state**: Loading indicators, disabled elements
 - **Error state**: Validation errors, system errors
 - **Success state**: Confirmation messages, completed actions
 - **Empty state**: No data, first-time use scenarios
@@ -90,13 +90,13 @@ Include all relevant interface states:
 - Create variants for loading, error, success states
 - Show responsive behavior notes
 - Include accessibility considerations
-- Document any conditional logic
+- Document conditional logic
 
 ### Step 6: Connect to Flow
 - Show how users arrive at this screen
 - Document exit points and next steps
 - Include error recovery paths
-- Note any branching logic
+- Note branching logic
 
 ---
 
@@ -147,8 +147,8 @@ Document how different feature flows connect:
 - Plan for larger content areas
 
 ### Cross-Device Flow
-- Note where flows might differ between devices
-- Document any device-specific features
+- Note where flows differ between devices
+- Document device-specific features
 - Consider offline/online scenarios
 - Plan for different input methods
 
@@ -177,7 +177,7 @@ Document how different feature flows connect:
 ### Update Tracking
 - Note when wireframes need updates based on development feedback
 - Track which wireframes are implemented vs. planned
-- Maintain a changelog for significant revisions
+- Maintain changelog for significant revisions
 - Archive outdated wireframe versions
 
 ---
@@ -193,22 +193,22 @@ Before considering wireframes complete:
 - [ ] Content length represents real usage patterns
 
 ### Technical Quality
-- [ ] ASCII alignment is correct in monospace font
-- [ ] All interactive elements are clearly marked
-- [ ] Navigation flows are documented
-- [ ] Responsive behavior is noted
+- [ ] ASCII alignment correct in monospace font
+- [ ] All interactive elements clearly marked
+- [ ] Navigation flows documented
+- [ ] Responsive behavior noted
 
 ### Completeness
-- [ ] All major user states are represented
-- [ ] Error and edge cases are included
-- [ ] Flow connections are documented
-- [ ] Accessibility considerations are noted
+- [ ] All major user states represented
+- [ ] Error and edge cases included
+- [ ] Flow connections documented
+- [ ] Accessibility considerations noted
 
 ### Stakeholder Review
-- [ ] Development team has reviewed for feasibility
-- [ ] Product team has approved user flows
-- [ ] Design team has validated layout concepts
-- [ ] Any user research findings are incorporated
+- [ ] Development team reviewed for feasibility
+- [ ] Product team approved user flows
+- [ ] Design team validated layout concepts
+- [ ] User research findings incorporated
 
 ---
 
@@ -224,7 +224,7 @@ Before considering wireframes complete:
 - **Generic placeholder text** - Use realistic, product-specific content
 - **Unrealistic data volumes** - Show actual content patterns
 - **Missing edge cases** - Include error scenarios and unusual data
-- **Inconsistent terminology** - Use the same terms as your product
+- **Inconsistent terminology** - Use same terms as your product
 
 ### Process Issues
 - **No stakeholder review** - Get feedback before development starts
@@ -239,7 +239,7 @@ Before considering wireframes complete:
 1. **Start simple**: Begin with basic layout, add detail iteratively
 2. **Use real content**: Wireframes with actual text reveal layout issues
 3. **Think mobile-first**: Consider small screen constraints early
-4. **Document assumptions**: Note any business logic or technical constraints
+4. **Document assumptions**: Note business logic or technical constraints
 5. **Test the flow**: Walk through wireframes as a real user would
 6. **Get feedback early**: Share rough wireframes to catch issues quickly
 7. **Keep it updated**: Wireframes should evolve with the product

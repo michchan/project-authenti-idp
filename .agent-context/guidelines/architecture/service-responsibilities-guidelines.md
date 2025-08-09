@@ -1,7 +1,7 @@
-# 📘 Service responsibilities guidelines
+# 📘 Service Responsibilities Guidelines
 
 ## 🧭 Purpose
-To define which service/component does what and what it should *not* do. This ensures clean separations of logic, scalability, and long-term maintainability across frontend applications and backend microservices.
+Define what each service does and does *not* do. Ensures clean separation, scalability, and maintainability across frontend and backend.
 
 ## ✅ Must Include
 - Service name
@@ -9,27 +9,26 @@ To define which service/component does what and what it should *not* do. This en
 - Explicit non-responsibilities
 - Relationships to other services
 - Ownership model (owned, shared, infra)
-- Justification for boundaries
+- Boundary justification
 
 ## 🤔 Why It Matters
-- Reduces coupling between services and components
-- Prevents duplicated or overlapping logic across frontend and backend
-- Helps teams own specific domains clearly
-- Enables independent deployment and scaling of microservices
+- Reduces coupling between services
+- Prevents duplicated logic
+- Clarifies team ownership
+- Enables independent deployment and scaling
 
-## 📐 How To Structure It
-1. **Overview Table**  
-   | Service | Responsibilities | Non-Responsibilities | Ownership | Notes |
-2. **For each service/component**  
+## 📐 Structure
+1. **Overview Table**: Service | Responsibilities | Non-Responsibilities | Ownership | Notes
+2. **For each service**:
    - Summary
-   - Primary Responsibilities
-   - Non-Responsibilities 
-   - Key Interactions (calls, receives, dependencies)
-   - Justification for service boundaries
+   - Primary responsibilities
+   - Non-responsibilities 
+   - Key interactions (calls, receives, dependencies)
+   - Boundary justification
 
 ## 🛠 Tips
-- Explicitly state what each service/component *does not* do
-- Don't define interfaces here — only boundaries and goals
-- Include scalability and performance considerations for microservices
-- Cover both frontend applications and backend services
-- Consider team ownership and operational responsibilities
+- Explicitly state what each service does *not* do
+- Define boundaries and goals, not interfaces
+- Include scalability considerations
+- Cover frontend and backend services
+- Consider team ownership
