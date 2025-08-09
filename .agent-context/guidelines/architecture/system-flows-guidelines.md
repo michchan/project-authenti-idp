@@ -1,7 +1,7 @@
 # 📘 System Flows Guidelines
 
 ## 🧭 Purpose
-Document high-level system flows for user journeys and workflows without implementation details. Organize flow documents in `/architecture/flows` subdirectory.
+Document high-level system flows for user journeys and workflows without implementation details. Organize flow documents in `/flows` subdirectory.
 
 ## ✅ Must Include
 - **Flow Trigger**: User action or system event initiating flow
