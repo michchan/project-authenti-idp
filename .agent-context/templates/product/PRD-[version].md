@@ -27,15 +27,11 @@
 ### Non-goals
 - What is out of scope?
 
-## 5. Success Metrics / KPIs
-- How will success be measured?
-- Ex: conversion rate, adoption rate, retention, error reduction, etc.
-
-## 6. Target Users
+## 5. Target Users
 - Who are the primary users?
 - Include personas or user segments if available.
 
-## 7. Features / Requirements
+## 6. Features / Requirements
 
 Each requirement should be described clearly, ideally using user stories.
 
@@ -49,14 +45,11 @@ Each requirement should be described clearly, ideally using user stories.
 ### Feature 2: Title
 ...
 
-## 8. UX Design
+## 7. UX Design
 - **Status**: Pending | In Progress | Complete
 - **Entry Link**: [Link to wireframes or design brief]()
 
-## 9. Open Questions / Risks
+## 8. Open Questions / Risks
 - What’s still undecided?
 - Known risks or dependencies?
 
-## 10. Appendix
-- [Link to supporting docs, if any]()
-- [Glossary or definitions, if needed]()

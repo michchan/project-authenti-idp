@@ -46,17 +46,7 @@ Current solutions either:
 - High-availability infrastructure setup for MVP (can accept some downtime)
 - White-label customization options for different applications in v1.0
 
-## 5. Success Metrics / KPIs
-- **Adoption**: ≥ 2 personal applications successfully integrated within first 4 months
-- **User Experience**: ≥ 90% successful authentication rate without user errors
-- **Developer Experience**: SDK integration completed in ≤ 4-6 hours for new applications
-- **Performance**: Authentication flows complete in ≤ 2 seconds end-to-end
-- **Cost Efficiency**: Total operational cost stays within $0-25/month for first 50 users
-- **Reliability**: ≥ 99% uptime for authentication services during business hours
-- **Security**: Zero critical security vulnerabilities in security audits
-- **SDK Usage**: ≥ 80% of integration tasks completed using provided SDK vs custom implementation
-
-## 6. Target Users
+## 5. Target Users
 
 ### Primary Users
 1. **End Users** (Personal Application Users)
@@ -81,7 +71,7 @@ Current solutions either:
 - **Future Contributors**: Open-source contributors who might extend the system
 - **Security Auditors**: Individuals reviewing security implementation
 
-## 7. Features / Requirements
+## 6. Features / Requirements
 
 ### Feature 1: User Registration & Authentication
 - **User Story**: As an end user, I want to register once and use those credentials across multiple applications so that I don't need to manage separate accounts.
@@ -107,13 +97,14 @@ Current solutions either:
 ### Feature 3: Developer SDK & Integration Tools
 - **User Story**: As a developer, I want easy-to-use SDK with clear documentation so that I can integrate authentication in under 4-6 hours.
 - **Acceptance Criteria**:
-  - JavaScript/TypeScript SDK with comprehensive API coverage (React focus for MVP)
+  - React frontend SDK with comprehensive API coverage for client-side integration
+  - NodeJS backend SDK for server-side authentication and API protection
   - SDK handles token management, refresh, and storage automatically
-  - Pre-built UI components for login/register forms
-  - Integration examples for React framework (primary focus)
-  - Comprehensive documentation with code examples
-  - Error handling and debugging tools included in SDK
-- **Notes**: SDK should abstract complexity while providing flexibility for customization. Multi-framework support deprioritized for MVP.
+  - Pre-built UI components for login/register forms (React)
+  - Integration examples for React frontend and NodeJS backend
+  - Comprehensive documentation with code examples for both SDKs
+  - Error handling and debugging tools included in both SDKs
+- **Notes**: Focus on React frontend and NodeJS backend SDKs for MVP. Multi-framework support deprioritized for initial release.
 
 ### Feature 4: User Profile Management
 - **User Story**: As an end user, I want to manage my profile information centrally so that updates are reflected across all connected applications.
@@ -166,38 +157,18 @@ Current solutions either:
   - CDN usage for static assets and SDK distribution
 - **Notes**: Design for cost efficiency while maintaining upgrade path for growth
 
-## 8. UX Design
+## 7. UX Design
 - **Status**: Completed
-- **User Journeys**: [User Journey Flow Charts](docs/v1/ui-ux/user-journeys-1.0.md)
-- **Wireframes**: [Wireframes and UI Components](docs/v1/ui-ux/wireframes-1.0.md)
+- **User Journeys**: [User Journey Flow Charts](/docs/v1/ui-ux/user-journeys-1.0.md)
+- **Wireframes**: [Wireframes and UI Components](/docs/v1/ui-ux/wireframes-1.0.md)
 
-## 9. Technical Considerations
+### Key UX Considerations
+- **Token Management Security**: Refresh tokens stored securely using HttpOnly cookies to prevent XSS attacks, while access tokens are kept in memory for security
+- **Session Duration**: 30-day refresh token lifespan to minimize re-login frequency while maintaining security standards
+- **Automatic Token Refresh**: Seamless token refresh in background to maintain user sessions without interruption
+- **Secure Storage**: Clear guidelines for developers on secure token storage practices in different environments
 
-### Architecture Approach
-- **Out-of-the-box Solutions**: Leverage existing OAuth2/OpenID Connect libraries and frameworks
-- **Database**: PostgreSQL or MongoDB on free tier (Supabase, MongoDB Atlas free tier)
-- **Hosting**: Vercel/Netlify for frontend, Railway/Render for backend API
-- **CDN**: CloudFlare for SDK distribution and caching
-
-### Integration Patterns
-- **OAuth2 Authorization Code Flow**: Standard implementation for web applications
-- **JWT Access Tokens**: Short-lived tokens (15-30 minutes) with refresh tokens
-- **SDK Architecture**: Wrapper around standard OAuth2 flows with convenience methods
-- **CORS Configuration**: Proper cross-origin setup for multi-application access
-
-### Scalability Considerations
-- **Database Design**: Efficient indexing on user_id and application_id
-- **Caching Strategy**: Redis for session storage and frequently accessed data
-- **API Design**: RESTful APIs with proper pagination and filtering
-- **Monitoring**: Basic application metrics and error tracking
-
-### Security Implementation
-- **Token Management**: Secure storage recommendations and automatic rotation
-- **Session Security**: HttpOnly, Secure, SameSite cookie configurations
-- **Input Validation**: Comprehensive validation on all user inputs
-- **Audit Logging**: Security events and authentication attempts logging
-
-## 10. Open Questions / Risks
+## 8. Open Questions / Risks
 
 ### Technical Risks
 - **Free tier limitations**: Risk of exceeding database/hosting limits as usage grows
@@ -215,7 +186,7 @@ Current solutions either:
 - **Documentation maintenance**: Keeping examples and guides current with rapid development
 - **Cross-browser compatibility**: Ensuring consistent experience across different browsers and devices
 
-## 11. Dependencies & Assumptions
+## 9. Dependencies & Assumptions
 
 ### Dependencies
 - OAuth2/OpenID Connect specification compliance
@@ -229,7 +200,7 @@ Current solutions either:
 - Applications using IDP are under same ownership/control
 - Security requirements align with industry standards for small-scale applications
 
-## 12. Future Roadmap (Post v1.0)
+## 10. Future Roadmap (Post v1.0)
 - **v1.1**: Mobile application SDK (React Native, Flutter)
 - **v1.2**: Third-party OAuth provider integration (Google, GitHub, etc.)
 - **v1.3**: Advanced user roles and permissions system
@@ -237,7 +208,7 @@ Current solutions either:
 - **v1.5**: Advanced analytics and user behavior insights
 - **v1.6**: Enterprise features (SAML, LDAP, SSO integrations)
 
-## 13. Timeline & Milestones
+## 11. Timeline & Milestones
 
 ### 4-Month Development Timeline
 
@@ -264,12 +235,6 @@ Current solutions either:
 - User profile management interface
 - Production deployment and monitoring setup
 - Security audit and final testing
-
-## 14. Appendix
-- **Technology Stack**: Node.js/Express, PostgreSQL, JWT, OAuth2
-- **Hosting Platform**: Railway/Render for backend, Vercel for frontend
-- **Development Tools**: TypeScript, Jest for testing, ESLint for code quality
-- **Documentation Tools**: GitBook or similar for comprehensive developer documentation
 
 ---
 

@@ -89,6 +89,9 @@ Below constants will be used as references in below workflow guides.
 - `THREAD_MODEL_TEMPLATE` = `{TEMPLATES_LOCATION}/architecture/[version]-[flow-name]-thread-model.md`
 - `THREAD_MODEL_GUIDELINES` = `{GUIDELINES_LOCATION}/architecture/thread-model-guidelines.md`
 - `THREAD_MODEL_EXAMPLE` = `{EXAMPLE_PROJECT_LOCATION}/docs/v1/architecture/1.0-user-authentication-thread-model.md`
+- `TECHNICAL_CONSIDERATIONS_TEMPLATE` = `{TEMPLATES_LOCATION}/architecture/technical-considerations-[version].md`
+- `TECHNICAL_CONSIDERATIONS_GUIDELINES` = `{GUIDELINES_LOCATION}/architecture/technical-considerations-guidelines.md`
+- `TECHNICAL_CONSIDERATIONS_EXAMPLE` = `{EXAMPLE_PROJECT_LOCATION}/docs/v1/architecture/technical-considerations-1.0.md`
 
 # Background
 
@@ -98,6 +101,7 @@ Below constants will be used as references in below workflow guides.
 - The version of the template filename is the version of the product requirement. It should follow `[major].[minor]` version format, .e.g `1.0`.
 - However, each major version should only have one folder under the `/docs` folder, e.g. `/docs/v1`.
 - The folder structure of the documentation should follow `EXAMPLE_PROJECT_LOCATION` , you should mimic that structure **under the root directory of the current repository**.
+- When linking to files in markdown documents, use absolute paths with leading forward slashes from the repository root (e.g., `/docs/v1/file.md` not `docs/v1/file.md`) to ensure links work correctly across different directory contexts.
 
 ## Roles in the team
 
@@ -368,6 +372,10 @@ The **epics**should be drafted based on:
         - `DEPLOYMENT_PLAN_TEMPLATE` as the template
         - `DEPLOYMENT_PLAN_GUIDELINES` as the guidelines
         - `DEPLOYMENT_PLAN_EXAMPLE` as the example
+    6. **Technical considerations** - should be drafted based on:
+        - `TECHNICAL_CONSIDERATIONS_TEMPLATE` as the template
+        - `TECHNICAL_CONSIDERATIONS_GUIDELINES` as the guidelines
+        - `TECHNICAL_CONSIDERATIONS_EXAMPLE` as the example
 
 - **Security Expert** to create security documentation including:
     1. **Threat model** - should be drafted based on:
