@@ -114,7 +114,7 @@ This is a team consisting of the following roles with their detailed responsibil
 | **Backend Engineer** | Implements server-side functionality and APIs:<br>• Reviews UI design feasibility from backend perspective<br>• Implements backend features and APIs<br>• Creates unit tests and handles data integration<br>• Addresses security concerns related to data handling<br>• Troubleshoots integration issues and API problems<br>• Collaborates on environment and deployment configuration |
 | **Frontend Engineer** | Implements client-side functionality and user interfaces:<br>• Reviews UI design feasibility from frontend perspective<br>• Implements frontend features and user interfaces<br>• Creates unit tests and handles client-side logic<br>• Addresses client-side security issues and data validation<br>• Ensures cross-browser compatibility<br>• Implements responsive design requirements |
 | **Code Reviewer** | Ensures code quality and adherence to standards:<br>• Reviews code quality and architecture adherence<br>• Validates security practices and test coverage<br>• Provides feedback for improvement<br>• Ensures coding standards compliance<br>• May consult with System Architect on complex reviews |
-| **QA Engineer** | Validates feature quality through comprehensive testing:<br>• Sets up test environments and prepares test cases<br>• Performs manual and automated testing<br>• Conducts integration testing with system components<br>• Executes end-to-end testing across user workflows<br>• Validates cross-browser and performance requirements<br>• Documents and reports testing results |
+| **QA Engineer** | Validates feature quality through comprehensive automated testing:<br>• Sets up test environments and prepares automated test scripts<br>• Performs automated testing with comprehensive test scripts<br>• Conducts automated integration testing with system components<br>• Executes automated end-to-end testing across user workflows<br>• Validates cross-browser and performance requirements through automation<br>• Documents and reports automated testing results |
 | **DevOps Engineer** | Manages infrastructure, deployment, and CI/CD processes:<br>• Ensures features are deployed to testing environments<br>• Reviews features for infrastructure requirements<br>• Configures and maintains CI/CD pipelines<br>• Sets up monitoring and alerting for features<br>• Manages production deployments<br>• Collaborates on environment configuration and scripts |
 
 ## Development workflow
@@ -143,8 +143,8 @@ flowchart LR
 | **Planned in Sprint** | Placed into a sprint for development |
 | **In-progress**     | Development has started |
 | **Code review**     | Code being reviewed by the code reviewer |
-| **Integration testing** | Feature is being tested by Test Engineer with integration testing |
-| **E2E Testing**     | Feature is being tested by QA/Test Engineer with end-to-end testing |
+| **Integration testing** | Feature is being tested by QA Engineer with automated integration testing |
+| **E2E Testing**     | Feature is being tested by QA Engineer with automated end-to-end testing |
 | **PO review**       | Feature review by the product owner |
 | **Security review** | Security review by the security expert |
 | **Configuring DevOps** | DevOps Engineer checks and configures CI/CD pipeline for the story's system components |
@@ -201,7 +201,7 @@ flowchart LR
 **Assigned to**: QA Engineer  
 **What happens**: Feature is being tested in integration with other system components.
 
-- **QA Engineer**: Tests feature integration with existing functionality, API integrations, data flow
+- **QA Engineer**: Creates and executes automated integration tests for feature integration with existing functionality, API integrations, data flow
 - **Backend Engineer**: Available for integration issues and API-related problems
 - **System Architect**: Consulted for complex integration scenarios
 
@@ -210,7 +210,7 @@ flowchart LR
 **Assigned to**: QA Engineer  
 **What happens**: End-to-end testing across complete user workflows.
 
-- **QA Engineer**: Tests complete user journeys, cross-browser testing, performance validation
+- **QA Engineer**: Creates and executes automated end-to-end tests for complete user journeys, automated cross-browser testing, performance validation
 - **UX Designer**: Validates that implementation matches design specifications
 - **Product Owner**: May perform acceptance testing alongside QA engineer
 
