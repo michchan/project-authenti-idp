@@ -6,6 +6,8 @@
 - [Table of Contents](#table-of-contents)
 - [Constants](#constants)
 - [Background](#background)
+  - [Things to keep in mind](#things-to-keep-in-mind)
+  - [Development workflow](#development-workflow)
 - [Stage 1 - PRD Definition with UX design](#stage-1---prd-definition-with-ux-design)
   - [1. From an idea to a PRD draft](#1-from-an-idea-to-a-prd-draft)
   - [2. PRD review by stakeholders and amendment](#2-prd-review-by-stakeholders-and-amendment)
@@ -74,10 +76,43 @@ Below constants will be used as references in below workflow guides.
 
 # Background
 
+## Things to keep in mind
+
 - Given the **business owner,** is who sends prompt to the agents.
 - The version of the template filename is the version of the product requirement. It should follow `[major].[minor]` version format, .e.g `1.0`.
 - However, each major version should only have one folder under the `/docs` folder, e.g. `/docs/v1`.
 - The folder structure of the documentation should follow `EXAMPLE_PROJECT_LOCATION` , you should mimic that structure **under the root directory of the current repository**.
+
+## Development workflow
+
+Here are the flow of the status of a story and the full list of statuses below.
+
+```mermaid
+flowchart LR
+    Draft[Draft] --> Backlog[Backlog]
+    Backlog --> Planned[Planned in Sprint]
+    Planned --> InProgress[In-progress]
+    InProgress --> CodeReview[Code review]
+    CodeReview --> ReadyTesting[Ready for testing]
+    ReadyTesting --> Integration[Integration testing]
+    Integration --> E2E[E2E Testing]
+    E2E --> UAT[UAT]
+    UAT --> Done[Done]
+```
+
+| Status              | Description |
+|---------------------|-------------|
+| **Draft**           | To be reviewed by stakeholders |
+| **Backlog**         | Ready for development |
+| **Planned in Sprint** | Placed into a sprint for development |
+| **In-progress**     | Development has started |
+| **Code review**     | Code being reviewed by the code reviewer |
+| **Ready for testing** | Feature is ready for integration/E2E and other tests |
+| **Integration testing** | Feature is being tested by Test Engineer with integration testing |
+| **E2E Testing**     | Feature is being tested by QA/Test Engineer with end-to-end testing |
+| **UAT**             | User acceptance testing by the "business owner". Ask to review the work before moving it to done. |
+| **Done**            | The feature is completed |
+
 
 # Stage 1 - PRD Definition with UX design
 
@@ -209,7 +244,7 @@ The following parts work in parallel.
 - **Frontend engineer** to review the feasibility of the UI design.
 - **Product owner, UX Designer** and **Engineer** to review the deliverables by **System architect**.
 - **System architect** to review the deliverables by **Security Expert**.
-- **Engineers** to review epics and stories.
+- **Engineers** to review epics and stories. See if there are any concerns to address, and if they are ready for development.
 
 ***Until all the stakeholders are fine with the documents, repeat the above process.***
 
