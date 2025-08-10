@@ -68,34 +68,13 @@ Guide for creating effective epics using the epic template.
 - **Celebrate completion**: Move to "Done" only when fully implemented and tested
 
 ### Estimation Guidelines
-- **Use consistent units**: Story points, hours, or t-shirt sizes
+- **Use consistent units**: Hours or t-shirt sizes
 - **Include whole team**: Involve developers, designers, and testers
 - **Account for unknowns**: Add buffer for high uncertainty stories
 - **Refine over time**: Initial estimates are rough - refine as you learn
 
 ---
 
-## 📈 Success Metrics
-
-### Choosing Metrics
-- **Align with business goals**: Connect to broader company objectives
-- **Make them measurable**: Avoid subjective metrics
-- **Set realistic targets**: Ambitious but achievable improvements
-- **Include leading and lagging indicators**: Both predictive and result metrics
-
-### Common Epic Metrics
-- **Usage**: Adoption rates, feature usage, user engagement
-- **Performance**: Load times, error rates, system throughput
-- **Business**: Conversion rates, revenue impact, cost savings
-- **User satisfaction**: NPS scores, support ticket volume, user feedback
-
-### Measurement Planning
-- **Establish baselines**: Know starting point before implementing changes
-- **Define measurement methods**: How to collect and analyze data
-- **Set review cadence**: How often to check progress on metrics
-- **Plan for iteration**: Adjust based on early results
-
----
 
 ## 🔗 Dependency Management
 

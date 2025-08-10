@@ -19,12 +19,12 @@
 
 ## 📋 User Stories
 
-| ID      | Title                             | Status       | Estimate |
-|---------|-----------------------------------|--------------|----------|
-| `[US-001]` | `[User Story Title 1]`         | 🟢 To Do     | `[SP]`   |
-| `[US-002]` | `[User Story Title 2]`         | 🔧 In Progress | `[SP]`   |
-| `[US-003]` | `[User Story Title 3]`         | ✅ Done      | `[SP]`   |
-| `[US-004]` | `[User Story Title 4]`         | 🟢 To Do     | `[SP]`   |
+| ID      | Title                             | Status       |
+|---------|-----------------------------------|--------------|
+| `[US-001]` | `[User Story Title 1]`         | 🟢 To Do     |
+| `[US-002]` | `[User Story Title 2]`         | 🔧 In Progress |
+| `[US-003]` | `[User Story Title 3]`         | ✅ Done      |
+| `[US-004]` | `[User Story Title 4]`         | 🟢 To Do     |
 
 ---
 
@@ -42,19 +42,12 @@
 - [ ] `[Specific testable outcome 3]`
 
 **Status**: `[Current status]`  
-**Estimate**: `[Story points]`  
 **Reference**: `[Link to designs/specs]`
 
 **Notes**: `[Implementation details or dependencies]`
 
 ---
 
-## 📊 Success Metrics
-
-- **`[Metric Name]`**: `[Current baseline]` → `[Target]`
-- **`[Metric Name]`**: `[Current baseline]` → `[Target]`
-
----
 
 ## 🔗 Dependencies
 
