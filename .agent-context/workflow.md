@@ -1,8 +1,8 @@
-# V2 workflow
+# Workflow
 
 # Table of Contents
 
-- [V2 workflow](#v2-workflow)
+- [Workflow](#workflow)
 - [Table of Contents](#table-of-contents)
 - [Constants](#constants)
 - [Background](#background)
