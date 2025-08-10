@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics - TaskMaster</title>
+    <meta name="description" content="Track your productivity with TaskMaster analytics - view completion rates, trends, and insights to improve your workflow.">
+    <link rel="stylesheet" href="assets/css/taskmaster.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="page-wrapper">
+    <!-- Skip Link for Accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- Header -->
+    <header class="header" role="banner">
+        <div class="container header-container">
+            <a href="01-landing.html" class="logo" aria-label="TaskMaster Home">
+                🎯 TaskMaster
+            </a>
+            
+            <nav class="nav" role="navigation" aria-label="Main navigation">
+                <a href="02-dashboard.html" class="nav-link">
+                    🏠 Dashboard
+                </a>
+                <a href="04-analytics.html" class="nav-link active">
+                    📊 Analytics
+                </a>
+                <a href="05-settings.html" class="nav-link">
+                    ⚙️ Settings
+                </a>
+            </nav>
+            
+            <div class="user-menu">
+                <button class="btn btn-secondary theme-toggle" aria-label="Switch to dark mode">
+                    <span class="theme-icon">🌙</span>
+                </button>
+                <div class="user-profile" style="display: flex; align-items: center; gap: 8px; padding: 8px 12px; background: var(--color-surface); border-radius: var(--radius-md); border: 1px solid var(--color-border);">
+                    <div style="width: 32px; height: 32px; background: linear-gradient(135deg, #4299E1, #805AD5); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; font-size: 14px;">
+                        SJ
+                    </div>
+                    <div style="text-align: left;">
+                        <div style="font-size: 14px; font-weight: 500; color: var(--color-text-primary);">Sarah Johnson</div>
+                        <div style="font-size: 12px; color: var(--color-text-muted);">Productivity Champion</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main id="main-content" class="main-content" role="main">
+        <div class="container">
+            
+            <!-- Analytics Header -->
+            <section class="analytics-header" style="margin-bottom: 40px;">
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px; flex-wrap: wrap; gap: 20px;">
+                    <div>
+                        <h1 style="font-size: 32px; font-weight: 700; color: var(--color-text-primary); margin: 0 0 8px 0;">
+                            📊 Your Productivity Analytics
+                        </h1>
+                        <p style="color: var(--color-text-secondary); margin: 0; font-size: 16px;">
+                            Track your progress, identify patterns, and optimize your workflow with detailed insights.
+                        </p>
+                    </div>
+                    <div style="display: flex; gap: 12px; align-items: center;">
+                        <select class="form-select" style="min-width: 140px;">
+                            <option value="7">Last 7 days</option>
+                            <option value="30" selected>Last 30 days</option>
+                            <option value="90">Last 90 days</option>
+                            <option value="365">Last year</option>
+                        </select>
+                        <button class="btn btn-secondary">📤 Export Data</button>
+                    </div>
+                </div>
+                
+                <!-- Key Metrics Overview -->
+                <div class="stats-grid">
+                    <div class="stat-card" style="background: linear-gradient(135deg, #4299E1, #3182CE); color: white; border: none;">
+                        <div class="stat-value" style="color: white;">847</div>
+                        <div class="stat-label" style="color: rgba(255,255,255,0.9);">Total Tasks</div>
+                        <div style="margin-top: 8px; font-size: 12px; color: rgba(255,255,255,0.8);">↗️ +23 this week</div>
+                    </div>
+                    <div class="stat-card" style="background: linear-gradient(135deg, #48BB78, #38A169); color: white; border: none;">
+                        <div class="stat-value" style="color: white;">742</div>
+                        <div class="stat-label" style="color: rgba(255,255,255,0.9);">Completed</div>
+                        <div style="margin-top: 8px; font-size: 12px; color: rgba(255,255,255,0.8);">↗️ +19 this week</div>
+                    </div>
+                    <div class="stat-card" style="background: linear-gradient(135deg, #805AD5, #6B46C1); color: white; border: none;">
+                        <div class="stat-value" style="color: white;">87.6%</div>
+                        <div class="stat-label" style="color: rgba(255,255,255,0.9);">Success Rate</div>
+                        <div style="margin-top: 8px; font-size: 12px; color: rgba(255,255,255,0.8);">↗️ +2.3% vs last month</div>
+                    </div>
+                    <div class="stat-card" style="background: linear-gradient(135deg, #F6AD55, #DD6B20); color: white; border: none;">
+                        <div class="stat-value" style="color: white;">23</div>
+                        <div class="stat-label" style="color: rgba(255,255,255,0.9);">Day Streak</div>
+                        <div style="margin-top: 8px; font-size: 12px; color: rgba(255,255,255,0.8);">🔥 Personal best!</div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Charts and Analytics -->
+            <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 30px; margin-bottom: 40px;">
+                
+                <!-- Completion Trend Chart -->
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="card-title">📈 Completion Trends</h2>
+                        <div style="display: flex; gap: 8px;">
+                            <button class="btn btn-sm btn-secondary" style="background: var(--color-primary); color: white;">Daily</button>
+                            <button class="btn btn-sm btn-secondary">Weekly</button>
+                            <button class="btn btn-sm btn-secondary">Monthly</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Mock Chart Area -->
+                    <div style="height: 300px; background: var(--color-surface); border-radius: var(--radius-md); margin-top: 20px; padding: 20px; display: flex; flex-direction: column; justify-content: flex-end; position: relative;">
+                        <!-- Chart Background Grid -->
+                        <div style="position: absolute; top: 20px; left: 20px; right: 20px; bottom: 60px; opacity: 0.1;">
+                            <div style="display: grid; grid-template-rows: repeat(5, 1fr); height: 100%;">
+                                <div style="border-bottom: 1px solid var(--color-text-muted);"></div>
+                                <div style="border-bottom: 1px solid var(--color-text-muted);"></div>
+                                <div style="border-bottom: 1px solid var(--color-text-muted);"></div>
+                                <div style="border-bottom: 1px solid var(--color-text-muted);"></div>
+                                <div style="border-bottom: 1px solid var(--color-text-muted);"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Mock Chart Bars -->
+                        <div style="display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px; height: 200px; margin-bottom: 20px; align-items: flex-end;">
+                            <div style="background: linear-gradient(to top, #4299E1, #63B3ED); height: 60%; border-radius: 2px 2px 0 0;"></div>
+                            <div style="background: linear-gradient(to top, #4299E1, #63B3ED); height: 75%; border-radius: 2px 2px 0 0;"></div>
+                            <div style="background: linear-gradient(to top, #4299E1, #63B3ED); height: 85%; border-radius: 2px 2px 0 0;"></div>
+                            <div style="background: linear-gradient(to top, #4299E1, #63B3ED); height: 40%; border-radius: 2px 2px 0 0;"></div>
+                            <div style="background: linear-gradient(to top, #4299E1, #63B3ED); height: 90%; border-radius: 2px 2px 0 0;"></div>
+                            <div style="background: linear-gradient(to top, #4299E1, #63B3ED); height: 70%; border-radius: 2px 2px 0 0;"></div>
+                            <div style="background: linear-gradient(to top, #48BB78, #68D391); height: 100%; border-radius: 2px 2px 0 0; box-shadow: 0 0 10px rgba(72, 187, 120, 0.3);"></div>
+                        </div>
+                        
+                        <!-- Chart Labels -->
+                        <div style="display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px; font-size: 12px; color: var(--color-text-muted); text-align: center;">
+                            <span>Mon</span>
+                            <span>Tue</span>
+                            <span>Wed</span>
+                            <span>Thu</span>
+                            <span>Fri</span>
+                            <span>Sat</span>
+                            <span style="font-weight: 600; color: var(--color-success);">Sun</span>
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--color-border);">
+                        <div style="font-size: 14px; color: var(--color-text-muted);">
+                            Average: <strong>12.3 tasks/day</strong>
+                        </div>
+                        <div style="font-size: 14px; color: var(--color-success);">
+                            ↗️ Best day: <strong>18 tasks (Sunday)</strong>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Category Breakdown -->
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="card-title">🏷️ Category Breakdown</h2>
+                    </div>
+                    
+                    <!-- Mock Pie Chart -->
+                    <div style="display: flex; justify-content: center; margin: 30px 0;">
+                        <div style="width: 120px; height: 120px; border-radius: 50%; background: conic-gradient(#4299E1 0deg 144deg, #48BB78 144deg 216deg, #F6AD55 216deg 252deg, #805AD5 252deg 288deg, #F56565 288deg 324deg, #38B2AC 324deg 360deg); position: relative;">
+                            <div style="position: absolute; top: 50%; left: 50%; width: 60px; height: 60px; background: var(--color-bg); border-radius: 50%; transform: translate(-50%, -50%); display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600; color: var(--color-text-primary);">
+                                Total<br>847
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Category Legend -->
+                    <div style="display: flex; flex-direction: column; gap: 8px;">
+                        <div style="display: flex; align-items: center; justify-content: space-between;">
+                            <div style="display: flex; align-items: center; gap: 8px;">
+                                <div style="width: 12px; height: 12px; background: #4299E1; border-radius: 2px;"></div>
+                                <span style="font-size: 14px;">💼 Work</span>
+                            </div>
+                            <span style="font-size: 14px; font-weight: 600;">340 (40%)</span>
+                        </div>
+                        <div style="display: flex; align-items: center; justify-content: space-between;">
+                            <div style="display: flex; align-items: center; gap: 8px;">
+                                <div style="width: 12px; height: 12px; background: #48BB78; border-radius: 2px;"></div>
+                                <span style="font-size: 14px;">🏠 Personal</span>
+                            </div>
+                            <span style="font-size: 14px; font-weight: 600;">169 (20%)</span>
+                        </div>
+                        <div style="display: flex; align-items: center; justify-content: space-between;">
+                            <div style="display: flex; align-items: center; gap: 8px;">
+                                <div style="width: 12px; height: 12px; background: #F6AD55; border-radius: 2px;"></div>
+                                <span style="font-size: 14px;">🛒 Shopping</span>
+                            </div>
+                            <span style="font-size: 14px; font-weight: 600;">85 (10%)</span>
+                        </div>
+                        <div style="display: flex; align-items: center; justify-content: space-between;">
+                            <div style="display: flex; align-items: center; gap: 8px;">
+                                <div style="width: 12px; height: 12px; background: #805AD5; border-radius: 2px;"></div>
+                                <span style="font-size: 14px;">🏥 Health</span>
+                            </div>
+                            <span style="font-size: 14px; font-weight: 600;">85 (10%)</span>
+                        </div>
+                        <div style="display: flex; align-items: center; justify-content: space-between;">
+                            <div style="display: flex; align-items: center; gap: 8px;">
+                                <div style="width: 12px; height: 12px; background: #F56565; border-radius: 2px;"></div>
+                                <span style="font-size: 14px;">💰 Finance</span>
+                            </div>
+                            <span style="font-size: 14px; font-weight: 600;">84 (10%)</span>
+                        </div>
+                        <div style="display: flex; align-items: center; justify-content: space-between;">
+                            <div style="display: flex; align-items: center; gap: 8px;">
+                                <div style="width: 12px; height: 12px; background: #38B2AC; border-radius: 2px;"></div>
+                                <span style="font-size: 14px;">🎨 Hobbies</span>
+                            </div>
+                            <span style="font-size: 14px; font-weight: 600;">84 (10%)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Productivity Insights -->
+            <section class="productivity-insights" style="margin-bottom: 40px;">
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="card-title">💡 Productivity Insights</h2>
+                        <div style="font-size: 14px; color: var(--color-text-muted);">Based on your task history</div>
+                    </div>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 20px;">
+                        <div class="insight-card" style="background: linear-gradient(135deg, #48BB78, #38A169); color: white; padding: 20px; border-radius: var(--radius-lg);">
+                            <div style="font-size: 24px; margin-bottom: 8px;">🌅</div>
+                            <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 8px;">Peak Performance Time</h3>
+                            <p style="font-size: 14px; opacity: 0.9; margin: 0;">You complete 67% more tasks between 9-11 AM. Consider scheduling important tasks during this window.</p>
+                        </div>
+                        
+                        <div class="insight-card" style="background: linear-gradient(135deg, #4299E1, #3182CE); color: white; padding: 20px; border-radius: var(--radius-lg);">
+                            <div style="font-size: 24px; margin-bottom: 8px;">📅</div>
+                            <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 8px;">Best Productivity Day</h3>
+                            <p style="font-size: 14px; opacity: 0.9; margin: 0;">Tuesdays are your most productive day with an average completion rate of 92%. Plan challenging tasks accordingly.</p>
+                        </div>
+                        
+                        <div class="insight-card" style="background: linear-gradient(135deg, #805AD5, #6B46C1); color: white; padding: 20px; border-radius: var(--radius-lg);">
+                            <div style="font-size: 24px; margin-bottom: 8px;">🎯</div>
+                            <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 8px;">Task Size Sweet Spot</h3>
+                            <p style="font-size: 14px; opacity: 0.9; margin: 0;">Tasks taking 30-45 minutes have your highest completion rate (94%). Break larger tasks into this timeframe.</p>
+                        </div>
+                        
+                        <div class="insight-card" style="background: linear-gradient(135deg, #F6AD55, #DD6B20); color: white; padding: 20px; border-radius: var(--radius-lg);">
+                            <div style="font-size: 24px; margin-bottom: 8px;">⚡</div>
+                            <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 8px;">Momentum Pattern</h3>
+                            <p style="font-size: 14px; opacity: 0.9; margin: 0;">Completing 3+ tasks in the morning increases your daily completion rate by 45%. Start strong!</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Detailed Analytics -->
+            <div style="display: grid; gap: 30px; margin-bottom: 40px;">
+                
+                <!-- Priority Analysis -->
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="card-title">🔥 Priority Analysis</h2>
+                        <p style="font-size: 14px; color: var(--color-text-muted); margin: 0;">How you handle different priority levels</p>
+                    </div>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 20px;">
+                        <div class="priority-stat" style="text-align: center; padding: 20px; background: rgba(245, 101, 101, 0.1); border-radius: var(--radius-lg); border: 2px solid rgba(245, 101, 101, 0.2);">
+                            <div style="font-size: 32px; font-weight: 700; color: var(--color-error); margin-bottom: 8px;">89%</div>
+                            <div style="font-size: 14px; font-weight: 600; color: var(--color-error); margin-bottom: 4px;">🔴 High Priority</div>
+                            <div style="font-size: 12px; color: var(--color-text-muted);">124 of 139 completed</div>
+                            <div style="font-size: 11px; color: var(--color-success); margin-top: 4px;">↗️ +5% vs last month</div>
+                        </div>
+                        
+                        <div class="priority-stat" style="text-align: center; padding: 20px; background: rgba(246, 173, 85, 0.1); border-radius: var(--radius-lg); border: 2px solid rgba(246, 173, 85, 0.2);">
+                            <div style="font-size: 32px; font-weight: 700; color: var(--color-warning); margin-bottom: 8px;">87%</div>
+                            <div style="font-size: 14px; font-weight: 600; color: var(--color-warning); margin-bottom: 4px;">🟡 Medium Priority</div>
+                            <div style="font-size: 12px; color: var(--color-text-muted);">348 of 401 completed</div>
+                            <div style="font-size: 11px; color: var(--color-success); margin-top: 4px;">↗️ +2% vs last month</div>
+                        </div>
+                        
+                        <div class="priority-stat" style="text-align: center; padding: 20px; background: rgba(72, 187, 120, 0.1); border-radius: var(--radius-lg); border: 2px solid rgba(72, 187, 120, 0.2);">
+                            <div style="font-size: 32px; font-weight: 700; color: var(--color-success); margin-bottom: 8px;">86%</div>
+                            <div style="font-size: 14px; font-weight: 600; color: var(--color-success); margin-bottom: 4px;">🟢 Low Priority</div>
+                            <div style="font-size: 12px; color: var(--color-text-muted);">270 of 315 completed</div>
+                            <div style="font-size: 11px; color: var(--color-error); margin-top: 4px;">↘️ -1% vs last month</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Time Analysis -->
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="card-title">⏰ Time Analysis</h2>
+                        <p style="font-size: 14px; color: var(--color-text-muted); margin: 0;">Your productivity patterns throughout the day</p>
+                    </div>
+                    
+                    <div style="margin-top: 20px;">
+                        <!-- Hourly Activity Heatmap -->
+                        <div style="display: grid; grid-template-columns: repeat(12, 1fr); gap: 4px; margin-bottom: 20px;">
+                            <!-- Hour labels -->
+                            <div style="grid-column: 1 / -1; display: grid; grid-template-columns: repeat(12, 1fr); gap: 4px; margin-bottom: 8px;">
+                                <div style="text-align: center; font-size: 10px; color: var(--color-text-muted);">6AM</div>
+                                <div style="text-align: center; font-size: 10px; color: var(--color-text-muted);">8AM</div>
+                                <div style="text-align: center; font-size: 10px; color: var(--color-text-muted);">10AM</div>
+                                <div style="text-align: center; font-size: 10px; color: var(--color-text-muted);">12PM</div>
+                                <div style="text-align: center; font-size: 10px; color: var(--color-text-muted);">2PM</div>
+                                <div style="text-align: center; font-size: 10px; color: var(--color-text-muted);">4PM</div>
+                                <div style="text-align: center; font-size: 10px; color: var(--color-text-muted);">6PM</div>
+                                <div style="text-align: center; font-size: 10px; color: var(--color-text-muted);">8PM</div>
+                                <div style="text-align: center; font-size: 10px; color: var(--color-text-muted);">10PM</div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                            
+                            <!-- Activity blocks -->
+                            <div style="height: 20px; background: rgba(72, 187, 120, 0.3); border-radius: 2px;"></div>
+                            <div style="height: 20px; background: rgba(72, 187, 120, 0.5); border-radius: 2px;"></div>
+                            <div style="height: 20px; background: rgba(72, 187, 120, 0.9); border-radius: 2px;"></div>
+                            <div style="height: 20px; background: rgba(72, 187, 120, 1.0); border-radius: 2px;"></div>
+                            <div style="height: 20px; background: rgba(72, 187, 120, 0.8); border-radius: 2px;"></div>
+                            <div style="height: 20px; background: rgba(72, 187, 120, 0.6); border-radius: 2px;"></div>
+                            <div style="height: 20px; background: rgba(72, 187, 120, 0.7); border-radius: 2px;"></div>
+                            <div style="height: 20px; background: rgba(72, 187, 120, 0.5); border-radius: 2px;"></div>
+                            <div style="height: 20px; background: rgba(72, 187, 120, 0.3); border-radius: 2px;"></div>
+                            <div style="height: 20px; background: rgba(72, 187, 120, 0.2); border-radius: 2px;"></div>
+                            <div style="height: 20px; background: rgba(72, 187, 120, 0.1); border-radius: 2px;"></div>
+                            <div style="height: 20px; background: rgba(72, 187, 120, 0.1); border-radius: 2px;"></div>
+                        </div>
+                        
+                        <div style="display: flex; justify-content: space-between; align-items: center; text-align: center;">
+                            <div>
+                                <div style="font-size: 20px; font-weight: 600; color: var(--color-primary);">9-11 AM</div>
+                                <div style="font-size: 12px; color: var(--color-text-muted);">Peak hours</div>
+                            </div>
+                            <div>
+                                <div style="font-size: 20px; font-weight: 600; color: var(--color-warning);">2-4 PM</div>
+                                <div style="font-size: 12px; color: var(--color-text-muted);">Second peak</div>
+                            </div>
+                            <div>
+                                <div style="font-size: 20px; font-weight: 600; color: var(--color-text-muted);">10 PM+</div>
+                                <div style="font-size: 12px; color: var(--color-text-muted);">Low activity</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <!-- Goals and Achievements -->
+            <section class="goals-achievements" style="margin-bottom: 40px;">
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="card-title">🎯 Goals & Achievements</h2>
+                        <button class="btn btn-sm btn-primary">+ Set New Goal</button>
+                    </div>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 20px;">
+                        
+                        <!-- Current Goals -->
+                        <div class="goal-card" style="padding: 20px; border: 2px solid var(--color-warning); border-radius: var(--radius-lg); background: rgba(246, 173, 85, 0.05);">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                                <h4 style="font-size: 16px; font-weight: 600; margin: 0;">Complete 100 tasks</h4>
+                                <span style="font-size: 12px; color: var(--color-warning); font-weight: 500;">IN PROGRESS</span>
+                            </div>
+                            <div style="margin-bottom: 12px;">
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+                                    <span style="font-size: 14px; color: var(--color-text-secondary);">Progress</span>
+                                    <span style="font-size: 14px; font-weight: 600;">87 / 100</span>
+                                </div>
+                                <div style="width: 100%; height: 8px; background: var(--color-surface); border-radius: 4px; overflow: hidden;">
+                                    <div style="width: 87%; height: 100%; background: linear-gradient(90deg, #F6AD55, #DD6B20); border-radius: 4px;"></div>
+                                </div>
+                            </div>
+                            <div style="font-size: 12px; color: var(--color-text-muted);">Due: End of month (11 days left)</div>
+                        </div>
+                        
+                        <!-- Completed Achievement -->
+                        <div class="achievement-card" style="padding: 20px; border: 2px solid var(--color-success); border-radius: var(--radius-lg); background: rgba(72, 187, 120, 0.05);">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                                <h4 style="font-size: 16px; font-weight: 600; margin: 0;">🔥 Week Warrior</h4>
+                                <span style="font-size: 12px; color: var(--color-success); font-weight: 500;">ACHIEVED</span>
+                            </div>
+                            <p style="font-size: 14px; color: var(--color-text-secondary); margin: 0 0 8px 0;">
+                                Complete tasks 7 days in a row
+                            </p>
+                            <div style="font-size: 12px; color: var(--color-text-muted);">Completed: March 15, 2024</div>
+                        </div>
+                        
+                        <!-- Another Current Goal -->
+                        <div class="goal-card" style="padding: 20px; border: 2px solid var(--color-primary); border-radius: var(--radius-lg); background: rgba(66, 153, 225, 0.05);">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                                <h4 style="font-size: 16px; font-weight: 600; margin: 0;">90% completion rate</h4>
+                                <span style="font-size: 12px; color: var(--color-primary); font-weight: 500;">IN PROGRESS</span>
+                            </div>
+                            <div style="margin-bottom: 12px;">
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+                                    <span style="font-size: 14px; color: var(--color-text-secondary);">Current Rate</span>
+                                    <span style="font-size: 14px; font-weight: 600;">87.6%</span>
+                                </div>
+                                <div style="width: 100%; height: 8px; background: var(--color-surface); border-radius: 4px; overflow: hidden;">
+                                    <div style="width: 97.3%; height: 100%; background: linear-gradient(90deg, #4299E1, #3182CE); border-radius: 4px;"></div>
+                                </div>
+                            </div>
+                            <div style="font-size: 12px; color: var(--color-text-muted);">Target: 90% (2.4% to go!)</div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </section>
+            
+        </div>
+    </main>
+    
+    <script src="assets/js/taskmaster.js"></script>
+</body>
+</html>

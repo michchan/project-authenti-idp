@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - TaskMaster</title>
+    <meta name="description" content="Customize your TaskMaster experience with personal preferences, notifications, and account settings.">
+    <link rel="stylesheet" href="assets/css/taskmaster.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="page-wrapper">
+    <!-- Skip Link for Accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- Header -->
+    <header class="header" role="banner">
+        <div class="container header-container">
+            <a href="01-landing.html" class="logo" aria-label="TaskMaster Home">
+                🎯 TaskMaster
+            </a>
+            
+            <nav class="nav" role="navigation" aria-label="Main navigation">
+                <a href="02-dashboard.html" class="nav-link">
+                    🏠 Dashboard
+                </a>
+                <a href="04-analytics.html" class="nav-link">
+                    📊 Analytics
+                </a>
+                <a href="05-settings.html" class="nav-link active">
+                    ⚙️ Settings
+                </a>
+            </nav>
+            
+            <div class="user-menu">
+                <button class="btn btn-secondary theme-toggle" aria-label="Switch to dark mode">
+                    <span class="theme-icon">🌙</span>
+                </button>
+                <div class="user-profile" style="display: flex; align-items: center; gap: 8px; padding: 8px 12px; background: var(--color-surface); border-radius: var(--radius-md); border: 1px solid var(--color-border);">
+                    <div style="width: 32px; height: 32px; background: linear-gradient(135deg, #4299E1, #805AD5); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; font-size: 14px;">
+                        SJ
+                    </div>
+                    <div style="text-align: left;">
+                        <div style="font-size: 14px; font-weight: 500; color: var(--color-text-primary);">Sarah Johnson</div>
+                        <div style="font-size: 12px; color: var(--color-text-muted);">Productivity Champion</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main id="main-content" class="main-content" role="main">
+        <div class="container">
+            
+            <!-- Settings Header -->
+            <section class="settings-header" style="margin-bottom: 40px;">
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px; flex-wrap: wrap; gap: 20px;">
+                    <div>
+                        <h1 style="font-size: 32px; font-weight: 700; color: var(--color-text-primary); margin: 0 0 8px 0;">
+                            ⚙️ Settings & Preferences
+                        </h1>
+                        <p style="color: var(--color-text-secondary); margin: 0; font-size: 16px;">
+                            Customize your TaskMaster experience to match your workflow and preferences.
+                        </p>
+                    </div>
+                    <div style="display: flex; gap: 12px;">
+                        <button class="btn btn-secondary">📤 Export Data</button>
+                        <button class="btn btn-primary">💾 Save All Changes</button>
+                    </div>
+                </div>
+                
+                <!-- Settings Navigation -->
+                <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px;">
+                    <button class="btn btn-sm btn-primary" onclick="scrollToSection('profile')">👤 Profile</button>
+                    <button class="btn btn-sm btn-secondary" onclick="scrollToSection('preferences')">⚙️ Preferences</button>
+                    <button class="btn btn-sm btn-secondary" onclick="scrollToSection('notifications')">🔔 Notifications</button>
+                    <button class="btn btn-sm btn-secondary" onclick="scrollToSection('tasks')">📋 Tasks</button>
+                    <button class="btn btn-sm btn-secondary" onclick="scrollToSection('privacy')">🔒 Privacy</button>
+                    <button class="btn btn-sm btn-secondary" onclick="scrollToSection('integrations')">🔗 Integrations</button>
+                </div>
+            </section>
+            
+            <!-- Settings Content -->
+            <div style="display: grid; gap: 30px;">
+                
+                <!-- Profile Settings -->
+                <section id="profile" class="settings-section">
+                    <div class="card">
+                        <div class="card-header">
+                            <h2 class="card-title">👤 Profile Information</h2>
+                            <p style="font-size: 14px; color: var(--color-text-muted); margin: 0;">Manage your personal information and avatar</p>
+                        </div>
+                        
+                        <div style="display: grid; grid-template-columns: auto 1fr; gap: 30px; align-items: start; margin-top: 20px;">
+                            <!-- Avatar Section -->
+                            <div style="text-align: center;">
+                                <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #4299E1, #805AD5); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; font-size: 24px; margin-bottom: 12px;">
+                                    SJ
+                                </div>
+                                <button class="btn btn-sm btn-secondary">📷 Change Avatar</button>
+                            </div>
+                            
+                            <!-- Profile Form -->
+                            <div style="display: grid; gap: 20px;">
+                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                                    <div class="form-group">
+                                        <label for="first-name" class="form-label">First Name</label>
+                                        <input type="text" id="first-name" class="form-input" value="Sarah" style="max-width: 400px;">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="last-name" class="form-label">Last Name</label>
+                                        <input type="text" id="last-name" class="form-input" value="Johnson" style="max-width: 400px;">
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="email" class="form-label">Email Address</label>
+                                    <input type="email" id="email" class="form-input" value="sarah.johnson@example.com" style="max-width: 400px;">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="job-title" class="form-label">Job Title</label>
+                                    <input type="text" id="job-title" class="form-input" value="Productivity Champion" placeholder="Your role or title" style="max-width: 400px;">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="bio" class="form-label">Bio (Optional)</label>
+                                    <textarea id="bio" class="form-textarea" placeholder="Tell us about yourself..." rows="3" style="max-width: 400px;">Passionate about productivity and helping teams achieve their goals through effective task management.</textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Application Preferences -->
+                <section id="preferences" class="settings-section">
+                    <div class="card">
+                        <div class="card-header">
+                            <h2 class="card-title">⚙️ Application Preferences</h2>
+                            <p style="font-size: 14px; color: var(--color-text-muted); margin: 0;">Customize how TaskMaster looks and behaves</p>
+                        </div>
+                        
+                        <div style="display: grid; gap: 24px; margin-top: 20px;">
+                            <!-- Theme Settings -->
+                            <div class="preference-group">
+                                <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 12px; color: var(--color-text-primary);">🎨 Appearance</h3>
+                                <div style="display: grid; gap: 16px;">
+                                    <div class="form-group">
+                                        <label for="theme-select" class="form-label">Theme</label>
+                                        <select id="theme-select" class="form-select" style="max-width: 300px;">
+                                            <option value="auto">🌓 Auto (Follow system)</option>
+                                            <option value="light" selected>☀️ Light Mode</option>
+                                            <option value="dark">🌙 Dark Mode</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="accent-color" class="form-label">Accent Color</label>
+                                        <div style="display: flex; gap: 8px; align-items: center;">
+                                            <select id="accent-color" class="form-select" style="max-width: 200px;">
+                                                <option value="blue" selected>🔵 Blue</option>
+                                                <option value="green">🟢 Green</option>
+                                                <option value="purple">🟣 Purple</option>
+                                                <option value="orange">🟠 Orange</option>
+                                                <option value="red">🔴 Red</option>
+                                            </select>
+                                            <div style="width: 24px; height: 24px; background: var(--color-primary); border-radius: 50%; border: 2px solid var(--color-border);"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Language & Region -->
+                            <div class="preference-group">
+                                <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 12px; color: var(--color-text-primary);">🌍 Language & Region</h3>
+                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                                    <div class="form-group">
+                                        <label for="language" class="form-label">Language</label>
+                                        <select id="language" class="form-select">
+                                            <option value="en" selected>🇺🇸 English</option>
+                                            <option value="es">🇪🇸 Español</option>
+                                            <option value="fr">🇫🇷 Français</option>
+                                            <option value="de">🇩🇪 Deutsch</option>
+                                            <option value="ja">🇯🇵 日本語</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="timezone" class="form-label">Timezone</label>
+                                        <select id="timezone" class="form-select">
+                                            <option value="UTC-8" selected>🕐 Pacific Time (UTC-8)</option>
+                                            <option value="UTC-5">🕐 Eastern Time (UTC-5)</option>
+                                            <option value="UTC+0">🕐 Greenwich Time (UTC+0)</option>
+                                            <option value="UTC+9">🕐 Japan Time (UTC+9)</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Display Options -->
+                            <div class="preference-group">
+                                <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 12px; color: var(--color-text-primary);">📱 Display Options</h3>
+                                <div style="display: grid; gap: 12px;">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" class="checkbox" checked>
+                                        <span>Show task descriptions in list view</span>
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" class="checkbox" checked>
+                                        <span>Enable task completion animations</span>
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" class="checkbox">
+                                        <span>Compact view mode</span>
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" class="checkbox" checked>
+                                        <span>Show category icons in task list</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Notification Settings -->
+                <section id="notifications" class="settings-section">
+                    <div class="card">
+                        <div class="card-header">
+                            <h2 class="card-title">🔔 Notification Settings</h2>
+                            <p style="font-size: 14px; color: var(--color-text-muted); margin: 0;">Control when and how you receive notifications</p>
+                        </div>
+                        
+                        <div style="margin-top: 20px;">
+                            <!-- Master Toggle -->
+                            <div style="padding: 16px; background: var(--color-surface); border-radius: var(--radius-md); margin-bottom: 20px;">
+                                <div style="display: flex; justify-content: space-between; align-items: center;">
+                                    <div>
+                                        <h4 style="font-size: 16px; font-weight: 600; margin: 0 0 4px 0;">Enable Notifications</h4>
+                                        <p style="font-size: 14px; color: var(--color-text-muted); margin: 0;">Master toggle for all notifications</p>
+                                    </div>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" checked>
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <!-- Notification Types -->
+                            <div style="display: grid; gap: 16px;">
+                                <div class="notification-setting">
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                                        <h4 style="font-size: 15px; font-weight: 500; margin: 0;">⏰ Due Date Reminders</h4>
+                                        <label class="toggle-switch">
+                                            <input type="checkbox" checked>
+                                            <span class="toggle-slider"></span>
+                                        </label>
+                                    </div>
+                                    <div style="margin-left: 20px; display: grid; gap: 8px;">
+                                        <label class="checkbox-label">
+                                            <input type="checkbox" class="checkbox" checked>
+                                            <span>15 minutes before due time</span>
+                                        </label>
+                                        <label class="checkbox-label">
+                                            <input type="checkbox" class="checkbox" checked>
+                                            <span>1 hour before due time</span>
+                                        </label>
+                                        <label class="checkbox-label">
+                                            <input type="checkbox" class="checkbox">
+                                            <span>1 day before due date</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                
+                                <div class="notification-setting">
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                                        <h4 style="font-size: 15px; font-weight: 500; margin: 0;">📊 Daily Summary</h4>
+                                        <label class="toggle-switch">
+                                            <input type="checkbox" checked>
+                                            <span class="toggle-slider"></span>
+                                        </label>
+                                    </div>
+                                    <div style="margin-left: 20px;">
+                                        <select class="form-select" style="max-width: 200px;">
+                                            <option value="8">8:00 AM</option>
+                                            <option value="9" selected>9:00 AM</option>
+                                            <option value="10">10:00 AM</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                
+                                <div class="notification-setting">
+                                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                                        <div>
+                                            <h4 style="font-size: 15px; font-weight: 500; margin: 0;">🎉 Achievement Notifications</h4>
+                                            <p style="font-size: 12px; color: var(--color-text-muted); margin: 4px 0 0 0;">Celebrate your productivity milestones</p>
+                                        </div>
+                                        <label class="toggle-switch">
+                                            <input type="checkbox" checked>
+                                            <span class="toggle-slider"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                                
+                                <div class="notification-setting">
+                                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                                        <div>
+                                            <h4 style="font-size: 15px; font-weight: 500; margin: 0;">📧 Weekly Progress Report</h4>
+                                            <p style="font-size: 12px; color: var(--color-text-muted); margin: 4px 0 0 0;">Email summary of your weekly productivity</p>
+                                        </div>
+                                        <label class="toggle-switch">
+                                            <input type="checkbox">
+                                            <span class="toggle-slider"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Task Management Settings -->
+                <section id="tasks" class="settings-section">
+                    <div class="card">
+                        <div class="card-header">
+                            <h2 class="card-title">📋 Task Management</h2>
+                            <p style="font-size: 14px; color: var(--color-text-muted); margin: 0;">Configure how tasks behave and are organized</p>
+                        </div>
+                        
+                        <div style="display: grid; gap: 24px; margin-top: 20px;">
+                            <!-- Default Task Settings -->
+                            <div class="preference-group">
+                                <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 12px; color: var(--color-text-primary);">🆕 Default Task Settings</h3>
+                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                                    <div class="form-group">
+                                        <label for="default-category" class="form-label">Default Category</label>
+                                        <select id="default-category" class="form-select">
+                                            <option value="work" selected>💼 Work</option>
+                                            <option value="personal">🏠 Personal</option>
+                                            <option value="shopping">🛒 Shopping</option>
+                                            <option value="health">🏥 Health</option>
+                                            <option value="finance">💰 Finance</option>
+                                            <option value="hobbies">🎨 Hobbies</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="default-priority" class="form-label">Default Priority</label>
+                                        <select id="default-priority" class="form-select">
+                                            <option value="low">🟢 Low</option>
+                                            <option value="medium" selected>🟡 Medium</option>
+                                            <option value="high">🔴 High</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Task Behavior -->
+                            <div class="preference-group">
+                                <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 12px; color: var(--color-text-primary);">⚙️ Task Behavior</h3>
+                                <div style="display: grid; gap: 12px;">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" class="checkbox" checked>
+                                        <span>Auto-complete subtasks when parent task is completed</span>
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" class="checkbox" checked>
+                                        <span>Move completed tasks to bottom of list</span>
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" class="checkbox">
+                                        <span>Auto-delete tasks after 30 days of completion</span>
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" class="checkbox" checked>
+                                        <span>Show overdue tasks at top of list</span>
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <!-- Quick Actions -->
+                            <div class="preference-group">
+                                <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 12px; color: var(--color-text-primary);">⚡ Quick Actions</h3>
+                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                                    <div class="form-group">
+                                        <label for="quick-add-shortcut" class="form-label">Quick Add Shortcut</label>
+                                        <select id="quick-add-shortcut" class="form-select">
+                                            <option value="ctrl-n" selected>Ctrl + N</option>
+                                            <option value="ctrl-plus">Ctrl + +</option>
+                                            <option value="ctrl-enter">Ctrl + Enter</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="search-shortcut" class="form-label">Search Shortcut</label>
+                                        <select id="search-shortcut" class="form-select">
+                                            <option value="ctrl-k" selected>Ctrl + K</option>
+                                            <option value="ctrl-f">Ctrl + F</option>
+                                            <option value="slash">/</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Privacy & Data -->
+                <section id="privacy" class="settings-section">
+                    <div class="card">
+                        <div class="card-header">
+                            <h2 class="card-title">🔒 Privacy & Data</h2>
+                            <p style="font-size: 14px; color: var(--color-text-muted); margin: 0;">Manage your data and privacy preferences</p>
+                        </div>
+                        
+                        <div style="display: grid; gap: 24px; margin-top: 20px;">
+                            <!-- Data Management -->
+                            <div class="preference-group">
+                                <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 12px; color: var(--color-text-primary);">💾 Data Management</h3>
+                                <div style="display: grid; gap: 16px;">
+                                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px; border: 1px solid var(--color-border); border-radius: var(--radius-md);">
+                                        <div>
+                                            <h4 style="font-size: 15px; font-weight: 500; margin: 0 0 4px 0;">Export Your Data</h4>
+                                            <p style="font-size: 13px; color: var(--color-text-muted); margin: 0;">Download all your tasks, settings, and activity data</p>
+                                        </div>
+                                        <button class="btn btn-secondary">📤 Export</button>
+                                    </div>
+                                    
+                                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px; border: 1px solid var(--color-border); border-radius: var(--radius-md);">
+                                        <div>
+                                            <h4 style="font-size: 15px; font-weight: 500; margin: 0 0 4px 0;">Import Data</h4>
+                                            <p style="font-size: 13px; color: var(--color-text-muted); margin: 0;">Import tasks from other applications or backup files</p>
+                                        </div>
+                                        <button class="btn btn-secondary">📥 Import</button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Privacy Options -->
+                            <div class="preference-group">
+                                <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 12px; color: var(--color-text-primary);">🔐 Privacy Options</h3>
+                                <div style="display: grid; gap: 12px;">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" class="checkbox" checked>
+                                        <span>Allow usage analytics to improve TaskMaster</span>
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" class="checkbox">
+                                        <span>Share anonymous productivity insights</span>
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" class="checkbox" checked>
+                                        <span>Encrypt sensitive task data</span>
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <!-- Account Actions -->
+                            <div class="preference-group">
+                                <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 12px; color: var(--color-text-primary);">⚠️ Account Actions</h3>
+                                <div style="display: grid; gap: 12px;">
+                                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px; border: 1px solid var(--color-warning); background: rgba(246, 173, 85, 0.05); border-radius: var(--radius-md);">
+                                        <div>
+                                            <h4 style="font-size: 15px; font-weight: 500; margin: 0 0 4px 0; color: var(--color-warning);">⚠️ Reset All Settings</h4>
+                                            <p style="font-size: 13px; color: var(--color-text-muted); margin: 0;">Restore all preferences to default values</p>
+                                        </div>
+                                        <button class="btn btn-warning">🔄 Reset</button>
+                                    </div>
+                                    
+                                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px; border: 1px solid var(--color-error); background: rgba(245, 101, 101, 0.05); border-radius: var(--radius-md);">
+                                        <div>
+                                            <h4 style="font-size: 15px; font-weight: 500; margin: 0 0 4px 0; color: var(--color-error);">🗑️ Delete Account</h4>
+                                            <p style="font-size: 13px; color: var(--color-text-muted); margin: 0;">Permanently delete your account and all data</p>
+                                        </div>
+                                        <button class="btn btn-danger">Delete</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Integrations -->
+                <section id="integrations" class="settings-section">
+                    <div class="card">
+                        <div class="card-header">
+                            <h2 class="card-title">🔗 Integrations & Connections</h2>
+                            <p style="font-size: 14px; color: var(--color-text-muted); margin: 0;">Connect TaskMaster with your favorite apps and services</p>
+                        </div>
+                        
+                        <div style="margin-top: 20px;">
+                            <!-- Available Integrations -->
+                            <div style="display: grid; gap: 16px;">
+                                <div class="integration-item" style="display: flex; justify-content: space-between; align-items: center; padding: 16px; border: 1px solid var(--color-border); border-radius: var(--radius-md);">
+                                    <div style="display: flex; align-items: center; gap: 12px;">
+                                        <div style="width: 40px; height: 40px; background: #4285f4; border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: white; font-weight: 600;">G</div>
+                                        <div>
+                                            <h4 style="font-size: 15px; font-weight: 500; margin: 0 0 4px 0;">Google Calendar</h4>
+                                            <p style="font-size: 13px; color: var(--color-text-muted); margin: 0;">Sync tasks with your calendar events</p>
+                                        </div>
+                                    </div>
+                                    <div style="display: flex; align-items: center; gap: 8px;">
+                                        <span style="color: var(--color-success); font-size: 12px; font-weight: 500;">✅ Connected</span>
+                                        <button class="btn btn-sm btn-secondary">⚙️ Configure</button>
+                                    </div>
+                                </div>
+                                
+                                <div class="integration-item" style="display: flex; justify-content: space-between; align-items: center; padding: 16px; border: 1px solid var(--color-border); border-radius: var(--radius-md);">
+                                    <div style="display: flex; align-items: center; gap: 12px;">
+                                        <div style="width: 40px; height: 40px; background: #0078d4; border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: white; font-weight: 600;">O</div>
+                                        <div>
+                                            <h4 style="font-size: 15px; font-weight: 500; margin: 0 0 4px 0;">Outlook</h4>
+                                            <p style="font-size: 13px; color: var(--color-text-muted); margin: 0;">Import emails as tasks and sync with Outlook calendar</p>
+                                        </div>
+                                    </div>
+                                    <button class="btn btn-sm btn-primary">🔗 Connect</button>
+                                </div>
+                                
+                                <div class="integration-item" style="display: flex; justify-content: space-between; align-items: center; padding: 16px; border: 1px solid var(--color-border); border-radius: var(--radius-md);">
+                                    <div style="display: flex; align-items: center; gap: 12px;">
+                                        <div style="width: 40px; height: 40px; background: #36c5f0; border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: white; font-weight: 600;">S</div>
+                                        <div>
+                                            <h4 style="font-size: 15px; font-weight: 500; margin: 0 0 4px 0;">Slack</h4>
+                                            <p style="font-size: 13px; color: var(--color-text-muted); margin: 0;">Create tasks from Slack messages and get notifications</p>
+                                        </div>
+                                    </div>
+                                    <button class="btn btn-sm btn-primary">🔗 Connect</button>
+                                </div>
+                                
+                                <div class="integration-item" style="display: flex; justify-content: space-between; align-items: center; padding: 16px; border: 1px solid var(--color-border); border-radius: var(--radius-md);">
+                                    <div style="display: flex; align-items: center; gap: 12px;">
+                                        <div style="width: 40px; height: 40px; background: #000; border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: white; font-weight: 600;">N</div>
+                                        <div>
+                                            <h4 style="font-size: 15px; font-weight: 500; margin: 0 0 4px 0;">Notion</h4>
+                                            <p style="font-size: 13px; color: var(--color-text-muted); margin: 0;">Sync tasks with your Notion workspace</p>
+                                        </div>
+                                    </div>
+                                    <button class="btn btn-sm btn-primary">🔗 Connect</button>
+                                </div>
+                                
+                                <div class="integration-item" style="display: flex; justify-content: space-between; align-items: center; padding: 16px; border: 1px solid var(--color-border); border-radius: var(--radius-md);">
+                                    <div style="display: flex; align-items: center; gap: 12px;">
+                                        <div style="width: 40px; height: 40px; background: #ff7b00; border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: white; font-weight: 600;">Z</div>
+                                        <div>
+                                            <h4 style="font-size: 15px; font-weight: 500; margin: 0 0 4px 0;">Zapier</h4>
+                                            <p style="font-size: 13px; color: var(--color-text-muted); margin: 0;">Connect with 5000+ apps via Zapier automation</p>
+                                        </div>
+                                    </div>
+                                    <button class="btn btn-sm btn-primary">🔗 Connect</button>
+                                </div>
+                            </div>
+                            
+                            <!-- API Access -->
+                            <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid var(--color-border);">
+                                <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 16px; color: var(--color-text-primary);">🔧 Developer Options</h3>
+                                <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px; background: var(--color-surface); border-radius: var(--radius-md);">
+                                    <div>
+                                        <h4 style="font-size: 15px; font-weight: 500; margin: 0 0 4px 0;">API Access</h4>
+                                        <p style="font-size: 13px; color: var(--color-text-muted); margin: 0;">Create custom integrations with the TaskMaster API</p>
+                                    </div>
+                                    <button class="btn btn-sm btn-secondary">🔑 Manage Keys</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+            </div>
+        </div>
+    </main>
+    
+    <script src="assets/js/taskmaster.js"></script>
+    <script>
+        // Smooth scroll to section
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                
+                // Update active button
+                document.querySelectorAll('.btn').forEach(btn => {
+                    if (btn.onclick && btn.onclick.toString().includes(sectionId)) {
+                        btn.classList.remove('btn-secondary');
+                        btn.classList.add('btn-primary');
+                    } else if (btn.onclick) {
+                        btn.classList.remove('btn-primary');
+                        btn.classList.add('btn-secondary');
+                    }
+                });
+            }
+        }
+        
+        // Theme preview
+        document.getElementById('theme-select')?.addEventListener('change', function(e) {
+            const theme = e.target.value;
+            if (theme !== 'auto') {
+                TaskMasterApp.theme = theme;
+                TaskMasterApp.initTheme();
+            }
+        });
+        
+        // Accent color preview
+        document.getElementById('accent-color')?.addEventListener('change', function(e) {
+            const color = e.target.value;
+            TaskMasterApp.showNotification(`Accent color changed to ${color}`, 'info');
+        });
+        
+        // Toggle switches
+        document.querySelectorAll('.toggle-switch input').forEach(toggle => {
+            toggle.addEventListener('change', function() {
+                const label = this.closest('.notification-setting')?.querySelector('h4')?.textContent || 'Setting';
+                TaskMasterApp.showNotification(`${label} ${this.checked ? 'enabled' : 'disabled'}`, 'info');
+            });
+        });
+    </script>
+</body>
+</html>

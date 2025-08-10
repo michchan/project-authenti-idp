@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskMaster - Simple Task Management for Everyone</title>
+    <meta name="description" content="TaskMaster is a clean, intuitive task management app that helps you organize your daily tasks efficiently. Get started for free!">
+    <link rel="stylesheet" href="assets/css/taskmaster.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="page-wrapper">
+    <!-- Skip Link for Accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- Header -->
+    <header class="header" role="banner">
+        <div class="container header-container">
+            <a href="#" class="logo" aria-label="TaskMaster Home">
+                🎯 TaskMaster
+            </a>
+            
+            <nav class="nav" role="navigation" aria-label="Main navigation">
+                <a href="02-dashboard.html" class="nav-link">
+                    🏠 Dashboard
+                </a>
+                <a href="04-analytics.html" class="nav-link">
+                    📊 Analytics
+                </a>
+                <a href="05-settings.html" class="nav-link">
+                    ⚙️ Settings
+                </a>
+            </nav>
+            
+            <div class="user-menu">
+                <button class="btn btn-secondary theme-toggle" aria-label="Switch to dark mode">
+                    <span class="theme-icon">🌙</span>
+                </button>
+                <a href="02-dashboard.html" class="btn btn-primary">
+                    Get Started
+                </a>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main id="main-content" class="main-content" role="main">
+        <div class="container">
+            <!-- Hero Section -->
+            <section class="hero-section" style="text-align: center; padding: 60px 0; margin-bottom: 60px;">
+                <div style="max-width: 800px; margin: 0 auto;">
+                    <h1 style="font-size: 48px; font-weight: 700; color: var(--color-text-primary); margin-bottom: 20px; line-height: 1.2;">
+                        📋 Simple Task Management<br>
+                        <span style="color: var(--color-primary);">for Everyone</span>
+                    </h1>
+                    <p style="font-size: 20px; color: var(--color-text-secondary); margin-bottom: 40px; line-height: 1.6;">
+                        Stay organized, track progress, and get things done with TaskMaster's clean and intuitive interface. No complexity, just results.
+                    </p>
+                    <div style="display: flex; gap: 16px; justify-content: center; align-items: center; flex-wrap: wrap; margin-bottom: 20px;">
+                        <a href="02-dashboard.html" class="btn btn-primary btn-lg">
+                            🚀 Start Managing Your Tasks
+                        </a>
+                        <button class="btn btn-secondary btn-lg" data-modal="demo-modal">
+                            👀 See Demo
+                        </button>
+                    </div>
+                    <p style="font-size: 14px; color: var(--color-text-muted);">
+                        No signup required to try • Free forever • No credit card needed
+                    </p>
+                </div>
+            </section>
+            
+            <!-- Interactive Demo Section -->
+            <section class="demo-section" style="margin-bottom: 80px;">
+                <div class="card" style="max-width: 900px; margin: 0 auto; padding: 40px;">
+                    <div class="card-header">
+                        <h2 class="card-title" style="display: flex; align-items: center; gap: 12px;">
+                            ✨ Live Demo - Try It Now!
+                        </h2>
+                        <div class="card-actions">
+                            <span style="font-size: 14px; color: var(--color-text-muted);">Interactive Preview</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Demo Task List -->
+                    <div class="task-list" style="margin-top: 20px;">
+                        <div class="task-item fade-in" style="animation-delay: 0.1s;">
+                            <input type="checkbox" class="task-checkbox" checked>
+                            <div class="task-content">
+                                <div class="task-title completed">Buy groceries for dinner party</div>
+                                <div class="task-meta">
+                                    <span class="category-badge category-personal">🏠 Personal</span>
+                                    <span class="priority-badge priority-medium">🟡 Medium</span>
+                                    <span class="task-due-date">✅ Completed</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="task-item fade-in" style="animation-delay: 0.2s;">
+                            <input type="checkbox" class="task-checkbox">
+                            <div class="task-content">
+                                <div class="task-title">Prepare quarterly presentation slides</div>
+                                <div class="task-meta">
+                                    <span class="category-badge category-work">💼 Work</span>
+                                    <span class="priority-badge priority-high">🔴 High</span>
+                                    <span class="task-due-date">📅 Due: Today 2:00 PM</span>
+                                </div>
+                            </div>
+                            <div class="task-actions">
+                                <button class="btn btn-sm btn-secondary">✏️</button>
+                            </div>
+                        </div>
+                        
+                        <div class="task-item fade-in" style="animation-delay: 0.3s;">
+                            <input type="checkbox" class="task-checkbox">
+                            <div class="task-content">
+                                <div class="task-title">Submit tax documents</div>
+                                <div class="task-meta">
+                                    <span class="category-badge category-finance">💰 Finance</span>
+                                    <span class="priority-badge priority-high">🔴 High</span>
+                                    <span class="task-due-date overdue">⚠️ Overdue by 2 days</span>
+                                </div>
+                            </div>
+                            <div class="task-actions">
+                                <button class="btn btn-sm btn-secondary">✏️</button>
+                                <button class="btn btn-sm btn-danger">🗑️</button>
+                            </div>
+                        </div>
+                        
+                        <div class="task-item fade-in" style="animation-delay: 0.4s;">
+                            <input type="checkbox" class="task-checkbox">
+                            <div class="task-content">
+                                <div class="task-title">Plan weekend hiking trip</div>
+                                <div class="task-meta">
+                                    <span class="category-badge category-hobbies">🎨 Hobbies</span>
+                                    <span class="priority-badge priority-low">🟢 Low</span>
+                                    <span class="task-due-date">📅 Due: Saturday 8:00 AM</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Demo Controls -->
+                    <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--color-border); text-align: center;">
+                        <p style="color: var(--color-text-muted); font-size: 14px; margin-bottom: 16px;">
+                            ✅ Try checking off tasks above to see the completion animation!
+                        </p>
+                        <a href="02-dashboard.html" class="btn btn-primary">
+                            💫 Experience the Full App
+                        </a>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Features Section -->
+            <section class="features-section" style="margin-bottom: 80px;">
+                <h2 style="text-align: center; font-size: 32px; font-weight: 600; margin-bottom: 50px; color: var(--color-text-primary);">
+                    Everything you need to stay organized
+                </h2>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px;">
+                    <div class="feature-card card fade-in" style="text-align: center; animation-delay: 0.1s;">
+                        <div style="font-size: 48px; margin-bottom: 20px;">⚡</div>
+                        <h3 style="font-size: 20px; font-weight: 600; margin-bottom: 16px; color: var(--color-text-primary);">Quick Task Creation</h3>
+                        <p style="color: var(--color-text-secondary); line-height: 1.6;">
+                            Add tasks in seconds with our streamlined interface. Just type and go - no unnecessary fields or complexity.
+                        </p>
+                    </div>
+                    
+                    <div class="feature-card card fade-in" style="text-align: center; animation-delay: 0.2s;">
+                        <div style="font-size: 48px; margin-bottom: 20px;">📊</div>
+                        <h3 style="font-size: 20px; font-weight: 600; margin-bottom: 16px; color: var(--color-text-primary);">Progress Tracking</h3>
+                        <p style="color: var(--color-text-secondary); line-height: 1.6;">
+                            Visualize your productivity with completion statistics and trends that motivate you to achieve more.
+                        </p>
+                    </div>
+                    
+                    <div class="feature-card card fade-in" style="text-align: center; animation-delay: 0.3s;">
+                        <div style="font-size: 48px; margin-bottom: 20px;">🏷️</div>
+                        <h3 style="font-size: 20px; font-weight: 600; margin-bottom: 16px; color: var(--color-text-primary);">Smart Categories</h3>
+                        <p style="color: var(--color-text-secondary); line-height: 1.6;">
+                            Organize tasks with color-coded categories and flexible tagging system that adapts to your workflow.
+                        </p>
+                    </div>
+                    
+                    <div class="feature-card card fade-in" style="text-align: center; animation-delay: 0.4s;">
+                        <div style="font-size: 48px; margin-bottom: 20px;">🔍</div>
+                        <h3 style="font-size: 20px; font-weight: 600; margin-bottom: 16px; color: var(--color-text-primary);">Powerful Search</h3>
+                        <p style="color: var(--color-text-secondary); line-height: 1.6;">
+                            Find any task instantly with real-time search and smart filtering across titles, descriptions, and tags.
+                        </p>
+                    </div>
+                    
+                    <div class="feature-card card fade-in" style="text-align: center; animation-delay: 0.5s;">
+                        <div style="font-size: 48px; margin-bottom: 20px;">⏰</div>
+                        <h3 style="font-size: 20px; font-weight: 600; margin-bottom: 16px; color: var(--color-text-primary);">Due Date Alerts</h3>
+                        <p style="color: var(--color-text-secondary); line-height: 1.6;">
+                            Never miss deadlines with visual indicators for upcoming, due today, and overdue tasks.
+                        </p>
+                    </div>
+                    
+                    <div class="feature-card card fade-in" style="text-align: center; animation-delay: 0.6s;">
+                        <div style="font-size: 48px; margin-bottom: 20px;">🌙</div>
+                        <h3 style="font-size: 20px; font-weight: 600; margin-bottom: 16px; color: var(--color-text-primary);">Dark Mode Support</h3>
+                        <p style="color: var(--color-text-secondary); line-height: 1.6;">
+                            Work comfortably in any lighting condition with automatic dark mode and manual theme switching.
+                        </p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Statistics Preview -->
+            <section class="stats-preview" style="margin-bottom: 80px;">
+                <div class="card" style="text-align: center; padding: 50px 40px;">
+                    <h2 style="font-size: 28px; font-weight: 600; margin-bottom: 40px; color: var(--color-text-primary);">
+                        📈 See Your Progress at a Glance
+                    </h2>
+                    
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-value">847</div>
+                            <div class="stat-label">Tasks Completed</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">87%</div>
+                            <div class="stat-label">Completion Rate</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">23</div>
+                            <div class="stat-label">Day Streak</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">12</div>
+                            <div class="stat-label">Active Projects</div>
+                        </div>
+                    </div>
+                    
+                    <p style="color: var(--color-text-muted); margin-top: 30px; font-size: 16px;">
+                        Track your productivity journey with detailed analytics and insights
+                    </p>
+                    <a href="04-analytics.html" class="btn btn-primary" style="margin-top: 20px;">
+                        📊 View Full Analytics
+                    </a>
+                </div>
+            </section>
+            
+            <!-- CTA Section -->
+            <section class="cta-section" style="text-align: center; padding: 60px 0;">
+                <h2 style="font-size: 36px; font-weight: 700; margin-bottom: 20px; color: var(--color-text-primary);">
+                    Ready to get organized?
+                </h2>
+                <p style="font-size: 18px; color: var(--color-text-secondary); margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto;">
+                    Join thousands of users who have transformed their productivity with TaskMaster. Start your organized journey today!
+                </p>
+                <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+                    <a href="02-dashboard.html" class="btn btn-primary btn-lg">
+                        🎯 Start Now - It's Free
+                    </a>
+                    <a href="#demo-section" class="btn btn-secondary btn-lg" onclick="document.querySelector('.demo-section').scrollIntoView({behavior: 'smooth'})">
+                        🔄 Try Demo Again
+                    </a>
+                </div>
+            </section>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer style="background: var(--color-surface); border-top: 1px solid var(--color-border); padding: 40px 0;">
+        <div class="container" style="text-align: center;">
+            <div style="margin-bottom: 20px;">
+                <a href="#" class="logo" style="font-size: 18px;">🎯 TaskMaster</a>
+            </div>
+            <div style="display: flex; justify-content: center; gap: 24px; margin-bottom: 20px; flex-wrap: wrap;">
+                <a href="02-dashboard.html" class="nav-link" style="color: var(--color-text-muted);">Dashboard</a>
+                <a href="04-analytics.html" class="nav-link" style="color: var(--color-text-muted);">Analytics</a>
+                <a href="05-settings.html" class="nav-link" style="color: var(--color-text-muted);">Settings</a>
+                <a href="#" class="nav-link" style="color: var(--color-text-muted);">Privacy</a>
+                <a href="#" class="nav-link" style="color: var(--color-text-muted);">Terms</a>
+            </div>
+            <p style="color: var(--color-text-muted); font-size: 14px;">
+                © 2024 TaskMaster. Made with ❤️ for productivity enthusiasts.
+            </p>
+        </div>
+    </footer>
+    
+    <!-- Demo Modal -->
+    <div id="demo-modal" class="modal-overlay">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 class="modal-title">🎬 TaskMaster Demo</h3>
+                <button class="modal-close" aria-label="Close modal">✕</button>
+            </div>
+            <div style="text-align: center;">
+                <div style="font-size: 64px; margin: 40px 0;">🎯</div>
+                <h4 style="font-size: 24px; font-weight: 600; margin-bottom: 16px;">Welcome to TaskMaster!</h4>
+                <p style="color: var(--color-text-secondary); margin-bottom: 30px; line-height: 1.6;">
+                    This demo shows you the core features of TaskMaster in action. Try checking off the tasks above, 
+                    or click "Start Now" to experience the full application with all features unlocked!
+                </p>
+                <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+                    <a href="02-dashboard.html" class="btn btn-primary">
+                        🚀 Start Full App
+                    </a>
+                    <button class="btn btn-secondary modal-close">
+                        👍 Got it
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="assets/js/taskmaster.js"></script>
+</body>
+</html>
