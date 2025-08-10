@@ -156,13 +156,14 @@ The **epics **should be drafted based on:
     - `EPIC_TEMPLATE` as the template
     - `EPIC_GUIDELINES` as the guidelines
     - `EPIC_EXAMPLE` as the example
+  
 - **UI designer** to create UI design draft including:
     1. **UI design system** - should be drafted based on:
         - `UI_DESIGN_SYSTEM_TEMPLATE` as the template
         - `UI_DESIGN_SYSTEM_GUIDELINES` as the guidelines
         - `UI_DESIGN_SYSTEM_EXAMPLE` as the example
     2. **UI component library** - should be drafted based on:
-        - `UI_COMPONENT_LIBRARY_TEMPLATE` as the template
+     - `UI_COMPONENT_LIBRARY_TEMPLATE` as the template
         - `UI_COMPONENT_LIBRARY_GUIDELINES` as the guidelines
         - `UI_COMPONENT_LIBRARY_EXAMPLE` as the example
     3. **High-Fidelity UI mockup in html** - should be drafted based on:
@@ -205,6 +206,7 @@ The **epics **should be drafted based on:
 The following parts work in parallel.
 
 - **Product owner** and **UX Designer** to review the UI design deliverables and also alignment with the stories.
+- **Frontend engineer** to review the feasibility of the UI design.
 - **Product owner, UX Designer** and **Engineer** to review the deliverables by **System architect**.
 - **System architect** to review the deliverables by **Security Expert**.
 - **Engineers** to review epics and stories.
