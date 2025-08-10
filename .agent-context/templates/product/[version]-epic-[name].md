@@ -49,8 +49,3 @@
 ---
 
 
-## 🔗 Dependencies
-
-**Internal**: `[Other teams, systems, or epics this depends on]`
-
-**External**: `[Third-party services, compliance, or infrastructure needs]`

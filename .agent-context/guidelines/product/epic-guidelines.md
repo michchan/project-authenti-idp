@@ -76,26 +76,6 @@ Guide for creating effective epics using the epic template.
 ---
 
 
-## 🔗 Dependency Management
-
-### Types of Dependencies
-- **Epic**: Other large initiatives that must be completed first
-- **Team**: Work other teams must complete
-- **System**: Technical infrastructure or platform changes
-- **External**: Third-party services, regulatory approvals, vendor deliverables
-
-### Managing Dependencies
-- **Identify early**: Don't wait until sprint planning
-- **Communicate proactively**: Keep dependent teams informed of timeline
-- **Plan for delays**: Build buffer into timeline
-- **Document clearly**: Make dependencies visible to all stakeholders
-
-### Risk Mitigation
-- **Have backup plans**: What if critical dependency is delayed?
-- **Regular check-ins**: Monitor dependency status throughout development
-- **Escalation paths**: Know who to contact when dependencies become blockers
-
----
 
 ## 🗓️ Implementation Planning
 
@@ -139,14 +119,13 @@ Guide for creating effective epics using the epic template.
 
 ### Planning Issues
 - **Scope creep**: Adding features without proper change control
-- **Under-estimation**: Not accounting for complexity, dependencies, or unknowns
+- **Under-estimation**: Not accounting for complexity or unknowns
 - **Poor decomposition**: User stories too large or interdependent
 - **Missing stakeholders**: Not involving all necessary parties
 
 ### Execution Issues
 - **Inadequate communication**: Teams working in silos
-- **Ignoring metrics**: Not tracking progress toward success metrics
-- **Poor dependency management**: Being blindsided by blocking dependencies
+- **Poor progress tracking**: Not monitoring epic completion status
 - **Quality shortcuts**: Rushing at expense of quality
 
 ### Documentation Issues
