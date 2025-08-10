@@ -21,10 +21,10 @@
 
 | ID      | Title                             | Status       | Dependencies |
 |---------|-----------------------------------|--------------|--------------|
-| `[US-001]` | `[User Story Title 1]`         | 🟢 To Do     | -            |
-| `[US-002]` | `[User Story Title 2]`         | 🔧 In Progress | `[US-001]`   |
-| `[US-003]` | `[User Story Title 3]`         | ✅ Done      | `[US-001]`   |
-| `[US-004]` | `[User Story Title 4]`         | 🟢 To Do     | `[US-002, US-003]` |
+| `[US-001]` | `[User Story Title 1]`         | Draft        | -            |
+| `[US-002]` | `[User Story Title 2]`         | In-progress  | `[US-001]`   |
+| `[US-003]` | `[User Story Title 3]`         | Done         | `[US-001]`   |
+| `[US-004]` | `[User Story Title 4]`         | Backlog      | `[US-002, US-003]` |
 
 ---
 
@@ -41,12 +41,11 @@
 - [ ] `[Specific testable outcome 2]`
 - [ ] `[Specific testable outcome 3]`
 
-**Status**: `[Current status]`  
+**Status**: `[Current status - see Development Workflow in .agent-context/workflow.md]`  
 **Dependencies**: `[List of dependent story IDs, or "None"]`  
 **Reference**: `[Link to designs/specs]`
 
 **Notes**: `[Implementation details or dependencies]`
-
 ---
 
 

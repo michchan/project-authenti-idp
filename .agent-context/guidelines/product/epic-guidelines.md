@@ -64,9 +64,9 @@ Guide for creating effective epics using the epic template.
 
 ### Status Tracking
 - **Update regularly**: Keep status current for accurate progress visibility
-- **Use consistent statuses**: Stick to defined status legend
-- **Track blockers**: Use "Blocked" status and document unblocking needs
-- **Celebrate completion**: Move to "Done" only when fully implemented and tested
+- **Use development workflow statuses**: Follow the standard development workflow statuses defined in the epic template
+- **Track blockers**: Document blockers in notes and communicate with stakeholders
+- **Celebrate completion**: Move to "Done" only when fully implemented and tested through UAT
 
 ### Story Ordering and Dependencies
 - **Sort by priority and dependencies**: Order stories so dependent stories appear after their prerequisites
@@ -79,6 +79,10 @@ Guide for creating effective epics using the epic template.
 - **Include whole team**: Involve developers, designers, and testers
 - **Account for unknowns**: Add buffer for high uncertainty stories
 - **Refine over time**: Initial estimates are rough - refine as you learn
+
+### Development Workflow Status Usage
+
+For detailed status definitions and workflow progression, refer to the **Development workflow** section in `.agent-context/workflow.md`.
 
 ---
 
