@@ -25,7 +25,7 @@ Each sprint document should contain:
 - **Type:** One of:
   - `Status Update` — reflects a change in the ticket’s status and/or assignee.
   - `Comment` — any additional note, question, or information from any team member.
-- **Status:** The ticket status at the time of the update (e.g., Draft, Backlog, Planned in Sprint, In-progress, Code review, Ready for testing, Integration testing, E2E Testing, PO Review, UAT, Done).
+- **Status:** The ticket status at the time of the update (e.g., Draft, Backlog, Planned in Sprint, In-progress, Code review, Integration testing, E2E Testing, PO Review, UAT, Done).
 - **Assignee:** The person or role responsible for the ticket at that status.
 - **Comment:** Free-text field for explanations, observations, or discussion points.
 - **Comment By:** The role or person who authored the comment. Leave blank for status updates without comments.
@@ -63,10 +63,11 @@ Use consistent role titles to describe assignees, such as:
 | Planned in Sprint    | Frontend Engineer / Backend Engineer |
 | In-progress         | Frontend Engineer / Backend Engineer |
 | Code review         | Code Reviewer         |
-| Ready for testing   | QA Engineer           |
 | Integration testing | QA Engineer           |
 | E2E Testing         | QA Engineer           |
 | PO Review           | Product Owner         |
+| Security review     | Security Expert       |
+| Configuring DevOps  | DevOps Engineer       |
 | UAT                 | Product Owner         |
 | Done                | Unassigned            |
 
