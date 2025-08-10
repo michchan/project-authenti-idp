@@ -60,12 +60,19 @@ Guide for creating effective epics using the epic template.
 - **Size appropriately**: Stories fit within 1-2 sprints
 - **Maintain traceability**: Each story contributes to epic goals
 - **Prioritize ruthlessly**: Not all stories need first release
+- **Map dependencies clearly**: Identify which stories depend on others using story IDs
 
 ### Status Tracking
 - **Update regularly**: Keep status current for accurate progress visibility
 - **Use consistent statuses**: Stick to defined status legend
 - **Track blockers**: Use "Blocked" status and document unblocking needs
 - **Celebrate completion**: Move to "Done" only when fully implemented and tested
+
+### Story Ordering and Dependencies
+- **Sort by priority and dependencies**: Order stories so dependent stories appear after their prerequisites
+- **Use story IDs for dependencies**: Reference dependent stories by their ID (e.g., US-101, US-102)
+- **Support multiple dependencies**: Stories can depend on multiple other stories (e.g., US-102, US-103)
+- **Plan development order**: Stories with no dependencies should be developed first
 
 ### Estimation Guidelines
 - **Use consistent units**: Hours or t-shirt sizes
