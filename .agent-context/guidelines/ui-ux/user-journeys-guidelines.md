@@ -149,12 +149,6 @@ Guidance for creating user journey documentation using ASCII diagrams.
 
 ## 📊 Metrics & Measurement
 
-### Success Metrics
-- **Conversion rates**: Percentage completing the flow
-- **Time to completion**: How long flow takes for successful users
-- **Error rates**: Frequency of errors at each step
-- **Abandonment points**: Where users most commonly exit
-
 ### Measurement Strategy
 - **Event tracking**: Specific user actions to track in analytics
 - **Funnel analysis**: Step-by-step conversion through flow
@@ -203,7 +197,7 @@ Guidance for creating user journey documentation using ASCII diagrams.
 - [ ] Documentation easy to navigate and understand
 - [ ] ASCII diagrams clear and readable
 - [ ] Pain points and optimization opportunities highlighted
-- [ ] Success metrics and measurement plans defined
+- [ ] Measurement strategies defined (tracking, not specific metrics)
 
 ### Maintenance
 - [ ] Regular review schedule established
@@ -220,6 +214,7 @@ Guidance for creating user journey documentation using ASCII diagrams.
 - **Generic scenarios**: Using theoretical users instead of real personas
 - **Stale documentation**: Flows don't match current product
 - **Missing context**: Not explaining why users take certain paths
+- **Success Metrics in UX docs**: Including performance metrics in UX documents - these belong in product/analytics documents
 
 ### Research Issues
 - **Assumption-based flows**: Creating flows without user research validation

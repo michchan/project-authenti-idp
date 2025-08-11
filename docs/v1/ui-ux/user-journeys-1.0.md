@@ -100,10 +100,6 @@ This document outlines key user journeys for AuthentiIDP, a centralized identity
 - Social login options in future versions
 - Clear progress indicators during email verification wait
 
-**Success Metrics**: 
-- Registration completion rate > 85%
-- Email verification within 24 hours > 90%
-- First login success rate > 95%
 
 ### Error Handling
 
@@ -201,10 +197,6 @@ This document outlines key user journeys for AuthentiIDP, a centralized identity
 - Background session validation
 - Graceful handling of network timeouts
 
-**Success Metrics**:
-- SSO success rate > 98%
-- Average SSO flow completion < 2 seconds
-- User session duration across apps
 
 ### Error Handling
 
@@ -300,10 +292,6 @@ This document outlines key user journeys for AuthentiIDP, a centralized identity
 - Better error messages with suggested fixes
 - Video walkthrough for common integration patterns
 
-**Success Metrics**:
-- Integration completion rate > 80%
-- Time to first successful authentication < 4 hours
-- SDK documentation rating > 4.5/5
 
 ### Error Handling
 
@@ -395,10 +383,6 @@ This document outlines key user journeys for AuthentiIDP, a centralized identity
 - Automated alerts for unusual activity
 - Mobile-responsive design for on-the-go monitoring
 
-**Success Metrics**:
-- Daily active dashboard usage
-- Feature adoption rates across different sections
-- Time to complete common management tasks
 
 ### Error Handling
 
@@ -505,10 +489,6 @@ This document outlines key user journeys for AuthentiIDP, a centralized identity
 - Clear email sender identification
 - Multiple retry attempts with escalating help
 
-**Success Metrics**:
-- Password reset completion rate > 75%
-- Time from request to successful login < 15 minutes
-- Support ticket reduction for locked accounts
 
 ### Error Handling
 
@@ -600,10 +580,6 @@ This document outlines key user journeys for AuthentiIDP, a centralized identity
 - Clear indication of propagation status
 - Rollback option for unwanted changes
 
-**Success Metrics**:
-- Profile completion rates
-- Time to complete common profile updates
-- User retention after profile updates
 
 ### Error Handling
 
@@ -717,10 +693,6 @@ This document outlines key user journeys for AuthentiIDP, a centralized identity
 - Gradual logout warnings before forced logout
 - Quick re-authentication for recent logouts
 
-**Success Metrics**:
-- User understanding of logout options
-- Successful logout completion rate
-- Re-authentication time after logout
 
 ### Error Handling
 
@@ -801,38 +773,5 @@ Show how different user journeys connect:
 
 ---
 
-## 📊 Journey Success Metrics
-
-### End User Experience
-- Registration completion rate > 85%
-- SSO authentication success rate > 98%
-- Average authentication flow time < 2 seconds
-- User session duration across applications
-
-### Developer Experience
-- Integration completion rate > 80%
-- Time to first working authentication < 4 hours
-- SDK documentation satisfaction > 4.5/5
-- Support ticket volume for integration issues
-
-### Product Management
-- Application onboarding success rate
-- Dashboard daily active usage
-- Feature adoption across management tools
-- User growth and retention metrics
-
-### Security and Reliability
-- Password reset success rate > 75%
-- Session management error rate < 1%
-- Security incident response time
-- System uptime during business hours > 99%
-
-### Business Impact
-- Reduction in authentication-related development time
-- User account consolidation across applications
-- Cost efficiency vs alternatives
-- Developer satisfaction and platform adoption
-
----
 
 *These user journeys form the foundation for AuthentiIDP's user experience design, ensuring that all personas - end users, developers, and product managers - have clear, efficient paths through the authentication ecosystem. Each journey prioritizes security, usability, and developer experience while maintaining the cost-effective and scalable nature of the platform.*
