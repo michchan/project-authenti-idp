@@ -126,9 +126,11 @@ Show all possible paths including error scenarios.
 ### Cross-Flow Connections
 Document how different feature flows connect:
 - Entry points from other flows
-- Exit points leading to other flows
+- Exit points leading to other flows  
 - Shared screens or components
 - Navigation patterns between flows
+- **Trigger information**: Specify what user actions cause navigation between screens
+- **Flowchart format**: Use flowcharts instead of simple arrows to show connections
 
 ---
 
@@ -225,6 +227,8 @@ Before considering wireframes complete:
 - **Unrealistic data volumes** - Show actual content patterns
 - **Missing edge cases** - Include error scenarios and unusual data
 - **Inconsistent terminology** - Use same terms as your product
+- **Design system details** - Including typography, colors, spacing specifications (UI designer concern)
+- **Responsive behavior details** - Including specific breakpoints and adaptive features (UI designer concern)
 
 ### Process Issues
 - **No stakeholder review** - Get feedback before development starts

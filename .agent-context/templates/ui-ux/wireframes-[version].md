@@ -64,12 +64,14 @@ Document key interface layouts using ASCII art for rapid design communication.
 
 ## 🔗 Flow Connections
 
-Create a simple map showing how flows connect:
+Show how different screens connect with trigger information:
 
 ```
-`[Flow A]` → `[Flow B]` → `[Flow C]`
-           ↓
-          `[Alternative Flow]`
+[Screen A] ──user clicks action button──→ [Screen B] ──user completes form──→ [Screen C]
+     |
+     |──user selects alternative──→ [Alternative Screen] ──user navigates back──→ [Screen A]
+     
+[Error States] ──validation fails──→ [Error Recovery] ──user fixes issue──→ [Screen A]
 ```
 
-**Connection Notes**: `[Describe how flows link together and any conditional logic]`
+**Connection Notes**: `[Describe how flows link together. Triggers on arrows show specific user actions that cause navigation between screens.]`

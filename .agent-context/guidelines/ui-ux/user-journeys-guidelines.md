@@ -46,6 +46,8 @@ Guidance for creating user journey documentation using ASCII diagrams.
 - **Clear labeling**: Every step clearly labeled and understandable
 - **Logical flow direction**: Use arrows to show progression
 - **Group related steps**: Visual grouping for related actions
+- **Condition blocks**: Use `<...>` to wrap condition blocks (e.g., `<Form errors?>`)
+- **Regular blocks**: Use `[...]` for regular action/state blocks (e.g., `[User submits form]`)
 
 ### Visual Clarity
 - **Keep diagrams readable**: Don't fit too much in one diagram
@@ -128,6 +130,8 @@ Guidance for creating user journey documentation using ASCII diagrams.
 - **Context preservation**: Information carrying over between flows
 - **Navigation patterns**: How users move between product areas
 - **State management**: How system state changes affect available flows
+- **Flowchart format**: Use flowchart diagrams instead of tables for inter-flow connections
+- **Trigger labels**: Put triggers as captions on arrows connecting flows (e.g., `──user completes verification──→`)
 
 ---
 
@@ -215,6 +219,12 @@ Guidance for creating user journey documentation using ASCII diagrams.
 - **Stale documentation**: Flows don't match current product
 - **Missing context**: Not explaining why users take certain paths
 - **Success Metrics in UX docs**: Including performance metrics in UX documents - these belong in product/analytics documents
+- **Wrong condition format**: Using `[...]` instead of `<...>` for condition blocks
+- **Table format for connections**: Using tables instead of flowcharts for inter-flow connections
+- **Missing trigger labels**: Not specifying what actions trigger flow transitions
+- **Out-of-scope content**: Including UI design concerns, performance optimization details, or visual design specifications
+- **Technical implementation details**: Including backend processes, API calls, or technical steps users don't see
+- **Assuming tech stack**: Making assumptions about specific technologies or exact technical commands
 
 ### Research Issues
 - **Assumption-based flows**: Creating flows without user research validation

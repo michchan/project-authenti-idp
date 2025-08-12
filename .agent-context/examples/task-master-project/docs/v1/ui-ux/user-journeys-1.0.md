@@ -303,18 +303,22 @@ This document outlines key user journeys for TaskMaster, a personal task managem
 ## 🔗 Cross-Journey Interactions
 
 ```
-Daily Management ←→ Organization (tasks need categories)
-     ↓                    ↓
-Due Date Mgmt ←→ Search & Filter (find overdue tasks)
-     ↓                    ↓
-Progress Tracking ←→ All Workflows (completion data)
+[Daily Task Management] ──user creates many tasks──→ [Task Organization & Categorization]
+         |                                                    |
+         |──user sets deadlines──→ [Due Date Management] ←────┘
+         |                                    |
+         |                                    |──user searches overdue──→ [Search & Filtering Workflow]
+         |                                                                          |
+         |──user reviews accomplishments──→ [Progress Tracking & Statistics] ←──────┘
+                                                   |
+                                                   |──user sees patterns──→ [Daily Task Management]
 ```
 
 **Integration Points:**
-- Task creation flows into organization workflows
-- Search/filtering supports all other workflows
+- Task creation flows into organization workflows when users have many tasks
+- Search/filtering supports finding overdue tasks and specific items
 - Progress tracking provides feedback loop for all activities
-- Due dates create urgency that drives daily management
+- Due dates create urgency that drives daily management priorities
 
 ---
 
@@ -339,30 +343,6 @@ Progress Tracking ←→ All Workflows (completion data)
 - Multiple ways to organize tasks
 - Customizable views and filters
 - Accommodates different productivity styles
-
----
-
-## 📊 Journey Success Metrics
-
-### Onboarding Success
-- % users who complete first task within 5 minutes
-- % users who create categories within first week
-- % users who return within 24 hours of signup
-
-### Daily Usage Quality
-- Average tasks completed per session
-- Time to complete common operations
-- % sessions that include task creation and completion
-
-### Feature Adoption
-- % users who use categories after 1 week
-- % users who set due dates on tasks
-- % users who use search/filtering features
-
-### Long-term Engagement
-- % users still active after 30 days
-- Average tasks managed per active user
-- % users who use progress tracking features
 
 ---
 

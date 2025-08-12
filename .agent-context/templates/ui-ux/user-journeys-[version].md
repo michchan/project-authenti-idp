@@ -29,7 +29,7 @@ List your main user flows:
 `[Starting Point]`
    |
    v
-`[User Action/Decision Point]`
+`<User Decision/Condition?>`
    |
    +---> `[Branch Option A]` --> `[Outcome A]`
    |
@@ -41,6 +41,11 @@ List your main user flows:
    v
 `[End State]` --> (Leads to: `[Next Flow Name]`)
 ```
+
+**Format Notes**: 
+- Use `<...>` for condition blocks (decisions, validations, checks)
+- Use `[...]` for action/state blocks (user actions, system states)
+- Put trigger conditions as arrow labels in Inter-Flow Connections section
 
 ### Key Screens/States
 
@@ -94,11 +99,14 @@ List your main user flows:
 
 ## 🔗 Inter-Flow Connections
 
-Show how different user journeys connect:
+Show how different user journeys connect using flowchart format:
 
-| From Flow | Leads To | Trigger/Context |
-|-----------|----------|-----------------|
-| `[Flow A]` | `[Flow B]` | `[When this happens]` |
-| `[Flow B]` | `[Flow C]` | `[Completion trigger]` |
+```
+[Flow A] ──trigger condition──→ [Flow B] ──completion action──→ [Flow C]
+    |
+    |──alternative trigger──→ [Flow D] ──user choice──→ [Flow E]
+    
+[Error Flows] ──system errors or user mistakes──→ [Recovery Paths]
+```
 
-**Connection Notes**: `[Additional context about how flows link together]`
+**Connection Notes**: `[Additional context about how flows link together. Triggers shown as arrow labels describe specific user actions or conditions that cause navigation between flows.]`

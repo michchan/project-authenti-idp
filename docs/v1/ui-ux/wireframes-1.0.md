@@ -1,4 +1,4 @@
-# 🖼️ ASCII Wireframes: AuthentiIDP v1.0
+# 🖼️ ASCII Wireframes: AuthentiIDP v2.0 - Simplified Developer Experience
 
 This document provides ASCII wireframes for AuthentiIDP, a centralized identity provider service for personal applications. Each wireframe shows the layout, functionality, and user interactions for different screens and authentication states.
 
@@ -21,13 +21,21 @@ This document provides ASCII wireframes for AuthentiIDP, a centralized identity 
 
 ## 📁 Index
 
+**End-user journeys**
+
 1. [Authentication Screens](#1-authentication-screens)
 2. [SSO Integration Screens](#2-sso-integration-screens)
 3. [User Profile Management](#3-user-profile-management)
+
+**Developer journeys**
+
 4. [Developer Dashboard](#4-developer-dashboard)
-5. [Application Management](#5-application-management)
-6. [Sample Web Application](#6-sample-web-application)
-7. [Mobile Responsive Views](#7-mobile-responsive-views)
+
+**Others**
+
+5. [Sample Web Application](#5-sample-web-application)
+6. [Mobile Responsive Views](#6-mobile-responsive-views)
+
 
 ---
 
@@ -427,353 +435,125 @@ This document provides ASCII wireframes for AuthentiIDP, a centralized identity 
 
 ## 4. Developer Dashboard
 
-### A. Developer Console Overview
+### A. Auto-Discovery Dashboard
 
-**Purpose**: Main dashboard for developers managing their applications
-
-```
-┌──────────────────────────────────────────────────────────────┐
-│  🔧 AuthentiIDP Developer Console           john@dev.com [↓] │
-├──────────────────────────────────────────────────────────────┤
-│                                                              │
-│  [🏠 Dashboard] [📱 My Apps] [📚 Docs] [🔑 API Keys] [⚙️]   │
-│                                                              │
-│    ┌─ Quick Stats ──────────────────────────────────────┐    │
-│    │                                                   │    │
-│    │  Total Applications: 3        Active Users: 47   │    │
-│    │  This Month's Logins: 1,247   API Calls: 8,934   │    │
-│    │                                                   │    │
-│    └───────────────────────────────────────────────────┘    │
-│                                                              │
-│    ┌─ My Applications ──────────────────────────────────┐    │
-│    │                                                   │    │
-│    │  📱 TaskMaster App               [🟢 Active]      │    │
-│    │  Users: 23 • Created: Mar 15    [Manage] [Stats] │    │
-│    │                                                   │    │
-│    │  📊 Analytics Dashboard         [🟢 Active]      │    │
-│    │  Users: 15 • Created: Mar 10    [Manage] [Stats] │    │
-│    │                                                   │    │
-│    │  🛒 Shopping List App           [🟡 Testing]     │    │
-│    │  Users: 9 • Created: Mar 8      [Manage] [Stats] │    │
-│    │                                                   │    │
-│    │                            [+ Create New App]    │    │
-│    └───────────────────────────────────────────────────┘    │
-│                                                              │
-│    ┌─ Recent Activity ──────────────────────────────────┐    │
-│    │                                                   │    │
-│    │  2h ago   TaskMaster: 15 new user registrations  │    │
-│    │  4h ago   API key regenerated for Analytics      │    │
-│    │  1d ago   Shopping List: Configuration updated   │    │
-│    │  2d ago   New version of JavaScript SDK released │    │
-│    │                                                   │    │
-│    │                                [View All Activity] │    │
-│    └───────────────────────────────────────────────────┘    │
-│                                                              │
-│    [📖 Get Started Guide] [📞 Contact Support] [📋 Changelog]│
-└──────────────────────────────────────────────────────────────┘
-```
-
-**Flow**: Dashboard → App Management → Configuration → Testing
-
-**Notes**: High-level metrics, app status indicators, recent activity feed
-
-### B. API Key Management
-
-**Purpose**: Secure management of application credentials and API keys
+**Purpose**: Simple unified view of all applications with basic configuration management
 
 ```
 ┌──────────────────────────────────────────────────────────────┐
-│  🔧 AuthentiIDP > API Keys              john@dev.com [↓]     │
+│  🚀 AuthentiIDP Unified Dashboard      john@dev.com [Sign Out]│
 ├──────────────────────────────────────────────────────────────┤
 │                                                              │
-│  [🏠 Dashboard] [📱 My Apps] [📚 Docs] [🔑 API Keys] [⚙️]   │
+│  🎯 Simple Application Management • API Keys Required        │
 │                                                              │
-│    ┌─ Application Credentials ──────────────────────────┐    │
-│    │                                                   │    │
-│    │  📱 TaskMaster App                                │    │
-│    │                                                   │    │
-│    │  Client ID:                                       │    │
-│    │  ┌─────────────────────────────────────────────┐  │    │
-│    │  │ tk_app_live_1234567890abcdef              📋 │  │    │
-│    │  └─────────────────────────────────────────────┘  │    │
-│    │                                                   │    │
-│    │  Client Secret:                                   │    │
-│    │  ┌─────────────────────────────────────────────┐  │    │
-│    │  │ ●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●● [Show]│  │    │
-│    │  └─────────────────────────────────────────────┘  │    │
-│    │                                                   │    │
-│    │  API Key (Optional):                              │    │
-│    │  ┌─────────────────────────────────────────────┐  │    │
-│    │  │ ak_live_abcdef1234567890                  📋 │  │    │
-│    │  └─────────────────────────────────────────────┘  │    │
-│    │                                                   │    │
-│    │  [Regenerate Client Secret] [Generate New API Key]│    │
-│    │                                                   │    │
-│    └───────────────────────────────────────────────────┘    │
+│    ┌─ Applications (Auto-Discovered) ──────────────────────┐    │
+│    │                                                     │    │
+│    │  📱 TaskMaster App (localhost:3000 → PROD)         │    │
+│    │  🟢 Live • Connected                               │    │
+│    │  🔑 [Manage API Keys]  [View Documentation]        │    │
+│    │                                                     │    │
+│    │  📊 Analytics Dashboard (analytics.myapp.com)      │    │
+│    │  🟢 Live • Connected                               │    │
+│    │  🔑 [Manage API Keys]  [View Documentation]        │    │
+│    │                                                     │    │
+│    │  🛒 Shopping App (shopping.local → staging)        │    │
+│    │  🟡 Dev • Connected                                │    │
+│    │  🔑 [Manage API Keys]  [View Documentation]        │    │
+│    │                                                     │    │
+│    │  💡 New apps appear here automatically when used   │    │
+│    └─────────────────────────────────────────────────────┘    │
 │                                                              │
-│    ┌─ Environment Settings ─────────────────────────────┐    │
-│    │                                                   │    │
-│    │  Environment: [Production ▼]                     │    │
-│    │                                                   │    │
-│    │  Allowed Redirect URLs:                          │    │
-│    │  • https://taskmaster.example.com/auth/callback  │    │
-│    │  • http://localhost:3000/auth/callback           │    │
-│    │                                                   │    │
-│    │  [+ Add URL]                                      │    │
-│    │                                                   │    │
-│    │  Allowed Origins (CORS):                         │    │
-│    │  • https://taskmaster.example.com               │    │
-│    │  • http://localhost:3000                        │    │
-│    │                                                   │    │
-│    │  [+ Add Origin]                                   │    │
-│    │                                                   │    │
-│    │                    [Save Configuration]           │    │
-│    └───────────────────────────────────────────────────┘    │
+│    ┌─ Quick Actions ──────────────────────────────────────┐    │
+│    │                                                     │    │
+│    │  🔑 [Generate New API Keys]                        │    │
+│    │  📚 [View Integration Documentation]               │    │
+│    │  🛠️ [SDK Download Links]                           │    │
+│    │                                                     │    │
+│    └─────────────────────────────────────────────────────┘    │
 │                                                              │
-│  ⚠️  Keep your credentials secure. Never share them publicly.│
+│  ⚡ Simple management • API keys required for integration    │
 └──────────────────────────────────────────────────────────────┘
 ```
 
-**Flow**: App Selection → Credential Management → Configuration Update
+**Flow**: Simple Dashboard View → Application Management → API Key Configuration
 
-**Notes**: Secure credential display, environment management, URL validation
+**Notes**: Auto-discovery, basic application management, API keys required for integration
 
-### C. Integration Documentation Interface
+### B. Simple Integration Guide
 
-**Purpose**: Interactive documentation with code examples and testing tools
+**Purpose**: Show developers how simple integration has become with API key configuration
 
 ```
 ┌──────────────────────────────────────────────────────────────┐
-│  🔧 AuthentiIDP > Documentation          john@dev.com [↓]    │
+│  🚀 AuthentiIDP > Integration Guide    john@dev.com [Sign Out]│
 ├──────────────────────────────────────────────────────────────┤
 │                                                              │
-│  [🏠 Dashboard] [📱 My Apps] [📚 Docs] [🔑 API Keys] [⚙️]   │
+│  🎯 Simple Integration • API Keys Required • Framework Flexible│
 │                                                              │
-│  ┌─ Documentation Navigation ───┐ ┌─ Interactive Example ──┐ │
-│  │                              │ │                        │ │
-│  │ 🚀 Getting Started           │ │ 1. Install the SDK:    │ │
-│  │ │ ✓ Create Application       │ │                        │ │
-│  │ │ ✓ Install SDK              │ │ ```bash                │ │
-│  │ │ ► Basic Integration        │ │ npm install @authenti- │ │
-│  │                              │ │ idp/sdk                │ │
-│  │ 📚 JavaScript SDK            │ │ ```                    │ │
-│  │ │ ► Installation             │ │                        │ │
-│  │ │ ► Authentication           │ │ 2. Initialize:         │ │
-│  │ │ ► User Management          │ │                        │ │
-│  │ │ ► Error Handling           │ │ ```javascript          │ │
-│  │                              │ │ import AuthentiIDP     │ │
-│  │ 🔌 REST API                  │ │ from '@authenti-idp/sdk'│ │
-│  │ │ ► Endpoints                │ │                        │ │
-│  │ │ ► Authentication           │ │ const auth = new       │ │
-│  │ │ ► Rate Limits              │ │   AuthentiIDP({        │ │
-│  │                              │ │     clientId: 'your_id'│ │
-│  │ 🧪 Testing & Debugging       │ │   })                   │ │
-│  │ │ ► Test Environment         │ │ ```                    │ │
-│  │ │ ► Common Issues            │ │                        │ │
-│  │ │ ► Error Codes              │ │ [📋 Copy] [▶️ Try It]  │ │
-│  └──────────────────────────────┘ └────────────────────────┘ │
+│    ┌─ Integration in 4 Simple Steps ──────────────────────┐  │
+│    │                                                     │  │
+│    │  🔑 Step 1: Configure API Keys                     │  │
+│    │  ┌─────────────────────────────────────────────────┐ │  │
+│    │  │ AUTHENTI_CLIENT_ID=your_client_id           📋 │ │  │
+│    │  │ AUTHENTI_CLIENT_SECRET=your_client_secret       │ │  │
+│    │  └─────────────────────────────────────────────────┘ │  │
+│    │                                                     │  │
+│    │  ✨ Step 2: Install SDK (React example)            │  │
+│    │  ┌─────────────────────────────────────────────────┐ │  │
+│    │  │ npm install @authenti-idp/react             📋 │ │  │
+│    │  └─────────────────────────────────────────────────┘ │  │
+│    │                                                     │  │
+│    │  ✨ Step 3: Add login to your app                  │  │
+│    │  ┌─────────────────────────────────────────────────┐ │  │
+│    │  │ import { AuthLogin } from '@authenti-idp/react'│ │  │
+│    │  │                                                 │ │  │
+│    │  │ function App() {                                │ │  │
+│    │  │   return <AuthLogin />  // Framework flexible! │ │  │
+│    │  │ }                                      📋 Copy │ │  │
+│    │  └─────────────────────────────────────────────────┘ │  │
+│    │                                                     │  │
+│    │  ✨ Step 4: Protect routes (optional)             │  │
+│    │  ┌─────────────────────────────────────────────────┐ │  │
+│    │  │ import { ProtectedRoute } from '@authenti-idp'  │ │  │
+│    │  │                                                 │ │  │
+│    │  │ <ProtectedRoute>                                │ │  │
+│    │  │   <MySecretComponent />                         │ │  │
+│    │  │ </ProtectedRoute>              📋 Copy         │ │  │
+│    │  └─────────────────────────────────────────────────┘ │  │
+│    └─────────────────────────────────────────────────────┘  │
 │                                                              │
-│    ┌─ Quick Start for TaskMaster App ───────────────────┐    │
-│    │                                                   │    │
-│    │  Your app is configured for:                     │    │
-│    │  • Client ID: tk_app_live_1234567890abcdef        │    │
-│    │  • Redirect: https://taskmaster.example.com/auth │    │
-│    │                                                   │    │
-│    │  Copy this code to get started:                  │    │
-│    │                                                   │    │
-│    │  ┌─ React Example ─────────────────────────────┐  │    │
-│    │  │ const loginButton = () => {                 │  │    │
-│    │  │   auth.login({                              │  │    │
-│    │  │     redirectUri: 'https://taskmaster...'   │  │    │
-│    │  │   })                                        │  │    │
-│    │  │ }                                           │  │    │
-│    │  └─────────────────────────────────────────────┘  │    │
-│    │                                                   │    │
-│    │                            [📋 Copy Full Example] │    │
-│    └───────────────────────────────────────────────────┘    │
+│    ┌─ What Happens Automatically ──────────────────────┐     │
+│    │                                                   │     │
+│    │  🎯 Environment Detection:                        │     │
+│    │  • localhost → AuthentiIDP DEV automatically     │     │
+│    │  • yourdomain.com → AuthentiIDP PROD automatically│     │
+│    │                                                   │     │
+│    │  🔒 Security Handled:                            │     │
+│    │  • All tokens and credentials managed internally │     │
+│    │  • No configuration or secrets to manage         │     │
+│    │                                                   │     │
+│    │  📊 Analytics Included:                          │     │
+│    │  • Usage metrics appear in dashboard automatically│     │
+│    │  • No setup or tracking code required            │     │
+│    │                                                   │     │
+│    │  🎨 UI Provided:                                 │     │
+│    │  • Beautiful login/logout UI included            │     │
+│    │  • User profile management built-in              │     │
+│    │  • Consistent styling across all apps            │     │
+│    └───────────────────────────────────────────────────┘     │
+│                                                              │
+│  ⚡ No credentials, no config, no complexity. It just works! │
 └──────────────────────────────────────────────────────────────┘
 ```
 
-**Flow**: Documentation Browse → Code Example → Copy/Test → Implementation
+**Flow**: Install → Add Component → Deploy → Works Everywhere
 
-**Notes**: App-specific examples, interactive code testing, contextual navigation
+**Notes**: Zero configuration, automatic environment detection, built-in everything
+
 
 ---
 
-## 5. Application Management
-
-### A. Application Configuration
-
-**Purpose**: Detailed configuration interface for individual applications
-
-```
-┌──────────────────────────────────────────────────────────────┐
-│  🔧 AuthentiIDP > TaskMaster App          john@dev.com [↓]   │
-├──────────────────────────────────────────────────────────────┤
-│                                                              │
-│  [⚙️ Settings] [📊 Analytics] [👥 Users] [🧪 Testing]       │
-│                                                              │
-│    ┌─ Basic Information ────────────────────────────────┐    │
-│    │                                                   │    │
-│    │  Application Name: *                              │    │
-│    │  ┌─────────────────────────────────────────────┐  │    │
-│    │  │ TaskMaster App                              │  │    │
-│    │  └─────────────────────────────────────────────┘  │    │
-│    │                                                   │    │
-│    │  Description:                                     │    │
-│    │  ┌─────────────────────────────────────────────┐  │    │
-│    │  │ A personal task management application      │  │    │
-│    │  │ for organizing daily activities             │  │    │
-│    │  └─────────────────────────────────────────────┘  │    │
-│    │                                                   │    │
-│    │  Website URL:                                     │    │
-│    │  ┌─────────────────────────────────────────────┐  │    │
-│    │  │ https://taskmaster.example.com              │  │    │
-│    │  └─────────────────────────────────────────────┘  │    │
-│    │                                                   │    │
-│    │  Privacy Policy URL:                              │    │
-│    │  ┌─────────────────────────────────────────────┐  │    │
-│    │  │ https://taskmaster.example.com/privacy      │  │    │
-│    │  └─────────────────────────────────────────────┘  │    │
-│    └───────────────────────────────────────────────────┘    │
-│                                                              │
-│    ┌─ Authentication Settings ──────────────────────────┐    │
-│    │                                                   │    │
-│    │  Session Timeout:         [30 days ▼]            │    │
-│    │  Require Email Verify:    [x] Enabled            │    │
-│    │  Password Requirements:   [Standard ▼]           │    │
-│    │                                                   │    │
-│    │  User Registration:       (●) Open to all        │    │
-│    │                           ( ) Invite only        │    │
-│    │                           ( ) Disabled           │    │
-│    │                                                   │    │
-│    │  Profile Data Access:                            │    │
-│    │  [x] Basic profile (name, email)                 │    │
-│    │  [x] Profile picture                             │    │
-│    │  [ ] Email notifications permission              │    │
-│    │  [ ] Extended profile data                       │    │
-│    └───────────────────────────────────────────────────┘    │
-│                                                              │
-│                           [Save Changes]                     │
-└──────────────────────────────────────────────────────────────┘
-```
-
-**Flow**: Configuration → Validation → Save → Propagation
-
-**Notes**: Comprehensive settings, session management, permission granularity
-
-### B. User Management Interface
-
-**Purpose**: Manage users and view user activity for specific applications
-
-```
-┌──────────────────────────────────────────────────────────────┐
-│  🔧 AuthentiIDP > TaskMaster App > Users  john@dev.com [↓]   │
-├──────────────────────────────────────────────────────────────┤
-│                                                              │
-│  [⚙️ Settings] [📊 Analytics] [👥 Users] [🧪 Testing]       │
-│                                                              │
-│    🔍 [Search users...] [All Status ▼] [Export CSV]        │
-│                                                              │
-│    ┌─ Active Users (23) ────────────────────────────────┐    │
-│    │                                                   │    │
-│    │  📧 user@example.com          Last: 2h ago  [🟢]  │    │
-│    │  👤 John Doe • Joined: Mar 15 • Logins: 47      │    │
-│    │                              [View] [Suspend]    │    │
-│    │                                                   │    │
-│    ├───────────────────────────────────────────────────┤    │
-│    │                                                   │    │
-│    │  📧 alice@example.com         Last: 1d ago  [🟢]  │    │
-│    │  👤 Alice Smith • Joined: Mar 12 • Logins: 23   │    │
-│    │                              [View] [Suspend]    │    │
-│    │                                                   │    │
-│    ├───────────────────────────────────────────────────┤    │
-│    │                                                   │    │
-│    │  📧 bob@example.com           Last: 5d ago  [🟡]  │    │
-│    │  👤 Bob Johnson • Joined: Mar 8 • Logins: 12    │    │
-│    │                              [View] [Suspend]    │    │
-│    │                                                   │    │
-│    └───────────────────────────────────────────────────┘    │
-│                                                              │
-│    ┌─ User Activity Summary ────────────────────────────┐    │
-│    │                                                   │    │
-│    │  This Week:    127 logins   •   8 new users      │    │
-│    │  Last Week:    156 logins   •   5 new users      │    │
-│    │  Growth:       +18% logins  •   +60% new users   │    │
-│    │                                                   │    │
-│    │  Most Active:  Tuesday 2-4 PM                    │    │
-│    │  Peak Day:     March 16 (89 logins)              │    │
-│    └───────────────────────────────────────────────────┘    │
-│                                                              │
-│    Showing 1-3 of 23 users        [1] [2] [3] ... [8] [Next]│
-└──────────────────────────────────────────────────────────────┘
-```
-
-**Flow**: User Search → User Details → Management Actions
-
-**Notes**: Activity monitoring, user status indicators, bulk actions, pagination
-
-### C. Analytics and Monitoring Dashboard
-
-**Purpose**: Comprehensive analytics for application usage and authentication patterns
-
-```
-┌──────────────────────────────────────────────────────────────┐
-│  🔧 AuthentiIDP > TaskMaster App > Analytics john@dev.com [↓]│
-├──────────────────────────────────────────────────────────────┤
-│                                                              │
-│  [⚙️ Settings] [📊 Analytics] [👥 Users] [🧪 Testing]       │
-│                                                              │
-│  Time Range: [Last 30 Days ▼]                    [📊 Export]│
-│                                                              │
-│    ┌─ Authentication Metrics ────────────────────────────┐   │
-│    │                                                    │   │
-│    │  Daily Logins:             Login Success Rate:    │   │
-│    │                                                    │   │
-│    │        ┌─┐                       ████████████░░   │   │
-│    │    ┌─┐ │ │ ┌─┐                       97.8%        │   │
-│    │  ┌─│ │ │ │ │ │ ┌─┐                               │   │
-│    │  │ │ │ │ │ │ │ │ │   ┌─┐                        │   │
-│    │  │ │ │ │ │ │ │ │ │ ┌─│ │                        │   │
-│    │  └─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─                        │   │
-│    │  1  5  10 15 20 25 30       Failed: 2.2%        │   │
-│    │                                                    │   │
-│    └────────────────────────────────────────────────────┘   │
-│                                                              │
-│    ┌─ User Engagement ───────────────────────────────────┐   │
-│    │                                                    │   │
-│    │  New vs Returning Users:    Session Duration:     │   │
-│    │                                                    │   │
-│    │  New: 35%      ████████      Avg: 24 minutes      │   │
-│    │  Return: 65%   ████████████  Most: 2.3 hours     │   │
-│    │                               Min: 30 seconds      │   │
-│    │  Peak Hours:    Registration Sources:             │   │
-│    │  2-4 PM (42%)   Direct: 78%                      │   │
-│    │  8-10 AM (31%)  Other Apps: 22%                  │   │
-│    └────────────────────────────────────────────────────┘   │
-│                                                              │
-│    ┌─ Error Analysis ───────────────────────────────────┐    │
-│    │                                                   │    │
-│    │  Common Issues:               Recent Errors:     │    │
-│    │  • Invalid credentials: 45%   Today: 3 errors   │    │
-│    │  • Token expired: 23%         Yesterday: 1 error │    │
-│    │  • Network timeout: 18%       This week: 12      │    │
-│    │  • Server error: 14%          Last week: 8       │    │
-│    │                                                   │    │
-│    │  Avg resolution time: 2.3 minutes               │    │
-│    │                                                   │    │
-│    │                           [View Detailed Logs]   │    │
-│    └───────────────────────────────────────────────────┘    │
-└──────────────────────────────────────────────────────────────┘
-```
-
-**Flow**: Analytics View → Filter/Range → Export → Detailed Analysis
-
-**Notes**: Visual charts, error tracking, performance metrics, export functionality
-
----
-
-## 6. Sample Web Application
+## 5. Sample Web Application
 
 ### A. Landing Page with Login Integration
 
@@ -925,7 +705,7 @@ This document provides ASCII wireframes for AuthentiIDP, a centralized identity 
 
 ---
 
-## 7. Mobile Responsive Views
+## 6. Mobile Responsive Views
 
 ### Mobile Authentication (Portrait)
 
@@ -1049,74 +829,29 @@ This document provides ASCII wireframes for AuthentiIDP, a centralized identity 
 
 ---
 
-## 🎨 Design System Specifications
-
-### Typography Scale
-- **H1**: 28px/24px mobile (Page titles)
-- **H2**: 20px/18px mobile (Section headers)
-- **H3**: 18px/16px mobile (Card titles)
-- **Body**: 16px/14px mobile (Main content)
-- **Small**: 14px/12px mobile (Meta info)
-- **Caption**: 12px/11px mobile (Labels, tags)
-
-### Color System
-- **Primary**: #2563EB (AuthentiIDP brand blue)
-- **Success**: #059669 (Green - authenticated, success states)
-- **Warning**: #F59E0B (Amber - attention, warnings)
-- **Error**: #DC2626 (Red - errors, failed states)
-- **Gray Scale**: #F9FAFB, #F3F4F6, #E5E7EB, #D1D5DB, #9CA3AF, #6B7280, #374151, #1F2937
-
-### Spacing System
-- **XS**: 4px (Tight spacing)
-- **SM**: 8px (Small gaps)
-- **MD**: 16px (Standard spacing)
-- **LG**: 24px (Section spacing)
-- **XL**: 32px (Page margins)
-- **2XL**: 48px (Large separations)
-
-### Component States
-- **Default**: Standard appearance
-- **Hover**: Subtle highlight (desktop only)
-- **Focus**: Keyboard navigation indicator
-- **Active**: Pressed/selected state
-- **Disabled**: Reduced opacity (0.6)
-- **Loading**: Spinner + disabled state
-- **Error**: Red border + error message
-- **Success**: Green accent + success message
-
----
-
 ## 🔗 Flow Connections
 
-Cross-wireframe navigation patterns:
+Cross-wireframe navigation patterns showing trigger actions:
+
+**End-user journeys**
 
 ```
-Authentication → SSO Consent → Application Access
-      ↓               ↓              ↓
-Profile Management → Connected Apps → Permission Control
-      ↓               ↓              ↓
-Developer Console → App Management → User Analytics
-      ↓               ↓              ↓
-Sample Application → Integration Testing → Documentation
+[Authentication Screens] ──user clicks login/register──→ [SSO Consent Screen] ──user grants access──→ [Application Access]
+         |
+         |──user clicks profile link──→ [Profile Settings] ──user manages apps──→ [Connected Apps View]
+                                                |
+                                                |──user changes permissions──→ [Permission Control]
+```
+**Developer journeys**
+```
+[Developer Dashboard] ──developer selects app──→ [App Management] ──developer views usage──→ [User Analytics]
+         |
+         |──developer needs help──→ [Integration Documentation] ──developer tests code──→ [Sample Application]
+                                                |
+                                                |──developer validates flows──→ [Integration Testing]
 ```
 
-**Connection Notes**: All screens maintain consistent navigation patterns with clear breadcrumbs, contextual back buttons, and user identity awareness throughout the experience.
-
----
-
-## 📱 Responsive Behavior
-
-### Breakpoints
-- **Mobile**: 320px - 767px (Single column, stacked elements)
-- **Tablet**: 768px - 1023px (Two-column where appropriate)
-- **Desktop**: 1024px+ (Full layout with sidebars, multi-column)
-
-### Adaptive Features
-- **Navigation**: Hamburger menu on mobile, full nav on desktop
-- **Forms**: Stacked labels on mobile, inline on desktop
-- **Tables**: Horizontal scroll or card layout on mobile
-- **Modals**: Full-screen on mobile, centered dialog on desktop
-- **Touch Targets**: Minimum 44px on mobile, smaller allowed on desktop
+**Connection Notes**: All screens maintain consistent navigation patterns with clear breadcrumbs, contextual back buttons, and user identity awareness throughout the experience. Triggers are shown as the specific user action that causes navigation between screens.
 
 ---
 
@@ -1138,4 +873,4 @@ Sample Application → Integration Testing → Documentation
 
 ---
 
-*These wireframes provide the foundation for AuthentiIDP's user interface design, ensuring clear information hierarchy, intuitive interaction patterns, and comprehensive coverage of all user journeys across desktop and mobile devices. The design prioritizes security, usability, and developer experience while maintaining the cost-effective and scalable nature of the platform.*
+*These simplified wireframes represent a fundamental shift toward zero-configuration user experience design. By eliminating setup complexity while preserving full functionality, the v2.0 interface enables internal teams to focus on their applications rather than authentication infrastructure management.*
