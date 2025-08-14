@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Settings - AuthentiIDP</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="theme-manager.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="nav-content">
+            <a href="03-dashboard.html" class="nav-brand">🔐 AuthentiIDP</a>
+            <div class="nav-user">
+                <div class="user-avatar">JD</div>
+                <span class="text-muted">user@example.com</span>
+                <button class="btn btn-secondary" style="padding: 8px 16px; margin-left: 12px;" onclick="window.location.href='01-login.html'">
+                    Sign Out
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container" style="padding-top: 40px;">
+        <!-- Header -->
+        <div style="margin-bottom: 32px;">
+            <nav style="margin-bottom: 16px;">
+                <a href="08-app-selection.html" style="color: var(--color-text-muted); text-decoration: none; font-size: var(--font-size-sm);">
+                    ← Back to Connected Apps
+                </a>
+            </nav>
+            <h1>Profile Settings</h1>
+            <p class="text-muted">Manage your personal information and privacy settings</p>
+        </div>
+
+        <!-- Tab Navigation -->
+        <div style="margin-bottom: 32px;">
+            <div class="nav-links" style="display: flex; border-bottom: 1px solid var(--color-border); gap: 0;">
+                <button class="nav-link active" data-tab="profile" style="border: none; background: none; padding: 12px 24px; cursor: pointer;">
+                    👤 Profile
+                </button>
+                <button class="nav-link" data-tab="security" style="border: none; background: none; padding: 12px 24px; cursor: pointer;">
+                    🔒 Security
+                </button>
+                <button class="nav-link" data-tab="apps" style="border: none; background: none; padding: 12px 24px; cursor: pointer;">
+                    📱 Apps
+                </button>
+                <button class="nav-link" data-tab="privacy" style="border: none; background: none; padding: 12px 24px; cursor: pointer;">
+                    🔔 Privacy
+                </button>
+            </div>
+        </div>
+
+        <!-- Tab Content -->
+        <div style="max-width: 800px;">
+            <!-- Profile Tab -->
+            <div id="profile-tab" class="tab-content">
+                <!-- Success Alert (hidden by default) -->
+                <div class="alert alert-success" style="display: none;" id="success-alert">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <div>
+                        <strong>Profile updated!</strong> Changes will propagate to connected applications.
+                    </div>
+                </div>
+
+                <!-- Personal Information -->
+                <div class="card" style="margin-bottom: 32px;">
+                    <h2 style="margin-bottom: 24px;">Personal Information</h2>
+                    
+                    <form id="profile-form">
+                        <!-- Profile Picture -->
+                        <div class="form-group" style="display: flex; align-items: center; gap: 24px; margin-bottom: 32px;">
+                            <div style="display: flex; align-items: center; gap: 16px;">
+                                <div style="width: 80px; height: 80px; background: var(--color-primary); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: white; font-size: 32px; font-weight: 600;">
+                                    JD
+                                </div>
+                                <div>
+                                    <p style="margin: 0 0 8px 0; font-weight: 500;">Profile Picture</p>
+                                    <button type="button" class="btn btn-secondary" style="font-size: var(--font-size-sm);">
+                                        Upload Image
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Name -->
+                        <div class="form-group">
+                            <label for="fullName" class="form-label">Full Name *</label>
+                            <input 
+                                type="text" 
+                                id="fullName" 
+                                name="fullName" 
+                                class="form-input" 
+                                value="John Doe"
+                                required
+                            >
+                        </div>
+
+                        <!-- Email -->
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email Address *</label>
+                            <div style="display: flex; align-items: center; gap: 12px;">
+                                <input 
+                                    type="email" 
+                                    id="email" 
+                                    name="email" 
+                                    class="form-input" 
+                                    value="user@example.com"
+                                    required
+                                    style="flex: 1;"
+                                >
+                                <button type="button" class="btn btn-secondary" style="font-size: var(--font-size-sm);">
+                                    Verify Email
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Bio -->
+                        <div class="form-group">
+                            <label for="bio" class="form-label">Bio (optional)</label>
+                            <textarea 
+                                id="bio" 
+                                name="bio" 
+                                class="form-input" 
+                                rows="3"
+                                placeholder="Tell us about yourself..."
+                                style="resize: vertical; min-height: 80px;"
+                            >Software developer and productivity enthusiast from San Francisco</textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">
+                            Save Changes
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Profile Visibility -->
+                <div class="card">
+                    <h3 style="margin-bottom: 16px;">Profile Visibility</h3>
+                    <p style="color: var(--color-text-muted); margin-bottom: 20px;">
+                        Who can see your profile information:
+                    </p>
+                    
+                    <div style="space-y: 12px;">
+                        <label style="display: flex; align-items: center; gap: 12px; cursor: pointer; padding: 12px; border: 1px solid var(--color-border); border-radius: var(--radius-md);">
+                            <input type="radio" name="visibility" value="all">
+                            <div>
+                                <div style="font-weight: 500;">All connected applications</div>
+                                <div style="color: var(--color-text-muted); font-size: var(--font-size-sm);">Your profile is visible to all apps you use</div>
+                            </div>
+                        </label>
+
+                        <label style="display: flex; align-items: center; gap: 12px; cursor: pointer; padding: 12px; border: 1px solid var(--color-primary); border-radius: var(--radius-md); background: rgba(52, 69, 80, 0.05);">
+                            <input type="radio" name="visibility" value="selected" checked>
+                            <div>
+                                <div style="font-weight: 500;">Only applications I specifically allow</div>
+                                <div style="color: var(--color-text-muted); font-size: var(--font-size-sm);">You control which apps can see your profile</div>
+                            </div>
+                        </label>
+
+                        <label style="display: flex; align-items: center; gap: 12px; cursor: pointer; padding: 12px; border: 1px solid var(--color-border); border-radius: var(--radius-md);">
+                            <input type="radio" name="visibility" value="private">
+                            <div>
+                                <div style="font-weight: 500;">Keep profile private (name and email only)</div>
+                                <div style="color: var(--color-text-muted); font-size: var(--font-size-sm);">Only basic information is shared</div>
+                            </div>
+                        </label>
+                    </div>
+
+                    <!-- Propagation Status -->
+                    <div style="margin-top: 24px; padding: 16px; background: var(--color-secondary); border-radius: var(--radius-md);">
+                        <h4 style="font-size: var(--font-size-base); margin-bottom: 12px;">Changes will propagate to:</h4>
+                        <div style="space-y: 8px;">
+                            <div style="display: flex; align-items: center; gap: 8px; color: var(--color-success);">
+                                <span>✓</span>
+                                <span>TaskMaster App</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 8px; color: var(--color-success);">
+                                <span>✓</span>
+                                <span>Analytics Dashboard</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 8px; color: var(--color-success);">
+                                <span>✓</span>
+                                <span>Shopping List App</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Security Tab (Initially Hidden) -->
+            <div id="security-tab" class="tab-content" style="display: none;">
+                <div class="card">
+                    <h2 style="margin-bottom: 24px;">Security Settings</h2>
+                    <p style="color: var(--color-text-muted); margin-bottom: 32px;">
+                        Manage your password and account security
+                    </p>
+                    
+                    <div style="space-y: 24px;">
+                        <div style="padding: 20px; border: 1px solid var(--color-border); border-radius: var(--radius-md);">
+                            <h3 style="margin-bottom: 8px;">Password</h3>
+                            <p style="color: var(--color-text-muted); margin-bottom: 16px; font-size: var(--font-size-sm);">
+                                Last changed: 2 days ago
+                            </p>
+                            <button class="btn btn-primary" onclick="window.location.href='06-new-password.html'">
+                                Change Password
+                            </button>
+                        </div>
+
+                        <div style="padding: 20px; border: 1px solid var(--color-border); border-radius: var(--radius-md);">
+                            <h3 style="margin-bottom: 8px;">Two-Factor Authentication</h3>
+                            <p style="color: var(--color-text-muted); margin-bottom: 16px; font-size: var(--font-size-sm);">
+                                Add an extra layer of security to your account
+                            </p>
+                            <button class="btn btn-secondary">
+                                Enable 2FA
+                            </button>
+                        </div>
+
+                        <div style="padding: 20px; border: 1px solid var(--color-border); border-radius: var(--radius-md);">
+                            <h3 style="margin-bottom: 8px;">Active Sessions</h3>
+                            <p style="color: var(--color-text-muted); margin-bottom: 16px; font-size: var(--font-size-sm);">
+                                You're signed in on 3 devices
+                            </p>
+                            <button class="btn btn-secondary">
+                                Manage Sessions
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Theme Toggle -->
+    <button class="theme-toggle" id="theme-toggle" style="position: fixed; top: 24px; right: 24px;" aria-label="Toggle theme">
+        🌙
+    </button>
+
+    <script>
+        // Theme management is now handled by the shared theme-manager.js
+
+        // Tab Management
+        class TabManager {
+            constructor() {
+                this.init();
+            }
+            
+            init() {
+                this.bindTabEvents();
+            }
+            
+            bindTabEvents() {
+                document.querySelectorAll('[data-tab]').forEach(tab => {
+                    tab.addEventListener('click', () => {
+                        this.switchTab(tab.dataset.tab);
+                    });
+                });
+            }
+            
+            switchTab(tabName) {
+                // Update tab buttons
+                document.querySelectorAll('[data-tab]').forEach(tab => {
+                    tab.classList.remove('active');
+                });
+                document.querySelector(`[data-tab="${tabName}"]`).classList.add('active');
+                
+                // Update tab content
+                document.querySelectorAll('.tab-content').forEach(content => {
+                    content.style.display = 'none';
+                });
+                
+                const targetContent = document.getElementById(`${tabName}-tab`);
+                if (targetContent) {
+                    targetContent.style.display = 'block';
+                }
+            }
+        }
+
+        // Form Handling
+        document.getElementById('profile-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const successAlert = document.getElementById('success-alert');
+            
+            // Show success message
+            successAlert.style.display = 'flex';
+            
+            // Hide after 3 seconds
+            setTimeout(() => {
+                successAlert.style.display = 'none';
+            }, 3000);
+        });
+
+        // Initialize components (theme manager is automatically initialized by theme-manager.js)
+        new TabManager();
+    </script>
+</body>
+</html>

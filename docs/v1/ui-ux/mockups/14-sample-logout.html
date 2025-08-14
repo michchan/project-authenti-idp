@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Out Options - TaskMaster</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="theme-manager.js"></script>    <style>
+        .sample-nav {
+            background: linear-gradient(135deg, var(--color-primary) 0%, #2563eb 100%);
+            color: white;
+            padding: 16px 0;
+        }
+        
+        .sample-nav a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        .sample-nav .nav-brand {
+            font-size: var(--font-size-xl);
+            font-weight: 700;
+        }
+        
+        .logout-container {
+            min-height: calc(100vh - 80px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--color-bg);
+        }
+        
+        .logout-card {
+            background: var(--color-panel);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-2xl);
+            width: 100%;
+            max-width: 500px;
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .logout-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #f59e0b, #f97316);
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            font-size: 32px;
+            color: white;
+        }
+        
+        .logout-option {
+            padding: 20px;
+            border: 2px solid var(--color-border);
+            border-radius: var(--radius-md);
+            margin-bottom: 16px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        
+        .logout-option:hover {
+            border-color: var(--color-primary);
+            background: var(--color-secondary);
+        }
+        
+        .logout-option.selected {
+            border-color: var(--color-primary);
+            background: rgba(52, 69, 80, 0.1);
+        }
+        
+        .logout-option input[type="radio"] {
+            width: 20px;
+            height: 20px;
+            accent-color: var(--color-primary);
+        }
+        
+        .option-content {
+            flex: 1;
+        }
+        
+        .option-title {
+            font-weight: 600;
+            margin-bottom: 4px;
+            color: var(--color-text);
+        }
+        
+        .option-description {
+            color: var(--color-text-muted);
+            font-size: var(--font-size-sm);
+            line-height: 1.4;
+        }
+        
+        .logout-actions {
+            display: flex;
+            gap: 16px;
+            margin-top: 32px;
+        }
+        
+        .what-happens {
+            background: var(--color-secondary);
+            padding: 24px;
+            border-radius: var(--radius-md);
+            margin-top: 32px;
+        }
+        
+        .what-happens ul {
+            margin: 0;
+            padding-left: 20px;
+            color: var(--color-text-muted);
+            font-size: var(--font-size-sm);
+        }
+        
+        .what-happens li {
+            margin-bottom: 8px;
+        }
+        
+        .status-indicators {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+        
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: var(--radius-full);
+        }
+        
+        .status-dot.success {
+            background: var(--color-success);
+        }
+        
+        .status-dot.warning {
+            background: var(--color-warning);
+        }
+    </style>
+</head>
+<body>
+    <!-- Sample App Navigation -->
+    <nav class="sample-nav">
+        <div class="nav-content" style="color: white;">
+            <div style="display: flex; align-items: center; gap: 16px;">
+                <a href="13-sample-protected.html" class="nav-brand">📋 TaskMaster</a>
+                <span style="font-size: var(--font-size-sm); opacity: 0.8;">Sign Out Options</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 16px;">
+                <div style="background: rgba(255, 255, 255, 0.1); padding: 4px 12px; border-radius: var(--radius-full); font-size: var(--font-size-sm);">
+                    🔐 AuthentiIDP
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="logout-container">
+        <div class="logout-card">
+            <!-- Header -->
+            <div class="text-center" style="margin-bottom: 32px;">
+                <div class="logout-icon">
+                    👋
+                </div>
+                <h1 style="margin-bottom: 16px; color: var(--color-text);">Sign Out Options</h1>
+                <p class="text-muted">
+                    How would you like to sign out of your AuthentiIDP session?
+                </p>
+            </div>
+
+            <!-- Logout Options -->
+            <form id="logout-form">
+                <!-- Local App Only -->
+                <div class="logout-option selected" onclick="selectOption('local')">
+                    <input type="radio" name="logoutType" value="local" id="local" checked>
+                    <div class="option-content">
+                        <div class="option-title">Sign out of TaskMaster Demo only</div>
+                        <div class="option-description">
+                            Keep me signed in to other AuthentiIDP applications. You'll stay logged in to Analytics, Shopping List, and other connected apps.
+                        </div>
+                        <div class="status-indicators" style="margin-top: 12px;">
+                            <div class="status-dot warning"></div>
+                            <span style="font-size: var(--font-size-xs); color: var(--color-text-muted);">
+                                You'll remain signed in elsewhere
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- All Applications -->
+                <div class="logout-option" onclick="selectOption('global')">
+                    <input type="radio" name="logoutType" value="global" id="global">
+                    <div class="option-content">
+                        <div class="option-title">Sign out of all AuthentiIDP applications</div>
+                        <div class="option-description">
+                            Sign me out everywhere for security. This will end your session in TaskMaster, Analytics, Shopping List, and all other connected applications.
+                        </div>
+                        <div class="status-indicators" style="margin-top: 12px;">
+                            <div class="status-dot success"></div>
+                            <span style="font-size: var(--font-size-xs); color: var(--color-text-muted);">
+                                Maximum security - sign out everywhere
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Remember Choice -->
+                <div style="margin-top: 20px; padding: 16px; background: var(--color-secondary); border-radius: var(--radius-md);">
+                    <label style="display: flex; align-items: center; gap: 12px; cursor: pointer;">
+                        <input type="checkbox" name="rememberChoice" id="rememberChoice">
+                        <span style="font-size: var(--font-size-sm);">
+                            Remember this choice for future sign outs
+                        </span>
+                    </label>
+                </div>
+
+                <!-- Actions -->
+                <div class="logout-actions">
+                    <button type="button" class="btn btn-secondary" style="flex: 1;" onclick="cancelLogout()">
+                        Cancel
+                    </button>
+                    <button type="submit" class="btn btn-primary" style="flex: 1;" id="logout-btn">
+                        <span id="logout-text">Sign Out Now</span>
+                        <svg id="logout-spinner" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="display: none; animation: spin 1s linear infinite;">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
+                        </svg>
+                    </button>
+                </div>
+            </form>
+
+            <!-- What Happens Next -->
+            <div class="what-happens">
+                <h3 style="margin-bottom: 16px; color: var(--color-text);">What Happens Next</h3>
+                <div id="local-info">
+                    <p style="color: var(--color-text-muted); margin-bottom: 16px; font-size: var(--font-size-sm);">
+                        After signing out of TaskMaster only:
+                    </p>
+                    <ul>
+                        <li>Your session in this app will end</li>
+                        <li>Protected content will be inaccessible</li>
+                        <li>You'll be redirected to the landing page</li>
+                        <li>Other AuthentiIDP apps will remain accessible</li>
+                    </ul>
+                </div>
+
+                <div id="global-info" style="display: none;">
+                    <p style="color: var(--color-text-muted); margin-bottom: 16px; font-size: var(--font-size-sm);">
+                        After signing out of all applications:
+                    </p>
+                    <ul>
+                        <li>All active sessions will be terminated</li>
+                        <li>You'll be signed out of every connected app</li>
+                        <li>Fresh login required for any app access</li>
+                        <li>Maximum security and privacy protection</li>
+                    </ul>
+                </div>
+
+                <div style="border-top: 1px solid var(--color-border); padding-top: 16px; margin-top: 16px;">
+                    <p style="color: var(--color-text-muted); margin: 0; font-size: var(--font-size-sm);">
+                        <strong>To sign back in:</strong> Use the same credentials or SSO from another connected app
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Theme Toggle -->
+    <button class="theme-toggle" id="theme-toggle" style="position: fixed; top: 24px; right: 24px;" aria-label="Toggle theme">
+        🌙
+    </button>
+
+    <script>
+                // Theme management is now handled by the shared theme-manager.js
+        // Option Selection
+        function selectOption(type) {
+            // Update radio buttons
+            document.getElementById('local').checked = (type === 'local');
+            document.getElementById('global').checked = (type === 'global');
+            
+            // Update visual selection
+            document.querySelectorAll('.logout-option').forEach(option => {
+                option.classList.remove('selected');
+            });
+            event.currentTarget.classList.add('selected');
+            
+            // Update info display
+            document.getElementById('local-info').style.display = (type === 'local') ? 'block' : 'none';
+            document.getElementById('global-info').style.display = (type === 'global') ? 'block' : 'none';
+        }
+
+        // Form Handling
+        document.getElementById('logout-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const btn = document.getElementById('logout-btn');
+            const text = document.getElementById('logout-text');
+            const spinner = document.getElementById('logout-spinner');
+            const logoutType = document.querySelector('input[name="logoutType"]:checked').value;
+            const rememberChoice = document.getElementById('rememberChoice').checked;
+            
+            // Show loading state
+            btn.disabled = true;
+            text.textContent = 'Signing Out...';
+            spinner.style.display = 'block';
+            
+            // Store preference if requested
+            if (rememberChoice) {
+                localStorage.setItem('authenti-logout-preference', logoutType);
+            }
+            
+            // Simulate logout process
+            setTimeout(() => {
+                // Clear authentication
+                sessionStorage.removeItem('demo-authenticated');
+                
+                if (logoutType === 'global') {
+                    // Global logout - clear everything
+                    sessionStorage.clear();
+                    localStorage.removeItem('loggedIn');
+                }
+                
+                // Show completion message
+                text.textContent = 'Signed Out Successfully';
+                spinner.style.display = 'none';
+                
+                // Redirect after delay
+                setTimeout(() => {
+                    window.location.href = '12-sample-landing.html';
+                }, 1500);
+            }, 2000);
+        });
+
+        function cancelLogout() {
+            window.location.href = '13-sample-protected.html';
+        }
+
+        // Load saved preference
+        function loadPreference() {
+            const savedPreference = localStorage.getItem('authenti-logout-preference');
+            if (savedPreference) {
+                selectOption(savedPreference);
+                document.getElementById('rememberChoice').checked = true;
+            }
+        }
+
+        // Initialize
+        loadPreference();
+    </script>
+</body>
+</html>

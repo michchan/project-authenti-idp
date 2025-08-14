@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Connected Apps - AuthentiIDP</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="theme-manager.js"></script></head>
+<body>
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="nav-content">
+            <a href="03-dashboard.html" class="nav-brand">🔐 AuthentiIDP</a>
+            <div class="nav-user">
+                <div class="user-avatar">JD</div>
+                <span class="text-muted">user@example.com</span>
+                <button class="btn btn-secondary" style="padding: 8px 16px; margin-left: 12px;" onclick="window.location.href='01-login.html'">
+                    Sign Out
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container" style="padding-top: 40px;">
+        <!-- Header -->
+        <div class="text-center" style="margin-bottom: 48px;">
+            <h1 style="margin-bottom: 16px;">Your Connected Apps</h1>
+            <p class="text-muted">Quick access to all your applications</p>
+        </div>
+
+        <!-- Quick Access Section -->
+        <div style="max-width: 800px; margin: 0 auto;">
+            <div class="card" style="margin-bottom: 32px;">
+                <h2 style="font-size: var(--font-size-xl); margin-bottom: 24px; color: var(--color-text);">
+                    Quick Access
+                </h2>
+                
+                <div class="grid grid-3" style="gap: 16px;">
+                    <!-- TaskMaster App -->
+                    <div class="card" style="padding: 20px; text-align: center; cursor: pointer; transition: all 0.2s;" onclick="openApp('taskmaster')">
+                        <div style="width: 48px; height: 48px; background: var(--color-primary); border-radius: var(--radius-md); margin: 0 auto 12px; display: flex; align-items: center; justify-content: center; font-size: 20px; color: white;">
+                            📱
+                        </div>
+                        <h3 style="font-size: var(--font-size-base); margin-bottom: 8px;">TaskMaster App</h3>
+                        <p style="color: var(--color-text-muted); font-size: var(--font-size-sm); margin-bottom: 12px;">
+                            Last: 2h ago
+                        </p>
+                        <button class="btn btn-primary" style="font-size: var(--font-size-sm); padding: 8px 16px;">
+                            Open
+                        </button>
+                    </div>
+
+                    <!-- Analytics Dashboard -->
+                    <div class="card" style="padding: 20px; text-align: center; cursor: pointer; transition: all 0.2s;" onclick="openApp('analytics')">
+                        <div style="width: 48px; height: 48px; background: #3b82f6; border-radius: var(--radius-md); margin: 0 auto 12px; display: flex; align-items: center; justify-content: center; font-size: 20px; color: white;">
+                            📊
+                        </div>
+                        <h3 style="font-size: var(--font-size-base); margin-bottom: 8px;">Analytics Dashboard</h3>
+                        <p style="color: var(--color-text-muted); font-size: var(--font-size-sm); margin-bottom: 12px;">
+                            Last: 1d ago
+                        </p>
+                        <button class="btn btn-primary" style="font-size: var(--font-size-sm); padding: 8px 16px;">
+                            Open
+                        </button>
+                    </div>
+
+                    <!-- Shopping List App -->
+                    <div class="card" style="padding: 20px; text-align: center; cursor: pointer; transition: all 0.2s;" onclick="openApp('shopping')">
+                        <div style="width: 48px; height: 48px; background: #10b981; border-radius: var(--radius-md); margin: 0 auto 12px; display: flex; align-items: center; justify-content: center; font-size: 20px; color: white;">
+                            🛒
+                        </div>
+                        <h3 style="font-size: var(--font-size-base); margin-bottom: 8px;">Shopping List App</h3>
+                        <p style="color: var(--color-text-muted); font-size: var(--font-size-sm); margin-bottom: 12px;">
+                            Last: 3d ago
+                        </p>
+                        <button class="btn btn-primary" style="font-size: var(--font-size-sm); padding: 8px 16px;">
+                            Open
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Activity Section -->
+            <div class="card" style="margin-bottom: 32px;">
+                <h2 style="font-size: var(--font-size-xl); margin-bottom: 24px; color: var(--color-text);">
+                    Recent Activity
+                </h2>
+                
+                <div style="space-y: 16px;">
+                    <!-- Activity Item -->
+                    <div style="display: flex; align-items: center; gap: 16px; padding: 16px; background: var(--color-secondary); border-radius: var(--radius-md); margin-bottom: 12px;">
+                        <div style="width: 32px; height: 32px; background: var(--color-primary); border-radius: var(--radius-full); display: flex; align-items: center; justify-content: center; font-size: 14px; color: white;">
+                            📱
+                        </div>
+                        <div style="flex: 1;">
+                            <p style="margin: 0; font-weight: 500; color: var(--color-text);">Logged into TaskMaster App</p>
+                            <p style="margin: 0; color: var(--color-text-muted); font-size: var(--font-size-sm);">Today 2:30 PM</p>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; align-items: center; gap: 16px; padding: 16px; background: var(--color-secondary); border-radius: var(--radius-md); margin-bottom: 12px;">
+                        <div style="width: 32px; height: 32px; background: #3b82f6; border-radius: var(--radius-full); display: flex; align-items: center; justify-content: center; font-size: 14px; color: white;">
+                            📊
+                        </div>
+                        <div style="flex: 1;">
+                            <p style="margin: 0; font-weight: 500; color: var(--color-text);">Logged into Analytics Dashboard</p>
+                            <p style="margin: 0; color: var(--color-text-muted); font-size: var(--font-size-sm);">Today 10:15 AM</p>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; align-items: center; gap: 16px; padding: 16px; background: var(--color-secondary); border-radius: var(--radius-md); margin-bottom: 12px;">
+                        <div style="width: 32px; height: 32px; background: var(--color-warning); border-radius: var(--radius-full); display: flex; align-items: center; justify-content: center; font-size: 14px; color: white;">
+                            🔑
+                        </div>
+                        <div style="flex: 1;">
+                            <p style="margin: 0; font-weight: 500; color: var(--color-text);">Password changed</p>
+                            <p style="margin: 0; color: var(--color-text-muted); font-size: var(--font-size-sm);">Yesterday</p>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; align-items: center; gap: 16px; padding: 16px; background: var(--color-secondary); border-radius: var(--radius-md); margin-bottom: 12px;">
+                        <div style="width: 32px; height: 32px; background: var(--color-success); border-radius: var(--radius-full); display: flex; align-items: center; justify-content: center; font-size: 14px; color: white;">
+                            🛒
+                        </div>
+                        <div style="flex: 1;">
+                            <p style="margin: 0; font-weight: 500; color: var(--color-text);">New app authorized: Shopping List</p>
+                            <p style="margin: 0; color: var(--color-text-muted); font-size: var(--font-size-sm);">2 days ago</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center" style="margin-top: 20px;">
+                    <button class="btn btn-secondary">
+                        View Full History
+                    </button>
+                </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="flex-between" style="gap: 16px;">
+                <button class="btn btn-primary" onclick="window.location.href='09-profile-settings.html'">
+                    🔒 Manage Profile
+                </button>
+                <button class="btn btn-secondary" onclick="window.location.href='10-connected-apps.html'">
+                    📱 Manage Apps
+                </button>
+                <button class="btn btn-secondary" onclick="window.location.href='03-dashboard.html'">
+                    ⚙️ Settings
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Theme Toggle -->
+    <button class="theme-toggle" id="theme-toggle" style="position: fixed; top: 24px; right: 24px;" aria-label="Toggle theme">
+        🌙
+    </button>
+
+    <script>
+                // Theme management is now handled by the shared theme-manager.js
+        // App Opening Handler
+        function openApp(appName) {
+            const appUrls = {
+                'taskmaster': '12-sample-landing.html',
+                'analytics': '03-dashboard.html', 
+                'shopping': '12-sample-landing.html'
+            };
+            
+            const url = appUrls[appName];
+            if (url) {
+                // Simulate SSO - direct navigation without login
+                window.location.href = url;
+            }
+        }
+
+        // Add hover effects to app cards
+        document.querySelectorAll('.card[onclick]').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-2px)';
+                this.style.boxShadow = 'var(--shadow-lg)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = '';
+            });
+        });
+        // Theme manager is automatically initialized by theme-manager.js
+    </script>
+</body>
+</html>

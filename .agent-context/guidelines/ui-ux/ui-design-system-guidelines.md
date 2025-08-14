@@ -95,7 +95,7 @@ Every section must include visual presentations, not just text or CSS:
 ### Usage Guidelines
 - **Style usage**: H1 for page titles, H3 for section headers
 - **Content guidelines**: Max line lengths, optimal paragraph sizes
-- **Accessibility**: Minimum font sizes, contrast requirements
+- **Accessibility**: Minimum font sizes, contrast requirements - follow WCAG 2.1 AA contrast guidelines.
 - **Brand alignment**: Typography reinforcing brand personality
 
 ---

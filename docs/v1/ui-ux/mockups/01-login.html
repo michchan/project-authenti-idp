@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In - AuthentiIDP</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="theme-manager.js"></script>
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-card">
+            <!-- Header -->
+            <div class="text-center" style="margin-bottom: 32px;">
+                <h1 style="color: var(--color-primary); margin-bottom: 8px;">AuthentiIDP</h1>
+                <p class="text-muted">Sign in to your identity provider</p>
+            </div>
+
+            <!-- Success Alert (for demo) -->
+            <div class="alert alert-success" style="display: none;" id="success-alert">
+                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <div>
+                    <strong>Welcome back!</strong> You have successfully signed in.
+                </div>
+            </div>
+
+            <!-- Error Alert (for demo) -->
+            <div class="alert alert-error" style="display: none;" id="error-alert">
+                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
+                </svg>
+                <div>
+                    <strong>Invalid credentials.</strong> Please check your email and password.
+                </div>
+            </div>
+
+            <!-- Login Form -->
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="email" class="form-label">Email Address</label>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email" 
+                        class="form-input" 
+                        placeholder="Enter your email"
+                        required
+                        autocomplete="email"
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="password" class="form-label">Password</label>
+                    <input 
+                        type="password" 
+                        id="password" 
+                        name="password" 
+                        class="form-input" 
+                        placeholder="Enter your password"
+                        required
+                        autocomplete="current-password"
+                    >
+                </div>
+
+                <div class="form-group">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                            <input type="checkbox" name="remember" id="remember">
+                            <span class="text-sm text-muted">Remember me</span>
+                        </label>
+                        <a href="05-password-reset.html" class="text-sm" style="color: var(--color-primary); text-decoration: none;">Forgot password?</a>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-full" id="login-btn">
+                    <span id="login-text">Sign In</span>
+                    <svg id="login-spinner" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="display: none; animation: spin 1s linear infinite;">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
+                    </svg>
+                </button>
+            </form>
+
+            <!-- Divider -->
+            <div style="margin: 32px 0; text-align: center; position: relative;">
+                <div style="height: 1px; background: var(--color-border);"></div>
+                <span style="background: var(--color-panel); padding: 0 16px; position: absolute; top: -8px; left: 50%; transform: translateX(-50%); color: var(--color-text-muted); font-size: 14px;">or</span>
+            </div>
+
+            <!-- Social Login -->
+            <div style="display: flex; flex-direction: column; gap: 12px;">
+                <button type="button" class="btn btn-secondary btn-full">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+                        <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                        <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+                        <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+                    </svg>
+                    Continue with Google
+                </button>
+                
+                <button type="button" class="btn btn-secondary btn-full">
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.024-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.719-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.097.118.112.22.082.339-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.402.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.357-.629-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24.009 12.017 24.009c6.624 0 11.99-5.367 11.99-11.988C24.007 5.367 18.641.001 12.017.001z"/>
+                    </svg>
+                    Continue with GitHub
+                </button>
+            </div>
+
+            <!-- Sign Up Link -->
+            <div class="text-center" style="margin-top: 32px;">
+                <p class="text-muted">
+                    Don't have an account? 
+                    <a href="02-register.html" style="color: var(--color-primary); text-decoration: none; font-weight: 500;">Sign up</a>
+                </p>
+            </div>
+        </div>
+
+        <!-- Theme Toggle -->
+        <button class="theme-toggle" id="theme-toggle" style="position: fixed; top: 24px; right: 24px;" aria-label="Toggle theme">
+            🌙
+        </button>
+    </div>
+
+    <script>
+        // Theme management is now handled by the shared theme-manager.js
+
+        // Form Handling
+        document.getElementById('login-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const btn = document.getElementById('login-btn');
+            const text = document.getElementById('login-text');
+            const spinner = document.getElementById('login-spinner');
+            const errorAlert = document.getElementById('error-alert');
+            const successAlert = document.getElementById('success-alert');
+            
+            // Hide alerts
+            errorAlert.style.display = 'none';
+            successAlert.style.display = 'none';
+            
+            // Show loading state
+            btn.disabled = true;
+            text.textContent = 'Signing In...';
+            spinner.style.display = 'block';
+            
+            // Simulate API call
+            setTimeout(() => {
+                const email = document.getElementById('email').value;
+                const password = document.getElementById('password').value;
+                
+                // Simple validation for demo
+                if (email === 'demo@authenti.com' && password === 'password') {
+                    // Success - show success message then redirect
+                    successAlert.style.display = 'flex';
+                    setTimeout(() => {
+                        window.location.href = '03-dashboard.html';
+                    }, 1500);
+                } else {
+                    // Error - show error message
+                    errorAlert.style.display = 'flex';
+                    
+                    // Reset button
+                    btn.disabled = false;
+                    text.textContent = 'Sign In';
+                    spinner.style.display = 'none';
+                }
+            }, 2000);
+        });
+
+        // Theme manager is automatically initialized by theme-manager.js
+    </script>
+</body>
+</html>

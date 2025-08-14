@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connected Applications - AuthentiIDP</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="theme-manager.js"></script></head>
+<body>
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="nav-content">
+            <a href="03-dashboard.html" class="nav-brand">🔐 AuthentiIDP</a>
+            <div class="nav-user">
+                <div class="user-avatar">JD</div>
+                <span class="text-muted">user@example.com</span>
+                <button class="btn btn-secondary" style="padding: 8px 16px; margin-left: 12px;" onclick="window.location.href='01-login.html'">
+                    Sign Out
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container" style="padding-top: 40px;">
+        <!-- Header -->
+        <div style="margin-bottom: 32px;">
+            <nav style="margin-bottom: 16px;">
+                <a href="09-profile-settings.html" style="color: var(--color-text-muted); text-decoration: none; font-size: var(--font-size-sm);">
+                    ← Back to Profile Settings
+                </a>
+            </nav>
+            <h1>Connected Applications</h1>
+            <p class="text-muted">Manage application permissions and access</p>
+        </div>
+
+        <!-- Tab Navigation -->
+        <div style="margin-bottom: 32px;">
+            <div class="nav-links" style="display: flex; border-bottom: 1px solid var(--color-border); gap: 0;">
+                <button class="nav-link" data-tab="profile" onclick="window.location.href='09-profile-settings.html'" style="border: none; background: none; padding: 12px 24px; cursor: pointer;">
+                    👤 Profile
+                </button>
+                <button class="nav-link" data-tab="security" onclick="window.location.href='09-profile-settings.html'" style="border: none; background: none; padding: 12px 24px; cursor: pointer;">
+                    🔒 Security
+                </button>
+                <button class="nav-link active" data-tab="apps" style="border: none; background: none; padding: 12px 24px; cursor: pointer;">
+                    📱 Apps
+                </button>
+                <button class="nav-link" data-tab="privacy" onclick="window.location.href='09-profile-settings.html'" style="border: none; background: none; padding: 12px 24px; cursor: pointer;">
+                    🔔 Privacy
+                </button>
+            </div>
+        </div>
+
+        <!-- Success Alert (hidden by default) -->
+        <div class="alert alert-success" style="display: none;" id="success-alert">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <div>
+                <strong>Access revoked!</strong> The application can no longer access your account.
+            </div>
+        </div>
+
+        <!-- Warning Alert (hidden by default) -->
+        <div class="alert alert-warning" style="display: none;" id="warning-alert">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
+            </svg>
+            <div>
+                <strong>Are you sure?</strong> This will immediately revoke all access for this application.
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div style="max-width: 800px;">
+            <div class="card">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+                    <h2>Connected Applications (3)</h2>
+                    <button class="btn btn-primary" style="font-size: var(--font-size-sm);">
+                        + Add New Application
+                    </button>
+                </div>
+
+                <!-- Applications List -->
+                <div style="space-y: 24px;">
+                    <!-- TaskMaster App -->
+                    <div class="card" style="border: 1px solid var(--color-border);">
+                        <div style="display: flex; align-items: start; gap: 16px;">
+                            <!-- App Icon -->
+                            <div style="width: 56px; height: 56px; background: var(--color-primary); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; font-size: 24px; color: white; flex-shrink: 0;">
+                                📱
+                            </div>
+                            
+                            <!-- App Info -->
+                            <div style="flex: 1;">
+                                <h3 style="margin: 0 0 8px 0; font-size: var(--font-size-lg);">TaskMaster App</h3>
+                                <div style="display: flex; flex-wrap: wrap; gap: 16px; color: var(--color-text-muted); font-size: var(--font-size-sm); margin-bottom: 12px;">
+                                    <span>Connected: March 15, 2025</span>
+                                    <span>Last access: 2 hours ago</span>
+                                </div>
+                                <div style="margin-bottom: 12px;">
+                                    <span style="color: var(--color-text-muted); font-size: var(--font-size-sm);">Permissions: </span>
+                                    <span style="color: var(--color-text); font-size: var(--font-size-sm);">Profile, Authentication</span>
+                                </div>
+                                <div style="margin-bottom: 16px;">
+                                    <span style="color: var(--color-text-muted); font-size: var(--font-size-sm);">Created by: </span>
+                                    <span style="color: var(--color-text); font-size: var(--font-size-sm);">John Doe</span>
+                                </div>
+                                
+                                <!-- Actions -->
+                                <div style="display: flex; gap: 12px;">
+                                    <button class="btn btn-secondary" style="font-size: var(--font-size-sm); padding: 8px 16px;" onclick="editPermissions('taskmaster')">
+                                        Edit Permissions
+                                    </button>
+                                    <button class="btn btn-danger" style="font-size: var(--font-size-sm); padding: 8px 16px;" onclick="revokeAccess('taskmaster', 'TaskMaster App')">
+                                        Revoke Access
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Analytics Dashboard -->
+                    <div class="card" style="border: 1px solid var(--color-border);">
+                        <div style="display: flex; align-items: start; gap: 16px;">
+                            <div style="width: 56px; height: 56px; background: #3b82f6; border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; font-size: 24px; color: white; flex-shrink: 0;">
+                                📊
+                            </div>
+                            
+                            <div style="flex: 1;">
+                                <h3 style="margin: 0 0 8px 0; font-size: var(--font-size-lg);">Analytics Dashboard</h3>
+                                <div style="display: flex; flex-wrap: wrap; gap: 16px; color: var(--color-text-muted); font-size: var(--font-size-sm); margin-bottom: 12px;">
+                                    <span>Connected: March 10, 2025</span>
+                                    <span>Last access: 1 day ago</span>
+                                </div>
+                                <div style="margin-bottom: 12px;">
+                                    <span style="color: var(--color-text-muted); font-size: var(--font-size-sm);">Permissions: </span>
+                                    <span style="color: var(--color-text); font-size: var(--font-size-sm);">Profile, Email notifications</span>
+                                </div>
+                                <div style="margin-bottom: 16px;">
+                                    <span style="color: var(--color-text-muted); font-size: var(--font-size-sm);">Created by: </span>
+                                    <span style="color: var(--color-text); font-size: var(--font-size-sm);">John Doe</span>
+                                </div>
+                                
+                                <div style="display: flex; gap: 12px;">
+                                    <button class="btn btn-secondary" style="font-size: var(--font-size-sm); padding: 8px 16px;" onclick="editPermissions('analytics')">
+                                        Edit Permissions
+                                    </button>
+                                    <button class="btn btn-danger" style="font-size: var(--font-size-sm); padding: 8px 16px;" onclick="revokeAccess('analytics', 'Analytics Dashboard')">
+                                        Revoke Access
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Shopping List App -->
+                    <div class="card" style="border: 1px solid var(--color-border);">
+                        <div style="display: flex; align-items: start; gap: 16px;">
+                            <div style="width: 56px; height: 56px; background: #10b981; border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; font-size: 24px; color: white; flex-shrink: 0;">
+                                🛒
+                            </div>
+                            
+                            <div style="flex: 1;">
+                                <h3 style="margin: 0 0 8px 0; font-size: var(--font-size-lg);">Shopping List App</h3>
+                                <div style="display: flex; flex-wrap: wrap; gap: 16px; color: var(--color-text-muted); font-size: var(--font-size-sm); margin-bottom: 12px;">
+                                    <span>Connected: March 8, 2025</span>
+                                    <span>Last access: 3 days ago</span>
+                                </div>
+                                <div style="margin-bottom: 12px;">
+                                    <span style="color: var(--color-text-muted); font-size: var(--font-size-sm);">Permissions: </span>
+                                    <span style="color: var(--color-text); font-size: var(--font-size-sm);">Profile only</span>
+                                </div>
+                                <div style="margin-bottom: 16px;">
+                                    <span style="color: var(--color-text-muted); font-size: var(--font-size-sm);">Created by: </span>
+                                    <span style="color: var(--color-text); font-size: var(--font-size-sm);">John Doe</span>
+                                </div>
+                                
+                                <div style="display: flex; gap: 12px;">
+                                    <button class="btn btn-secondary" style="font-size: var(--font-size-sm); padding: 8px 16px;" onclick="editPermissions('shopping')">
+                                        Edit Permissions
+                                    </button>
+                                    <button class="btn btn-danger" style="font-size: var(--font-size-sm); padding: 8px 16px;" onclick="revokeAccess('shopping', 'Shopping List App')">
+                                        Revoke Access
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Help Section -->
+                <div style="margin-top: 32px; padding: 20px; background: var(--color-secondary); border-radius: var(--radius-md);">
+                    <h3 style="margin-bottom: 12px;">Managing Application Access</h3>
+                    <ul style="color: var(--color-text-muted); font-size: var(--font-size-sm); margin: 0; padding-left: 20px;">
+                        <li style="margin-bottom: 8px;">Edit permissions to control what data each app can access</li>
+                        <li style="margin-bottom: 8px;">Revoke access to immediately disconnect an application</li>
+                        <li style="margin-bottom: 8px;">Your data will remain secure and under your control</li>
+                        <li>Contact support if you notice any suspicious activity</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Revoke Access Modal (Hidden) -->
+    <div id="revoke-modal" class="modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; align-items: center; justify-content: center;">
+        <div class="modal-content" style="background: var(--color-panel); border-radius: var(--radius-md); padding: 32px; max-width: 400px; width: 90%;">
+            <h3 style="margin-bottom: 16px;">Revoke Access</h3>
+            <p style="color: var(--color-text-muted); margin-bottom: 24px;" id="revoke-message">
+                Are you sure you want to revoke access for this application? This action cannot be undone.
+            </p>
+            <div style="display: flex; gap: 12px;">
+                <button class="btn btn-secondary" style="flex: 1;" onclick="closeRevokeModal()">
+                    Cancel
+                </button>
+                <button class="btn btn-danger" style="flex: 1;" id="confirm-revoke" onclick="confirmRevoke()">
+                    Revoke Access
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Theme Toggle -->
+    <button class="theme-toggle" id="theme-toggle" style="position: fixed; top: 24px; right: 24px;" aria-label="Toggle theme">
+        🌙
+    </button>
+
+    <script>
+        let currentRevokeApp = null;
+
+                // Theme management is now handled by the shared theme-manager.js
+        // Application Management Functions
+        function editPermissions(appId) {
+            // In a real app, this would open a permissions editor
+            alert(`Edit permissions for ${appId} - This would open a permissions management interface.`);
+        }
+
+        function revokeAccess(appId, appName) {
+            currentRevokeApp = { id: appId, name: appName };
+            document.getElementById('revoke-message').textContent = 
+                `Are you sure you want to revoke access for ${appName}? This action cannot be undone.`;
+            document.getElementById('revoke-modal').style.display = 'flex';
+        }
+
+        function closeRevokeModal() {
+            document.getElementById('revoke-modal').style.display = 'none';
+            currentRevokeApp = null;
+        }
+
+        function confirmRevoke() {
+            if (currentRevokeApp) {
+                // Hide the app card
+                const appCard = document.querySelector(`[onclick*="${currentRevokeApp.id}"]`).closest('.card');
+                if (appCard) {
+                    appCard.style.display = 'none';
+                }
+                
+                // Show success message
+                document.getElementById('success-alert').style.display = 'flex';
+                
+                // Hide success message after 3 seconds
+                setTimeout(() => {
+                    document.getElementById('success-alert').style.display = 'none';
+                }, 3000);
+                
+                closeRevokeModal();
+            }
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('revoke-modal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeRevokeModal();
+            }
+        });
+        // Theme manager is automatically initialized by theme-manager.js
+    </script>
+</body>
+</html>
