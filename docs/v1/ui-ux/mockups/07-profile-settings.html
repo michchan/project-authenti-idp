@@ -145,7 +145,7 @@
                     </p>
                     
                     <div style="display: flex; flex-direction: column; gap: 16px;">
-                        <label style="display: flex; align-items: center; gap: 12px; cursor: pointer; padding: 12px; border: 1px solid var(--color-border); border-radius: var(--radius-md);">
+                        <label style="display: flex; align-items: center; gap: 12px; cursor: pointer; padding: 12px; border: 1px solid var(--color-border-light); border-radius: var(--radius-md);">
                             <input type="radio" name="visibility" value="all">
                             <div>
                                 <div style="font-weight: 500;">All connected applications</div>
@@ -161,7 +161,7 @@
                             </div>
                         </label>
 
-                        <label style="display: flex; align-items: center; gap: 12px; cursor: pointer; padding: 12px; border: 1px solid var(--color-border); border-radius: var(--radius-md);">
+                        <label style="display: flex; align-items: center; gap: 12px; cursor: pointer; padding: 12px; border: 1px solid var(--color-border-light); border-radius: var(--radius-md);">
                             <input type="radio" name="visibility" value="private">
                             <div>
                                 <div style="font-weight: 500;">Keep profile private (name and email only)</div>
@@ -200,7 +200,7 @@
                     </p>
                     
                     <div style="display: flex; flex-direction: column; gap: 24px;">
-                        <div style="padding: 20px; border: 1px solid var(--color-border); border-radius: var(--radius-md);">
+                        <div style="padding: 20px; border: 1px solid var(--color-border-light); border-radius: var(--radius-md);">
                             <h3 style="margin-bottom: 8px;">Password</h3>
                             <p style="color: var(--color-text-muted); margin-bottom: 16px; font-size: var(--font-size-sm);">
                                 Last changed: 2 days ago
@@ -210,7 +210,7 @@
                             </button>
                         </div>
 
-                        <div style="padding: 20px; border: 1px solid var(--color-border); border-radius: var(--radius-md);">
+                        <div style="padding: 20px; border: 1px solid var(--color-border-light); border-radius: var(--radius-md);">
                             <h3 style="margin-bottom: 8px;">Two-Factor Authentication</h3>
                             <p style="color: var(--color-text-muted); margin-bottom: 16px; font-size: var(--font-size-sm);">
                                 Add an extra layer of security to your account
@@ -247,7 +247,7 @@
                     <!-- Applications List -->
                     <div style="display: flex; flex-direction: column; gap: 24px;">
                         <!-- TaskMaster App -->
-                        <div class="card" style="border: 1px solid var(--color-border);">
+                        <div class="card">
                             <div style="display: flex; align-items: start; gap: 16px;">
                                 <!-- App Icon -->
                                 <div style="width: 56px; height: 56px; background: var(--color-primary); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; font-size: 24px; color: white; flex-shrink: 0;">
@@ -295,9 +295,9 @@
                         </div>
 
                         <!-- Analytics Dashboard -->
-                        <div class="card" style="border: 1px solid var(--color-border);">
+                        <div class="card">
                             <div style="display: flex; align-items: start; gap: 16px;">
-                                <div style="width: 56px; height: 56px; background: #3b82f6; border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; font-size: 24px; color: white; flex-shrink: 0;">
+                                <div style="width: 56px; height: 56px; background: var(--color-info); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; font-size: 24px; color: white; flex-shrink: 0;">
                                     📊
                                 </div>
                                 
@@ -340,9 +340,9 @@
                         </div>
 
                         <!-- Shopping List App -->
-                        <div class="card" style="border: 1px solid var(--color-border);">
+                        <div class="card">
                             <div style="display: flex; align-items: start; gap: 16px;">
-                                <div style="width: 56px; height: 56px; background: #10b981; border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; font-size: 24px; color: white; flex-shrink: 0;">
+                                <div style="width: 56px; height: 56px; background: var(--color-success); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; font-size: 24px; color: white; flex-shrink: 0;">
                                     🛒
                                 </div>
                                 
@@ -427,7 +427,7 @@
                         </div>
 
                         <!-- Other Active Sessions -->
-                        <div class="card" style="border: 1px solid var(--color-border);">
+                        <div class="card">
                             <div style="display: flex; align-items: start; gap: 16px;">
                                 <div style="width: 48px; height: 48px; background: var(--color-warning); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: white; font-size: 20px; flex-shrink: 0;">
                                     📱
@@ -450,7 +450,7 @@
                             </div>
                         </div>
 
-                        <div class="card" style="border: 1px solid var(--color-border);">
+                        <div class="card">
                             <div style="display: flex; align-items: start; gap: 16px;">
                                 <div style="width: 48px; height: 48px; background: var(--color-primary); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: white; font-size: 20px; flex-shrink: 0;">
                                     🖥️
@@ -627,7 +627,7 @@
         function revokeAllOtherSessions() {
             if (confirm('Are you sure you want to end all other sessions? You will be signed out on all other devices.')) {
                 // Hide all session cards except current
-                document.querySelectorAll('.card[style*="border: 1px solid var(--color-border)"]').forEach(card => {
+                document.querySelectorAll('.card').forEach(card => {
                     card.style.display = 'none';
                 });
                 

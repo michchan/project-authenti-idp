@@ -1,18 +1,19 @@
 /* AuthentiIDP Mockup Styles v1.0 */
 
 :root {
-  /* Colors */
-  --color-bg: #ffffff;
+  /* Colors - New Flat Sharp Design System */
+  --color-bg: #f8f9fa;
   --color-panel: #ffffff;
-  --color-primary: #344550;
-  --color-primary-hover: #2d3a43;
-  --color-primary-focus: #253036;
-  --color-secondary: #deedf7;
-  --color-text: #111827;
-  --color-text-muted: #6b7280;
-  --color-text-disabled: #9ca3af;
-  --color-border: #e5e7eb;
-  --color-border-focus: #d1d5db;
+  --color-primary: #212529;
+  --color-primary-hover: #343a40;
+  --color-primary-focus: #495057;
+  --color-secondary: #e9ecef;
+  --color-text: #212529;
+  --color-text-muted: #6c757d;
+  --color-text-disabled: #adb5bd;
+  --color-border: #dee2e6;
+  --color-border-focus: #ced4da;
+  --color-border-light: #e9ecef;
   
   /* Status Colors */
   --color-success: #10b981;
@@ -39,40 +40,50 @@
   --space-2xl: 48px;
   --space-3xl: 64px;
   
-  /* Border Radius */
-  --radius-sm: 0.25rem;
-  --radius-md: 0.4rem;
-  --radius-lg: 0.5rem;
-  --radius-xl: 0.75rem;
+  /* Border Radius - Sharp Design (Halved) */
+  --radius-sm: 0.125rem;
+  --radius-md: 0.2rem;
+  --radius-lg: 0.25rem;
+  --radius-xl: 0.375rem;
   --radius-full: 50%;
   
-  /* Shadows */
-  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  /* Shadows - ELIMINATED for flat design */
+  --shadow-sm: none;
+  --shadow-md: none;
+  --shadow-lg: none;
 }
 
-/* Dark mode support */
+/* Dark mode support - Inverted grayscale palette */
 @media (prefers-color-scheme: dark) {
   [data-theme="auto"] {
-    --color-bg: #1f2937;
-    --color-panel: #374151;
-    --color-primary: #60a5fa;
-    --color-secondary: #1e3a8a;
-    --color-text: #f9fafb;
-    --color-text-muted: #d1d5db;
-    --color-border: #4b5563;
+    --color-bg: #212529;
+    --color-panel: #343a40;
+    --color-primary: #f8f9fa;
+    --color-primary-hover: #e9ecef;
+    --color-primary-focus: #dee2e6;
+    --color-secondary: #495057;
+    --color-text: #f8f9fa;
+    --color-text-muted: #adb5bd;
+    --color-text-disabled: #6c757d;
+    --color-border: #495057;
+    --color-border-focus: #6c757d;
+    --color-border-light: #495057;
   }
 }
 
 [data-theme="dark"] {
-  --color-bg: #1f2937;
-  --color-panel: #374151;
-  --color-primary: #60a5fa;
-  --color-secondary: #1e3a8a;
-  --color-text: #f9fafb;
-  --color-text-muted: #d1d5db;
-  --color-border: #4b5563;
+  --color-bg: #212529;
+  --color-panel: #343a40;
+  --color-primary: #f8f9fa;
+  --color-primary-hover: #e9ecef;
+  --color-primary-focus: #dee2e6;
+  --color-secondary: #495057;
+  --color-text: #f8f9fa;
+  --color-text-muted: #adb5bd;
+  --color-text-disabled: #6c757d;
+  --color-border: #495057;
+  --color-border-focus: #6c757d;
+  --color-border-light: #495057;
 }
 
 /* Base Styles */
@@ -108,25 +119,25 @@ body {
 
 .auth-card {
   background: var(--color-panel);
-  border: 1px solid var(--color-border);
+  border: none; /* Removed border - sufficient contrast */
   border-radius: var(--radius-md);
   padding: var(--space-2xl);
   width: 100%;
   max-width: 400px;
-  box-shadow: var(--shadow-lg);
+  /* No shadow - flat design */
 }
 
 .card {
   background: var(--color-panel);
-  border: 1px solid var(--color-border);
+  border: none; /* Removed border - sufficient contrast */
   border-radius: var(--radius-md);
   padding: var(--space-lg);
   transition: all 0.2s ease;
 }
 
 .card:hover {
-  border-color: var(--color-border-focus);
-  box-shadow: var(--shadow-md);
+  /* No shadow or border changes - flat design */
+  background: var(--color-panel);
 }
 
 /* Navigation */
@@ -241,7 +252,7 @@ h4 { font-size: var(--font-size-lg); }
 
 .btn-primary:hover:not(:disabled) {
   background: var(--color-primary-hover);
-  transform: translateY(-1px);
+  /* Removed transform - flat design */
 }
 
 .btn-primary:focus {
@@ -289,7 +300,7 @@ h4 { font-size: var(--font-size-lg); }
 .form-input {
   width: 100%;
   padding: 12px 16px;
-  border: 1px solid var(--color-border);
+  border: 1px solid var(--color-border-light); /* Light border when needed inside cards */
   border-radius: var(--radius-md);
   font-size: var(--font-size-base);
   color: var(--color-text);
@@ -454,6 +465,7 @@ h4 { font-size: var(--font-size-lg); }
   width: 90%;
   max-height: 90vh;
   overflow-y: auto;
+  /* No shadow - flat design */
 }
 
 /* Enhanced Form Styles */
@@ -536,13 +548,13 @@ textarea.form-input {
   font-size: var(--font-size-sm);
   font-weight: 500;
   z-index: 1100;
-  box-shadow: var(--shadow-lg);
+  /* No shadow - flat design */
 }
 
 /* Code Block Styles */
 .code-block {
-  background: var(--color-panel);
-  border: 1px solid var(--color-border);
+  background: var(--color-secondary); /* Different background for contrast */
+  border: none; /* Removed border - sufficient contrast */
   border-radius: var(--radius-md);
   padding: var(--space-lg);
   font-family: 'Monaco', 'Consolas', 'Courier New', monospace;
