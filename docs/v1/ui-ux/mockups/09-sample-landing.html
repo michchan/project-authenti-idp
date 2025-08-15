@@ -177,7 +177,7 @@
                         <a href="https://github.com/authenti-idp/demo-app" style="color: var(--color-primary); text-decoration: none; display: flex; align-items: center; gap: 4px;">
                             🔍 View source code
                         </a>
-                        <a href="16-developer-integration-guide.html" style="color: var(--color-primary); text-decoration: none; display: flex; align-items: center; gap: 4px;">
+                        <a href="12-developer-dashboard.html" style="color: var(--color-primary); text-decoration: none; display: flex; align-items: center; gap: 4px;">
                             📚 Integration docs
                         </a>
                     </div>
@@ -286,7 +286,7 @@
         function signInDemo() {
             // Simulate the SSO flow
             sessionStorage.setItem('demo-authenticated', 'true');
-            window.location.href = '13-sample-protected.html';
+            window.location.href = '10-sample-protected.html';
         }
 
         function createAccountDemo() {
@@ -302,9 +302,47 @@
                 const ctaButtons = document.querySelectorAll('.btn-auth, .btn-primary[onclick="signInDemo()"]');
                 ctaButtons.forEach(btn => {
                     btn.innerHTML = '✓ You\'re Signed In - View Protected Content';
-                    btn.onclick = () => window.location.href = '13-sample-protected.html';
+                    btn.onclick = () => window.location.href = '10-sample-protected.html';
                 });
+                
+                // Add sign out button for authenticated users
+                addSignOutOption();
             }
+        }
+        
+        function addSignOutOption() {
+            // Find the demo section container
+            const demoSection = document.querySelector('.demo-badge').parentElement;
+            
+            // Create sign out option
+            const signOutSection = document.createElement('div');
+            signOutSection.style.cssText = 'margin-top: 24px; padding: 20px; background: var(--color-secondary); border-radius: var(--radius-md); text-align: center;';
+            signOutSection.innerHTML = `
+                <p style="color: var(--color-text-muted); margin-bottom: 16px; font-size: var(--font-size-sm);">
+                    Already signed in? You can sign out or manage your session.
+                </p>
+                <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+                    <button class="btn btn-secondary" onclick="window.location.href='11-sample-logout.html'" style="font-size: var(--font-size-sm);">
+                        📝 Sign Out Options
+                    </button>
+                    <button class="btn btn-secondary" onclick="quickSignOut()" style="font-size: var(--font-size-sm);">
+                        🚪 Quick Sign Out
+                    </button>
+                </div>
+            `;
+            
+            // Insert after the main demo card
+            const mainCard = document.querySelector('.hero-section .card');
+            if (mainCard && mainCard.parentElement) {
+                mainCard.parentElement.insertBefore(signOutSection, mainCard.nextSibling);
+            }
+        }
+        
+        function quickSignOut() {
+            // Quick sign out - clear demo authentication and redirect
+            sessionStorage.removeItem('demo-authenticated');
+            alert('You have been signed out of the TaskMaster demo.');
+            location.reload(); // Refresh to show signed-out state
         }
 
         // Initialize

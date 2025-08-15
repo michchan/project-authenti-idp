@@ -1,6 +1,8 @@
-# 📈 User Journey Flowchart: AuthentiIDP v2.0 - Simplified Developer Experience
+# 📈 User Journey Flowchart: AuthentiIDP v1.0 - MVP Scope
 
 This document outlines key user journeys for AuthentiIDP, a centralized identity provider service for small-scale personal applications. Each flow is presented as an ASCII diagram, showing how users move through the authentication ecosystem.
+
+**MVP Scope Updates**: This document reflects the simplified MVP scope with consolidated flows, removed Privacy settings, integrated Connected Apps management, and streamlined Developer Dashboard.
 
 ---
 
@@ -11,13 +13,13 @@ This document outlines key user journeys for AuthentiIDP, a centralized identity
 1. [End User Registration & First Login](#1-end-user-registration--first-login) - New user creating account and first authentication
 2. [End User SSO Login Flow](#2-end-user-sso-login-flow) - Returning user accessing applications via SSO
 3. [Password Reset & Recovery](#3-password-reset--recovery) - User recovering access to their account
-4. [User Profile Management](#4-user-profile-management) - User updating personal information
+4. [User Profile Management](#4-user-profile-management) - User updating personal information and managing connected apps
 5. [Session Management & Logout](#5-session-management--logout) - Session handling and termination flows
 
 **Developer journeys**
 
 1. [Developer Integration Workflow](#6-developer-integration-workflow) - Engineer setting up AuthentiIDP in their app
-2. [Application Management Dashboard](#7-application-management-dashboard) - Product manager configuring applications
+2. [Application Management Dashboard](#7-application-management-dashboard) - Product manager configuring applications with comprehensive settings
 
 ---
 
@@ -341,19 +343,17 @@ This document outlines key user journeys for AuthentiIDP, a centralized identity
          |    [Two-factor auth] [Current + new password]
          |         |              |
          |         v              v
-         |    [Active sessions] [Validate and update]
+         |    [Session management] [Validate and update]
          |
-         +──→ [Privacy] ──→ [Data sharing controls]
-         |         |              |
-         |         v              v
-         |    [App permissions] [Export data]
-         |         |              |
-         |         v              v
-         |    [Delete account] [GDPR compliance]
-         |
-         +──→ [Connected Apps] ──→ [View authorized applications]
+         +──→ [Connected Apps Tab] ──→ [View authorized applications]
                    |                    |
                    v                    v
+              [Edit Permissions] ──→ [Configure app permissions]
+                   |                    |
+                   v                    v
+              [Save permissions] [Update app access]
+                   |
+                   v
               [Revoke access] ──→ [Confirm disconnection]
                    |                    |
                    v                    v
@@ -368,7 +368,7 @@ This document outlines key user journeys for AuthentiIDP, a centralized identity
 
 **Security Settings**: Clear options for password changes and session management
 
-**Privacy Controls**: Granular control over data sharing and account deletion
+**Connected Apps Tab**: Integrated application management within profile settings
 
 ### Pain Points & Optimizations
 
@@ -509,7 +509,7 @@ This document outlines key user journeys for AuthentiIDP, a centralized identity
 ## 6. Developer Integration Workflow
 
 ### Flow Purpose
-**Goal**: Enable internal developers to add authentication to applications in minutes with zero configuration
+**Goal**: Enable internal developers to add authentication to applications with simplified setup
 
 **Success Criteria**: Developer completes integration and has working authentication within 30 minutes
 
@@ -519,16 +519,19 @@ This document outlines key user journeys for AuthentiIDP, a centralized identity
 [Developer needs authentication for new app]
          |
          v
-[Installs AuthentiIDP SDK]
+[Accesses simplified developer dashboard]
          |
          v
-[Configures API key and client secrets]
+[Manages API keys for application]
+         |
+         v
+[Configures application settings]
          |
          v
 [Adds login component to app] (React example - framework choice flexible)
          |
          v
-[Tests locally] ──→ [Authentication works automatically]
+[Tests locally] ──→ [Authentication works]
          |                      |
          v                      v
 [Deploys to production] ──→ [Same code works in production]
@@ -539,30 +542,30 @@ This document outlines key user journeys for AuthentiIDP, a centralized identity
 
 ### Key Screens/States
 
-**Zero Setup Experience**: Install package, add component, everything works
+**Simplified Setup Experience**: Install package, configure API keys, add component
 
-**Automatic Dashboard**: Analytics appear automatically when app is used
+**Basic Dashboard**: Simple application management with basic options
 
 **Built-in UI**: Consistent login/profile/logout UI across all apps
 
-**Intelligent Defaults**: All configuration happens behind the scenes
+**Essential Configuration**: Basic settings with comprehensive application management
 
 ### Error Handling
 
-**Automatic Recovery**: SDK handles all error states internally with user-friendly messages
+**Simplified Recovery**: SDK handles common error states with user-friendly messages
 
-**Zero Debug Needed**: No integration issues possible with zero-config approach
+**Basic Debugging**: Simple error handling with clear guidance
 
-**Built-in Support**: All error states display helpful guidance automatically
+**Integrated Support**: Documentation integrated within application settings
 
 ---
 
 ## 7. Application Management Dashboard
 
 ### Flow Purpose
-**Goal**: Enable product managers to configure and manage applications with zero setup
+**Goal**: Enable product managers to configure and manage applications with comprehensive settings
 
-**Success Criteria**: Manager can view and configure applications and basic integration settings
+**Success Criteria**: Manager can view and configure applications through comprehensive 5-tab interface
 
 ### ASCII Flow Diagram
 
@@ -570,41 +573,48 @@ This document outlines key user journeys for AuthentiIDP, a centralized identity
 [Product Manager visits dashboard]
          |
          v
-[Unified overview displays automatically]
+[Simplified dashboard displays]
    - All applications (auto-detected)
-   - Application configuration options
+   - Basic management options
          |
          v
-[Everything visible in one view]
+[Simple overview with essential actions]
          |
-         +──→ [Applications] ──→ [Auto-discovered apps with basic info]
+         +──→ [All Applications] ──→ [Select application]
          |                              |
          |                              v
-         |                         [Configuration and settings]
+         |                         [Application Settings - 5-tab interface]
+         |                         [📱 App Info] [🔑 API Keys] [🔗 URLs] [⚙️ Settings] [📚 Docs]
+         |                              |
+         |                              v
+         |                         [Configure across all tabs]
+         |                              |
+         |                              v
+         |                         [Save changes or delete application]
          |
-         +──→ [Integration] ──→ [API keys and secrets management]
-                                  |
-                                  v
-                             [Developer documentation]
+         +──→ [Add New Application] ──→ [Create application configuration]
+                                         |
+                                         v
+                                    [Generate API credentials]
 ```
 
 ### Key Screens/States
 
-**Simple Dashboard View**: All applications and configuration in one place
+**Simple Dashboard View**: All applications with basic management options
 
 **Auto-Discovery**: Applications appear automatically when integrated
 
-**Configuration Management**: Easy access to API keys, secrets, and settings
+**Comprehensive Settings**: 5-tab interface for complete application configuration
 
-**Developer Resources**: Documentation and integration guides
+**Integrated Documentation**: Documentation included within application settings
 
 ### Error Handling
 
 **Configuration Validation**: System validates API keys and connection settings
 
-**Self-Healing Dashboard**: Data loading issues resolve automatically with retry logic
+**Simple Dashboard**: Basic interface with essential management functions
 
-**Intelligent Alerts**: Only meaningful issues surface, with automatic resolution suggestions
+**Clear Guidance**: Documentation and help integrated within settings interface
 
 ---
 
@@ -628,7 +638,9 @@ This document outlines key user journeys for AuthentiIDP, a centralized identity
 ```
 [Developer Integration] ──developer needs to configure app──→ [Application Management Dashboard]
                                                                       |
-                                                                      |──manager configures API keys/settings──→ [Configuration Management]
+                                                                      |──manager selects application──→ [Application Settings - 5-tab interface]
+                                                                                                               |
+                                                                                                               |──manager configures across all tabs──→ [Save Configuration]
 ```
 
 **Connection Notes**: All flows are designed to maintain user context and provide clear paths between related functionality. Error states always include recovery paths back to successful workflows.

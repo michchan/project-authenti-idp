@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Settings - AuthentiIDP</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="theme-manager.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="nav-content">
+            <a href="12-developer-dashboard.html" class="nav-brand">🔐 AuthentiIDP</a>
+            <div class="nav-user">
+                <div class="user-avatar">JD</div>
+                <span class="text-muted">john@dev.com</span>
+                <button class="btn btn-secondary" style="padding: 8px 16px; margin-left: 12px;" onclick="window.location.href='01-login.html'">
+                    Sign Out
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container" style="padding-top: 40px;">
+        <!-- Header -->
+        <div style="margin-bottom: 32px;">
+            <nav style="margin-bottom: 16px;">
+                <a href="12-developer-dashboard.html" style="color: var(--color-text-muted); text-decoration: none; font-size: var(--font-size-sm);">
+                    ← Back to Developer Dashboard
+                </a>
+            </nav>
+            <h1>Application Settings</h1>
+            <p class="text-muted">Configure your application's authentication and integration settings</p>
+        </div>
+
+        <!-- Tab Navigation -->
+        <div style="margin-bottom: 32px;">
+            <div class="nav-links" style="display: flex; border-bottom: 1px solid var(--color-border); gap: 0;">
+                <button class="nav-link active" data-tab="info" style="border: none; background: none; padding: 12px 24px; cursor: pointer;">
+                    📋 Application Info
+                </button>
+                <button class="nav-link" data-tab="credentials" style="border: none; background: none; padding: 12px 24px; cursor: pointer;">
+                    🔑 API Credentials
+                </button>
+                <button class="nav-link" data-tab="redirect" style="border: none; background: none; padding: 12px 24px; cursor: pointer;">
+                    🔄 Redirect URIs
+                </button>
+                <button class="nav-link" data-tab="tokens" style="border: none; background: none; padding: 12px 24px; cursor: pointer;">
+                    🎫 Token Settings
+                </button>
+                <button class="nav-link" data-tab="integration" style="border: none; background: none; padding: 12px 24px; cursor: pointer;">
+                    🛠️ Integration
+                </button>
+            </div>
+        </div>
+
+        <!-- Success Alert (hidden by default) -->
+        <div class="alert alert-success" style="display: none;" id="success-alert">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <div>
+                <strong>Settings saved!</strong> Your application configuration has been updated.
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div style="max-width: 800px;">
+            <!-- Application Info Tab -->
+            <div id="info-tab" class="tab-content">
+                <div class="card" style="margin-bottom: 32px;">
+                    <h2 style="margin-bottom: 24px;">Application Information</h2>
+                    
+                    <form id="app-info-form">
+                        <!-- App Name -->
+                        <div class="form-group">
+                            <label for="appName" class="form-label">Application Name *</label>
+                            <input 
+                                type="text" 
+                                id="appName" 
+                                name="appName" 
+                                class="form-input" 
+                                value="TaskMaster Pro"
+                                required
+                            >
+                        </div>
+
+                        <!-- Description -->
+                        <div class="form-group">
+                            <label for="description" class="form-label">Description</label>
+                            <textarea 
+                                id="description" 
+                                name="description" 
+                                class="form-input" 
+                                rows="3"
+                                placeholder="Describe what your application does..."
+                                style="resize: vertical; min-height: 80px;"
+                            >A task management application that helps users organize and track their daily activities</textarea>
+                        </div>
+
+                        <!-- Application Type -->
+                        <div class="form-group">
+                            <label for="appType" class="form-label">Application Type *</label>
+                            <select id="appType" name="appType" class="form-input" required>
+                                <option value="spa">Single Page Application (SPA)</option>
+                                <option value="web" selected>Traditional Web Application</option>
+                                <option value="mobile">Mobile Application</option>
+                                <option value="api">API Service</option>
+                            </select>
+                        </div>
+
+                        <!-- Status -->
+                        <div class="form-group">
+                            <label class="form-label">Application Status</label>
+                            <div style="display: flex; gap: 16px; margin-top: 8px;">
+                                <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                                    <input type="radio" name="status" value="active" checked>
+                                    <span style="color: var(--color-success);">Active</span>
+                                </label>
+                                <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                                    <input type="radio" name="status" value="disabled">
+                                    <span style="color: var(--color-danger);">Disabled</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Homepage URL -->
+                        <div class="form-group">
+                            <label for="homepageUrl" class="form-label">Homepage URL</label>
+                            <input 
+                                type="url" 
+                                id="homepageUrl" 
+                                name="homepageUrl" 
+                                class="form-input" 
+                                value="https://taskmaster.example.com"
+                                placeholder="https://example.com"
+                            >
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">
+                            Save Application Info
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- API Credentials Tab -->
+            <div id="credentials-tab" class="tab-content" style="display: none;">
+                <div class="card" style="margin-bottom: 32px;">
+                    <h2 style="margin-bottom: 24px;">API Credentials</h2>
+                    <p style="color: var(--color-text-muted); margin-bottom: 24px;">
+                        Use these credentials to authenticate your application with AuthentiIDP.
+                    </p>
+
+                    <!-- DEMO ONLY - NOT REAL SECRETS -->
+                    <!-- Client ID -->
+                    <div class="form-group">
+                        <label class="form-label">Client ID</label>
+                        <div style="display: flex; gap: 12px; align-items: center;">
+                            <input 
+                                type="text" 
+                                class="form-input" 
+                                value="DEMO_CLIENT_ID_12345_NOT_REAL"
+                                readonly
+                                style="flex: 1;"
+                            >
+                            <button class="btn btn-secondary" style="font-size: var(--font-size-sm); padding: 8px 16px;" onclick="copyToClipboard('client-id')">
+                                📋 Copy
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Client Secret -->
+                    <div class="form-group">
+                        <label class="form-label">Client Secret</label>
+                        <div style="display: flex; gap: 12px; align-items: center;">
+                            <input 
+                                type="password" 
+                                class="form-input" 
+                                value="FAKE_CLIENT_SECRET_DEMO_ONLY_NOT_REAL"
+                                readonly
+                                style="flex: 1;"
+                                id="client-secret"
+                            >
+                            <button class="btn btn-secondary" style="font-size: var(--font-size-sm); padding: 8px 16px;" onclick="toggleSecretVisibility()">
+                                👁️ Show
+                            </button>
+                            <button class="btn btn-secondary" style="font-size: var(--font-size-sm); padding: 8px 16px;" onclick="copyToClipboard('client-secret')">
+                                📋 Copy
+                            </button>
+                        </div>
+                    </div>
+
+
+                    <!-- Actions -->
+                    <div style="display: flex; gap: 16px; margin-top: 24px;">
+                        <button class="btn btn-primary" onclick="generateNewSecret()">
+                            🔄 Generate New Secret
+                        </button>
+                    </div>
+
+                    <!-- Warning -->
+                    <div style="margin-top: 24px; padding: 16px; background: var(--color-warning-light); border: 1px solid var(--color-warning); border-radius: var(--radius-md);">
+                        <h4 style="margin-bottom: 8px; color: var(--color-warning-dark);">⚠️ Security Notice</h4>
+                        <p style="margin: 0; font-size: var(--font-size-sm); color: var(--color-warning-dark);">
+                            Keep your client secret secure and never expose it in client-side code. For Single Page Applications (SPAs), use PKCE flow instead of client secrets. Generating new credentials will invalidate the previous ones.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Redirect URIs Tab -->
+            <div id="redirect-tab" class="tab-content" style="display: none;">
+                <div class="card" style="margin-bottom: 32px;">
+                    <h2 style="margin-bottom: 24px;">Redirect URIs</h2>
+                    <p style="color: var(--color-text-muted); margin-bottom: 24px;">
+                        Configure the allowed redirect URIs for OAuth authentication flows.
+                    </p>
+
+                    <!-- Current URIs -->
+                    <div style="margin-bottom: 24px;">
+                        <h3 style="margin-bottom: 16px;">Configured Redirect URIs</h3>
+                        <div style="display: flex; flex-direction: column; gap: 16px;" id="redirect-uris-list">
+                            <div style="display: flex; align-items: center; gap: 12px; padding: 12px; border: 1px solid var(--color-border); border-radius: var(--radius-md);">
+                                <span style="flex: 1; font-family: monospace;">https://taskmaster.example.com/auth/callback</span>
+                                <button class="btn btn-danger" style="font-size: var(--font-size-sm); padding: 6px 12px;" onclick="removeRedirectUri(0)">
+                                    Remove
+                                </button>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 12px; padding: 12px; border: 1px solid var(--color-border); border-radius: var(--radius-md);">
+                                <span style="flex: 1; font-family: monospace;">http://localhost:3000/auth/callback</span>
+                                <button class="btn btn-danger" style="font-size: var(--font-size-sm); padding: 6px 12px;" onclick="removeRedirectUri(1)">
+                                    Remove
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Add New URI -->
+                    <div style="margin-bottom: 24px;">
+                        <h3 style="margin-bottom: 16px;">Add New Redirect URI</h3>
+                        <div style="display: flex; gap: 12px;">
+                            <input 
+                                type="url" 
+                                id="new-redirect-uri" 
+                                class="form-input" 
+                                placeholder="https://example.com/auth/callback"
+                                style="flex: 1;"
+                            >
+                            <button class="btn btn-primary" onclick="addRedirectUri()">
+                                Add URI
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Guidelines -->
+                    <div style="padding: 16px; background: var(--color-secondary); border-radius: var(--radius-md);">
+                        <h4 style="margin-bottom: 12px;">Guidelines</h4>
+                        <ul style="color: var(--color-text-muted); font-size: var(--font-size-sm); margin: 0; padding-left: 20px;">
+                            <li style="margin-bottom: 8px;">Use HTTPS for production URLs</li>
+                            <li style="margin-bottom: 8px;">localhost URLs are allowed for development</li>
+                            <li style="margin-bottom: 8px;">Wildcard subdomains are not supported</li>
+                            <li>URI must exactly match for authentication to succeed</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Token Settings Tab -->
+            <div id="tokens-tab" class="tab-content" style="display: none;">
+                <div class="card" style="margin-bottom: 32px;">
+                    <h2 style="margin-bottom: 24px;">Token Settings</h2>
+                    <p style="color: var(--color-text-muted); margin-bottom: 24px;">
+                        Configure token expiration and refresh settings for your application.
+                    </p>
+
+                    <form id="token-settings-form">
+                        <!-- Access Token Lifetime -->
+                        <div class="form-group">
+                            <label for="accessTokenLifetime" class="form-label">Access Token Lifetime (minutes)</label>
+                            <select id="accessTokenLifetime" name="accessTokenLifetime" class="form-input">
+                                <option value="15">15 minutes</option>
+                                <option value="30">30 minutes</option>
+                                <option value="60" selected>1 hour</option>
+                                <option value="240">4 hours</option>
+                                <option value="480">8 hours</option>
+                                <option value="1440">24 hours</option>
+                            </select>
+                        </div>
+
+                        <!-- Refresh Token Lifetime -->
+                        <div class="form-group">
+                            <label for="refreshTokenLifetime" class="form-label">Refresh Token Lifetime (days)</label>
+                            <select id="refreshTokenLifetime" name="refreshTokenLifetime" class="form-input">
+                                <option value="1">1 day</option>
+                                <option value="7">7 days</option>
+                                <option value="30" selected>30 days</option>
+                                <option value="90">90 days</option>
+                                <option value="365">1 year</option>
+                            </select>
+                        </div>
+
+                        <!-- Token Rotation -->
+                        <div class="form-group">
+                            <label class="form-label">Refresh Token Rotation</label>
+                            <div style="margin-top: 8px;">
+                                <label style="display: flex; align-items: center; gap: 12px; cursor: pointer;">
+                                    <input type="checkbox" name="rotateRefreshTokens" checked>
+                                    <div>
+                                        <div style="font-weight: 500;">Enable refresh token rotation</div>
+                                        <div style="color: var(--color-text-muted); font-size: var(--font-size-sm);">Generate a new refresh token each time one is used</div>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Inactivity Timeout -->
+                        <div class="form-group">
+                            <label class="form-label">Inactivity Timeout</label>
+                            <div style="margin-top: 8px;">
+                                <label style="display: flex; align-items: center; gap: 12px; cursor: pointer;">
+                                    <input type="checkbox" name="enableInactivityTimeout" checked>
+                                    <div>
+                                        <div style="font-weight: 500;">Enable inactivity timeout</div>
+                                        <div style="color: var(--color-text-muted); font-size: var(--font-size-sm);">Automatically expire tokens after 30 days of inactivity</div>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Save Button -->
+                        <button type="submit" class="btn btn-primary">
+                            Save Token Settings
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Integration Tab -->
+            <div id="integration-tab" class="tab-content" style="display: none;">
+                <div class="card" style="margin-bottom: 32px;">
+                    <div style="margin-bottom: 48px; text-align: center;">
+                        <div style="font-size: 48px; margin-bottom: 16px;">🎯</div>
+                        <h2 style="margin-bottom: 16px;">Simple Integration Guide</h2>
+                        <p style="font-size: var(--font-size-lg); color: var(--color-text-muted); max-width: 600px; margin: 0 auto;">
+                            Simple Integration • Client Secret Required • Framework Flexible
+                        </p>
+                    </div>
+
+                    <!-- Integration Steps -->
+                    <div style="margin-bottom: 32px;">
+                        <h3 style="margin-bottom: 32px; text-align: center;">Integration in 4 Simple Steps</h3>
+                        
+                        <div style="display: flex; flex-direction: column; gap: 24px;">
+                            <!-- Step 1 -->
+                            <div style="padding: 24px; border: 2px solid var(--color-primary); border-radius: var(--radius-md); background: rgba(52, 69, 80, 0.05);">
+                                <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 16px;">
+                                    <div style="width: 48px; height: 48px; background: var(--color-primary); border-radius: var(--radius-full); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: var(--font-size-lg);">1</div>
+                                    <h4 style="margin: 0; color: var(--color-primary);">🔑 Configure Credentials</h4>
+                                </div>
+                                <div style="background: var(--color-panel); padding: 16px; border-radius: var(--radius-md); margin-bottom: 12px; font-family: 'Monaco', 'Consolas', monospace; font-size: 13px;">
+                                    <code style="color: var(--color-text);">
+# DEMO ONLY - NOT REAL SECRETS<br>
+AUTHENTI_CLIENT_ID=DEMO_CLIENT_ID_12345_NOT_REAL<br>
+AUTHENTI_CLIENT_SECRET=FAKE_CLIENT_SECRET_DEMO_ONLY_NOT_REAL<br>
+AUTHENTI_REDIRECT_URI=https://taskmaster.example.com/auth/callback<br>
+AUTHENTI_BASE_URL=https://auth.authenti-idp.com
+                                    </code>
+                                </div>
+                                <p style="color: var(--color-text-muted); font-size: var(--font-size-sm); margin: 0;">
+                                    Add these environment variables to your app
+                                </p>
+                            </div>
+
+                            <!-- Step 2 -->
+                            <div style="padding: 24px; border: 2px solid #3b82f6; border-radius: var(--radius-md); background: rgba(59, 130, 246, 0.05);">
+                                <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 16px;">
+                                    <div style="width: 48px; height: 48px; background: #3b82f6; border-radius: var(--radius-full); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: var(--font-size-lg);">2</div>
+                                    <h4 style="margin: 0; color: #3b82f6;">✨ Install SDK</h4>
+                                </div>
+                                <div style="background: var(--color-panel); padding: 16px; border-radius: var(--radius-md); margin-bottom: 12px; font-family: 'Monaco', 'Consolas', monospace; font-size: 13px;">
+                                    <code style="color: var(--color-text);">
+npm install @authenti-idp/react
+                                    </code>
+                                </div>
+                                <p style="color: var(--color-text-muted); font-size: var(--font-size-sm); margin: 0;">
+                                    Framework flexible - React, Vue, Angular, vanilla JS
+                                </p>
+                            </div>
+
+                            <!-- Step 3 -->
+                            <div style="padding: 24px; border: 2px solid #10b981; border-radius: var(--radius-md); background: rgba(16, 185, 129, 0.05);">
+                                <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 16px;">
+                                    <div style="width: 48px; height: 48px; background: #10b981; border-radius: var(--radius-full); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: var(--font-size-lg);">3</div>
+                                    <h4 style="margin: 0; color: #10b981;">✨ Add PKCE login (SPAs)</h4>
+                                </div>
+                                <div style="background: var(--color-panel); padding: 16px; border-radius: var(--radius-md); margin-bottom: 12px; font-family: 'Monaco', 'Consolas', monospace; font-size: 13px; line-height: 1.4;">
+                                    <code style="color: var(--color-text);">
+import { AuthentiProvider, useAuth } from '@authenti-idp/react'<br><br>
+function App() {<br>
+&nbsp;&nbsp;return (<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;AuthentiProvider <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;clientId="DEMO_CLIENT_ID_12345_NOT_REAL"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;usePKCE={true}&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;TaskMasterApp /&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/AuthentiProvider&gt;<br>
+&nbsp;&nbsp;)<br>
+}
+                                    </code>
+                                </div>
+                                <p style="color: var(--color-text-muted); font-size: var(--font-size-sm); margin: 0;">
+                                    PKCE flow is secure for SPAs - no client secret needed
+                                </p>
+                            </div>
+
+                            <!-- Step 4 -->
+                            <div style="padding: 24px; border: 2px solid #f59e0b; border-radius: var(--radius-md); background: rgba(245, 158, 11, 0.05);">
+                                <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 16px;">
+                                    <div style="width: 48px; height: 48px; background: #f59e0b; border-radius: var(--radius-full); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: var(--font-size-lg);">4</div>
+                                    <h4 style="margin: 0; color: #f59e0b;">✨ Protect routes (optional)</h4>
+                                </div>
+                                <div style="background: var(--color-panel); padding: 16px; border-radius: var(--radius-md); margin-bottom: 12px; font-family: 'Monaco', 'Consolas', monospace; font-size: 13px; line-height: 1.4;">
+                                    <code style="color: var(--color-text);">
+import { ProtectedRoute } from '@authenti-idp/react'<br><br>
+&lt;ProtectedRoute&gt;<br>
+&nbsp;&nbsp;&lt;MySecretComponent /&gt;<br>
+&lt;/ProtectedRoute&gt;
+                                    </code>
+                                </div>
+                                <p style="color: var(--color-text-muted); font-size: var(--font-size-sm); margin: 0;">
+                                    Automatically redirects to login for protected content
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Footer Message -->
+                    <div style="text-align: center; padding: 32px; background: var(--color-secondary); border-radius: var(--radius-md);">
+                        <h3 style="margin-bottom: 16px;">⚡ Secure, simple, and ready to use</h3>
+                        <p style="color: var(--color-text-muted); font-size: var(--font-size-lg); margin: 0;">
+                            It just works!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Danger Zone -->
+        <div class="card" style="margin-top: 40px; border: 1px solid var(--color-danger);">
+            <h3 style="margin-bottom: 16px; color: var(--color-danger);">⚠️ Danger Zone</h3>
+            <p style="color: var(--color-text-muted); margin-bottom: 24px; font-size: var(--font-size-sm);">
+                These actions cannot be undone. Please proceed with caution.
+            </p>
+            
+            <button class="btn btn-danger" onclick="deleteApplication()">
+                🗑️ Delete Application
+            </button>
+        </div>
+    </div>
+
+    <!-- Theme Toggle -->
+    <button class="theme-toggle" id="theme-toggle" style="position: fixed; top: 24px; right: 24px;" aria-label="Toggle theme">
+        🌙
+    </button>
+
+    <!-- Toast Notification (Hidden) -->
+    <div id="toast" style="display: none; position: fixed; top: 24px; left: 50%; transform: translateX(-50%); background: var(--color-success); color: white; padding: 12px 24px; border-radius: var(--radius-md); z-index: 1000;">
+        Copied to clipboard!
+    </div>
+
+    <script>
+        // Theme management is now handled by the shared theme-manager.js
+
+        // Tab Management
+        class TabManager {
+            constructor() {
+                this.init();
+            }
+            
+            init() {
+                this.bindTabEvents();
+            }
+            
+            bindTabEvents() {
+                document.querySelectorAll('[data-tab]').forEach(tab => {
+                    tab.addEventListener('click', () => {
+                        this.switchTab(tab.dataset.tab);
+                    });
+                });
+            }
+            
+            switchTab(tabName) {
+                // Update tab buttons
+                document.querySelectorAll('[data-tab]').forEach(tab => {
+                    tab.classList.remove('active');
+                });
+                document.querySelector(`[data-tab="${tabName}"]`).classList.add('active');
+                
+                // Update tab content
+                document.querySelectorAll('.tab-content').forEach(content => {
+                    content.style.display = 'none';
+                });
+                
+                const targetContent = document.getElementById(`${tabName}-tab`);
+                if (targetContent) {
+                    targetContent.style.display = 'block';
+                }
+            }
+        }
+
+        // Form Handling
+        document.getElementById('app-info-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            showSuccessAlert('Application information saved successfully!');
+        });
+
+        document.getElementById('token-settings-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            showSuccessAlert('Token settings saved successfully!');
+        });
+
+        function showSuccessAlert(message) {
+            const successAlert = document.getElementById('success-alert');
+            successAlert.querySelector('div').innerHTML = `<strong>Settings saved!</strong> ${message}`;
+            successAlert.style.display = 'flex';
+            
+            // Hide after 3 seconds
+            setTimeout(() => {
+                successAlert.style.display = 'none';
+            }, 3000);
+        }
+
+        // Credentials Management
+        function toggleSecretVisibility() {
+            const secretInput = document.getElementById('client-secret');
+            const button = event.target;
+            
+            if (secretInput.type === 'password') {
+                secretInput.type = 'text';
+                button.textContent = '🙈 Hide';
+            } else {
+                secretInput.type = 'password';
+                button.textContent = '👁️ Show';
+            }
+        }
+
+        function generateNewSecret() {
+            if (confirm('Are you sure you want to generate a new client secret? This will invalidate the current secret.')) {
+                const newSecret = 'FAKE_SECRET_' + Math.random().toString(36).substring(2, 20).toUpperCase() + '_DEMO_ONLY';
+                document.getElementById('client-secret').value = newSecret;
+                showSuccessAlert('New client secret generated successfully!');
+            }
+        }
+
+
+        // Copy to Clipboard
+        function copyToClipboard(type) {
+            let text = '';
+            
+            switch(type) {
+                case 'client-id':
+                    text = 'DEMO_CLIENT_ID_12345_NOT_REAL';
+                    break;
+                case 'client-secret':
+                    text = document.getElementById('client-secret').value;
+                    break;
+            }
+            
+            if (text) {
+                navigator.clipboard.writeText(text).then(() => {
+                    showToast('Copied to clipboard!');
+                }).catch(() => {
+                    // Fallback for browsers that don't support clipboard API
+                    const textArea = document.createElement('textarea');
+                    textArea.value = text;
+                    document.body.appendChild(textArea);
+                    textArea.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(textArea);
+                    showToast('Copied to clipboard!');
+                });
+            }
+        }
+
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            toast.textContent = message;
+            toast.style.display = 'block';
+            setTimeout(() => {
+                toast.style.display = 'none';
+            }, 2000);
+        }
+
+        // Redirect URI Management
+        let redirectUris = [
+            'https://taskmaster.example.com/auth/callback',
+            'http://localhost:3000/auth/callback'
+        ];
+
+        function addRedirectUri() {
+            const input = document.getElementById('new-redirect-uri');
+            const uri = input.value.trim();
+            
+            if (!uri) {
+                alert('Please enter a valid URI');
+                return;
+            }
+            
+            if (redirectUris.includes(uri)) {
+                alert('This URI is already configured');
+                return;
+            }
+            
+            redirectUris.push(uri);
+            input.value = '';
+            renderRedirectUris();
+            showSuccessAlert('Redirect URI added successfully!');
+        }
+
+        function removeRedirectUri(index) {
+            if (confirm('Are you sure you want to remove this redirect URI?')) {
+                redirectUris.splice(index, 1);
+                renderRedirectUris();
+                showSuccessAlert('Redirect URI removed successfully!');
+            }
+        }
+
+        function renderRedirectUris() {
+            const container = document.getElementById('redirect-uris-list');
+            container.style.cssText = 'display: flex; flex-direction: column; gap: 16px;';
+            container.innerHTML = redirectUris.map((uri, index) => `
+                <div style="display: flex; align-items: center; gap: 12px; padding: 12px; border: 1px solid var(--color-border); border-radius: var(--radius-md);">
+                    <span style="flex: 1; font-family: monospace;">${uri}</span>
+                    <button class="btn btn-danger" style="font-size: var(--font-size-sm); padding: 6px 12px;" onclick="removeRedirectUri(${index})">
+                        Remove
+                    </button>
+                </div>
+            `).join('');
+        }
+
+
+        function deleteApplication() {
+            showDeleteModal();
+        }
+
+        function showDeleteModal() {
+            const modal = document.createElement('div');
+            modal.id = 'delete-modal';
+            modal.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.5);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                z-index: 1000;
+            `;
+            
+            modal.innerHTML = `
+                <div style="background: var(--color-bg); border-radius: var(--radius-md); padding: 32px; max-width: 500px; width: 90%; margin: 20px;">
+                    <h3 style="margin-bottom: 16px; color: var(--color-danger);">⚠️ Delete Application</h3>
+                    <p style="margin-bottom: 24px; color: var(--color-text-muted);">
+                        This action cannot be undone. This will permanently delete <strong>TaskMaster Pro</strong> and all associated data including:
+                    </p>
+                    <ul style="margin-bottom: 24px; color: var(--color-text-muted); padding-left: 20px;">
+                        <li>All API credentials</li>
+                        <li>User authentication sessions</li>
+                        <li>Integration configurations</li>
+                        <li>Usage analytics and logs</li>
+                    </ul>
+                    <div style="margin-bottom: 24px;">
+                        <label style="display: block; margin-bottom: 8px; font-weight: 500;">Please type <strong>TaskMaster Pro</strong> to confirm:</label>
+                        <input type="text" id="delete-confirm-input" class="form-input" placeholder="TaskMaster Pro" style="width: 100%;">
+                    </div>
+                    <div style="display: flex; gap: 12px; justify-content: flex-end;">
+                        <button class="btn btn-secondary" onclick="closeDeleteModal()">Cancel</button>
+                        <button id="delete-confirm-btn" class="btn btn-danger" onclick="confirmDeleteApplication()" disabled>
+                            Delete Application
+                        </button>
+                    </div>
+                </div>
+            `;
+            
+            document.body.appendChild(modal);
+            
+            // Add input validation
+            const input = document.getElementById('delete-confirm-input');
+            const confirmBtn = document.getElementById('delete-confirm-btn');
+            
+            input.addEventListener('input', function() {
+                if (input.value === 'TaskMaster Pro') {
+                    confirmBtn.disabled = false;
+                    confirmBtn.style.opacity = '1';
+                } else {
+                    confirmBtn.disabled = true;
+                    confirmBtn.style.opacity = '0.5';
+                }
+            });
+            
+            // Focus input
+            setTimeout(() => input.focus(), 100);
+            
+            // Close on escape
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') closeDeleteModal();
+            });
+        }
+
+        function closeDeleteModal() {
+            const modal = document.getElementById('delete-modal');
+            if (modal) {
+                modal.remove();
+            }
+        }
+
+        function confirmDeleteApplication() {
+            const input = document.getElementById('delete-confirm-input');
+            if (input.value === 'TaskMaster Pro') {
+                closeDeleteModal();
+                alert('Application "TaskMaster Pro" has been deleted successfully. Redirecting to dashboard...');
+                window.location.href = '12-developer-dashboard.html';
+            }
+        }
+
+        // Initialize components
+        new TabManager();
+    </script>
+</body>
+</html>

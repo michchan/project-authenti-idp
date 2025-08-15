@@ -129,7 +129,7 @@
     <nav class="sample-nav">
         <div class="nav-content" style="color: white;">
             <div style="display: flex; align-items: center; gap: 16px;">
-                <a href="12-sample-landing.html" class="nav-brand">📋 TaskMaster</a>
+                <a href="09-sample-landing.html" class="nav-brand">📋 TaskMaster</a>
                 <span style="font-size: var(--font-size-sm); opacity: 0.8;">Demo Dashboard</span>
             </div>
             <div style="display: flex; align-items: center; gap: 16px;">
@@ -182,8 +182,6 @@
             <button class="tab active" data-tab="tasks">🏠 Home</button>
             <button class="tab" data-tab="features">✅ Protected Features</button>
             <button class="tab" data-tab="profile">👤 Profile</button>
-            <button class="tab" data-tab="integration">📚 Integration Code</button>
-            <button class="tab" data-tab="docs">📖 Docs</button>
         </div>
 
         <!-- Tasks Tab -->
@@ -251,7 +249,7 @@
                     <div class="card">
                         <h3 style="margin-bottom: 16px;">🔗 Quick Links</h3>
                         <div style="space-y: 8px;">
-                            <a href="09-profile-settings.html" class="btn btn-secondary btn-full" style="justify-content: flex-start; margin-bottom: 8px;">
+                            <a href="07-profile-settings.html" class="btn btn-secondary btn-full" style="justify-content: flex-start; margin-bottom: 8px;">
                                 👤 Manage Profile
                             </a>
                         </div>
@@ -300,80 +298,6 @@
             </div>
         </div>
 
-        <!-- Integration Code Tab -->
-        <div id="integration-tab" class="tab-content">
-            <div class="card">
-                <h3 style="margin-bottom: 24px;">📋 Integration Code Examples</h3>
-                <p style="color: var(--color-text-muted); margin-bottom: 32px;">
-                    See exactly how this page uses the AuthentiIDP SDK for authentication and user management.
-                </p>
-
-                <!-- Current Page Protection -->
-                <h4 style="margin-bottom: 16px;">Current Page Protection:</h4>
-                <div class="code-example" style="margin-bottom: 24px;">
-                    <button class="btn btn-secondary" style="position: absolute; top: 16px; right: 16px; font-size: 12px; padding: 6px 12px;" onclick="copyCode('page-protection')">
-                        📋 Copy
-                    </button>
-                    <code style="color: var(--color-text);" id="page-protection">
-const user = auth.getCurrentUser()<br>
-if (!user) {<br>
-&nbsp;&nbsp;auth.login() // Redirect to AuthentiIDP<br>
-}<br><br>
-
-// Display user info<br>
-document.getElementById('user-name').textContent = user.name<br>
-document.getElementById('user-email').textContent = user.email
-                    </code>
-                </div>
-
-                <!-- User Data Access -->
-                <h4 style="margin-bottom: 16px;">Accessing User Data:</h4>
-                <div class="code-example" style="margin-bottom: 24px;">
-                    <button class="btn btn-secondary" style="position: absolute; top: 16px; right: 16px; font-size: 12px; padding: 6px 12px;" onclick="copyCode('user-data')">
-                        📋 Copy
-                    </button>
-                    <code style="color: var(--color-text);" id="user-data">
-// Get current user information<br>
-const user = authentiIDP.getCurrentUser()<br><br>
-
-// User properties available:<br>
-console.log(user.id)          // User ID<br>
-console.log(user.email)       // Email address<br>
-console.log(user.name)        // Display name<br>
-console.log(user.avatar)      // Profile picture<br>
-console.log(user.roles)       // User roles/permissions
-                    </code>
-                </div>
-
-                <!-- Protected Route Example -->
-                <h4 style="margin-bottom: 16px;">Protected Route Component:</h4>
-                <div class="code-example">
-                    <button class="btn btn-secondary" style="position: absolute; top: 16px; right: 16px; font-size: 12px; padding: 6px 12px;" onclick="copyCode('protected-route')">
-                        📋 Copy
-                    </button>
-                    <code style="color: var(--color-text);" id="protected-route">
-import { ProtectedRoute } from '@authenti-idp/react'<br><br>
-
-function App() {<br>
-&nbsp;&nbsp;return (<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;ProtectedRoute&gt;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;TaskDashboard /&gt;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ProtectedRoute&gt;<br>
-&nbsp;&nbsp;)<br>
-}<br><br>
-
-// Automatically redirects to login if not authenticated<br>
-// Shows loading state during token validation
-                    </code>
-                </div>
-
-                <div style="text-center; margin-top: 24px;">
-                    <a href="16-developer-integration-guide.html" class="btn btn-primary">
-                        📚 View Full Integration Guide
-                    </a>
-                </div>
-            </div>
-        </div>
 
         <!-- Profile Tab -->
         <div id="profile-tab" class="tab-content">
@@ -393,60 +317,16 @@ function App() {<br>
                 </div>
 
                 <div style="display: flex; gap: 16px;">
-                    <a href="09-profile-settings.html" class="btn btn-primary">
+                    <a href="07-profile-settings.html" class="btn btn-primary">
                         Edit Profile
                     </a>
-                    <a href="10-connected-apps.html" class="btn btn-secondary">
+                    <a href="07-profile-settings.html" class="btn btn-secondary">
                         Manage Apps
                     </a>
                 </div>
             </div>
         </div>
 
-        <!-- Docs Tab -->
-        <div id="docs-tab" class="tab-content">
-            <div class="card">
-                <h3 style="margin-bottom: 24px;">📖 Documentation & Resources</h3>
-                <div class="grid grid-2" style="gap: 24px;">
-                    <div>
-                        <h4 style="margin-bottom: 16px;">🚀 Getting Started</h4>
-                        <ul style="list-style: none; padding: 0;">
-                            <li style="margin-bottom: 8px;">
-                                <a href="16-developer-integration-guide.html" style="color: var(--color-primary); text-decoration: none;">
-                                    📋 Integration Guide
-                                </a>
-                            </li>
-                            <li style="margin-bottom: 8px;">
-                                <a href="#" style="color: var(--color-primary); text-decoration: none;">
-                                    📚 SDK Documentation
-                                </a>
-                            </li>
-                            <li style="margin-bottom: 8px;">
-                                <a href="#" style="color: var(--color-primary); text-decoration: none;">
-                                    🎯 Quick Start Templates
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div>
-                        <h4 style="margin-bottom: 16px;">🔧 Developer Tools</h4>
-                        <ul style="list-style: none; padding: 0;">
-                            <li style="margin-bottom: 8px;">
-                                <a href="#" style="color: var(--color-primary); text-decoration: none;">
-                                    🔍 API Reference
-                                </a>
-                            </li>
-                            <li style="margin-bottom: 8px;">
-                                <a href="https://github.com/authenti-idp/demo-app" style="color: var(--color-primary); text-decoration: none;">
-                                    📂 Sample Code Repository
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 
     <!-- Theme Toggle -->
@@ -525,30 +405,12 @@ function App() {<br>
             document.getElementById('pending-tasks').textContent = pending;
         }
 
-        // Code Copying
-        function copyCode(elementId) {
-            const element = document.getElementById(elementId);
-            const text = element.textContent;
-            
-            navigator.clipboard.writeText(text).then(() => {
-                // Show success feedback
-                const btn = element.nextElementSibling || element.parentNode.querySelector('button');
-                const originalText = btn.textContent;
-                btn.textContent = '✓ Copied!';
-                btn.style.background = 'var(--color-success)';
-                
-                setTimeout(() => {
-                    btn.textContent = originalText;
-                    btn.style.background = '';
-                }, 2000);
-            });
-        }
 
         // Authentication Management
         function signOut() {
             // Clear demo authentication
             sessionStorage.removeItem('demo-authenticated');
-            window.location.href = '12-sample-landing.html';
+            window.location.href = '09-sample-landing.html';
         }
 
         // Check authentication on load
@@ -556,7 +418,7 @@ function App() {<br>
             const isAuthenticated = sessionStorage.getItem('demo-authenticated');
             if (!isAuthenticated) {
                 // Redirect to landing page
-                window.location.href = '12-sample-landing.html';
+                window.location.href = '09-sample-landing.html';
             }
         }
 
