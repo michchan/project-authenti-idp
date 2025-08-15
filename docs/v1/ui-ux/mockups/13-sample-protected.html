@@ -254,12 +254,6 @@
                             <a href="09-profile-settings.html" class="btn btn-secondary btn-full" style="justify-content: flex-start; margin-bottom: 8px;">
                                 👤 Manage Profile
                             </a>
-                            <a href="08-app-selection.html" class="btn btn-secondary btn-full" style="justify-content: flex-start; margin-bottom: 8px;">
-                                📱 Switch Apps
-                            </a>
-                            <a href="03-dashboard.html" class="btn btn-secondary btn-full" style="justify-content: flex-start;">
-                                🔐 AuthentiIDP Dashboard
-                            </a>
                         </div>
                     </div>
                 </div>
@@ -374,7 +368,7 @@ function App() {<br>
                 </div>
 
                 <div style="text-center; margin-top: 24px;">
-                    <a href="11-integration-guide.html" class="btn btn-primary">
+                    <a href="16-developer-integration-guide.html" class="btn btn-primary">
                         📚 View Full Integration Guide
                     </a>
                 </div>
@@ -418,7 +412,7 @@ function App() {<br>
                         <h4 style="margin-bottom: 16px;">🚀 Getting Started</h4>
                         <ul style="list-style: none; padding: 0;">
                             <li style="margin-bottom: 8px;">
-                                <a href="11-integration-guide.html" style="color: var(--color-primary); text-decoration: none;">
+                                <a href="16-developer-integration-guide.html" style="color: var(--color-primary); text-decoration: none;">
                                     📋 Integration Guide
                                 </a>
                             </li>
@@ -438,11 +432,6 @@ function App() {<br>
                     <div>
                         <h4 style="margin-bottom: 16px;">🔧 Developer Tools</h4>
                         <ul style="list-style: none; padding: 0;">
-                            <li style="margin-bottom: 8px;">
-                                <a href="03-dashboard.html" style="color: var(--color-primary); text-decoration: none;">
-                                    🎛️ Developer Dashboard
-                                </a>
-                            </li>
                             <li style="margin-bottom: 8px;">
                                 <a href="#" style="color: var(--color-primary); text-decoration: none;">
                                     🔍 API Reference
@@ -471,7 +460,14 @@ function App() {<br>
         class TabManager {
             constructor() {
                 this.bindEvents();
-            });
+            }
+            
+            bindEvents() {
+                document.querySelectorAll('.tab').forEach(tab => {
+                    tab.addEventListener('click', () => {
+                        this.switchTab(tab.dataset.tab);
+                    });
+                });
             }
             
             switchTab(tabName) {
@@ -550,7 +546,9 @@ function App() {<br>
 
         // Authentication Management
         function signOut() {
-            window.location.href = '14-sample-logout.html';
+            // Clear demo authentication
+            sessionStorage.removeItem('demo-authenticated');
+            window.location.href = '12-sample-landing.html';
         }
 
         // Check authentication on load
