@@ -1,17 +1,17 @@
-# 🎨 AuthentiIDP Design System v1.0
+# AuthentiIDP Design System v1.0
 
 This document defines the visual design foundation for AuthentiIDP, a centralized identity provider service for personal applications. It establishes a minimalist, flat, and professional yet young design language that ensures consistency across all interfaces while supporting both light and dark modes.
 
 ---
 
-## 📁 Index
+## Index
 
 1. [Brand Identity](#brand-identity)
 2. [Color System](#color-system)
 3. [Typography](#typography)
 4. [Spacing & Layout](#spacing--layout)
-5. [Iconography](#iconography)
-6. [Border Radius](#border-radius)
+5. [Professional Iconography](#professional-iconography)
+6. [Border Guidelines](#border-guidelines)
 7. [Component States](#component-states)
 8. [Component Sizing](#component-sizing)
 9. [Dark Mode Support](#dark-mode-support)
@@ -107,34 +107,36 @@ AuthentiIDP embodies **minimalism, efficiency, and trust**. The design should fe
   </div>
 </div>
 
-### Status Colors
+### Status Colors - Muted/Gray-toned
 
 <div style="display: flex; gap: 16px; margin: 20px 0; flex-wrap: wrap;">
   <div style="text-align: center;">
-    <div style="width: 80px; height: 80px; background-color: #10b981; border-radius: 0.4rem; margin-bottom: 8px;"></div>
-    <div style="font-size: 14px; font-weight: 600;">✅ Success</div>
-    <div style="font-size: 12px; color: #6b7280;">#10b981</div>
+    <div style="width: 80px; height: 80px; background-color: #6b7280; border-radius: 0.4rem; margin-bottom: 8px;"></div>
+    <div style="font-size: 14px; font-weight: 600;">Success</div>
+    <div style="font-size: 12px; color: #6b7280;">#6b7280</div>
     <div style="font-size: 11px; margin-top: 4px;">Successful actions</div>
   </div>
   <div style="text-align: center;">
-    <div style="width: 80px; height: 80px; background-color: #f59e0b; border-radius: 0.4rem; margin-bottom: 8px;"></div>
-    <div style="font-size: 14px; font-weight: 600;">⚠️ Warning</div>
-    <div style="font-size: 12px; color: #6b7280;">#f59e0b</div>
+    <div style="width: 80px; height: 80px; background-color: #9ca3af; border-radius: 0.4rem; margin-bottom: 8px;"></div>
+    <div style="font-size: 14px; font-weight: 600;">Warning</div>
+    <div style="font-size: 12px; color: #6b7280;">#9ca3af</div>
     <div style="font-size: 11px; margin-top: 4px;">Caution states</div>
   </div>
   <div style="text-align: center;">
-    <div style="width: 80px; height: 80px; background-color: #ef4444; border-radius: 0.4rem; margin-bottom: 8px;"></div>
-    <div style="font-size: 14px; font-weight: 600;">🚨 Error</div>
-    <div style="font-size: 12px; color: #6b7280;">#ef4444</div>
+    <div style="width: 80px; height: 80px; background-color: #6b7280; border-radius: 0.4rem; margin-bottom: 8px;"></div>
+    <div style="font-size: 14px; font-weight: 600;">Error</div>
+    <div style="font-size: 12px; color: #6b7280;">#6b7280</div>
     <div style="font-size: 11px; margin-top: 4px;">Error states</div>
   </div>
   <div style="text-align: center;">
-    <div style="width: 80px; height: 80px; background-color: #3b82f6; border-radius: 0.4rem; margin-bottom: 8px;"></div>
-    <div style="font-size: 14px; font-weight: 600;">ℹ️ Info</div>
-    <div style="font-size: 12px; color: #6b7280;">#3b82f6</div>
+    <div style="width: 80px; height: 80px; background-color: #6b7280; border-radius: 0.4rem; margin-bottom: 8px;"></div>
+    <div style="font-size: 14px; font-weight: 600;">Info</div>
+    <div style="font-size: 12px; color: #6b7280;">#6b7280</div>
     <div style="font-size: 11px; margin-top: 4px;">Information states</div>
   </div>
 </div>
+
+**Note:** Status colors have been muted to align with the grayscale aesthetic while maintaining functionality. They appear more subtle and integrated with the overall design theme.
 
 ### Border Colors
 
@@ -237,7 +239,17 @@ AuthentiIDP uses a consistent 4px-based spacing system that creates visual rhyth
 
 ---
 
-## Iconography
+## Professional Iconography
+
+### Design Guidelines
+AuthentiIDP follows strict professional iconography standards:
+
+- **No emoji icons allowed** - Emojis make interfaces look unprofessional
+- **Professional line icons only** - Thin, clean, consistent stroke width
+- **Unified style** - All icons follow the same visual language
+- **Accessibility compliant** - Clear meaning and proper contrast
+
+### Professional Icon System
 
 ### Icon System
 AuthentiIDP uses thin line icons that complement the minimalist design approach.
@@ -358,7 +370,17 @@ AuthentiIDP uses thin line icons that complement the minimalist design approach.
 
 ---
 
-## Border Radius
+## Border Guidelines
+
+### Thin Border Standard
+All borders throughout the system use consistently thin widths for a sharp, professional appearance:
+
+- **Default border width**: 0.5px for subtle definition
+- **Focus states**: 1px for interactive emphasis  
+- **Never thick borders**: Avoid 2px+ borders except for selected/active states
+- **Consistent application**: All cards, forms, and containers follow this standard
+
+### Border Radius
 
 AuthentiIDP uses subtle, consistent border radius to create a professional yet modern appearance.
 
@@ -375,6 +397,76 @@ AuthentiIDP uses subtle, consistent border radius to create a professional yet m
 </div>
 
 **Default Border Radius**: 0.4rem (6px) - Professional look without being too round
+
+---
+
+## Form Element Styling
+
+### Theme-Aware Form Controls
+
+All form elements are styled to match the theme colors and provide a consistent experience:
+
+#### Radio Buttons and Checkboxes
+Custom-styled radio buttons and checkboxes that use theme colors instead of default browser colors:
+
+```css
+input[type="radio"],
+input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 1px solid var(--color-border);
+  background-color: var(--color-panel);
+  position: relative;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+input[type="radio"] {
+  border-radius: 50%;
+}
+
+input[type="checkbox"] {
+  border-radius: var(--radius-sm);
+}
+
+input[type="radio"]:checked,
+input[type="checkbox"]:checked {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+input[type="radio"]:checked::after {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+input[type="checkbox"]:checked::after {
+  content: '✓';
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  line-height: 1;
+}
+```
+
+### Form Guidelines
+- All form elements maintain a minimum 44px touch target
+- Focus states use consistent outline styling
+- Form elements automatically adapt to light/dark themes
+- Custom radio buttons and checkboxes match the design system
 
 ---
 
@@ -539,11 +631,11 @@ AuthentiIDP supports automatic dark mode adaptation to enhance user experience a
   --color-border: #e5e7eb;
   --color-border-focus: #d1d5db;
   
-  /* Status Colors */
-  --color-success: #10b981;
-  --color-warning: #f59e0b;
-  --color-error: #ef4444;
-  --color-info: #3b82f6;
+  /* Status Colors - Muted/Gray-toned */
+  --color-success: #6b7280;
+  --color-warning: #9ca3af;
+  --color-error: #6b7280;
+  --color-info: #6b7280;
   
   /* Typography */
   --font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;

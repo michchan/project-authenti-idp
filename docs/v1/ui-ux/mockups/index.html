@@ -65,7 +65,7 @@
             font-weight: 600;
             margin: 0 0 1rem 0;
             padding-bottom: 0.5rem;
-            border-bottom: 2px solid var(--color-border);
+            border-bottom: 1px solid var(--color-border);
             display: flex;
             align-items: center;
             gap: 0.5rem;
@@ -166,7 +166,7 @@
 
         .journey-note {
             background: var(--color-secondary);
-            border: 1px solid var(--color-border);
+            border: 0.5px solid var(--color-border);
             border-radius: var(--radius-md);
             padding: 1rem;
             margin-top: 1rem;
@@ -220,13 +220,13 @@
         }
     </style>
 </head>
-<body data-theme="auto">
+<body>
     <div class="theme-toggle-wrapper">
-        <button class="theme-toggle" onclick="toggleTheme()">🌓</button>
+        <button id="theme-toggle" class="theme-toggle">☽</button>
     </div>
     <div class="container">
         <div class="header">
-            <h1>🔐 AuthentiIDP v1.0</h1>
+            <h1>AuthentiIDP v1.0</h1>
             <p>Complete UI Mockups Collection - High-Fidelity HTML Prototypes</p>
         </div>
 
@@ -254,7 +254,7 @@
         <div class="mockup-grid">
             <div class="category-section">
                 <h2 class="category-title">
-                    <span class="category-icon">🔑</span>
+                    <span class="category-icon">⚿</span>
                     Authentication Screens
                 </h2>
                 <ul class="mockup-list">
@@ -290,14 +290,14 @@
                     </li>
                 </ul>
                 <div class="journey-note">
-                    <h4>🔄 User Journey</h4>
+                    <h4>User Journey</h4>
                     <p>Registration → Email Verification → Login → SSO Access across applications</p>
                 </div>
             </div>
 
             <div class="category-section">
                 <h2 class="category-title">
-                    <span class="category-icon">🔗</span>
+                    <span class="category-icon">⚯</span>
                     SSO Integration
                 </h2>
                 <ul class="mockup-list">
@@ -309,14 +309,14 @@
                     </li>
                 </ul>
                 <div class="journey-note">
-                    <h4>🔄 SSO Flow</h4>
+                    <h4>SSO Flow</h4>
                     <p>App Request → <a href="06-sso-consent.html" class="journey-link">Consent</a> → Token Grant → Seamless Access</p>
                 </div>
             </div>
 
             <div class="category-section">
                 <h2 class="category-title">
-                    <span class="category-icon">👤</span>
+                    <span class="category-icon">⚉</span>
                     Profile Management
                 </h2>
                 <ul class="mockup-list">
@@ -328,14 +328,14 @@
                     </li>
                 </ul>
                 <div class="journey-note">
-                    <h4>🔄 Management Flow</h4>
+                    <h4>Management Flow</h4>
                     <p><a href="07-profile-settings.html" class="journey-link">Profile Settings</a> → Apps Tab → Permission Control → Cross-app Updates</p>
                 </div>
             </div>
 
             <div class="category-section">
                 <h2 class="category-title">
-                    <span class="category-icon">🚀</span>
+                    <span class="category-icon">⚞</span>
                     Developer Dashboard
                 </h2>
                 <ul class="mockup-list">
@@ -353,14 +353,14 @@
                     </li>
                 </ul>
                 <div class="journey-note">
-                    <h4>🔄 Developer Flow</h4>
+                    <h4>Developer Flow</h4>
                     <p><a href="12-developer-dashboard.html" class="journey-link">Dashboard</a> → <a href="13-application-settings.html" class="journey-link">App Settings</a> → SDK Setup → Integration Guide</p>
                 </div>
             </div>
 
             <div class="category-section">
                 <h2 class="category-title">
-                    <span class="category-icon">📱</span>
+                    <span class="category-icon">⚍</span>
                     Sample Application
                 </h2>
                 <ul class="mockup-list">
@@ -384,7 +384,7 @@
                     </li>
                 </ul>
                 <div class="journey-note">
-                    <h4>🔄 Sample App Flow</h4>
+                    <h4>Sample App Flow</h4>
                     <p><a href="09-sample-landing.html" class="journey-link">Landing</a> → Authentication → <a href="10-sample-protected.html" class="journey-link">Protected Content</a> → <a href="11-sample-logout.html" class="journey-link">Logout</a></p>
                 </div>
             </div>
@@ -396,17 +396,6 @@
         </div>
     </div>
     
-    <script>
-        function toggleTheme() {
-            const body = document.body;
-            const currentTheme = body.getAttribute('data-theme');
-            
-            if (currentTheme === 'auto' || currentTheme === 'light' || !currentTheme) {
-                body.setAttribute('data-theme', 'dark');
-            } else {
-                body.setAttribute('data-theme', 'auto');
-            }
-        }
-    </script>
+    <script src="theme-manager.js"></script>
 </body>
 </html>

@@ -11,7 +11,7 @@
     <!-- Navigation -->
     <nav class="main-nav">
         <div class="nav-content">
-            <a href="12-developer-dashboard.html" class="nav-brand">🔐 AuthentiIDP</a>
+            <a href="12-developer-dashboard.html" class="nav-brand">⚿ AuthentiIDP</a>
             <div class="nav-user">
                 <div class="user-avatar">JD</div>
                 <span class="text-muted">john@dev.com</span>
@@ -38,19 +38,19 @@
         <div style="margin-bottom: 32px;">
             <div class="nav-links" style="display: flex; border-bottom: 1px solid var(--color-border); gap: 0;">
                 <button class="nav-link active" data-tab="info" style="border: none; background: none; padding: 12px 24px; cursor: pointer;">
-                    📋 Application Info
+                    ⚀ Application Info
                 </button>
                 <button class="nav-link" data-tab="credentials" style="border: none; background: none; padding: 12px 24px; cursor: pointer;">
-                    🔑 API Credentials
+                    ⚿ API Credentials
                 </button>
                 <button class="nav-link" data-tab="redirect" style="border: none; background: none; padding: 12px 24px; cursor: pointer;">
-                    🔄 Redirect URIs
+                    ⤴ Redirect URIs
                 </button>
                 <button class="nav-link" data-tab="tokens" style="border: none; background: none; padding: 12px 24px; cursor: pointer;">
-                    🎫 Token Settings
+                    ⚔ Token Settings
                 </button>
                 <button class="nav-link" data-tab="integration" style="border: none; background: none; padding: 12px 24px; cursor: pointer;">
-                    🛠️ Integration
+                    ⚒ Integration
                 </button>
             </div>
         </div>
@@ -166,7 +166,7 @@
                                 style="flex: 1;"
                             >
                             <button class="btn btn-secondary" style="font-size: var(--font-size-sm); padding: 8px 16px;" onclick="copyToClipboard('client-id')">
-                                📋 Copy
+                                ⚀ Copy
                             </button>
                         </div>
                     </div>
@@ -184,10 +184,10 @@
                                 id="client-secret"
                             >
                             <button class="btn btn-secondary" style="font-size: var(--font-size-sm); padding: 8px 16px;" onclick="toggleSecretVisibility()">
-                                👁️ Show
+                                ⚬ Show
                             </button>
                             <button class="btn btn-secondary" style="font-size: var(--font-size-sm); padding: 8px 16px;" onclick="copyToClipboard('client-secret')">
-                                📋 Copy
+                                ⚀ Copy
                             </button>
                         </div>
                     </div>
@@ -196,14 +196,14 @@
                     <!-- Actions -->
                     <div style="display: flex; gap: 16px; margin-top: 24px;">
                         <button class="btn btn-primary" onclick="generateNewSecret()">
-                            🔄 Generate New Secret
+                            ⤴ Generate New Secret
                         </button>
                     </div>
 
                     <!-- Warning -->
-                    <div style="margin-top: 24px; padding: 16px; background: var(--color-warning-light); border: 1px solid var(--color-warning); border-radius: var(--radius-md);">
-                        <h4 style="margin-bottom: 8px; color: var(--color-warning-dark);">⚠️ Security Notice</h4>
-                        <p style="margin: 0; font-size: var(--font-size-sm); color: var(--color-warning-dark);">
+                    <div style="margin-top: 24px; padding: 16px; background: var(--color-secondary); border-radius: var(--radius-md);">
+                        <h4 style="margin-bottom: 8px; color: var(--color-text);">⚠ Security Notice</h4>
+                        <p style="margin: 0; font-size: var(--font-size-sm); color: var(--color-text-muted);">
                             Keep your client secret secure and never expose it in client-side code. For Single Page Applications (SPAs), use PKCE flow instead of client secrets. Generating new credentials will invalidate the previous ones.
                         </p>
                     </div>
@@ -354,10 +354,10 @@
                         
                         <div style="display: flex; flex-direction: column; gap: 24px;">
                             <!-- Step 1 -->
-                            <div style="padding: 24px; border: 2px solid var(--color-primary); border-radius: var(--radius-md); background: rgba(52, 69, 80, 0.05);">
+                            <div style="padding: 24px; border-radius: var(--radius-md); background: var(--color-secondary);">
                                 <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 16px;">
                                     <div style="width: 48px; height: 48px; background: var(--color-primary); border-radius: var(--radius-full); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: var(--font-size-lg);">1</div>
-                                    <h4 style="margin: 0; color: var(--color-primary);">🔑 Configure Credentials</h4>
+                                    <h4 style="margin: 0; color: var(--color-primary);">⚿ Configure Credentials</h4>
                                 </div>
                                 <div style="background: var(--color-panel); padding: 16px; border-radius: var(--radius-md); margin-bottom: 12px; font-family: 'Monaco', 'Consolas', monospace; font-size: 13px;">
                                     <code style="color: var(--color-text);">
@@ -374,7 +374,7 @@ AUTHENTI_BASE_URL=https://auth.authenti-idp.com
                             </div>
 
                             <!-- Step 2 -->
-                            <div style="padding: 24px; border: 2px solid #3b82f6; border-radius: var(--radius-md); background: rgba(59, 130, 246, 0.05);">
+                            <div style="padding: 24px; border-radius: var(--radius-md); background: var(--color-secondary);">
                                 <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 16px;">
                                     <div style="width: 48px; height: 48px; background: #3b82f6; border-radius: var(--radius-full); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: var(--font-size-lg);">2</div>
                                     <h4 style="margin: 0; color: #3b82f6;">✨ Install SDK</h4>
@@ -390,7 +390,7 @@ npm install @authenti-idp/react
                             </div>
 
                             <!-- Step 3 -->
-                            <div style="padding: 24px; border: 2px solid #10b981; border-radius: var(--radius-md); background: rgba(16, 185, 129, 0.05);">
+                            <div style="padding: 24px; border-radius: var(--radius-md); background: var(--color-secondary);">
                                 <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 16px;">
                                     <div style="width: 48px; height: 48px; background: #10b981; border-radius: var(--radius-full); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: var(--font-size-lg);">3</div>
                                     <h4 style="margin: 0; color: #10b981;">✨ Add PKCE login (SPAs)</h4>
@@ -415,7 +415,7 @@ function App() {<br>
                             </div>
 
                             <!-- Step 4 -->
-                            <div style="padding: 24px; border: 2px solid #f59e0b; border-radius: var(--radius-md); background: rgba(245, 158, 11, 0.05);">
+                            <div style="padding: 24px; border-radius: var(--radius-md); background: var(--color-secondary);">
                                 <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 16px;">
                                     <div style="width: 48px; height: 48px; background: #f59e0b; border-radius: var(--radius-full); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: var(--font-size-lg);">4</div>
                                     <h4 style="margin: 0; color: #f59e0b;">✨ Protect routes (optional)</h4>
@@ -448,20 +448,20 @@ import { ProtectedRoute } from '@authenti-idp/react'<br><br>
 
         <!-- Danger Zone -->
         <div class="card" style="margin-top: 40px; border: 1px solid var(--color-danger);">
-            <h3 style="margin-bottom: 16px; color: var(--color-danger);">⚠️ Danger Zone</h3>
+            <h3 style="margin-bottom: 16px; color: var(--color-danger);">⚠ Danger Zone</h3>
             <p style="color: var(--color-text-muted); margin-bottom: 24px; font-size: var(--font-size-sm);">
                 These actions cannot be undone. Please proceed with caution.
             </p>
             
             <button class="btn btn-danger" onclick="deleteApplication()">
-                🗑️ Delete Application
+                ⚑ Delete Application
             </button>
         </div>
     </div>
 
     <!-- Theme Toggle -->
     <button class="theme-toggle" id="theme-toggle" style="position: fixed; top: 24px; right: 24px;" aria-label="Toggle theme">
-        🌙
+        ☽
     </button>
 
     <!-- Toast Notification (Hidden) -->
@@ -538,10 +538,10 @@ import { ProtectedRoute } from '@authenti-idp/react'<br><br>
             
             if (secretInput.type === 'password') {
                 secretInput.type = 'text';
-                button.textContent = '🙈 Hide';
+                button.textContent = '⚑ Hide';
             } else {
                 secretInput.type = 'password';
-                button.textContent = '👁️ Show';
+                button.textContent = '⚬ Show';
             }
         }
 
@@ -662,7 +662,7 @@ import { ProtectedRoute } from '@authenti-idp/react'<br><br>
             
             modal.innerHTML = `
                 <div style="background: var(--color-bg); border-radius: var(--radius-md); padding: 32px; max-width: 500px; width: 90%; margin: 20px;">
-                    <h3 style="margin-bottom: 16px; color: var(--color-danger);">⚠️ Delete Application</h3>
+                    <h3 style="margin-bottom: 16px; color: var(--color-danger);">⚠ Delete Application</h3>
                     <p style="margin-bottom: 24px; color: var(--color-text-muted);">
                         This action cannot be undone. This will permanently delete <strong>TaskMaster Pro</strong> and all associated data including:
                     </p>

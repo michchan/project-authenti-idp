@@ -44,7 +44,7 @@ class ThemeManager {
     updateThemeToggle(theme) {
         const toggle = document.querySelector('#theme-toggle');
         if (toggle) {
-            toggle.textContent = theme === 'dark' ? '☀️' : '🌙';
+            toggle.textContent = theme === 'dark' ? '☀' : '☽';
             toggle.setAttribute('aria-label', `Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`);
         }
     }
