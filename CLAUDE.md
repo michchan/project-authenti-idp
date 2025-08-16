@@ -34,7 +34,6 @@ docs/v1/
 ├── PRD-1.0-approved.md                 # Product requirements
 ├── architecture/                       # System design docs
 │   ├── system-architecture-1.0.md
-│   ├── service-responsibilities-1.0.md
 │   ├── flows/                          # Authentication flows
 │   └── technical-considerations-1.0.md
 ├── epics/                             # Feature epics

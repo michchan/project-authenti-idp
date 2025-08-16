@@ -65,4 +65,15 @@ graph TB
     CoreAPI --> Monitoring
 ```
 
-TaskMaster uses simplified service-oriented architecture balancing functionality with maintainability. The PWA provides cross-platform compatibility through responsive interface. Backend includes Authentication Service for user management and Core API Service for task functionality and search. API Gateway handles routing, load balancing, and security. Data layer uses primary database for storage and Redis cache for performance. Infrastructure includes CDN and monitoring.
+## Component Communication
+
+| Component | Responsibility | Inbound Communications | Outbound Communications |
+|-----------|---------------|----------------------|------------------------|
+| Web Application (PWA) | User interface, task management interactions, offline functionality. Provides responsive web interface for task creation, editing, and search. | • User interactions (Browser) | • API Gateway (HTTPS)<br>• CDN (HTTPS) |
+| API Gateway | Request routing, load balancing, security enforcement. Centralized entry point managing authentication and routing to appropriate services. | • Web Application (HTTPS) | • Authentication Service (HTTP)<br>• Core API Service (HTTP) |
+| Authentication Service | User authentication, session management, access control. Handles login, registration, token validation and user permissions. | • API Gateway (HTTP) | • Primary Database (TCP)<br>• Monitoring (HTTP) |
+| Core API Service | Task management, search functionality, business logic. Manages task CRUD operations, search indexing, and analytics. | • API Gateway (HTTP) | • Primary Database (TCP)<br>• Redis Cache (TCP)<br>• Monitoring (HTTP) |
+| Primary Database | Data persistence, user data, task storage. Maintains all application data with ACID compliance and backup capabilities. | • Authentication Service (TCP)<br>• Core API Service (TCP) | • None |
+| Redis Cache | Performance optimization, session storage, search caching. Improves response times for frequently accessed data. | • Core API Service (TCP) | • None |
+| CDN | Static asset delivery, global content distribution. Serves application assets and improves loading performance worldwide. | • Web Application (HTTPS) | • None |
+| Monitoring & Logging | System observability, performance tracking, error monitoring. Collects metrics and logs for system health analysis. | • Authentication Service (HTTP)<br>• Core API Service (HTTP) | • None |

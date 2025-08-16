@@ -104,7 +104,7 @@ Acknowledge and document technical trade-offs:
 ### Cross-References
 - Link to related architecture documents
 - Reference PRD requirements that drive technical decisions
-- Connect to system flows and service responsibilities
+- Connect to system flows and architecture documentation
 - Align with deployment plans and infrastructure designs
 
 ## Common Mistakes to Avoid
