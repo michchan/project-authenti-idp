@@ -1,7 +1,7 @@
-# 📘 Deployment Plan Guidelines 
+# 📘 Infra and DevOps Guidelines 
 
 ## 🧭 Purpose
-Define deployment strategy, infrastructure approach, and operational procedures without specific implementation details.
+Define infrastructure strategy, DevOps approach, and operational procedures without specific implementation details.
 
 ## ✅ Must Include
 - **Strategy Overview**: Architecture type, hosting approach, requirements
@@ -12,6 +12,8 @@ Define deployment strategy, infrastructure approach, and operational procedures 
 - **Operations**: Monitoring, disaster recovery, scaling plans
 
 ## ❌ Avoid Including
+- **Purpose sections**: Remove document purpose descriptions
+- **Footnotes**: Remove concluding footnotes about deployment plans
 - **Code Implementation**: No configuration files, scripts, or code
 - **Detailed Configuration**: High-level choices only, not specific settings
 - **Step-by-step Instructions**: Strategic approach, not procedures
@@ -30,6 +32,21 @@ Define deployment strategy, infrastructure approach, and operational procedures 
 4. **Pipeline Strategy**: Workflow, CI/CD approach, stages
 5. **Configuration Approach**: Environment management, security
 6. **Operations**: Monitoring, disaster recovery, scaling
+
+## 📝 Point Form Requirements
+Use bullet points for these sections instead of comma-separated values:
+- Authentication Security
+- Data Protection
+- Access Control
+- Optimization Approach
+- Application Monitoring
+- Error Tracking
+- Security Monitoring
+- Backup Strategy
+- Recovery Procedures
+- Business Continuity
+- Growth Planning
+- Migration Strategy
 
 ## 🛠 Tips
 - Focus on "what" and "why" over "how"
