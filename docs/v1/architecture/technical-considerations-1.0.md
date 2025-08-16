@@ -1,8 +1,5 @@
 # Technical Considerations - AuthentiIDP v1.0
 
-## Purpose
-Define technical implementation considerations, architecture approaches, and infrastructure decisions for AuthentiIDP v1.0 MVP that enable cost-effective, secure, and scalable identity provider service.
-
 ## Architecture Approach
 
 ### Out-of-the-box Solutions
@@ -158,6 +155,3 @@ Define technical implementation considerations, architecture approaches, and inf
 - **Analytics**: Vercel Analytics with option to integrate Google Analytics later
 - **Monitoring**: Built-in monitoring with readiness for external services (DataDog, New Relic)
 
----
-
-*These technical considerations guide the implementation of AuthentiIDP v1.0 MVP, ensuring security, performance, and cost-effectiveness while maintaining clear upgrade paths for future scaling.*
