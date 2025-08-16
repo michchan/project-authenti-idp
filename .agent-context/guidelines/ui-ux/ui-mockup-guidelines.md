@@ -588,6 +588,12 @@ mockup/
 - [ ] **Index page created** - Navigation hub with categorized links to all mockups
 - [ ] **Cross-references validated** - No gaps between documentation and implementation
 
+### Design System Requirements (MANDATORY)
+- [ ] **UI designer MUST design based on the design system and component library created** - All mockups must follow established design tokens, colors, typography, spacing, and component specifications
+- [ ] **Component consistency** - Reuse components from component library across all mockups
+- [ ] **Design token adherence** - Colors, fonts, spacing must match design system specifications
+- [ ] **Visual consistency** - All mockups maintain unified visual language and branding
+
 ### Essential Requirements
 - [ ] **All navigation links work** - Users can navigate between all pages
 - [ ] **All buttons link somewhere** - Action buttons go to relevant pages  

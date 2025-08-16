@@ -1,7 +1,5 @@
 # 🧩 UI Component Library `[Version]`
 
-Document reusable UI components with specifications, usage guidelines, and live examples.
-
 ---
 
 ## 📁 Index

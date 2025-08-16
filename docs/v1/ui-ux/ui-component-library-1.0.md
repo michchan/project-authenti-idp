@@ -1,7 +1,5 @@
 # 🧩 UI Component Library v1.0
 
-Document reusable UI components with specifications, usage guidelines, and live examples for AuthentiIDP.
-
 ---
 
 ## 📁 Index

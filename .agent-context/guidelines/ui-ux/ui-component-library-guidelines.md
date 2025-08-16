@@ -220,6 +220,7 @@ Guidance for creating effective component libraries with clear specifications, u
 - **Missing states**: Undocumented error, loading, edge cases
 - **Incomplete accessibility**: Missing ARIA or keyboard behavior
 - **Outdated examples**: Documentation doesn't match implementation
+- **Document descriptions**: Including unnecessary document description paragraphs at the beginning
 
 ### Technical Issues
 - **Inconsistent styling**: Don't follow design system tokens
