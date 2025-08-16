@@ -1,7 +1,5 @@
 # 🖼️ ASCII Wireframes `[Version]`
 
-Document key interface layouts using ASCII art for rapid design communication.
-
 ---
 
 ## 🔑 Symbol Legend
@@ -56,7 +54,9 @@ Document key interface layouts using ASCII art for rapid design communication.
 └──────────────────────────────────────────────┘
 ```
 
-**Flow**: `[Screen A → Screen B → Screen C]`
+**Actions**:
+- Press "`[Button/Element Text]`" going to [`[target screen name]`](#target-screen-id)
+- Press "`[Another Button Text]`" going to [`[another target screen name]`](#another-target-screen-id)
 
 **Notes**: `[Implementation notes or special considerations]`
 
@@ -64,14 +64,44 @@ Document key interface layouts using ASCII art for rapid design communication.
 
 ## 🔗 Flow Connections
 
-Show how different screens connect with trigger information:
+Show how different screens connect with trigger information using vertical format for better narrow screen readability:
 
 ```
-[Screen A] ──user clicks action button──→ [Screen B] ──user completes form──→ [Screen C]
-     |
-     |──user selects alternative──→ [Alternative Screen] ──user navigates back──→ [Screen A]
-     
-[Error States] ──validation fails──→ [Error Recovery] ──user fixes issue──→ [Screen A]
+[Screen A]
+   |
+   ──user clicks action button──
+   |
+   v
+[Screen B]
+   |
+   ──user completes form──
+   |
+   v
+[Screen C]
+
+[Screen A]
+   |
+   ──user selects alternative──
+   |
+   v
+[Alternative Screen]
+   |
+   ──user navigates back──
+   |
+   v
+[Screen A]
+
+[Error States]
+   |
+   ──validation fails──
+   |
+   v
+[Error Recovery]
+   |
+   ──user fixes issue──
+   |
+   v
+[Screen A]
 ```
 
 **Connection Notes**: `[Describe how flows link together. Triggers on arrows show specific user actions that cause navigation between screens.]`

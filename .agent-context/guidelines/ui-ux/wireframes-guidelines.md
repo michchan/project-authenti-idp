@@ -130,7 +130,8 @@ Document how different feature flows connect:
 - Shared screens or components
 - Navigation patterns between flows
 - **Trigger information**: Specify what user actions cause navigation between screens
-- **Flowchart format**: Use flowcharts instead of simple arrows to show connections
+- **Flowchart format**: Use vertical flowcharts instead of simple arrows to show connections for better readability on narrow screens
+- **Actions documentation**: For each screen, include an "Actions" section listing all triggers that lead to navigation with links to target screens
 
 ---
 
@@ -229,6 +230,9 @@ Before considering wireframes complete:
 - **Inconsistent terminology** - Use same terms as your product
 - **Design system details** - Including typography, colors, spacing specifications (UI designer concern)
 - **Responsive behavior details** - Including specific breakpoints and adaptive features (UI designer concern)
+- **Document description** - Including unnecessary document description paragraphs at the beginning
+- **Journey footnotes** - Adding explanatory footnotes at the end of wireframe documents
+- **Flow notes instead of Actions** - Using "Flow" sections instead of "Actions" sections to document navigation triggers
 
 ### Process Issues
 - **No stakeholder review** - Get feedback before development starts

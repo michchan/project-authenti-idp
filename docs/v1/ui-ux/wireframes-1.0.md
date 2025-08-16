@@ -1,9 +1,5 @@
 # 🖼️ ASCII Wireframes: AuthentiIDP v1.0 - MVP Scope
 
-This document provides ASCII wireframes for AuthentiIDP, a centralized identity provider service for personal applications. Each wireframe shows the layout, functionality, and user interactions for different screens and authentication states.
-
-**MVP Scope Updates**: This document reflects the simplified MVP scope with removed Privacy tab, consolidated Connected Apps management into Profile Settings, streamlined Developer Dashboard, and new Application Settings page for comprehensive app configuration.
-
 ---
 
 ## 🔑 Symbol Legend
@@ -92,7 +88,9 @@ This document provides ASCII wireframes for AuthentiIDP, a centralized identity 
 └──────────────────────────────────────────────────────────────┘
 ```
 
-**Flow**: Registration → Email Verification → Login
+**Actions**:
+- Press "Create account" going to [email verification screen](#b-email-verification-screen)
+- Press "Sign In" going to [login page](#c-login-page)
 
 **Notes**: Real-time password validation, WCAG 2.1 AA compliant form design
 
@@ -135,7 +133,9 @@ This document provides ASCII wireframes for AuthentiIDP, a centralized identity 
 └──────────────────────────────────────────────────────────────┘
 ```
 
-**Flow**: Email Verification → Login Success
+**Actions**:
+- Press "Verify" going to [login page](#c-login-page)
+- Press "Resend verification" to resend email
 
 **Notes**: Clear instructions, resend functionality, support contact information
 
@@ -177,7 +177,10 @@ This document provides ASCII wireframes for AuthentiIDP, a centralized identity 
 └──────────────────────────────────────────────────────────────┘
 ```
 
-**Flow**: Login → SSO Redirect → Application Access
+**Actions**:
+- Press "Sign In" going to [SSO consent screen](#a-sso-consent-screen)
+- Press "Create account" going to [user registration page](#a-user-registration-page)
+- Press "Forgot password" going to [password reset page](#d-password-reset-page)
 
 **Notes**: Context awareness (returning from app), password visibility toggle, remember me option
 
@@ -236,7 +239,9 @@ This document provides ASCII wireframes for AuthentiIDP, a centralized identity 
 └──────────────────────────────────────────────────────────────┘
 ```
 
-**Flow**: Password Reset Request → Email Link → New Password → Login Success
+**Actions**:
+- Press "Reset Password" to send reset email
+- Press "Back to Login" going to [login page](#c-login-page)
 
 **Notes**: Security option to invalidate all sessions, password strength indicator
 
@@ -283,7 +288,9 @@ This document provides ASCII wireframes for AuthentiIDP, a centralized identity 
 └──────────────────────────────────────────────────────────────┘
 ```
 
-**Flow**: App Request → Consent → Token Generation → App Redirect
+**Actions**:
+- Press "Allow" to grant permissions and redirect to app
+- Press "Deny" to deny access and return to login
 
 **Notes**: Clear permission granularity, user control emphasis, security messaging
 
@@ -331,7 +338,10 @@ This document provides ASCII wireframes for AuthentiIDP, a centralized identity 
 └──────────────────────────────────────────────────────────────┘
 ```
 
-**Flow**: Profile Edit → Validation → Save → App Propagation
+**Actions**:
+- Press "Save Changes" to update profile
+- Press "Cancel" to discard changes
+- Press "Change Password" going to [password change form](#password-change-form)
 
 **Notes**: Real-time propagation status, granular privacy controls, profile picture upload
 
@@ -381,7 +391,10 @@ This document provides ASCII wireframes for AuthentiIDP, a centralized identity 
 └──────────────────────────────────────────────────────────────┘
 ```
 
-**Flow**: Profile Settings → Apps Tab → Permission Management → Confirmation → Update
+**Actions**:
+- Press "Connected Apps" tab to view connected applications
+- Press "Edit" on an app going to [edit app permissions](#c-edit-app-permissions)
+- Press "Disconnect" to revoke app access
 
 **Notes**: Integrated into Profile Settings, last access tracking, granular permission editing, easy revocation
 
@@ -434,7 +447,10 @@ This document provides ASCII wireframes for AuthentiIDP, a centralized identity 
 └──────────────────────────────────────────────────────────────┘
 ```
 
-**Flow**: Permission Selection → Confirmation → Update Propagation
+**Actions**:
+- Press "Save Changes" to update permissions
+- Press "Cancel" going to [connected apps tab](#b-connected-apps-tab)
+- Toggle permission checkboxes to modify access
 
 **Notes**: Clear distinction between required and optional permissions, immediate effect warning
 
@@ -476,7 +492,10 @@ This document provides ASCII wireframes for AuthentiIDP, a centralized identity 
 └──────────────────────────────────────────────────────────────┘
 ```
 
-**Flow**: Simple Dashboard View → Application Management → API Key Configuration
+**Actions**:
+- Press "Manage" on an application going to [application management](#5-application-management)
+- Press "Add New Application" to register new app
+- Press "API Keys" tab to manage credentials
 
 **Notes**: Auto-discovery, simplified interface, basic management options only (no Quick Actions)
 
@@ -560,7 +579,10 @@ This document provides ASCII wireframes for AuthentiIDP, a centralized identity 
 └──────────────────────────────────────────────────────────────┘
 ```
 
-**Flow**: Dashboard → Application Settings → Tab Navigation → Configuration → Save/Delete
+**Actions**:
+- Press tabs to navigate between settings sections
+- Press "Save Changes" to update configuration
+- Press "Delete Application" going to [delete confirmation modal](#b-delete-confirmation-modal)
 
 **Notes**: Comprehensive 5-tab interface including integrated documentation, complete application management, secure credential handling
 
@@ -604,7 +626,10 @@ This document provides ASCII wireframes for AuthentiIDP, a centralized identity 
 └──────────────────────────────────────────────────────────────┘
 ```
 
-**Flow**: Delete Button → Confirmation Modal → Name Verification → Deletion
+**Actions**:
+- Press "Delete" to confirm deletion
+- Press "Cancel" going to [application settings interface](#a-application-settings-5-tab-interface)
+- Type application name to enable delete button
 
 **Notes**: Multi-step confirmation, clear consequences, name verification for safety
 
@@ -655,7 +680,9 @@ This document provides ASCII wireframes for AuthentiIDP, a centralized identity 
 └──────────────────────────────────────────────────────────────┘
 ```
 
-**Flow**: Landing → Authentication → Protected Content
+**Actions**:
+- Press "Sign in with AuthentiIDP" going to [login page](#c-login-page)
+- Automatic redirect after authentication
 
 **Notes**: Clear demo purpose, source code access, developer resources
 
@@ -709,7 +736,10 @@ This document provides ASCII wireframes for AuthentiIDP, a centralized identity 
 └──────────────────────────────────────────────────────────────┘
 ```
 
-**Flow**: Protected Access → User Info Display → Feature Demonstration
+**Actions**:
+- Press "Logout" going to [logout confirmation](#c-logout-confirmation)
+- Press "Profile" to view user information
+- Interactive features demonstrate SSO capabilities
 
 **Notes**: Authentication status display, protected content, code examples
 
@@ -757,7 +787,10 @@ This document provides ASCII wireframes for AuthentiIDP, a centralized identity 
 └──────────────────────────────────────────────────────────────┘
 ```
 
-**Flow**: Logout Choice → Confirmation → Redirect → Session Cleanup
+**Actions**:
+- Press "Logout from all apps" to end all sessions
+- Press "Logout from this app only" for partial logout
+- Press "Cancel" to remain logged in
 
 **Notes**: Logout scope options, user preference memory, clear expectations
 
@@ -889,19 +922,66 @@ Cross-wireframe navigation patterns showing trigger actions:
 **End-user journeys**
 
 ```
-[Authentication Screens] ──user clicks login/register──→ [SSO Consent Screen] ──user grants access──→ [Application Access]
-         |
-         |──user clicks profile link──→ [Profile Settings] ──user manages apps──→ [Connected Apps View]
-                                                |
-                                                |──user changes permissions──→ [Permission Control]
+[Authentication Screens]
+   |
+   ──user clicks login/register──
+   |
+   v
+[SSO Consent Screen]
+   |
+   ──user grants access──
+   |
+   v
+[Application Access]
+
+[Authentication Screens]
+   |
+   ──user clicks profile link──
+   |
+   v
+[Profile Settings]
+   |
+   ──user manages apps──
+   |
+   v
+[Connected Apps View]
+   |
+   ──user changes permissions──
+   |
+   v
+[Permission Control]
 ```
+
 **Developer journeys**
 ```
-[Developer Dashboard] ──developer selects app──→ [App Management] ──developer views usage──→ [User Analytics]
-         |
-         |──developer needs help──→ [Integration Documentation] ──developer tests code──→ [Sample Application]
-                                                |
-                                                |──developer validates flows──→ [Integration Testing]
+[Developer Dashboard]
+   |
+   ──developer selects app──
+   |
+   v
+[App Management]
+   |
+   ──developer views usage──
+   |
+   v
+[User Analytics]
+
+[Developer Dashboard]
+   |
+   ──developer needs help──
+   |
+   v
+[Integration Documentation]
+   |
+   ──developer tests code──
+   |
+   v
+[Sample Application]
+   |
+   ──developer validates flows──
+   |
+   v
+[Integration Testing]
 ```
 
 **Connection Notes**: All screens maintain consistent navigation patterns with clear breadcrumbs, contextual back buttons, and user identity awareness throughout the experience. Triggers are shown as the specific user action that causes navigation between screens.
@@ -923,7 +1003,3 @@ Cross-wireframe navigation patterns showing trigger actions:
 - **Recovery**: Clear paths to resolve errors
 - **Timeout**: Warnings before session expiration
 - **Network**: Graceful handling of connectivity issues
-
----
-
-*These simplified wireframes represent a fundamental shift toward zero-configuration user experience design. By eliminating setup complexity while preserving full functionality, the v2.0 interface enables internal teams to focus on their applications rather than authentication infrastructure management.*
