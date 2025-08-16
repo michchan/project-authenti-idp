@@ -31,7 +31,7 @@ The project uses a structured agent-based workflow with specific roles:
 
 ```
 docs/v1/
-├── PRD-1.0-draft.md                    # Product requirements
+├── PRD-1.0-approved.md                 # Product requirements
 ├── architecture/                       # System design docs
 │   ├── system-architecture-1.0.md
 │   ├── service-responsibilities-1.0.md

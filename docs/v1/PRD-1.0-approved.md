@@ -4,25 +4,19 @@
 - **Product Name**: AuthentiIDP - Centralized Identity Provider Service
 - **Author**: Product Manager
 - **Date**: 2025-08-10
-- **Status**: In Review
+- **Status**: Business Owner Approved
 - **Version**: 1.0
 
 ### ✅ Approvals Checklist
 - [x] System Architect
 - [x] Product Owner
-- [ ] Business Owner
+- [x] Business Owner
 
 ## 2. Objective
 AuthentiIDP is a centralized identity provider service similar to Facebook/Google SSO that enables users to register and login once across multiple applications. The service provides secure, scalable authentication with minimal cost, smooth UX/DX, and includes an SDK for easy integration with client applications.
 
 ## 3. Problem Statement
-Building authentication and user management systems for each individual application creates significant redundancy, development overhead, and maintenance complexity. Users face the inconvenience of managing multiple accounts across different applications, while developers spend valuable time implementing authentication instead of core business features. Small-scale applications need a cost-effective identity solution that doesn't compromise on security or user experience while being easily extendable for future growth.
-
-Current solutions either:
-- Require significant infrastructure investment and maintenance overhead
-- Are overengineered for small-scale applications (less than 50 users)
-- Lack proper SDK support for seamless integration
-- Have high operational costs that don't align with small application budgets
+Building authentication systems for each individual application creates significant redundancy and development overhead while users face the inconvenience of managing multiple accounts. Current solutions are either overengineered for small-scale applications or lack proper SDK support, making cost-effective centralized identity management difficult to achieve.
 
 ## 4. Goals & Non-goals
 
@@ -208,33 +202,6 @@ Current solutions either:
 - **v1.5**: Advanced analytics and user behavior insights
 - **v1.6**: Enterprise features (SAML, LDAP, SSO integrations)
 
-## 11. Timeline & Milestones
-
-### 4-Month Development Timeline
-
-**Month 1: Foundation & Core Auth**
-- Database schema design and setup
-- Basic user registration and authentication APIs
-- JWT token management implementation
-- Basic security measures (rate limiting, password hashing)
-
-**Month 2: SSO & Session Management**
-- OAuth2/OpenID Connect implementation
-- Cross-application session management
-- Token refresh and rotation mechanisms
-- Basic error handling and logging
-
-**Month 3: SDK & Integration Tools**
-- JavaScript/React SDK development and testing
-- Pre-built UI components for authentication
-- Integration documentation and examples
-- Sample application development
-
-**Month 4: Dashboard & Production Readiness**
-- Application management dashboard
-- User profile management interface
-- Production deployment and monitoring setup
-- Security audit and final testing
 
 ---
 

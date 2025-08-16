@@ -16,7 +16,7 @@
 > A brief summary of what this product/software does and why it matters.
 
 ## 3. Problem Statement
-> What problem are you solving? Who has this problem and how is it currently addressed?
+> What problem are you solving? Keep this concise (2-3 sentences) focusing on the essential business need.
 
 ## 4. Goals & Non-goals
 

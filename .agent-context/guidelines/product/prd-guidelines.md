@@ -62,14 +62,15 @@ Guidelines for creating effective PRDs using the PRD template.
 **Poor**: "Build a productivity tool that makes users more productive."
 
 ### 3. Problem Statement
-**Purpose**: Articulate the problem and for whom.
+**Purpose**: Articulate the problem and for whom in a concise manner.
 
-**Include**:
-- Who has the problem (specific segments)
-- What the problem is (concrete pain points)
-- Current solutions and their gaps
+**Guidelines**:
+- Keep to 2-3 sentences maximum focusing on essential business need
+- Include who has the problem and what the core issue is
+- Avoid extensive detail - focus on the most critical pain points
+- Current solutions and gaps can be mentioned briefly if essential
 
-**Research-backed**: Support with data, user quotes, and quantified problems.
+**Research-backed**: Support with data when possible, but prioritize clarity and brevity.
 
 ### 4. Goals & Non-goals
 **Purpose**: Define scope boundaries to prevent feature creep.
@@ -157,6 +158,13 @@ Guidelines for creating effective PRDs using the PRD template.
 **Don't include**: Specific database schemas, API specifications, security implementation details, or deployment configurations.
 
 **Why**: These belong in technical specifications created by engineering teams, not business requirement documents.
+
+### Timeline & Milestones
+**Don't include**: Detailed development timelines, milestones, or project schedules in PRDs.
+
+**Why**: Timeline management is handled separately in agentic AI-driven development processes. PRDs focus on requirements definition, not project scheduling.
+
+**Alternative**: Project timelines and milestones are managed through separate sprint planning and project management processes.
 
 ---
 

@@ -279,7 +279,7 @@ Given the drafted PRD document, update the status to **In Review**.
 It should be reviewed by:
 
 - **System Architect** - to see if there is any high level technical constraints which requires adjustment to the requirements,
-- **Product owner** - to see if the features match the goals and are feasible, whether the metrics / KPIs / Timeline are realistic
+- **Product owner** - to see if the features match the goals and are feasible, whether the metrics / KPIs are realistic
 
 After getting reviewed by these stakeholders, **product manager** to ****summarize and update the PRD.
 
