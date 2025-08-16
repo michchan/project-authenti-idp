@@ -1,7 +1,5 @@
 # AuthentiIDP Design System v1.0
 
-This document defines the visual design foundation for AuthentiIDP, a centralized identity provider service for personal applications. It establishes a minimalist, flat, and professional yet young design language that ensures consistency across all interfaces while supporting both light and dark modes.
-
 ---
 
 ## Index
@@ -15,7 +13,6 @@ This document defines the visual design foundation for AuthentiIDP, a centralize
 7. [Component States](#component-states)
 8. [Component Sizing](#component-sizing)
 9. [Dark Mode Support](#dark-mode-support)
-10. [Usage Examples](#usage-examples)
 
 ---
 
@@ -166,39 +163,27 @@ AuthentiIDP uses a clean sans-serif font stack optimized for digital interfaces 
 
 ### Font Hierarchy
 
-<div style="margin: 20px 0;">
+<div style="background: white; padding: 24px; border-radius: 8px; border: 1px solid #e5e7eb; margin: 20px 0;">
   <div style="font-size: 32px; font-weight: 700; color: #111827; margin-bottom: 12px; line-height: 1.2;">H1 - Page Title</div>
   <div style="font-size: 12px; color: #6b7280; margin-bottom: 20px;">32px, 700 weight, 1.2 line-height</div>
-</div>
 
-<div style="margin: 20px 0;">
   <div style="font-size: 24px; font-weight: 600; color: #111827; margin-bottom: 8px; line-height: 1.3;">H2 - Section Header</div>
   <div style="font-size: 12px; color: #6b7280; margin-bottom: 20px;">24px, 600 weight, 1.3 line-height</div>
-</div>
 
-<div style="margin: 20px 0;">
   <div style="font-size: 20px; font-weight: 600; color: #111827; margin-bottom: 8px; line-height: 1.4;">H3 - Subsection Header</div>
   <div style="font-size: 12px; color: #6b7280; margin-bottom: 20px;">20px, 600 weight, 1.4 line-height</div>
-</div>
 
-<div style="margin: 20px 0;">
   <div style="font-size: 16px; font-weight: 500; color: #111827; margin-bottom: 8px; line-height: 1.5;">H4 - Component Title</div>
   <div style="font-size: 12px; color: #6b7280; margin-bottom: 20px;">16px, 500 weight, 1.5 line-height</div>
-</div>
 
-<div style="margin: 20px 0;">
   <div style="font-size: 16px; font-weight: 400; color: #111827; line-height: 1.6; margin-bottom: 8px;">Body Text - This is the primary text style used for paragraphs, descriptions, and general content throughout the AuthentiIDP interface. It provides excellent readability while maintaining a professional appearance that appeals to our target demographic of 20-40 year olds who value efficiency and clarity in their digital experiences.</div>
   <div style="font-size: 12px; color: #6b7280; margin-bottom: 20px;">16px, 400 weight, 1.6 line-height</div>
-</div>
 
-<div style="margin: 20px 0;">
   <div style="font-size: 14px; font-weight: 400; color: #6b7280; line-height: 1.5; margin-bottom: 8px;">Small Text - Used for labels, captions, and secondary information</div>
   <div style="font-size: 12px; color: #6b7280; margin-bottom: 20px;">14px, 400 weight, 1.5 line-height</div>
-</div>
 
-<div style="margin: 20px 0;">
   <div style="font-size: 12px; font-weight: 400; color: #9ca3af; line-height: 1.4; margin-bottom: 8px;">Caption Text - For timestamps, metadata, and very small details</div>
-  <div style="font-size: 12px; color: #6b7280; margin-bottom: 20px;">12px, 400 weight, 1.4 line-height</div>
+  <div style="font-size: 12px; color: #6b7280; margin-bottom: 0;">12px, 400 weight, 1.4 line-height</div>
 </div>
 
 ### Font Usage Guidelines
@@ -610,211 +595,3 @@ AuthentiIDP supports automatic dark mode adaptation to enhance user experience a
 ```
 
 ---
-
-## Usage Examples
-
-### CSS Design Token Implementation
-
-```css
-/* AuthentiIDP Design System Tokens */
-:root {
-  /* Colors */
-  --color-bg: #ffffff;
-  --color-panel: #ffffff;
-  --color-primary: #344550;
-  --color-primary-hover: #2d3a43;
-  --color-primary-focus: #253036;
-  --color-secondary: #deedf7;
-  --color-text: #111827;
-  --color-text-muted: #6b7280;
-  --color-text-disabled: #9ca3af;
-  --color-border: #e5e7eb;
-  --color-border-focus: #d1d5db;
-  
-  /* Status Colors - Muted/Gray-toned */
-  --color-success: #6b7280;
-  --color-warning: #9ca3af;
-  --color-error: #6b7280;
-  --color-info: #6b7280;
-  
-  /* Typography */
-  --font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  --font-size-xs: 12px;
-  --font-size-sm: 14px;
-  --font-size-base: 16px;
-  --font-size-lg: 18px;
-  --font-size-xl: 20px;
-  --font-size-2xl: 24px;
-  --font-size-3xl: 32px;
-  
-  /* Spacing */
-  --space-xs: 4px;
-  --space-sm: 8px;
-  --space-md: 16px;
-  --space-lg: 24px;
-  --space-xl: 32px;
-  --space-2xl: 48px;
-  --space-3xl: 64px;
-  
-  /* Border Radius */
-  --radius-sm: 0.25rem;
-  --radius-md: 0.4rem;
-  --radius-lg: 0.5rem;
-  --radius-xl: 0.75rem;
-  --radius-full: 50%;
-}
-
-/* Example Component Implementation */
-.auth-button {
-  background: var(--color-primary);
-  color: var(--color-panel);
-  border: none;
-  border-radius: var(--radius-md);
-  padding: var(--space-md) var(--space-lg);
-  font-family: var(--font-family);
-  font-size: var(--font-size-base);
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  min-height: 44px;
-}
-
-.auth-button:hover {
-  background: var(--color-primary-hover);
-  transform: translateY(-1px);
-}
-
-.auth-button:focus {
-  outline: 2px solid var(--color-secondary);
-  outline-offset: 2px;
-}
-
-.auth-card {
-  background: var(--color-panel);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  padding: var(--space-lg);
-}
-```
-
-### JavaScript Theme Toggle Implementation
-
-```javascript
-// Theme Management System
-class ThemeManager {
-  constructor() {
-    this.init();
-  }
-  
-  init() {
-    // Check for saved theme or use system preference
-    const savedTheme = localStorage.getItem('authenti-theme');
-    const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-    const theme = savedTheme || systemTheme;
-    
-    this.setTheme(theme);
-    this.bindEvents();
-  }
-  
-  setTheme(theme) {
-    document.documentElement.setAttribute('data-theme', theme);
-    localStorage.setItem('authenti-theme', theme);
-    
-    // Update theme toggle button
-    const toggle = document.querySelector('.theme-toggle');
-    if (toggle) {
-      toggle.textContent = theme === 'dark' ? '☀️' : '🌙';
-      toggle.setAttribute('aria-label', `Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`);
-    }
-  }
-  
-  toggleTheme() {
-    const currentTheme = document.documentElement.getAttribute('data-theme');
-    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-    this.setTheme(newTheme);
-  }
-  
-  bindEvents() {
-    // Listen for system theme changes
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-      if (!localStorage.getItem('authenti-theme')) {
-        this.setTheme(e.matches ? 'dark' : 'light');
-      }
-    });
-    
-    // Theme toggle button
-    document.addEventListener('click', (e) => {
-      if (e.target.matches('.theme-toggle')) {
-        this.toggleTheme();
-      }
-    });
-  }
-}
-
-// Initialize theme management
-new ThemeManager();
-```
-
-### Responsive Grid System
-
-```css
-/* AuthentiIDP Grid System */
-.auth-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: var(--space-md);
-}
-
-.auth-grid {
-  display: grid;
-  gap: var(--space-lg);
-  grid-template-columns: 1fr;
-}
-
-@media (min-width: 768px) {
-  .auth-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (min-width: 1024px) {
-  .auth-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-/* Card-based layout */
-.auth-card {
-  background: var(--color-panel);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  padding: var(--space-lg);
-  transition: all 0.2s ease;
-}
-
-.auth-card:hover {
-  border-color: var(--color-border-focus);
-}
-```
-
----
-
-## Implementation Notes
-
-### Framework Integration
-- **React**: Use CSS modules or styled-components with design tokens
-- **Vue**: Utilize CSS custom properties with scoped styles
-- **Vanilla JS**: Implement with CSS custom properties and utility classes
-
-### Build Process
-- Design tokens should be maintained in a central configuration file
-- CSS custom properties provide runtime theme switching capability
-- Consider using a design token transformation tool for multiple format outputs
-
-### Maintenance Guidelines
-- All color values should reference design tokens, never hardcoded colors
-- Spacing should follow the 4px-based scale consistently
-- Typography hierarchy should be maintained across all implementations
-- Component states should follow the established interaction patterns
-
-**Quality Assurance**: All implementations should be tested across light/dark modes and mobile/desktop breakpoints to ensure consistent visual presentation and accessibility compliance.

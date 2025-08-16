@@ -61,7 +61,6 @@ Every section must include visual presentations, not just text or CSS:
 ### Technical Implementation
 - **CSS custom properties**: `--color-primary: #2563EB;`
 - **Multiple formats**: Hex, RGB, HSL as needed
-- **Usage examples**: How to implement in code
 - **Color tokens**: Naming conventions
 
 ### Best Practices
@@ -90,7 +89,6 @@ Every section must include visual presentations, not just text or CSS:
 - **Exact sizes**: Font-size in px/rem, line-height ratios
 - **Spacing**: Margins and padding around text
 - **Responsive behavior**: Text scaling on different screens
-- **Code examples**: CSS implementations for each style
 
 ### Usage Guidelines
 - **Style usage**: H1 for page titles, H3 for section headers
@@ -117,7 +115,6 @@ Every section must include visual presentations, not just text or CSS:
 ### Implementation Guidance
 - **CSS custom properties**: `--spacing-md: 16px;`
 - **Utility classes**: `.margin-lg`, `.padding-sm`
-- **Component examples**: Spacing in buttons, cards, forms
 - **Layout principles**: Spacing creating hierarchy and rhythm
 
 ### Common Applications
@@ -145,7 +142,6 @@ Every section must include visual presentations, not just text or CSS:
 ### Technical Implementation
 - **SVG optimization**: Properly optimized for web
 - **Accessibility**: Alt text, titles, ARIA labels
-- **Loading**: Icon fonts vs. SVG sprites vs. individual files
 - **Naming conventions**: Consistent for development integration
 
 ### Usage Guidelines
@@ -179,7 +175,6 @@ Every section must include visual presentations, not just text or CSS:
 - **CSS specifications**: Exact box-shadow values per level
 - **Performance**: Efficient shadow rendering
 - **Accessibility**: Shadows don't interfere with readability
-- **Animation**: Shadow transitions between states
 
 ---
 
@@ -224,7 +219,6 @@ Every section must include visual presentations, not just text or CSS:
 - **Cross-platform**: Tokens working across web, mobile
 
 ### Developer Handoff
-- **Code examples**: Implementing design system in HTML/CSS
 - **Framework integration**: Usage with React, Vue, Angular
 - **Build process**: Design tokens integrating with workflow
 - **Quality assurance**: Tools ensuring implementation fidelity
@@ -253,7 +247,6 @@ Every section must include visual presentations, not just text or CSS:
 
 ### Usability
 - [ ] Documentation is easy to navigate and search
-- [ ] Examples are copy-pasteable for developers
 - [ ] Guidelines answer common questions
 - [ ] Accessibility considerations are clearly stated
 
@@ -275,9 +268,11 @@ Every section must include visual presentations, not just text or CSS:
 
 ### Implementation Issues
 - **Inconsistent usage**: System exists but not followed consistently
-- **Missing developer guidance**: System without implementation details
 - **No enforcement**: No adherence process
 - **Platform inconsistency**: Works for web but not mobile
+- **Code implementation examples**: Including specific HTML/CSS code blocks and usage examples
+- **Implementation notes**: Adding technical implementation details and notes
+- **Document descriptions**: Including unnecessary document description paragraphs at the beginning
 
 ### Maintenance Issues
 - **No ownership**: Nobody responsible for updates
