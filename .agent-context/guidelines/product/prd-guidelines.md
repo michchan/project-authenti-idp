@@ -62,14 +62,15 @@ Guidelines for creating effective PRDs using the PRD template.
 **Poor**: "Build a productivity tool that makes users more productive."
 
 ### 3. Problem Statement
-**Purpose**: Articulate the problem and for whom.
+**Purpose**: Articulate the problem and for whom in a concise manner.
 
-**Include**:
-- Who has the problem (specific segments)
-- What the problem is (concrete pain points)
-- Current solutions and their gaps
+**Guidelines**:
+- Keep to 2-3 sentences maximum focusing on essential business need
+- Include who has the problem and what the core issue is
+- Avoid extensive detail - focus on the most critical pain points
+- Current solutions and gaps can be mentioned briefly if essential
 
-**Research-backed**: Support with data, user quotes, and quantified problems.
+**Research-backed**: Support with data when possible, but prioritize clarity and brevity.
 
 ### 4. Goals & Non-goals
 **Purpose**: Define scope boundaries to prevent feature creep.
@@ -78,21 +79,14 @@ Guidelines for creating effective PRDs using the PRD template.
 
 **Non-goals**: Prevent scope creep, address obvious questions, include future considerations.
 
-### 5. Success Metrics / KPIs
-**Purpose**: Define success measurement.
-
-**Selection criteria**: Align with business goals, mix leading/lagging indicators, be realistic, include timeframes.
-
-**Categories**: Adoption, Engagement, Retention, Business impact, Quality.
-
-### 6. Target Users
+### 5. Target Users
 **Purpose**: Define user segments and their differences.
 
 **Include**: Primary vs. secondary users, demographics/psychographics, use cases, pain points.
 
 **Be specific**: "Remote knowledge workers struggling with social media distractions" vs. "Anyone who wants to be productive."
 
-### 7. Features / Requirements
+### 6. Features / Requirements
 **Purpose**: Break down into specific, implementable features.
 
 **Structure**:
@@ -102,24 +96,20 @@ Guidelines for creating effective PRDs using the PRD template.
 
 **Best practices**: Focus on user value, be user-specific, avoid solution bias, make criteria testable, cover edge cases.
 
-### 8. UX Design
+### 7. UX Design
 **Purpose**: Connect requirements to design deliverables.
 
 **Status**: Pending/In Progress/Complete
 
 **Include**: Links to designs, user journeys, design rationale, responsive considerations.
 
-### 9. Open Questions / Risks
+### 8. Open Questions / Risks
 **Purpose**: Track unresolved issues and problems.
 
 **Questions**: Technical feasibility, user behavior, business model, resource availability.
 
 **Risks**: Technical, Market, Resource, Regulatory concerns.
 
-### 10. Appendix
-**Purpose**: Supporting documentation and definitions.
-
-**Include**: Research findings, competitive analysis, technical specs, design files, glossary.
 
 ---
 
@@ -127,7 +117,7 @@ Guidelines for creating effective PRDs using the PRD template.
 
 ### Content Quality
 - [ ] Problem clearly defined and research-backed
-- [ ] Success metrics specific and measurable
+- [ ] Business requirements clearly defined without technical implementation details
 - [ ] Target users well-defined with pain points
 - [ ] Features include complete user stories and criteria
 - [ ] Scope boundaries clear (goals vs. non-goals)
@@ -145,6 +135,36 @@ Guidelines for creating effective PRDs using the PRD template.
 - [ ] Links current and accessible
 - [ ] Version and approval status current
 - [ ] Format consistent and professional
+
+---
+
+## ❌ What NOT to Include in PRDs
+
+### Success Metrics / KPIs
+**Don't include**: Detailed success metrics, adoption targets, performance KPIs, or measurement frameworks in PRDs.
+
+**Why**: Metrics should be defined and tracked separately by business stakeholders. PRDs focus on requirements, not measurement.
+
+**Alternative**: Reference metrics tracking in a separate business metrics document or dashboard.
+
+### Technical Considerations
+**Don't include**: Detailed technical architecture, infrastructure decisions, implementation approaches, or technology stack details in PRDs.
+
+**Why**: Technical decisions should be documented by System Architects in dedicated technical documents. PRDs focus on business requirements.
+
+**Alternative**: Reference technical considerations in separate architecture documentation (technical-considerations.md).
+
+### Implementation Details
+**Don't include**: Specific database schemas, API specifications, security implementation details, or deployment configurations.
+
+**Why**: These belong in technical specifications created by engineering teams, not business requirement documents.
+
+### Timeline & Milestones
+**Don't include**: Detailed development timelines, milestones, or project schedules in PRDs.
+
+**Why**: Timeline management is handled separately in agentic AI-driven development processes. PRDs focus on requirements definition, not project scheduling.
+
+**Alternative**: Project timelines and milestones are managed through separate sprint planning and project management processes.
 
 ---
 

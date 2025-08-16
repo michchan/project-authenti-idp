@@ -1,7 +1,5 @@
 # 📐 Wireframes: TaskMaster v1.0
 
-This document provides ASCII wireframes for TaskMaster, a personal task management web application. Each wireframe shows the layout, functionality, and user interactions for different screens and states.
-
 ---
 
 ## 📁 Index
@@ -41,6 +39,12 @@ This document provides ASCII wireframes for TaskMaster, a personal task manageme
 ║                                                                  ║
 ╚══════════════════════════════════════════════════════════════════╝
 ```
+
+**Actions**:
+- Press "🚀 Start Managing Your Tasks" going to [Task Dashboard](#2-task-dashboard-main-view)
+- Press "Learn More" going to [About Page](#about-page)
+- Press "See Demo" going to [Demo View](#demo-view)
+- Press "🌙" going to [Toggle Dark Mode](#toggle-dark-mode)
 
 **Key Elements:**
 - Clean hero section with value proposition
@@ -92,6 +96,14 @@ This document provides ASCII wireframes for TaskMaster, a personal task manageme
 ╚══════════════════════════════════════════════════════════════════╝
 ```
 
+**Actions**:
+- Press "+ Add New Task" going to [Task Creation Modal](#3-task-creation-modal)
+- Press "🔍" going to [Search & Filter Interface](#6-search--filter-interface)
+- Press "📊 Stats" going to [Progress & Statistics](#7-progress--statistics)
+- Press "⚙️ Settings" going to [Settings & Preferences](#8-settings--preferences)
+- Press task title going to [Task Detail View](#4-task-detail-view)
+- Press checkbox to toggle completion
+
 **Key Elements:**
 - Header with app name, navigation, and user controls
 - Quick add task button prominently placed
@@ -136,6 +148,12 @@ This document provides ASCII wireframes for TaskMaster, a personal task manageme
 ║                                                                  ║
 ╚══════════════════════════════════════════════════════════════════╝
 ```
+
+**Actions**:
+- Press "❌" going to [Task Dashboard](#2-task-dashboard-main-view)
+- Press "Cancel" going to [Task Dashboard](#2-task-dashboard-main-view)
+- Press "Create Task" going to [Task Dashboard](#2-task-dashboard-main-view)
+- Press template buttons to auto-fill form
 
 **Key Elements:**
 - Modal overlay with dimmed background
@@ -584,6 +602,3 @@ This document provides ASCII wireframes for TaskMaster, a personal task manageme
 - **Inline editing**: Click to edit in place
 - **Auto-complete**: Smart suggestions for categories and tags
 
----
-
-*These wireframes provide the foundation for TaskMaster's user interface design, ensuring clear information hierarchy and intuitive interaction patterns across all devices.*

@@ -64,4 +64,11 @@ graph TB
     CoreAPI --> Monitoring
 ```
 
-> Brief explanation of how components interact, describing the architecture diagram. Focus on system-level interactions and data flow.
+## Component Communication
+
+| Component | Responsibility | Inbound Communications | Outbound Communications |
+|-----------|---------------|----------------------|------------------------|
+| [Component Name] | [2-3 sentence description of what this component handles] | • [Service Name] ([Protocol])<br>• [Service Name] ([Protocol]) | • [Service Name] ([Protocol])<br>• [Service Name] ([Protocol]) |
+| [Component Name] | [2-3 sentence description] | • [Service Name] ([Protocol]) | • [Service Name] ([Protocol])<br>• [Service Name] ([Protocol]) |
+
+> Use the system architecture diagram and requirements to determine component responsibilities and communication patterns.

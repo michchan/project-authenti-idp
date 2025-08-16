@@ -1,7 +1,5 @@
 # 🎨 TaskMaster Design System v1.0
 
-This document defines the visual design foundation for TaskMaster, a personal task management web application. It establishes colors, typography, spacing, and visual patterns to ensure consistency across all interfaces.
-
 ---
 
 ## 📁 Index
@@ -17,7 +15,6 @@ This document defines the visual design foundation for TaskMaster, a personal ta
 9. [Dark Mode Support](#dark-mode-support)
 10. [Component States](#component-states)
 11. [Component Sizing](#component-sizing)
-12. [Usage Examples](#usage-examples)
 
 ---
 
@@ -1271,108 +1268,3 @@ All color combinations meet **WCAG AA** standards:
 | Progress Bars    | 100% × 12px       | Progress tracking, completion status |
 
 ---
-
-## ✅ Usage Examples
-
-### Live TaskMaster Components Preview
-
-<div style="background: #FAFAFA; padding: 24px; border-radius: 12px; margin: 16px 0; border: 1px solid #E5E5E5;">
-  <h4 style="margin: 0 0 20px 0; color: #171717; font-size: 18px;">TaskMaster Interface Elements</h4>
-  
-  <div style="margin-bottom: 24px;">
-    <p style="margin: 0 0 12px 0; font-weight: 600; color: #525252;">Primary Actions</p>
-    <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-      <button style="background-color: #3182CE; color: white; border: none; padding: 12px 24px; border-radius: 6px; font-weight: 500; cursor: pointer; font-family: 'Inter', sans-serif;">+ Add New Task</button>
-      <button style="background-color: #22C55E; color: white; border: none; padding: 12px 24px; border-radius: 6px; font-weight: 500; cursor: pointer; font-family: 'Inter', sans-serif;">✓ Mark Complete</button>
-      <button style="background-color: transparent; color: #3182CE; border: 2px solid #3182CE; padding: 10px 22px; border-radius: 6px; font-weight: 500; cursor: pointer; font-family: 'Inter', sans-serif;">Cancel</button>
-    </div>
-  </div>
-  
-  <div style="margin-bottom: 24px;">
-    <p style="margin: 0 0 12px 0; font-weight: 600; color: #525252;">Form Elements</p>
-    <div style="display: flex; flex-direction: column; gap: 12px; max-width: 400px;">
-      <input type="text" placeholder="Search tasks..." style="padding: 12px 16px; border: 2px solid #E5E5E5; border-radius: 6px; font-size: 16px; font-family: 'Inter', sans-serif;" />
-      <select style="padding: 12px 16px; border: 2px solid #E5E5E5; border-radius: 6px; font-size: 16px; background: white; font-family: 'Inter', sans-serif;">
-        <option>All Categories</option>
-        <option>💼 Work</option>
-        <option>🏠 Personal</option>
-        <option>🛒 Shopping</option>
-      </select>
-    </div>
-  </div>
-  
-  <div style="margin-bottom: 24px;">
-    <p style="margin: 0 0 12px 0; font-weight: 600; color: #525252;">Status Indicators & Badges</p>
-    <div style="display: flex; gap: 8px; flex-wrap: wrap; align-items: center;">
-      <span style="background-color: #DBEAFE; color: #1D4ED8; padding: 4px 12px; border-radius: 16px; font-size: 12px; font-weight: 500;">💼 Work</span>
-      <span style="background-color: #D1FAE5; color: #065F46; padding: 4px 12px; border-radius: 16px; font-size: 12px; font-weight: 500;">🏠 Personal</span>
-      <span style="background-color: #FEF2F2; color: #991B1B; padding: 4px 12px; border-radius: 16px; font-size: 12px; font-weight: 500;">🔴 High Priority</span>
-      <span style="background-color: #FFFBEB; color: #92400E; padding: 4px 12px; border-radius: 16px; font-size: 12px; font-weight: 500;">🟡 Medium Priority</span>
-      <span style="background-color: #F0FDF4; color: #14532D; padding: 4px 12px; border-radius: 16px; font-size: 12px; font-weight: 500;">🟢 Low Priority</span>
-    </div>
-  </div>
-  
-  <div style="margin-bottom: 24px;">
-    <p style="margin: 0 0 12px 0; font-weight: 600; color: #525252;">Alert Messages</p>
-    <div style="display: flex; flex-direction: column; gap: 12px; max-width: 500px;">
-      <div style="display: flex; align-items: center; padding: 12px 16px; background-color: #F0FDF4; border: 1px solid #BBF7D0; border-radius: 6px; color: #14532D;">
-        <span style="margin-right: 8px;">✅</span>
-        <span>Task completed successfully!</span>
-      </div>
-      <div style="display: flex; align-items: center; padding: 12px 16px; background-color: #FFFBEB; border: 1px solid #FDE68A; border-radius: 6px; color: #92400E;">
-        <span style="margin-right: 8px;">⚠️</span>
-        <span>You have 3 tasks due today</span>
-      </div>
-      <div style="display: flex; align-items: center; padding: 12px 16px; background-color: #FEF2F2; border: 1px solid #FECACA; border-radius: 6px; color: #991B1B;">
-        <span style="margin-right: 8px;">❌</span>
-        <span>Task deadline has passed</span>
-      </div>
-    </div>
-  </div>
-  
-  <div style="margin-bottom: 0;">
-    <p style="margin: 0 0 12px 0; font-weight: 600; color: #525252;">Interactive Elements</p>
-    <div style="display: flex; align-items: center; gap: 16px; flex-wrap: wrap;">
-      <label style="display: flex; align-items: center; cursor: pointer; gap: 12px;">
-        <div style="position: relative; width: 48px; height: 24px; background-color: #3182CE; border-radius: 24px;">
-          <div style="position: absolute; top: 2px; right: 2px; width: 20px; height: 20px; background-color: white; border-radius: 50%; box-shadow: 0 2px 4px rgba(0,0,0,0.2);"></div>
-        </div>
-        <span style="font-size: 16px; color: #171717;">Show completed tasks</span>
-      </label>
-    </div>
-  </div>
-  
-</div>
-
-
----
-
-## Usage Guidelines
-
-### Do's ✅
-- Use semantic color tokens instead of hardcoded values
-- Follow the spacing scale for consistent layouts
-- Apply appropriate elevation levels for component hierarchy
-- Use the type scale for consistent typography
-- Test all interactive states (hover, focus, active, disabled)
-- Ensure sufficient color contrast for accessibility
-- Use animation to provide feedback and guide user attention
-
-### Don'ts ❌
-- Don't create custom colors outside the design system
-- Don't use inconsistent spacing values
-- Don't override component states without good reason
-- Don't use animations that are too flashy or distracting
-- Don't ignore focus states for keyboard navigation
-- Don't use color alone to convey information
-
-### Implementation Notes
-- All CSS custom properties support both light and dark modes
-- Components should be built mobile-first with progressive enhancement
-- Use CSS Grid and Flexbox for layouts instead of floats or positioning
-- Implement smooth transitions for better user experience
-- Test with actual devices and screen readers when possible
-
----
-
-*This design system provides the foundation for a cohesive, accessible, and delightful TaskMaster user experience across all platforms and devices.*

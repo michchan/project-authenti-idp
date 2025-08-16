@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskMaster Dashboard - Sample App</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="theme-manager.js"></script>    <style>
+        .sample-nav {
+            background: linear-gradient(135deg, var(--color-primary) 0%, #2563eb 100%);
+            color: white;
+            padding: 16px 0;
+        }
+        
+        .sample-nav a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        .sample-nav .nav-brand {
+            font-size: var(--font-size-xl);
+            font-weight: 700;
+        }
+        
+        .user-info {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 8px 16px;
+            border-radius: var(--radius-md);
+            font-size: var(--font-size-sm);
+            backdrop-filter: blur(4px);
+        }
+        
+        .auth-status {
+            background: var(--color-success);
+            color: white;
+            padding: 16px 24px;
+            border-radius: var(--radius-md);
+            margin-bottom: 32px;
+        }
+        
+        .status-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 16px;
+            margin-top: 16px;
+        }
+        
+        .status-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: var(--font-size-sm);
+        }
+        
+        .task-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 16px;
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-md);
+            margin-bottom: 12px;
+            transition: all 0.2s ease;
+        }
+        
+        .task-item:hover {
+            border-color: var(--color-primary);
+            background: var(--color-secondary);
+        }
+        
+        .task-checkbox {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+        
+        .task-text {
+            flex: 1;
+            font-size: var(--font-size-base);
+        }
+        
+        .task-completed .task-text {
+            text-decoration: line-through;
+            color: var(--color-text-muted);
+        }
+        
+        .code-example {
+            background: var(--color-panel);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-md);
+            padding: 20px;
+            font-family: 'Monaco', 'Consolas', monospace;
+            font-size: 14px;
+            overflow-x: auto;
+            position: relative;
+        }
+        
+        .tabs {
+            display: flex;
+            border-bottom: 1px solid var(--color-border);
+            margin-bottom: 24px;
+        }
+        
+        .tab {
+            padding: 12px 24px;
+            border: none;
+            background: none;
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+            transition: all 0.2s ease;
+        }
+        
+        .tab.active {
+            color: var(--color-primary);
+            border-bottom-color: var(--color-primary);
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- Sample App Navigation -->
+    <nav class="sample-nav">
+        <div class="nav-content" style="color: white;">
+            <div style="display: flex; align-items: center; gap: 16px;">
+                <a href="09-sample-landing.html" class="nav-brand">⚀ TaskMaster</a>
+                <span style="font-size: var(--font-size-sm); opacity: 0.8;">Demo Dashboard</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 16px;">
+                <div class="user-info">
+                    ⚉ John Doe • user@example.com
+                </div>
+                <div class="user-info" style="background: rgba(255, 255, 255, 0.2);">
+                    ⚿ AuthentiIDP
+                </div>
+                <button class="btn btn-secondary" style="padding: 8px 16px; background: rgba(255, 255, 255, 0.2); border: 1px solid rgba(255, 255, 255, 0.3);" onclick="signOut()">
+                    Sign Out
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container" style="padding-top: 32px;">
+        <!-- Authentication Status -->
+        <div class="auth-status">
+            <h2 style="margin-bottom: 16px; display: flex; align-items: center; gap: 8px;">
+                <span>✅</span>
+                Welcome Back, John!
+            </h2>
+            <p style="margin-bottom: 16px; opacity: 0.9;">
+                You're successfully authenticated via AuthentiIDP! Here's what the SDK provides:
+            </p>
+            
+            <div class="status-grid">
+                <div class="status-item">
+                    <span>⚿</span>
+                    <span>Authentication Status: <strong>✅ Signed In</strong></span>
+                </div>
+                <div class="status-item">
+                    <span>✉</span>
+                    <span>Email: <strong>user@example.com</strong></span>
+                </div>
+                <div class="status-item">
+                    <span>⚐</span>
+                    <span>Session: <strong>Active (expires in 29 days)</strong></span>
+                </div>
+                <div class="status-item">
+                    <span>⚔</span>
+                    <span>Token: <strong>Valid</strong></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab Navigation -->
+        <div class="tabs">
+            <button class="tab active" data-tab="tasks">⚘ Home</button>
+            <button class="tab" data-tab="features">✅ Protected Features</button>
+            <button class="tab" data-tab="profile">⚉ Profile</button>
+        </div>
+
+        <!-- Tasks Tab -->
+        <div id="tasks-tab" class="tab-content active">
+            <div class="grid grid-2" style="gap: 32px; align-items: start;">
+                <!-- Task List -->
+                <div class="card">
+                    <h3 style="margin-bottom: 24px;">⚚ Personal Tasks</h3>
+                    <p style="color: var(--color-text-muted); margin-bottom: 24px; font-size: var(--font-size-sm);">
+                        This content is only visible to authenticated users. Try signing out and back in to see SSO in action!
+                    </p>
+                    
+                    <div id="task-list">
+                        <div class="task-item task-completed">
+                            <input type="checkbox" class="task-checkbox" checked onchange="toggleTask(this)">
+                            <span class="task-text">Buy groceries</span>
+                            <span class="text-sm text-muted">Completed</span>
+                        </div>
+                        
+                        <div class="task-item task-completed">
+                            <input type="checkbox" class="task-checkbox" checked onchange="toggleTask(this)">
+                            <span class="task-text">Finish demo application</span>
+                            <span class="text-sm text-muted">Completed</span>
+                        </div>
+                        
+                        <div class="task-item">
+                            <input type="checkbox" class="task-checkbox" onchange="toggleTask(this)">
+                            <span class="task-text">Test AuthentiIDP integration</span>
+                            <span class="text-sm text-muted">In Progress</span>
+                        </div>
+                        
+                        <div class="task-item">
+                            <input type="checkbox" class="task-checkbox" onchange="toggleTask(this)">
+                            <span class="task-text">Deploy to production</span>
+                            <span class="text-sm text-muted">Pending</span>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 24px;">
+                        <input type="text" class="form-input" placeholder="Add new task..." id="new-task" style="margin-bottom: 12px;">
+                        <button class="btn btn-primary" onclick="addTask()">Add New Task</button>
+                    </div>
+                </div>
+
+                <!-- Quick Stats -->
+                <div>
+                    <div class="card" style="margin-bottom: 24px;">
+                        <h3 style="margin-bottom: 16px;">⚘ Quick Stats</h3>
+                        <div style="space-y: 12px;">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                                <span>Total Tasks:</span>
+                                <strong id="total-tasks">4</strong>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                                <span>Completed:</span>
+                                <strong id="completed-tasks" style="color: var(--color-success);">2</strong>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                                <span>In Progress:</span>
+                                <strong id="pending-tasks" style="color: var(--color-warning);">2</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3 style="margin-bottom: 16px;">⚯ Quick Links</h3>
+                        <div style="space-y: 8px;">
+                            <a href="07-profile-settings.html" class="btn btn-secondary btn-full" style="justify-content: flex-start; margin-bottom: 8px;">
+                                ⚉ Manage Profile
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Protected Features Tab -->
+        <div id="features-tab" class="tab-content">
+            <div class="card">
+                <h3 style="margin-bottom: 24px;">⚿ Protected Features Demo</h3>
+                <p style="color: var(--color-text-muted); margin-bottom: 32px;">
+                    These features are only accessible to authenticated users. The AuthentiIDP SDK automatically handles access control.
+                </p>
+
+                <div class="grid grid-2" style="gap: 24px;">
+                    <div style="padding: 20px; border: 1px solid var(--color-success); border-radius: var(--radius-md); background: rgba(16, 185, 129, 0.05);">
+                        <h4 style="color: var(--color-success); margin-bottom: 12px;">✅ User Data Access</h4>
+                        <p style="font-size: var(--font-size-sm); color: var(--color-text-muted);">
+                            Access user profile information, preferences, and personalized content based on authentication status.
+                        </p>
+                    </div>
+
+                    <div style="padding: 20px; border: 1px solid var(--color-success); border-radius: var(--radius-md); background: rgba(16, 185, 129, 0.05);">
+                        <h4 style="color: var(--color-success); margin-bottom: 12px;">✅ Secure API Calls</h4>
+                        <p style="font-size: var(--font-size-sm); color: var(--color-text-muted);">
+                            Make authenticated API requests with automatically managed tokens and session handling.
+                        </p>
+                    </div>
+
+                    <div style="padding: 20px; border: 1px solid var(--color-success); border-radius: var(--radius-md); background: rgba(16, 185, 129, 0.05);">
+                        <h4 style="color: var(--color-success); margin-bottom: 12px;">✅ Role-Based Features</h4>
+                        <p style="font-size: var(--font-size-sm); color: var(--color-text-muted);">
+                            Show different content and features based on user roles and permissions from AuthentiIDP.
+                        </p>
+                    </div>
+
+                    <div style="padding: 20px; border: 1px solid var(--color-success); border-radius: var(--radius-md); background: rgba(16, 185, 129, 0.05);">
+                        <h4 style="color: var(--color-success); margin-bottom: 12px;">✅ Cross-App Sessions</h4>
+                        <p style="font-size: var(--font-size-sm); color: var(--color-text-muted);">
+                            Maintain authentication state across multiple applications with seamless SSO experience.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Profile Tab -->
+        <div id="profile-tab" class="tab-content">
+            <div class="card">
+                <h3 style="margin-bottom: 24px;">⚉ User Profile</h3>
+                <div style="display: flex; align-items: center; gap: 24px; margin-bottom: 32px;">
+                    <div style="width: 80px; height: 80px; background: var(--color-primary); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: white; font-size: 32px; font-weight: 600;">
+                        JD
+                    </div>
+                    <div>
+                        <h4 style="margin-bottom: 8px;">John Doe</h4>
+                        <p style="color: var(--color-text-muted); margin-bottom: 8px;">user@example.com</p>
+                        <p style="color: var(--color-text-muted); font-size: var(--font-size-sm);">
+                            Member since March 2025
+                        </p>
+                    </div>
+                </div>
+
+                <div style="display: flex; gap: 16px;">
+                    <a href="07-profile-settings.html" class="btn btn-primary">
+                        Edit Profile
+                    </a>
+                    <a href="07-profile-settings.html" class="btn btn-secondary">
+                        Manage Apps
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Theme Toggle -->
+    <button class="theme-toggle" id="theme-toggle" style="position: fixed; top: 24px; right: 24px;" aria-label="Toggle theme">
+        ☽
+    </button>
+
+    <script>
+                // Theme management is now handled by the shared theme-manager.js
+        // Tab Management
+        class TabManager {
+            constructor() {
+                this.bindEvents();
+            }
+            
+            bindEvents() {
+                document.querySelectorAll('.tab').forEach(tab => {
+                    tab.addEventListener('click', () => {
+                        this.switchTab(tab.dataset.tab);
+                    });
+                });
+            }
+            
+            switchTab(tabName) {
+                // Update tab buttons
+                document.querySelectorAll('.tab').forEach(tab => {
+                    tab.classList.remove('active');
+                });
+                document.querySelector(`[data-tab="${tabName}"]`).classList.add('active');
+                
+                // Update tab content
+                document.querySelectorAll('.tab-content').forEach(content => {
+                    content.classList.remove('active');
+                });
+                document.getElementById(`${tabName}-tab`).classList.add('active');
+            }
+        }
+
+        // Task Management
+        function toggleTask(checkbox) {
+            const taskItem = checkbox.closest('.task-item');
+            if (checkbox.checked) {
+                taskItem.classList.add('task-completed');
+            } else {
+                taskItem.classList.remove('task-completed');
+            }
+            updateStats();
+        }
+
+        function addTask() {
+            const input = document.getElementById('new-task');
+            const taskText = input.value.trim();
+            
+            if (taskText) {
+                const taskList = document.getElementById('task-list');
+                const newTask = document.createElement('div');
+                newTask.className = 'task-item';
+                newTask.innerHTML = `
+                    <input type="checkbox" class="task-checkbox" onchange="toggleTask(this)">
+                    <span class="task-text">${taskText}</span>
+                    <span class="text-sm text-muted">New</span>
+                `;
+                taskList.appendChild(newTask);
+                input.value = '';
+                updateStats();
+            }
+        }
+
+        function updateStats() {
+            const total = document.querySelectorAll('.task-item').length;
+            const completed = document.querySelectorAll('.task-completed').length;
+            const pending = total - completed;
+            
+            document.getElementById('total-tasks').textContent = total;
+            document.getElementById('completed-tasks').textContent = completed;
+            document.getElementById('pending-tasks').textContent = pending;
+        }
+
+
+        // Authentication Management
+        function signOut() {
+            // Clear demo authentication
+            sessionStorage.removeItem('demo-authenticated');
+            window.location.href = '09-sample-landing.html';
+        }
+
+        // Check authentication on load
+        function checkAuth() {
+            const isAuthenticated = sessionStorage.getItem('demo-authenticated');
+            if (!isAuthenticated) {
+                // Redirect to landing page
+                window.location.href = '09-sample-landing.html';
+            }
+        }
+
+        // Allow enter key to add tasks
+        document.getElementById('new-task').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                addTask();
+            }
+        });
+
+        // Initialize
+        new TabManager();
+        checkAuth();
+        updateStats();
+    </script>
+</body>
+</html>

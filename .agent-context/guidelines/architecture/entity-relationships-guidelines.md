@@ -6,11 +6,14 @@ Define data model with entity relationships, ownership boundaries, and access pa
 ## ✅ Must Include
 - **Entity Relationship Diagram**: Visual representation of entities and relationships
 - **Data Ownership Map**: Ownership and access control matrix
-- **Entity Relationships**: Relationship descriptions with cardinality
-- **Service Boundaries**: Ownership and responsibility boundaries
-- **Access Control**: Read/write permissions and data flow
+- **Core Data Entities**: Table format with relationship details
+- **Derived Data Relationships**: Table format for aggregated data patterns
+- **Configuration and State Relationships**: Table format for configuration dependencies
+- **Service Ownership Boundaries**: Table format showing service responsibilities
+- **Data Flow Patterns**: Table format for operation flows
 
 ## ❌ Avoid Including
+- **Purpose sections**: Remove document purpose descriptions
 - **Storage Details**: Focus on logical relationships, not physical storage
 - **Detailed Schemas**: High-level entity structure only
 - **Technology Choices**: Storage type indications without vendor lock-in
@@ -37,32 +40,40 @@ Table with:
 - Access patterns (read/write permissions by service)
 - Lifecycle management (creation, updates, deletion)
 
-### 3. Relationships and Dependencies
-For each relationship:
-- Type and cardinality
-- Referential integrity rules
-- Cascade behaviors
-- Business rule implications
+### 3. Core Data Entities Table
+| Relationship | Cardinality | Referential Integrity | Cascade Behavior | Business Rules |
+|-------------|-------------|----------------------|------------------|----------------|
+| [Entity A → Entity B] | [1:Many] | [Integrity description] | [ON DELETE CASCADE] | [Business constraints] |
 
-### 4. Service Boundaries
-For each service:
-- Owned entities and responsibilities
-- Read access to other entities
-- Write permissions and validation
-- Event-driven communication
+### 4. Derived Data Relationships Table  
+| Source → Target | Aggregation Type | Recalculation | Historical Data | Dependencies |
+|----------------|------------------|---------------|-----------------|--------------|
+| [Entity → Analytics] | [Real-time/Batch] | [When/How] | [Retention policy] | [Dependencies] |
 
-### 5. Access Control and Data Flow
-- Write operation flows across services
-- Read operation patterns and permissions
-- Cross-service communication mechanisms
-- Error isolation and boundary protections
+### 5. Configuration and State Relationships Table
+| Config Entity → Target | Global Impact | Application | Dependencies |
+|------------------------|---------------|-------------|--------------|
+| [Config → Entity] | [System-wide effects] | [Specific use] | [Requirements] |
+
+### 6. Service Ownership Boundaries Table
+| Service | Full Control | Read Access | Write Authority | Validation |
+|---------|--------------|-------------|-----------------|------------|
+| [Service Name] | [Owned entities] | [Read permissions] | [Write scope] | [Validation rules] |
+
+### 7. Data Flow Patterns Table
+| Pattern Type | Step | Description |
+|-------------|------|-------------|
+| Write Operations | 1. | Authentication and permission verification |
+| | 2. | Validation and business rule enforcement |
+| Read Operations | 1. | Authorization and access control |
+| | 2. | Query optimization and data transformation |
 
 ## 🛠 Tips
 - Start with ERD: Visual first, then details
 - Focus on logical relationships
 - Use standard ERD notation
 - Group entities by service ownership
-- Document relationship rules
-- Show derived data clearly
-- Include temporal relationships
+- Convert all relationship sections to tables for clarity
+- Include footnote explaining data ownership model
 - Highlight cross-boundary relationships
+- Use consistent table formatting across all sections

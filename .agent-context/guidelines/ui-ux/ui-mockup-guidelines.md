@@ -4,6 +4,44 @@ Simple reference for creating navigable UI mockups that serve as visual design r
 
 **Purpose**: Create HTML mockups that users can browse and click through to see all design pages/components. The main goal is visual reference for frontend engineers, not production-ready code.
 
+## ⚠️ CRITICAL: Complete Coverage Requirements
+
+**MANDATORY FIRST STEP**: Before creating any mockups, you MUST:
+
+1. **Read ALL user journeys** from the user-journeys document to understand every screen/state required
+2. **Review ALL wireframes** from the wireframes document to identify each mockup needed  
+3. **Create a comprehensive checklist** of every screen, modal, form, and state mentioned
+4. **Map user flows** to ensure no transition points are missing mockups
+5. **Create an index page** that organizes and links to ALL mockups for easy navigation
+
+### Coverage Validation Process
+
+```markdown
+## Mockup Coverage Checklist Template
+
+### From User Journeys Analysis:
+- [ ] Journey 1: Screen A, Screen B, Error State C
+- [ ] Journey 2: Screen D, Modal E, Confirmation F
+- [ ] Journey N: ...
+
+### From Wireframes Analysis:
+- [ ] Wireframe Section 1: Page X, Page Y, Component Z
+- [ ] Wireframe Section 2: Page M, Flow N, State O
+- [ ] Wireframe Section N: ...
+
+### Cross-Reference Check:
+- [ ] Every user journey step has a corresponding mockup
+- [ ] Every wireframe screen has been implemented
+- [ ] All error states and edge cases covered
+- [ ] Navigation flows complete between all screens
+- [ ] Index page created with full navigation
+
+### Missing Elements (if any):
+- List any identified gaps with reasons
+```
+
+**FAILURE CRITERION**: If any user journey step or wireframe screen lacks a mockup, the work is INCOMPLETE and must be remedied before proceeding.
+
 ## Table of Contents
 
 1. [Basic Structure](#basic-structure)
@@ -129,21 +167,152 @@ Simple reference for creating navigable UI mockups that serve as visual design r
 .disabled { opacity: 0.5; cursor: not-allowed; }
 ```
 
-### Simple JavaScript
+### JavaScript Best Practices - DRY Principle
+
+**CRITICAL: Avoid Code Duplication**
+
+When creating multiple mockup pages, always extract common functionality into shared JavaScript files to reduce maintenance costs and ensure consistency.
+
+#### ❌ BAD: Duplicate Code in Every HTML File
+```html
+<!-- 01-login.html -->
+<script>
+    class ThemeManager {
+        constructor() { /* 50+ lines of theme logic */ }
+        toggle() { /* theme toggle logic */ }
+        // ... more duplicate code
+    }
+    new ThemeManager();
+</script>
+
+<!-- 02-register.html -->
+<script>
+    class ThemeManager {
+        constructor() { /* SAME 50+ lines duplicated */ }
+        toggle() { /* SAME theme toggle logic */ }
+        // ... SAME duplicate code
+    }
+    new ThemeManager();
+</script>
+<!-- This pattern across 14+ files = 700+ lines of duplicate code -->
+```
+
+#### ✅ GOOD: Shared JavaScript Module
+```javascript
+// theme-manager.js - Single source of truth
+class ThemeManager {
+    constructor() {
+        this.theme = localStorage.getItem('theme') || 'light';
+        this.initialize();
+        this.attachEventListeners();
+    }
+    
+    toggle() {
+        this.theme = this.theme === 'light' ? 'dark' : 'light';
+        this.apply();
+        this.persist();
+    }
+    
+    // ... complete theme management logic (107 lines once)
+}
+
+// Auto-initialize for all pages
+window.themeManager = new ThemeManager();
+```
+
+```html
+<!-- All HTML files just reference the shared module -->
+<script src="theme-manager.js"></script>
+<!-- No duplicate code! -->
+```
+
+#### Common Reusable Modules
 
 ```javascript
-// Basic click handlers
-function showPage(pageId) {
-    document.querySelectorAll('.page').forEach(p => p.style.display = 'none');
-    document.getElementById(pageId).style.display = 'block';
+// navigation-manager.js
+class NavigationManager {
+    static setActivePage(pageId) {
+        document.querySelectorAll('.nav-link').forEach(link => 
+            link.classList.remove('active'));
+        document.querySelector(`a[href="${pageId}"]`)?.classList.add('active');
+    }
 }
 
-// Simple form validation
-function validateForm(form) {
-    const inputs = form.querySelectorAll('input[required]');
-    return Array.from(inputs).every(input => input.value.trim());
+// form-validator.js  
+class FormValidator {
+    static validateRequired(form) {
+        const inputs = form.querySelectorAll('input[required]');
+        return Array.from(inputs).every(input => input.value.trim());
+    }
+    
+    static showFieldError(field, message) {
+        const error = field.parentNode.querySelector('.field-error');
+        if (error) error.textContent = message;
+    }
+}
+
+// modal-manager.js
+class ModalManager {
+    static show(modalId) {
+        document.getElementById(modalId).classList.add('active');
+    }
+    
+    static hide(modalId) {
+        document.getElementById(modalId).classList.remove('active');
+    }
 }
 ```
+
+#### File Organization Strategy
+
+```
+mockups/
+├── shared-scripts/
+│   ├── theme-manager.js       (theme switching logic)
+│   ├── navigation-manager.js  (page navigation helpers)
+│   ├── form-validator.js      (form validation utilities)
+│   ├── modal-manager.js       (modal/popup management)
+│   └── utils.js               (general utilities)
+├── styles.css                 (shared styles)
+├── index.html                 (navigation hub)
+├── 01-login.html              (includes shared scripts)
+├── 02-register.html           (includes shared scripts)
+└── ...
+```
+
+#### Implementation in HTML Files
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Page Title</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Page content -->
+    
+    <!-- Shared scripts -->
+    <script src="shared-scripts/theme-manager.js"></script>
+    <script src="shared-scripts/navigation-manager.js"></script>
+    <script src="shared-scripts/form-validator.js"></script>
+    
+    <!-- Page-specific script (minimal) -->
+    <script>
+        // Only page-specific logic here
+        NavigationManager.setActivePage('01-login.html');
+    </script>
+</body>
+</html>
+```
+
+#### Benefits of This Approach
+- **Reduced Codebase**: 700+ lines reduced to 107 lines (83% reduction)
+- **Single Source of Truth**: Updates in one place affect all pages
+- **Consistency**: Guaranteed identical behavior across mockups
+- **Maintainability**: Fix bugs once, benefit everywhere
+- **Performance**: Shared scripts cache across page visits
+- **Development Speed**: New pages just include existing modules
 
 ---
 
@@ -412,12 +581,32 @@ mockup/
 
 ## Checklist
 
+### Coverage Requirements (MANDATORY)
+- [ ] **Complete coverage analysis done** - All user journeys and wireframes reviewed
+- [ ] **All screens implemented** - Every wireframe screen has corresponding mockup
+- [ ] **All user flows covered** - Every user journey step has a mockup
+- [ ] **Index page created** - Navigation hub with categorized links to all mockups
+- [ ] **Cross-references validated** - No gaps between documentation and implementation
+
+### Design System Requirements (MANDATORY)
+- [ ] **UI designer MUST design based on the design system and component library created** - All mockups must follow established design tokens, colors, typography, spacing, and component specifications
+- [ ] **Component consistency** - Reuse components from component library across all mockups
+- [ ] **Design token adherence** - Colors, fonts, spacing must match design system specifications
+- [ ] **Visual consistency** - All mockups maintain unified visual language and branding
+
 ### Essential Requirements
 - [ ] **All navigation links work** - Users can navigate between all pages
 - [ ] **All buttons link somewhere** - Action buttons go to relevant pages  
 - [ ] **Current page highlighted** - Users know where they are
 - [ ] **Logo links to home** - Standard web behavior
 - [ ] **Mobile friendly** - Works on phone screens
+
+### Index Page Requirements
+- [ ] **Categorized organization** - Mockups grouped by user journey/functionality
+- [ ] **Clear descriptions** - Each mockup has purpose and flow context
+- [ ] **Statistics display** - Total mockups, categories, coverage metrics
+- [ ] **Flow diagrams** - Visual representation of user journey connections
+- [ ] **Quick navigation** - Easy access to any mockup from index
 
 ### Nice to Have
 - [ ] Simple hover effects on interactive elements
@@ -427,9 +616,17 @@ mockup/
 
 ### Files Needed
 - [ ] All HTML pages created and linked
+- [ ] index.html - comprehensive navigation page
 - [ ] Single CSS file with basic styles
-- [ ] Optional: Simple JavaScript for interactions
+- [ ] **Shared JavaScript modules** - Extract common functionality (theme management, navigation, forms, etc.)
+- [ ] **No duplicate JavaScript code** - All common logic must be in shared modules
 - [ ] Images/icons organized in folder
+
+### Code Quality Requirements
+- [ ] **DRY Principle Applied** - No duplicated JavaScript logic across files
+- [ ] **Single Source of Truth** - Common functionality exists in only one place
+- [ ] **Shared Modules Used** - All pages reference shared scripts instead of inline duplicates
+- [ ] **Maintainable Structure** - Updates require changing only one file per feature
 
 ---
 

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grant Access Permission - AuthentiIDP</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="theme-manager.js"></script></head>
+<body>
+    <div class="auth-container">
+        <div class="auth-card">
+            <!-- Header with User Info -->
+            <div class="nav-user" style="justify-content: space-between; margin-bottom: 32px; padding-bottom: 16px; border-bottom: 1px solid var(--color-border);">
+                <h1 style="color: var(--color-primary); margin: 0; font-size: var(--font-size-xl);">AuthentiIDP</h1>
+                <div style="display: flex; align-items: center; gap: 8px;">
+                    <div class="user-avatar">JD</div>
+                    <span class="text-sm text-muted">user@example.com</span>
+                </div>
+            </div>
+
+            <!-- Main Content -->
+            <div class="text-center" style="margin-bottom: 32px;">
+                <h2 style="font-size: var(--font-size-xl); margin-bottom: 8px;">Grant Access Permission</h2>
+                <p class="text-muted">An application is requesting access to your account</p>
+            </div>
+
+            <!-- Application Request Card -->
+            <div class="card" style="margin-bottom: 24px; background: var(--color-secondary); border: none;">
+                <!-- App Header -->
+                <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 20px;">
+                    <div style="width: 48px; height: 48px; background: var(--color-primary); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; font-size: 20px; color: white;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style="color: var(--color-primary);"><path d="M9 11H7v6h2v-6zm4 0h-2v6h2v-6zm4 0h-2v6h2v-6zm2.5-9H19V1h-2v1H7V1H5v1H4.5C3.12 2 2 3.12 2 4.5v14C2 19.88 3.12 21 4.5 21h15c1.38 0 2.5-1.12 2.5-2.5v-14C22 3.12 20.88 2 19.5 2zm0 16h-15V7h15v11z"/></svg>
+                    </div>
+                    <div>
+                        <h3 style="font-size: var(--font-size-lg); margin: 0 0 4px 0; color: var(--color-text);">TaskMaster App</h3>
+                        <p style="color: var(--color-text-muted); margin: 0; font-size: var(--font-size-sm);">Created by John Doe</p>
+                    </div>
+                </div>
+
+                <!-- Permissions List -->
+                <div style="margin-bottom: 20px;">
+                    <h4 style="font-size: var(--font-size-base); margin-bottom: 12px; color: var(--color-text);">
+                        This application is requesting access to:
+                    </h4>
+                    
+                    <div style="background: var(--color-panel); border-radius: var(--radius-md); padding: 16px; margin-bottom: 16px;">
+                        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                            <span style="color: var(--color-success);">✓</span>
+                            <strong style="color: var(--color-text);">Your basic profile information</strong>
+                        </div>
+                        <p style="color: var(--color-text-muted); font-size: var(--font-size-sm); margin: 0; padding-left: 24px;">
+                            Name, Email, Profile Picture
+                        </p>
+                    </div>
+
+                    <div style="background: var(--color-panel); border-radius: var(--radius-md); padding: 16px; margin-bottom: 16px;">
+                        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                            <span style="color: var(--color-success);">✓</span>
+                            <strong style="color: var(--color-text);">Authentication status</strong>
+                        </div>
+                        <p style="color: var(--color-text-muted); font-size: var(--font-size-sm); margin: 0; padding-left: 24px;">
+                            Login/logout notifications
+                        </p>
+                    </div>
+
+                    <!-- Controllable Permissions -->
+                    <h5 style="font-size: var(--font-size-sm); margin: 16px 0 8px 0; color: var(--color-text); font-weight: 600;">
+                        Permissions you can control:
+                    </h5>
+                    
+                    <div style="background: var(--color-panel); border-radius: var(--radius-md); padding: 16px;">
+                        <label style="display: flex; align-items: center; gap: 8px; cursor: pointer; margin-bottom: 12px;">
+                            <input type="checkbox" name="shareUpdates" checked>
+                            <span style="color: var(--color-text);">Share profile updates</span>
+                        </label>
+                        <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                            <input type="checkbox" name="emailNotifications">
+                            <span style="color: var(--color-text);">Email notifications from this app</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Privacy Notice -->
+                <div style="padding: 12px; background: rgba(59, 130, 246, 0.1); border-radius: var(--radius-md); margin-bottom: 20px;">
+                    <p style="color: var(--color-text); margin: 0; font-size: var(--font-size-sm);">
+                        By continuing, you agree to share this information with TaskMaster App.
+                    </p>
+                </div>
+
+                <!-- Action Buttons -->
+                <div style="display: flex; gap: 12px;">
+                    <button type="button" class="btn btn-secondary" style="flex: 1;" onclick="window.location.href='01-login.html'">
+                        Cancel
+                    </button>
+                    <button type="button" class="btn btn-primary" style="flex: 1;" id="grant-access-btn">
+                        Grant Access
+                    </button>
+                </div>
+
+                <!-- Security Message -->
+                <div style="display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--color-border);">
+                    <span style="font-size: 16px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="color: var(--color-primary);"><path d="M12 2L2 7v10c0 5.55 3.84 9.74 9 11 5.16-1.26 9-5.45 9-11V7l-10-5z"/></svg></span>
+                    <p style="color: var(--color-text-muted); margin: 0; font-size: var(--font-size-sm); text-align: center;">
+                        Your data remains under your control. You can revoke access anytime.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Additional Info -->
+            <div style="text-align: center;">
+                <p class="text-muted" style="font-size: var(--font-size-xs);">
+                    You'll be redirected to TaskMaster App after granting access
+                </p>
+            </div>
+        </div>
+
+        <!-- Theme Toggle -->
+        <button class="theme-toggle" id="theme-toggle" style="position: fixed; top: 24px; right: 24px;" aria-label="Toggle theme">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M9.37 5.51c-.18.64-.27 1.31-.27 1.99 0 4.08 3.32 7.4 7.4 7.4.68 0 1.35-.09 1.99-.27C17.45 17.19 14.93 19 12 19c-3.86 0-7-3.14-7-7 0-2.93 1.81-5.45 4.37-6.49z"/></svg>
+        </button>
+    </div>
+
+    <script>
+                // Theme management is now handled by the shared theme-manager.js
+        // Grant Access Handler
+        document.getElementById('grant-access-btn').addEventListener('click', function() {
+            const btn = this;
+            const originalText = btn.textContent;
+            
+            // Show loading state
+            btn.disabled = true;
+            btn.innerHTML = `
+                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="animation: spin 1s linear infinite;">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
+                </svg>
+                Granting Access...
+            `;
+            
+            // Simulate API call
+            setTimeout(() => {
+                // Redirect to sample app or dashboard
+                window.location.href = '09-sample-landing.html';
+            }, 2000);
+        });
+        // Theme manager is automatically initialized by theme-manager.js
+    </script>
+</body>
+</html>

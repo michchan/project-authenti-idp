@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AuthentiIDP v1.0 - UI Mockups Index</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Index page with new flat, sharp design system */
+        body {
+            font-family: var(--font-family);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: var(--color-bg);
+            min-height: 100vh;
+            color: var(--color-text);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .header {
+            background: var(--color-panel);
+            border-radius: var(--radius-md);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            /* No shadow - flat design */
+        }
+
+        .header h1 {
+            color: var(--color-primary);
+            font-size: 2.5rem;
+            margin: 0 0 0.5rem 0;
+            font-weight: 700;
+        }
+
+        .header p {
+            color: var(--color-text-muted);
+            font-size: 1.1rem;
+            margin: 0;
+        }
+
+        .mockup-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .category-section {
+            background: var(--color-panel);
+            border-radius: var(--radius-md);
+            padding: 1.5rem;
+            /* No shadow - flat design */
+        }
+
+        .category-title {
+            color: var(--color-primary);
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin: 0 0 1rem 0;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--color-border);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .category-icon {
+            font-size: 1.2em;
+        }
+
+        .mockup-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .mockup-item {
+            margin-bottom: 0.75rem;
+            padding: 1rem;
+            background: var(--color-secondary);
+            border-radius: var(--radius-md);
+            border: none; /* Removed border - sufficient contrast */
+            transition: all 0.2s ease;
+        }
+
+        .mockup-item:hover {
+            background: var(--color-border);
+            /* No shadow or transform - flat design */
+        }
+
+        .mockup-link {
+            text-decoration: none;
+            color: var(--color-text);
+            display: block;
+        }
+
+        .mockup-title {
+            font-weight: 600;
+            font-size: 1rem;
+            color: var(--color-primary);
+            margin: 0 0 0.25rem 0;
+        }
+
+        .mockup-description {
+            font-size: 0.9rem;
+            color: var(--color-text-muted);
+            margin: 0;
+        }
+
+        .stats {
+            background: var(--color-panel);
+            border-radius: var(--radius-md);
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            /* No shadow - flat design */
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .stat-item {
+            padding: 1rem;
+            background: var(--color-secondary);
+            border-radius: var(--radius-md);
+            border: none; /* Removed border - sufficient contrast */
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            display: block;
+        }
+
+        .stat-label {
+            color: var(--color-text-muted);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .footer {
+            background: var(--color-panel);
+            border-radius: var(--radius-md);
+            padding: 1.5rem;
+            text-align: center;
+            /* No shadow - flat design */
+        }
+
+        .footer p {
+            color: var(--color-text-muted);
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        .journey-note {
+            background: var(--color-secondary);
+            border: 0.5px solid var(--color-border);
+            border-radius: var(--radius-md);
+            padding: 1rem;
+            margin-top: 1rem;
+        }
+
+        .journey-note h4 {
+            color: var(--color-primary);
+            margin: 0 0 0.5rem 0;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .journey-note p {
+            color: var(--color-primary);
+            margin: 0;
+            font-size: 0.8rem;
+            line-height: 1.4;
+        }
+
+        .journey-link {
+            color: var(--color-primary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .journey-link:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .mockup-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+        }
+
+        /* Theme toggle integration */
+        .theme-toggle-wrapper {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            z-index: 100;
+        }
+    </style>
+</head>
+<body>
+    <div class="theme-toggle-wrapper">
+        <button id="theme-toggle" class="theme-toggle">☽</button>
+    </div>
+    <div class="container">
+        <div class="header">
+            <h1>AuthentiIDP v1.0</h1>
+            <p>Complete UI Mockups Collection - High-Fidelity HTML Prototypes</p>
+        </div>
+
+        <div class="stats">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-number">13</span>
+                    <span class="stat-label">Total Mockups</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">7</span>
+                    <span class="stat-label">User Journeys</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">5</span>
+                    <span class="stat-label">Categories</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">Coverage</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="mockup-grid">
+            <div class="category-section">
+                <h2 class="category-title">
+                    <span class="category-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7v10c0 5.55 3.84 9.74 9 11 5.16-1.26 9-5.45 9-11V7l-10-5z"/></svg></span>
+                    Authentication Screens
+                </h2>
+                <ul class="mockup-list">
+                    <li class="mockup-item">
+                        <a href="01-login.html" class="mockup-link">
+                            <div class="mockup-title">Login Page</div>
+                            <div class="mockup-description">Primary authentication screen with email/password, remember me, and context awareness</div>
+                        </a>
+                    </li>
+                    <li class="mockup-item">
+                        <a href="02-register.html" class="mockup-link">
+                            <div class="mockup-title">User Registration</div>
+                            <div class="mockup-description">Account creation with real-time password validation and terms agreement</div>
+                        </a>
+                    </li>
+                    <li class="mockup-item">
+                        <a href="03-email-verification.html" class="mockup-link">
+                            <div class="mockup-title">Email Verification</div>
+                            <div class="mockup-description">Post-registration verification with resend functionality and support links</div>
+                        </a>
+                    </li>
+                    <li class="mockup-item">
+                        <a href="04-password-reset.html" class="mockup-link">
+                            <div class="mockup-title">Password Reset Request</div>
+                            <div class="mockup-description">Secure password recovery initiation with clear instructions</div>
+                        </a>
+                    </li>
+                    <li class="mockup-item">
+                        <a href="05-new-password.html" class="mockup-link">
+                            <div class="mockup-title">New Password Creation</div>
+                            <div class="mockup-description">Password reset completion with strength validation and security options</div>
+                        </a>
+                    </li>
+                </ul>
+                <div class="journey-note">
+                    <h4>User Journey</h4>
+                    <p>Registration → Email Verification → Login → SSO Access across applications</p>
+                </div>
+            </div>
+
+            <div class="category-section">
+                <h2 class="category-title">
+                    <span class="category-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg></span>
+                    SSO Integration
+                </h2>
+                <ul class="mockup-list">
+                    <li class="mockup-item">
+                        <a href="06-sso-consent.html" class="mockup-link">
+                            <div class="mockup-title">SSO Consent Screen</div>
+                            <div class="mockup-description">Application permission request with granular control and clear data usage</div>
+                        </a>
+                    </li>
+                </ul>
+                <div class="journey-note">
+                    <h4>SSO Flow</h4>
+                    <p>App Request → <a href="06-sso-consent.html" class="journey-link">Consent</a> → Token Grant → Seamless Access</p>
+                </div>
+            </div>
+
+            <div class="category-section">
+                <h2 class="category-title">
+                    <span class="category-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm3.5 6L12 10.5 8.5 8 12 5.5 15.5 8zM8.5 16L12 13.5 15.5 16 12 18.5 8.5 16z"/></svg></span>
+                    Profile Management
+                </h2>
+                <ul class="mockup-list">
+                    <li class="mockup-item">
+                        <a href="07-profile-settings.html" class="mockup-link">
+                            <div class="mockup-title">Profile Settings</div>
+                            <div class="mockup-description">Comprehensive profile management with tabs for personal info, security, and connected apps with detailed permission controls</div>
+                        </a>
+                    </li>
+                </ul>
+                <div class="journey-note">
+                    <h4>Management Flow</h4>
+                    <p><a href="07-profile-settings.html" class="journey-link">Profile Settings</a> → Apps Tab → Permission Control → Cross-app Updates</p>
+                </div>
+            </div>
+
+            <div class="category-section">
+                <h2 class="category-title">
+                    <span class="category-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"/></svg></span>
+                    Developer Dashboard
+                </h2>
+                <ul class="mockup-list">
+                    <li class="mockup-item">
+                        <a href="12-developer-dashboard.html" class="mockup-link">
+                            <div class="mockup-title">Developer Dashboard</div>
+                            <div class="mockup-description">All applications overview with integrated step-by-step integration guide and code examples</div>
+                        </a>
+                    </li>
+                    <li class="mockup-item">
+                        <a href="13-application-settings.html" class="mockup-link">
+                            <div class="mockup-title">Application Settings</div>
+                            <div class="mockup-description">Complete application configuration with API credentials, redirect URIs, token settings, and integration guide</div>
+                        </a>
+                    </li>
+                </ul>
+                <div class="journey-note">
+                    <h4>Developer Flow</h4>
+                    <p><a href="12-developer-dashboard.html" class="journey-link">Dashboard</a> → <a href="13-application-settings.html" class="journey-link">App Settings</a> → SDK Setup → Integration Guide</p>
+                </div>
+            </div>
+
+            <div class="category-section">
+                <h2 class="category-title">
+                    <span class="category-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M9 11H7v6h2v-6zm4 0h-2v6h2v-6zm4 0h-2v6h2v-6zm2.5-9H19V1h-2v1H7V1H5v1H4.5C3.12 2 2 3.12 2 4.5v14C2 19.88 3.12 21 4.5 21h15c1.38 0 2.5-1.12 2.5-2.5v-14C22 3.12 20.88 2 19.5 2zm0 16h-15V7h15v11z"/></svg></span>
+                    Sample Application
+                </h2>
+                <ul class="mockup-list">
+                    <li class="mockup-item">
+                        <a href="09-sample-landing.html" class="mockup-link">
+                            <div class="mockup-title">Demo Landing Page</div>
+                            <div class="mockup-description">TaskMaster sample app showing AuthentiIDP integration with clear call-to-actions</div>
+                        </a>
+                    </li>
+                    <li class="mockup-item">
+                        <a href="10-sample-protected.html" class="mockup-link">
+                            <div class="mockup-title">Protected Content</div>
+                            <div class="mockup-description">Authenticated user experience with session info, protected features, and code examples</div>
+                        </a>
+                    </li>
+                    <li class="mockup-item">
+                        <a href="11-sample-logout.html" class="mockup-link">
+                            <div class="mockup-title">Logout Options</div>
+                            <div class="mockup-description">Session termination with local vs global logout choices and clear expectations</div>
+                        </a>
+                    </li>
+                </ul>
+                <div class="journey-note">
+                    <h4>Sample App Flow</h4>
+                    <p><a href="09-sample-landing.html" class="journey-link">Landing</a> → Authentication → <a href="10-sample-protected.html" class="journey-link">Protected Content</a> → <a href="11-sample-logout.html" class="journey-link">Logout</a></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p><strong>Complete Coverage:</strong> All user journeys, wireframes, and developer scenarios are represented in these high-fidelity HTML mockups. Each mockup includes interactive elements, proper navigation, and accessibility compliance.</p>
+            <p style="margin-top: 1rem; color: var(--color-text-disabled);"><em>Generated for AuthentiIDP v1.0 - Stage 2, Step 7: UI Design Draft</em></p>
+        </div>
+    </div>
+    
+    <script src="theme-manager.js"></script>
+</body>
+</html>

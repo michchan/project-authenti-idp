@@ -1,9 +1,5 @@
 # 📈 User Journey Flowchart: TaskMaster v1.0
 
-This document outlines key user journeys for TaskMaster, a personal task management web application. Each flow is presented as an ASCII diagram, showing how users move through the system.
-
----
-
 ## 🧭 Index of User Journeys
 
 1. [New User Onboarding](#1-new-user-onboarding)
@@ -16,6 +12,11 @@ This document outlines key user journeys for TaskMaster, a personal task managem
 ---
 
 ## 1. New User Onboarding
+
+### Flow Purpose
+**Goal**: Guide new users through account creation and first successful task management experience
+
+### ASCII Flow Diagram
 
 ```
 [User visits TaskMaster]
@@ -54,15 +55,14 @@ This document outlines key user journeys for TaskMaster, a personal task managem
                             [Onboarding complete]
 ```
 
-**Key Success Factors:**
-- Demo shows immediate value without signup required
-- Tutorial is skippable but encourages completion
-- First task creation is guided and successful
-- User sees progress tracking benefit immediately
-
 ---
 
 ## 2. Daily Task Management
+
+### Flow Purpose
+**Goal**: Enable efficient daily task completion and management workflow
+
+### ASCII Flow Diagram
 
 ```
 [User opens TaskMaster]
@@ -98,15 +98,14 @@ This document outlines key user journeys for TaskMaster, a personal task managem
 [Close satisfied] ←──────────────┘
 ```
 
-**Key Success Factors:**
-- Today's tasks are immediately visible
-- Quick completion workflow (single click)
-- New task creation is effortless
-- Progress is visually satisfying
-
 ---
 
 ## 3. Task Organization & Categorization
+
+### Flow Purpose
+**Goal**: Help users organize growing task lists through categories and tags for better findability
+
+### ASCII Flow Diagram
 
 ```
 [User has growing task list]
@@ -148,15 +147,14 @@ This document outlines key user journeys for TaskMaster, a personal task managem
 [Maintains organized system long-term]
 ```
 
-**Key Success Factors:**
-- Categories solve real organization pain
-- Visual color coding provides immediate clarity
-- Tags add flexibility without complexity
-- Combined filtering is powerful but intuitive
-
 ---
 
 ## 4. Due Date Management
+
+### Flow Purpose
+**Goal**: Enable users to set and track task deadlines with clear visual indicators
+
+### ASCII Flow Diagram
 
 ```
 [User creates task]
@@ -198,15 +196,14 @@ This document outlines key user journeys for TaskMaster, a personal task managem
 [Due date system builds trust]
 ```
 
-**Key Success Factors:**
-- Due date setting is optional but easy
-- Visual indicators create urgency without stress
-- Overdue tasks are prominent but not overwhelming
-- System helps users stay on track
-
 ---
 
 ## 5. Search & Filtering Workflow
+
+### Flow Purpose
+**Goal**: Help users quickly find specific tasks among large task lists using search and filtering
+
+### ASCII Flow Diagram
 
 ```
 [User has many tasks (50+)]
@@ -245,15 +242,14 @@ This document outlines key user journeys for TaskMaster, a personal task managem
 [Efficient task management workflow]
 ```
 
-**Key Success Factors:**
-- Search is fast and responsive (< 300ms)
-- Filters combine logically and intuitively
-- Common filter combinations can be saved
-- Filter state is clear and easily modified
-
 ---
 
 ## 6. Progress Tracking & Statistics
+
+### Flow Purpose
+**Goal**: Provide users with insights into their productivity patterns and progress over time
+
+### ASCII Flow Diagram
 
 ```
 [User completes several tasks]
@@ -292,29 +288,48 @@ This document outlines key user journeys for TaskMaster, a personal task managem
 [Long-term TaskMaster user]
 ```
 
-**Key Success Factors:**
-- Progress is visible without being overwhelming
-- Statistics provide insight, not just numbers
-- Visual trends are easy to understand
-- Data helps users improve their productivity habits
-
 ---
 
-## 🔗 Cross-Journey Interactions
+## 🔗 Inter-Flow Connections
 
 ```
-Daily Management ←→ Organization (tasks need categories)
-     ↓                    ↓
-Due Date Mgmt ←→ Search & Filter (find overdue tasks)
-     ↓                    ↓
-Progress Tracking ←→ All Workflows (completion data)
+[Daily Task Management]
+   |
+   ──user creates many tasks──
+   |
+   v
+[Task Organization & Categorization]
+
+[Daily Task Management]
+   |
+   ──user sets deadlines──
+   |
+   v
+[Due Date Management]
+   |
+   ──user searches overdue──
+   |
+   v
+[Search & Filtering Workflow]
+
+[Daily Task Management]
+   |
+   ──user reviews accomplishments──
+   |
+   v
+[Progress Tracking & Statistics]
+   |
+   ──user sees patterns──
+   |
+   v
+[Daily Task Management]
 ```
 
 **Integration Points:**
-- Task creation flows into organization workflows
-- Search/filtering supports all other workflows
+- Task creation flows into organization workflows when users have many tasks
+- Search/filtering supports finding overdue tasks and specific items
 - Progress tracking provides feedback loop for all activities
-- Due dates create urgency that drives daily management
+- Due dates create urgency that drives daily management priorities
 
 ---
 
@@ -340,30 +355,3 @@ Progress Tracking ←→ All Workflows (completion data)
 - Customizable views and filters
 - Accommodates different productivity styles
 
----
-
-## 📊 Journey Success Metrics
-
-### Onboarding Success
-- % users who complete first task within 5 minutes
-- % users who create categories within first week
-- % users who return within 24 hours of signup
-
-### Daily Usage Quality
-- Average tasks completed per session
-- Time to complete common operations
-- % sessions that include task creation and completion
-
-### Feature Adoption
-- % users who use categories after 1 week
-- % users who set due dates on tasks
-- % users who use search/filtering features
-
-### Long-term Engagement
-- % users still active after 30 days
-- Average tasks managed per active user
-- % users who use progress tracking features
-
----
-
-*These user journeys form the foundation for TaskMaster's information architecture and interaction design, ensuring that user needs drive the product experience.*

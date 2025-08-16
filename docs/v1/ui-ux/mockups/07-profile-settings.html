@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Settings - AuthentiIDP</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="theme-manager.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="nav-content">
+            <a href="12-developer-dashboard.html" class="nav-brand"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 8px; vertical-align: middle;"><path d="M12 2L2 7v10c0 5.55 3.84 9.74 9 11 5.16-1.26 9-5.45 9-11V7l-10-5z"/></svg>AuthentiIDP</a>
+            <div class="nav-user">
+                <div class="user-avatar">JD</div>
+                <span class="text-muted">user@example.com</span>
+                <button class="btn btn-secondary" style="padding: 8px 16px; margin-left: 12px;" onclick="window.location.href='01-login.html'">
+                    Sign Out
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container" style="padding-top: 40px;">
+        <!-- Header -->
+        <div style="margin-bottom: 32px;">
+            <nav style="margin-bottom: 16px;">
+                <a href="10-sample-protected.html" style="color: var(--color-text-muted); text-decoration: none; font-size: var(--font-size-sm);">
+                    ← Back to TaskMaster
+                </a>
+            </nav>
+            <h1>Profile Settings</h1>
+            <p class="text-muted">Manage your personal information and privacy settings</p>
+        </div>
+
+        <!-- Tab Navigation -->
+        <div style="margin-bottom: 32px;">
+            <div class="nav-links" style="display: flex; border-bottom: 1px solid var(--color-border); gap: 0;">
+                <button class="nav-link active" data-tab="profile" style="border: none; background: none; padding: 12px 24px; cursor: pointer;">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 8px; vertical-align: middle;"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>Profile
+                </button>
+                <button class="nav-link" data-tab="security" style="border: none; background: none; padding: 12px 24px; cursor: pointer;">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 8px; vertical-align: middle;"><path d="M12 1L3 5v6c0 5.55 3.84 9.74 9 11 5.16-1.26 9-5.45 9-11V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>Security
+                </button>
+                <button class="nav-link" data-tab="apps" style="border: none; background: none; padding: 12px 24px; cursor: pointer;">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 8px; vertical-align: middle;"><path d="M4 8h4V4H4v4zm6 12h4v-4h-4v4zm-6 0h4v-4H4v4zm0-6h4v-4H4v4zm6 0h4v-4h-4v4zm6-10v4h4V4h-4zm-6 4h4V4h-4v4zm6 6h4v-4h-4v4zm0 6h4v-4h-4v4z"/></svg>Apps
+                </button>
+                <button class="nav-link" data-tab="sessions" style="border: none; background: none; padding: 12px 24px; cursor: pointer;">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 8px; vertical-align: middle;"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>Sessions
+                </button>
+            </div>
+        </div>
+
+        <!-- Tab Content -->
+        <div style="max-width: 800px;">
+            <!-- Profile Tab -->
+            <div id="profile-tab" class="tab-content">
+                <!-- Success Alert (hidden by default) -->
+                <div class="alert alert-success" style="display: none;" id="success-alert">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <div>
+                        <strong>Profile updated!</strong> Changes will propagate to connected applications.
+                    </div>
+                </div>
+
+                <!-- Personal Information -->
+                <div class="card" style="margin-bottom: 32px;">
+                    <h2 style="margin-bottom: 24px;">Personal Information</h2>
+                    
+                    <form id="profile-form">
+                        <!-- Profile Picture -->
+                        <div class="form-group" style="display: flex; align-items: center; gap: 24px; margin-bottom: 32px;">
+                            <div style="display: flex; align-items: center; gap: 16px;">
+                                <div style="width: 80px; height: 80px; background: var(--color-primary); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: white; font-size: 32px; font-weight: 600;">
+                                    JD
+                                </div>
+                                <div>
+                                    <p style="margin: 0 0 8px 0; font-weight: 500;">Profile Picture</p>
+                                    <button type="button" class="btn btn-secondary" style="font-size: var(--font-size-sm);">
+                                        Upload Image
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Name -->
+                        <div class="form-group">
+                            <label for="fullName" class="form-label">Full Name *</label>
+                            <input 
+                                type="text" 
+                                id="fullName" 
+                                name="fullName" 
+                                class="form-input" 
+                                value="John Doe"
+                                required
+                            >
+                        </div>
+
+                        <!-- Email -->
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email Address *</label>
+                            <div style="display: flex; align-items: center; gap: 12px;">
+                                <input 
+                                    type="email" 
+                                    id="email" 
+                                    name="email" 
+                                    class="form-input" 
+                                    value="user@example.com"
+                                    required
+                                    style="flex: 1;"
+                                >
+                                <button type="button" class="btn btn-secondary" style="font-size: var(--font-size-sm);">
+                                    Verify Email
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Bio -->
+                        <div class="form-group">
+                            <label for="bio" class="form-label">Bio (optional)</label>
+                            <textarea 
+                                id="bio" 
+                                name="bio" 
+                                class="form-input" 
+                                rows="3"
+                                placeholder="Tell us about yourself..."
+                                style="resize: vertical; min-height: 80px;"
+                            >Software developer and productivity enthusiast from San Francisco</textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">
+                            Save Changes
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Profile Visibility -->
+                <div class="card">
+                    <h3 style="margin-bottom: 16px;">Profile Visibility</h3>
+                    <p style="color: var(--color-text-muted); margin-bottom: 20px;">
+                        Who can see your profile information:
+                    </p>
+                    
+                    <div style="display: flex; flex-direction: column; gap: 16px;">
+                        <label style="display: flex; align-items: center; gap: 12px; cursor: pointer; padding: 12px; border: 1px solid var(--color-border-light); border-radius: var(--radius-md);">
+                            <input type="radio" name="visibility" value="all">
+                            <div>
+                                <div style="font-weight: 500;">All connected applications</div>
+                                <div style="color: var(--color-text-muted); font-size: var(--font-size-sm);">Your profile is visible to all apps you use</div>
+                            </div>
+                        </label>
+
+                        <label style="display: flex; align-items: center; gap: 12px; cursor: pointer; padding: 12px; border: 1px solid var(--color-primary); border-radius: var(--radius-md); background: rgba(52, 69, 80, 0.05);">
+                            <input type="radio" name="visibility" value="selected" checked>
+                            <div>
+                                <div style="font-weight: 500;">Only applications I specifically allow</div>
+                                <div style="color: var(--color-text-muted); font-size: var(--font-size-sm);">You control which apps can see your profile</div>
+                            </div>
+                        </label>
+
+                        <label style="display: flex; align-items: center; gap: 12px; cursor: pointer; padding: 12px; border: 1px solid var(--color-border-light); border-radius: var(--radius-md);">
+                            <input type="radio" name="visibility" value="private">
+                            <div>
+                                <div style="font-weight: 500;">Keep profile private (name and email only)</div>
+                                <div style="color: var(--color-text-muted); font-size: var(--font-size-sm);">Only basic information is shared</div>
+                            </div>
+                        </label>
+                    </div>
+
+                    <!-- Propagation Status -->
+                    <div style="margin-top: 24px; padding: 16px; background: var(--color-secondary); border-radius: var(--radius-md);">
+                        <h4 style="font-size: var(--font-size-base); margin-bottom: 12px;">Changes will propagate to:</h4>
+                        <div style="space-y: 8px;">
+                            <div style="display: flex; align-items: center; gap: 8px; color: var(--color-success);">
+                                <span>✓</span>
+                                <span>TaskMaster App</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 8px; color: var(--color-success);">
+                                <span>✓</span>
+                                <span>Analytics Dashboard</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 8px; color: var(--color-success);">
+                                <span>✓</span>
+                                <span>Shopping List App</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Security Tab (Initially Hidden) -->
+            <div id="security-tab" class="tab-content" style="display: none;">
+                <div class="card">
+                    <h2 style="margin-bottom: 24px;">Security Settings</h2>
+                    <p style="color: var(--color-text-muted); margin-bottom: 32px;">
+                        Manage your password and account security
+                    </p>
+                    
+                    <div style="display: flex; flex-direction: column; gap: 24px;">
+                        <div style="padding: 20px; border: 1px solid var(--color-border-light); border-radius: var(--radius-md);">
+                            <h3 style="margin-bottom: 8px;">Password</h3>
+                            <p style="color: var(--color-text-muted); margin-bottom: 16px; font-size: var(--font-size-sm);">
+                                Last changed: 2 days ago
+                            </p>
+                            <button class="btn btn-primary" onclick="window.location.href='05-new-password.html'">
+                                Change Password
+                            </button>
+                        </div>
+
+                        <div style="padding: 20px; border: 1px solid var(--color-border-light); border-radius: var(--radius-md);">
+                            <h3 style="margin-bottom: 8px;">Two-Factor Authentication</h3>
+                            <p style="color: var(--color-text-muted); margin-bottom: 16px; font-size: var(--font-size-sm);">
+                                Add an extra layer of security to your account
+                            </p>
+                            <button class="btn btn-secondary">
+                                Enable 2FA
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Apps Tab (Initially Hidden) -->
+            <div id="apps-tab" class="tab-content" style="display: none;">
+                <!-- Success Alert (hidden by default) -->
+                <div class="alert alert-success" style="display: none;" id="apps-success-alert">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <div>
+                        <strong>Access revoked!</strong> The application can no longer access your account.
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div style="margin-bottom: 24px;">
+                        <h2>Connected Applications (3)</h2>
+                        <p style="color: var(--color-text-muted); margin: 8px 0 0 0; font-size: var(--font-size-sm);">
+                            Manage permissions and access for your connected applications.
+                        </p>
+                    </div>
+
+                    <!-- Applications List -->
+                    <div style="display: flex; flex-direction: column; gap: 24px;">
+                        <!-- TaskMaster App -->
+                        <div class="card">
+                            <div style="display: flex; align-items: start; gap: 16px;">
+                                <!-- App Icon -->
+                                <div style="width: 56px; height: 56px; background: var(--color-primary); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; font-size: 24px; color: white; flex-shrink: 0;">
+                                    ⚍
+                                </div>
+                                
+                                <!-- App Info -->
+                                <div style="flex: 1;">
+                                    <h3 style="margin: 0 0 8px 0; font-size: var(--font-size-lg);">TaskMaster App</h3>
+                                    <div style="display: flex; flex-wrap: wrap; gap: 16px; color: var(--color-text-muted); font-size: var(--font-size-sm); margin-bottom: 12px;">
+                                        <span>Connected: March 15, 2025</span>
+                                        <span>Last access: 2 hours ago</span>
+                                    </div>
+                                    
+                                    <!-- Detailed Permissions -->
+                                    <div style="margin-bottom: 16px; padding: 16px; background: var(--color-secondary); border-radius: var(--radius-md);">
+                                        <h4 style="margin: 0 0 12px 0; font-size: var(--font-size-base);">Current Permissions:</h4>
+                                        <div style="display: grid; gap: 8px;">
+                                            <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                                                <input type="checkbox" checked disabled>
+                                                <span style="font-size: var(--font-size-sm);">Profile Information (Name, Email)</span>
+                                            </label>
+                                            <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                                                <input type="checkbox" checked id="taskmaster-auth">
+                                                <span style="font-size: var(--font-size-sm);">Authentication Access</span>
+                                            </label>
+                                            <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                                                <input type="checkbox" id="taskmaster-notifications">
+                                                <span style="font-size: var(--font-size-sm);">Send Email Notifications</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Actions -->
+                                    <div style="display: flex; gap: 12px;">
+                                        <button class="btn btn-primary" style="font-size: var(--font-size-sm); padding: 8px 16px;" onclick="savePermissions('taskmaster')">
+                                            Save Permissions
+                                        </button>
+                                        <button class="btn btn-danger" style="font-size: var(--font-size-sm); padding: 8px 16px;" onclick="revokeAccess('taskmaster', 'TaskMaster App')">
+                                            Revoke Access
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Analytics Dashboard -->
+                        <div class="card">
+                            <div style="display: flex; align-items: start; gap: 16px;">
+                                <div style="width: 56px; height: 56px; background: var(--color-info); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; font-size: 24px; color: white; flex-shrink: 0;">
+                                    ⚘
+                                </div>
+                                
+                                <div style="flex: 1;">
+                                    <h3 style="margin: 0 0 8px 0; font-size: var(--font-size-lg);">Analytics Dashboard</h3>
+                                    <div style="display: flex; flex-wrap: wrap; gap: 16px; color: var(--color-text-muted); font-size: var(--font-size-sm); margin-bottom: 12px;">
+                                        <span>Connected: March 10, 2025</span>
+                                        <span>Last access: 1 day ago</span>
+                                    </div>
+                                    
+                                    <!-- Detailed Permissions -->
+                                    <div style="margin-bottom: 16px; padding: 16px; background: var(--color-secondary); border-radius: var(--radius-md);">
+                                        <h4 style="margin: 0 0 12px 0; font-size: var(--font-size-base);">Current Permissions:</h4>
+                                        <div style="display: grid; gap: 8px;">
+                                            <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                                                <input type="checkbox" checked disabled>
+                                                <span style="font-size: var(--font-size-sm);">Profile Information (Name, Email)</span>
+                                            </label>
+                                            <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                                                <input type="checkbox" checked id="analytics-notifications">
+                                                <span style="font-size: var(--font-size-sm);">Send Email Notifications</span>
+                                            </label>
+                                            <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                                                <input type="checkbox" id="analytics-usage">
+                                                <span style="font-size: var(--font-size-sm);">Access Usage Analytics</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    
+                                    <div style="display: flex; gap: 12px;">
+                                        <button class="btn btn-primary" style="font-size: var(--font-size-sm); padding: 8px 16px;" onclick="savePermissions('analytics')">
+                                            Save Permissions
+                                        </button>
+                                        <button class="btn btn-danger" style="font-size: var(--font-size-sm); padding: 8px 16px;" onclick="revokeAccess('analytics', 'Analytics Dashboard')">
+                                            Revoke Access
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Shopping List App -->
+                        <div class="card">
+                            <div style="display: flex; align-items: start; gap: 16px;">
+                                <div style="width: 56px; height: 56px; background: var(--color-success); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; font-size: 24px; color: white; flex-shrink: 0;">
+                                    🛒
+                                </div>
+                                
+                                <div style="flex: 1;">
+                                    <h3 style="margin: 0 0 8px 0; font-size: var(--font-size-lg);">Shopping List App</h3>
+                                    <div style="display: flex; flex-wrap: wrap; gap: 16px; color: var(--color-text-muted); font-size: var(--font-size-sm); margin-bottom: 12px;">
+                                        <span>Connected: March 8, 2025</span>
+                                        <span>Last access: 3 days ago</span>
+                                    </div>
+                                    
+                                    <!-- Detailed Permissions -->
+                                    <div style="margin-bottom: 16px; padding: 16px; background: var(--color-secondary); border-radius: var(--radius-md);">
+                                        <h4 style="margin: 0 0 12px 0; font-size: var(--font-size-base);">Current Permissions:</h4>
+                                        <div style="display: grid; gap: 8px;">
+                                            <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                                                <input type="checkbox" checked disabled>
+                                                <span style="font-size: var(--font-size-sm);">Profile Information (Name, Email)</span>
+                                            </label>
+                                            <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                                                <input type="checkbox" id="shopping-notifications">
+                                                <span style="font-size: var(--font-size-sm);">Send Email Notifications</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    
+                                    <div style="display: flex; gap: 12px;">
+                                        <button class="btn btn-primary" style="font-size: var(--font-size-sm); padding: 8px 16px;" onclick="savePermissions('shopping')">
+                                            Save Permissions
+                                        </button>
+                                        <button class="btn btn-danger" style="font-size: var(--font-size-sm); padding: 8px 16px;" onclick="revokeAccess('shopping', 'Shopping List App')">
+                                            Revoke Access
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Help Section -->
+                    <div style="margin-top: 32px; padding: 20px; background: var(--color-secondary); border-radius: var(--radius-md);">
+                        <h3 style="margin-bottom: 12px;">Managing Application Access</h3>
+                        <ul style="color: var(--color-text-muted); font-size: var(--font-size-sm); margin: 0; padding-left: 20px;">
+                            <li style="margin-bottom: 8px;">Edit permissions to control what data each app can access</li>
+                            <li style="margin-bottom: 8px;">Save changes to update app permissions immediately</li>
+                            <li style="margin-bottom: 8px;">Revoke access to immediately disconnect an application</li>
+                            <li style="margin-bottom: 8px;">Your data will remain secure and under your control</li>
+                            <li>Contact support if you notice any suspicious activity</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sessions Tab (Initially Hidden) -->
+            <div id="sessions-tab" class="tab-content" style="display: none;">
+                <div class="card">
+                    <h2 style="margin-bottom: 24px;">Active Sessions</h2>
+                    <p style="color: var(--color-text-muted); margin-bottom: 24px;">
+                        Manage your active login sessions across different devices and locations.
+                    </p>
+                    
+                    <div style="display: flex; flex-direction: column; gap: 24px;">
+                        <!-- Current Session -->
+                        <div class="card" style="background: var(--color-secondary);">
+                            <div style="display: flex; align-items: start; gap: 16px;">
+                                <div style="width: 48px; height: 48px; background: var(--color-primary); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: white; font-size: 20px; flex-shrink: 0;">
+                                    ⚪
+                                </div>
+                                
+                                <div style="flex: 1;">
+                                    <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                                        <h4 style="margin: 0; color: var(--color-success);">Current Session</h4>
+                                        <span style="background: var(--color-success); color: white; padding: 2px 8px; border-radius: var(--radius-sm); font-size: 12px; font-weight: 500;">Active</span>
+                                    </div>
+                                    <div style="color: var(--color-text-muted); font-size: var(--font-size-sm); display: flex; flex-direction: column; gap: 4px;">
+                                        <div>⚛ Chrome 119.0 on macOS</div>
+                                        <div>⚑ San Francisco, CA • IP: 192.168.1.105</div>
+                                        <div>⚐ Started: Today at 9:32 AM • Last activity: 2 minutes ago</div>
+                                        <div>⚿ Signed in via: AuthentiIDP</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Other Active Sessions -->
+                        <div class="card">
+                            <div style="display: flex; align-items: start; gap: 16px;">
+                                <div style="width: 48px; height: 48px; background: var(--color-warning); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: white; font-size: 20px; flex-shrink: 0;">
+                                    ⚍
+                                </div>
+                                
+                                <div style="flex: 1;">
+                                    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
+                                        <h4 style="margin: 0;">Mobile Session</h4>
+                                        <button class="btn btn-danger" style="font-size: var(--font-size-sm); padding: 6px 12px;" onclick="revokeSession('mobile')">
+                                            End Session
+                                        </button>
+                                    </div>
+                                    <div style="color: var(--color-text-muted); font-size: var(--font-size-sm); display: flex; flex-direction: column; gap: 4px;">
+                                        <div>⚛ Safari on iOS 17.1</div>
+                                        <div>⚑ San Francisco, CA • IP: 192.168.1.108</div>
+                                        <div>⚐ Started: Yesterday at 7:15 PM • Last activity: 3 hours ago</div>
+                                        <div>⚿ Signed in via: AuthentiIDP</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div style="display: flex; align-items: start; gap: 16px;">
+                                <div style="width: 48px; height: 48px; background: var(--color-primary); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: white; font-size: 20px; flex-shrink: 0;">
+                                    ⚪
+                                </div>
+                                
+                                <div style="flex: 1;">
+                                    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
+                                        <h4 style="margin: 0;">Work Computer</h4>
+                                        <button class="btn btn-danger" style="font-size: var(--font-size-sm); padding: 6px 12px;" onclick="revokeSession('work')">
+                                            End Session
+                                        </button>
+                                    </div>
+                                    <div style="color: var(--color-text-muted); font-size: var(--font-size-sm); display: flex; flex-direction: column; gap: 4px;">
+                                        <div>⚛ Firefox 118.0 on Windows 11</div>
+                                        <div>⚑ Office Network • IP: 10.0.1.45</div>
+                                        <div>⚐ Started: March 14 at 8:30 AM • Last activity: 6 hours ago</div>
+                                        <div>⚿ Signed in via: AuthentiIDP</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Session Management Options -->
+                    <div style="margin-top: 32px; padding: 20px; background: var(--color-secondary); border-radius: var(--radius-md);">
+                        <h4 style="margin-bottom: 16px;">Session Management</h4>
+                        <div style="display: flex; gap: 16px; margin-bottom: 16px;">
+                            <button class="btn btn-danger" onclick="revokeAllOtherSessions()">
+                                ⊗ End All Other Sessions
+                            </button>
+                            <button class="btn btn-secondary" onclick="refreshSessionList()">
+                                ⤴ Refresh
+                            </button>
+                        </div>
+                        <p style="color: var(--color-text-muted); font-size: var(--font-size-sm); margin: 0;">
+                            Ending a session will sign you out on that device. For security, we recommend ending sessions on devices you no longer use.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Theme Toggle -->
+    <button class="theme-toggle" id="theme-toggle" style="position: fixed; top: 24px; right: 24px;" aria-label="Toggle theme">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M9.37 5.51c-.18.64-.27 1.31-.27 1.99 0 4.08 3.32 7.4 7.4 7.4.68 0 1.35-.09 1.99-.27C17.45 17.19 14.93 19 12 19c-3.86 0-7-3.14-7-7 0-2.93 1.81-5.45 4.37-6.49z"/></svg>
+    </button>
+
+    <script>
+        // Theme management is now handled by the shared theme-manager.js
+
+        // Tab Management
+        class TabManager {
+            constructor() {
+                this.init();
+            }
+            
+            init() {
+                this.bindTabEvents();
+            }
+            
+            bindTabEvents() {
+                document.querySelectorAll('[data-tab]').forEach(tab => {
+                    tab.addEventListener('click', () => {
+                        this.switchTab(tab.dataset.tab);
+                    });
+                });
+            }
+            
+            switchTab(tabName) {
+                // Update tab buttons
+                document.querySelectorAll('[data-tab]').forEach(tab => {
+                    tab.classList.remove('active');
+                });
+                document.querySelector(`[data-tab="${tabName}"]`).classList.add('active');
+                
+                // Update tab content
+                document.querySelectorAll('.tab-content').forEach(content => {
+                    content.style.display = 'none';
+                });
+                
+                const targetContent = document.getElementById(`${tabName}-tab`);
+                if (targetContent) {
+                    targetContent.style.display = 'block';
+                }
+            }
+        }
+
+        // Form Handling
+        document.getElementById('profile-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const successAlert = document.getElementById('success-alert');
+            
+            // Show success message
+            successAlert.style.display = 'flex';
+            
+            // Hide after 3 seconds
+            setTimeout(() => {
+                successAlert.style.display = 'none';
+            }, 3000);
+        });
+
+        // Permission management functions
+        let currentRevokeApp = null;
+
+        function savePermissions(appId) {
+            // Show success message
+            const successAlert = document.getElementById('apps-success-alert');
+            successAlert.innerHTML = `
+                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <div>
+                    <strong>Permissions updated!</strong> Changes have been saved successfully.
+                </div>
+            `;
+            successAlert.style.display = 'flex';
+            
+            // Hide after 3 seconds
+            setTimeout(() => {
+                successAlert.style.display = 'none';
+            }, 3000);
+        }
+
+        function revokeAccess(appId, appName) {
+            currentRevokeApp = { id: appId, name: appName };
+            if (confirm(`Are you sure you want to revoke access for ${appName}? This action cannot be undone.`)) {
+                // Hide the app card
+                const appCard = document.querySelector(`[onclick*="${appId}"]`).closest('.card');
+                if (appCard && appCard.parentElement.classList.contains('card')) {
+                    appCard.style.display = 'none';
+                }
+                
+                // Show success message
+                const successAlert = document.getElementById('apps-success-alert');
+                successAlert.innerHTML = `
+                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <div>
+                        <strong>Access revoked!</strong> The application can no longer access your account.
+                    </div>
+                `;
+                successAlert.style.display = 'flex';
+                
+                // Hide success message after 3 seconds
+                setTimeout(() => {
+                    successAlert.style.display = 'none';
+                }, 3000);
+            }
+        }
+
+        // Session management functions
+        function revokeSession(sessionId) {
+            if (confirm('Are you sure you want to end this session? You will be signed out on that device.')) {
+                // Hide the session card
+                const sessionCard = document.querySelector(`[onclick*="${sessionId}"]`).closest('.card');
+                if (sessionCard) {
+                    sessionCard.style.display = 'none';
+                }
+                
+                // Show success message
+                const successAlert = document.getElementById('success-alert');
+                successAlert.querySelector('div').innerHTML = '<strong>Session ended!</strong> The device has been signed out.';
+                successAlert.style.display = 'flex';
+                
+                setTimeout(() => {
+                    successAlert.style.display = 'none';
+                }, 3000);
+            }
+        }
+
+        function revokeAllOtherSessions() {
+            if (confirm('Are you sure you want to end all other sessions? You will be signed out on all other devices.')) {
+                // Hide all session cards except current
+                document.querySelectorAll('.card').forEach(card => {
+                    card.style.display = 'none';
+                });
+                
+                // Show success message
+                const successAlert = document.getElementById('success-alert');
+                successAlert.querySelector('div').innerHTML = '<strong>All sessions ended!</strong> You have been signed out on all other devices.';
+                successAlert.style.display = 'flex';
+                
+                setTimeout(() => {
+                    successAlert.style.display = 'none';
+                }, 3000);
+            }
+        }
+
+        function refreshSessionList() {
+            // Show success message
+            const successAlert = document.getElementById('success-alert');
+            successAlert.querySelector('div').innerHTML = '<strong>Sessions refreshed!</strong> Session list has been updated.';
+            successAlert.style.display = 'flex';
+            
+            setTimeout(() => {
+                successAlert.style.display = 'none';
+            }, 3000);
+        }
+
+        // Initialize components (theme manager is automatically initialized by theme-manager.js)
+        new TabManager();
+    </script>
+</body>
+</html>

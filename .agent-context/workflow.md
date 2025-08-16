@@ -74,9 +74,6 @@ Below constants will be used as references in below workflow guides.
 - `SYSTEM_ARCHITECTURE_TEMPLATE` = `{TEMPLATES_LOCATION}/architecture/system-architecture-[version].md`
 - `SYSTEM_ARCHITECTURE_GUIDELINES` = `{GUIDELINES_LOCATION}/architecture/system-architecture-guidelines.md`
 - `SYSTEM_ARCHITECTURE_EXAMPLE` = `{EXAMPLE_PROJECT_LOCATION}/docs/v1/architecture/system-architecture-1.0.md`
-- `SERVICE_RESPONSIBILITIES_TEMPLATE` = `{TEMPLATES_LOCATION}/architecture/service-responsibilities-[version].md`
-- `SERVICE_RESPONSIBILITIES_GUIDELINES` = `{GUIDELINES_LOCATION}/architecture/service-responsibilities-guidelines.md`
-- `SERVICE_RESPONSIBILITIES_EXAMPLE` = `{EXAMPLE_PROJECT_LOCATION}/docs/v1/architecture/service-responsibilities-1.0.md`
 - `SYSTEM_FLOWS_TEMPLATE` = `{TEMPLATES_LOCATION}/architecture/system-flow-[version]-[flow-name].md`
 - `SYSTEM_FLOWS_GUIDELINES` = `{GUIDELINES_LOCATION}/architecture/system-flows-guidelines.md`
 - `SYSTEM_FLOWS_EXAMPLE` = `{EXAMPLE_PROJECT_LOCATION}/docs/v1/architecture/flows/1.0-task-creation-flow.md`
@@ -89,6 +86,9 @@ Below constants will be used as references in below workflow guides.
 - `THREAD_MODEL_TEMPLATE` = `{TEMPLATES_LOCATION}/architecture/[version]-[flow-name]-thread-model.md`
 - `THREAD_MODEL_GUIDELINES` = `{GUIDELINES_LOCATION}/architecture/thread-model-guidelines.md`
 - `THREAD_MODEL_EXAMPLE` = `{EXAMPLE_PROJECT_LOCATION}/docs/v1/architecture/1.0-user-authentication-thread-model.md`
+- `TECHNICAL_CONSIDERATIONS_TEMPLATE` = `{TEMPLATES_LOCATION}/architecture/technical-considerations-[version].md`
+- `TECHNICAL_CONSIDERATIONS_GUIDELINES` = `{GUIDELINES_LOCATION}/architecture/technical-considerations-guidelines.md`
+- `TECHNICAL_CONSIDERATIONS_EXAMPLE` = `{EXAMPLE_PROJECT_LOCATION}/docs/v1/architecture/technical-considerations-1.0.md`
 
 # Background
 
@@ -98,6 +98,7 @@ Below constants will be used as references in below workflow guides.
 - The version of the template filename is the version of the product requirement. It should follow `[major].[minor]` version format, .e.g `1.0`.
 - However, each major version should only have one folder under the `/docs` folder, e.g. `/docs/v1`.
 - The folder structure of the documentation should follow `EXAMPLE_PROJECT_LOCATION` , you should mimic that structure **under the root directory of the current repository**.
+- When linking to files in markdown documents, use absolute paths with leading forward slashes from the repository root (e.g., `/docs/v1/file.md` not `docs/v1/file.md`) to ensure links work correctly across different directory contexts.
 
 ## Roles in the team
 
@@ -107,7 +108,7 @@ This is a team consisting of the following roles with their detailed responsibil
 |------|------------------|
 | **Product Manager** | Manages product requirements and stakeholder communication:<br>• Drafts PRD documents from business ideas<br>• Facilitates stakeholder reviews and feedback sessions<br>• Updates and refines PRD based on stakeholder input<br>• Summarizes review outcomes and next steps |
 | **UX Designer** | Designs user experience and validates design implementation:<br>• Creates user journey flow charts and wireframes<br>• Designs user experience workflows<br>• Reviews and refines designs based on feedback<br>• Validates that final implementation matches design specifications<br>• Collaborates with UI Designer on design system alignment |
-| **System Architect** | Defines technical architecture and provides technical guidance:<br>• Reviews PRD for technical feasibility and constraints<br>• Creates system architecture and service responsibilities<br>• Designs system flows and data ownership models<br>• Creates deployment plans and infrastructure requirements<br>• Provides architectural guidance during development<br>• Reviews security expert deliverables for technical alignment |
+| **System Architect** | Defines technical architecture and provides technical guidance:<br>• Reviews PRD for technical feasibility and constraints<br>• Creates system architecture with component communication patterns<br>• Designs system flows and data ownership models<br>• Creates deployment plans and infrastructure requirements<br>• Provides architectural guidance during development<br>• Reviews security expert deliverables for technical alignment |
 | **Security Expert** | Ensures security compliance and identifies vulnerabilities:<br>• Identifies early security implications in story drafts<br>• Creates comprehensive threat models<br>• Conducts security assessments and vulnerability scanning<br>• Reviews features for security vulnerabilities<br>• Ensures compliance with security standards |
 | **Product Owner** | Manages product backlog and ensures business value delivery:<br>• Reviews PRD for business feasibility and metrics<br>• Creates epics and user stories<br>• Plans stories into sprints based on priority and dependencies<br>• Reviews and prioritizes backlog items<br>• Validates features against business requirements<br>• Facilitates UAT process and stakeholder communication<br>• Makes final feature approval decisions |
 | **UI Designer** | Creates visual design system and user interface components:<br>• Develops UI design system and component library<br>• Creates high-fidelity UI mockups in HTML<br>• Updates design reference links in epics<br>• Ensures design consistency across features<br>• Collaborates with UX Designer on user experience |
@@ -275,7 +276,7 @@ Given the drafted PRD document, update the status to **In Review**.
 It should be reviewed by:
 
 - **System Architect** - to see if there is any high level technical constraints which requires adjustment to the requirements,
-- **Product owner** - to see if the features match the goals and are feasible, whether the metrics / KPIs / Timeline are realistic
+- **Product owner** - to see if the features match the goals and are feasible, whether the metrics / KPIs are realistic
 
 After getting reviewed by these stakeholders, **product manager** to ****summarize and update the PRD.
 
@@ -368,6 +369,10 @@ The **epics**should be drafted based on:
         - `DEPLOYMENT_PLAN_TEMPLATE` as the template
         - `DEPLOYMENT_PLAN_GUIDELINES` as the guidelines
         - `DEPLOYMENT_PLAN_EXAMPLE` as the example
+    6. **Technical considerations** - should be drafted based on:
+        - `TECHNICAL_CONSIDERATIONS_TEMPLATE` as the template
+        - `TECHNICAL_CONSIDERATIONS_GUIDELINES` as the guidelines
+        - `TECHNICAL_CONSIDERATIONS_EXAMPLE` as the example
 
 - **Security Expert** to create security documentation including:
     1. **Threat model** - should be drafted based on:

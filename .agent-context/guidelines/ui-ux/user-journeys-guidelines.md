@@ -46,6 +46,8 @@ Guidance for creating user journey documentation using ASCII diagrams.
 - **Clear labeling**: Every step clearly labeled and understandable
 - **Logical flow direction**: Use arrows to show progression
 - **Group related steps**: Visual grouping for related actions
+- **Condition blocks**: Use `<...>` to wrap condition blocks (e.g., `<Form errors?>`)
+- **Regular blocks**: Use `[...]` for regular action/state blocks (e.g., `[User submits form]`)
 
 ### Visual Clarity
 - **Keep diagrams readable**: Don't fit too much in one diagram
@@ -71,48 +73,6 @@ Guidance for creating user journey documentation using ASCII diagrams.
 
 ---
 
-## 🚨 Pain Points & Optimization
-
-### Identifying Friction
-- **Drop-off points**: Where users most commonly exit
-- **Confusion points**: Steps users find unclear or difficult
-- **Time sinks**: Steps taking longer than necessary
-- **Error-prone areas**: Where users frequently make mistakes
-
-### Documentation Strategies
-- **Quantify problems**: Use data to show friction impact
-- **User quotes**: Include actual user feedback
-- **Competitor analysis**: How others handle similar flows
-- **Prioritization framework**: Which issues to tackle first
-
-### Optimization Ideas
-- **Specific improvements**: Concrete suggestions for reducing friction
-- **A/B test opportunities**: Areas for testing different approaches
-- **Quick wins**: Low-effort changes with high impact potential
-- **Long-term improvements**: Larger changes requiring more planning
-
----
-
-## 🔧 Error Handling & Edge Cases
-
-### Error Scenarios
-- **Validation errors**: Form errors, invalid inputs, missing information
-- **System errors**: Network issues, server problems, timeouts
-- **User errors**: Wrong information, accidental actions, confusion
-- **External errors**: Third-party failures, payment processing issues
-
-### Recovery Paths
-- **Clear error messages**: What went wrong and how to fix it
-- **Alternative options**: Other ways to complete the goal
-- **Escalation paths**: When to involve support or manual processes
-- **Prevention strategies**: How to reduce error likelihood
-
-### Edge Case Considerations
-- **First-time users**: How flow differs for new users
-- **Power users**: Shortcuts or advanced options for experienced users
-- **Accessibility needs**: How flow works for users with disabilities
-- **Low-bandwidth scenarios**: How flow performs on slow connections
-
 ---
 
 ## 🔗 Inter-Flow Connections
@@ -128,6 +88,8 @@ Guidance for creating user journey documentation using ASCII diagrams.
 - **Context preservation**: Information carrying over between flows
 - **Navigation patterns**: How users move between product areas
 - **State management**: How system state changes affect available flows
+- **Flowchart format**: Use vertical flowchart diagrams instead of tables for inter-flow connections for better readability on narrow screens
+- **Trigger labels**: Put triggers as captions on arrows connecting flows (e.g., `──user completes verification──→`)
 
 ---
 
@@ -148,12 +110,6 @@ Guidance for creating user journey documentation using ASCII diagrams.
 ---
 
 ## 📊 Metrics & Measurement
-
-### Success Metrics
-- **Conversion rates**: Percentage completing the flow
-- **Time to completion**: How long flow takes for successful users
-- **Error rates**: Frequency of errors at each step
-- **Abandonment points**: Where users most commonly exit
 
 ### Measurement Strategy
 - **Event tracking**: Specific user actions to track in analytics
@@ -203,7 +159,7 @@ Guidance for creating user journey documentation using ASCII diagrams.
 - [ ] Documentation easy to navigate and understand
 - [ ] ASCII diagrams clear and readable
 - [ ] Pain points and optimization opportunities highlighted
-- [ ] Success metrics and measurement plans defined
+- [ ] Measurement strategies defined (tracking, not specific metrics)
 
 ### Maintenance
 - [ ] Regular review schedule established
@@ -220,6 +176,18 @@ Guidance for creating user journey documentation using ASCII diagrams.
 - **Generic scenarios**: Using theoretical users instead of real personas
 - **Stale documentation**: Flows don't match current product
 - **Missing context**: Not explaining why users take certain paths
+- **Success Metrics in UX docs**: Including performance metrics in UX documents - these belong in product/analytics documents
+- **Wrong condition format**: Using `[...]` instead of `<...>` for condition blocks
+- **Table format for connections**: Using tables instead of vertical flowcharts for inter-flow connections
+- **Missing trigger labels**: Not specifying what actions trigger flow transitions
+- **Out-of-scope content**: Including UI design concerns, performance optimization details, or visual design specifications
+- **Technical implementation details**: Including backend processes, API calls, or technical steps users don't see
+- **Assuming tech stack**: Making assumptions about specific technologies or exact technical commands
+- **Document description**: Including unnecessary document description paragraphs at the beginning
+- **Index descriptions**: Adding descriptions in journey index lists
+- **Pain points sections**: Including pain points, optimizations, success criteria, or key screens sections in journeys
+- **Error handling sections**: Including error handling sections in individual journeys
+- **Journey footnotes**: Adding explanatory footnotes at the end of user journey documents
 
 ### Research Issues
 - **Assumption-based flows**: Creating flows without user research validation

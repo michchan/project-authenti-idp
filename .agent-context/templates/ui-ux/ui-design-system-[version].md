@@ -1,7 +1,5 @@
 # 🎨 UI Design System `[Version]`
 
-Document your product's visual language and design tokens for consistent implementation.
-
 ---
 
 ## 📁 Index
@@ -13,7 +11,6 @@ Document your product's visual language and design tokens for consistent impleme
 5. [Elevation / Shadows](#elevation--shadows)
 6. [Border Radius](#border-radius)
 7. [Component Sizing](#component-sizing)
-8. [Usage Examples](#usage-examples)
 
 ---
 
@@ -118,31 +115,3 @@ Document your product's visual language and design tokens for consistent impleme
 - **Form Elements**: `[Standard heights for inputs, buttons, selects]`
 - **Content Containers**: `[Standard widths and max-widths]`
 
----
-
-## ✅ Usage Examples
-
-### CSS Implementation
-```css
-/* `[Example of how to use design tokens in CSS]` */
-.example-component {
-  color: `[color-token-name]`;
-  font-size: `[font-size-token]`;
-  padding: `[spacing-token]`;
-  border-radius: `[radius-token]`;
-  box-shadow: `[shadow-token]`;
-}
-```
-
-### Design Token Reference
-`[List of all design tokens and their values for developer use]`
-
----
-
-## 📋 Implementation Notes
-
-**Framework Integration**: `[How to use with React, Vue, Angular, etc.]`
-
-**Build Process**: `[How design tokens integrate with development workflow]`
-
-**Maintenance**: `[How to update and version design system changes]`

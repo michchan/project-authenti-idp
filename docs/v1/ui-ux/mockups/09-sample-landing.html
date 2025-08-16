@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskMaster - Sample App</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="theme-manager.js"></script>    <style>
+        .sample-nav {
+            background: linear-gradient(135deg, var(--color-primary) 0%, #2563eb 100%);
+            color: white;
+            padding: 16px 0;
+        }
+        
+        .sample-nav a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        .sample-nav .nav-brand {
+            font-size: var(--font-size-xl);
+            font-weight: 700;
+        }
+        
+        .powered-by {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 4px 12px;
+            border-radius: var(--radius-full);
+            font-size: var(--font-size-sm);
+            backdrop-filter: blur(4px);
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, var(--color-secondary) 0%, rgba(59, 130, 246, 0.1) 100%);
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .demo-badge {
+            background: var(--color-warning);
+            color: white;
+            padding: 6px 16px;
+            border-radius: var(--radius-full);
+            font-size: var(--font-size-sm);
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 24px;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            margin-top: 48px;
+        }
+        
+        .feature-card {
+            text-align: center;
+            padding: 32px 24px;
+        }
+        
+        .feature-icon {
+            width: 64px;
+            height: 64px;
+            background: var(--color-primary);
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+            color: white;
+            font-size: 24px;
+        }
+        
+        .cta-section {
+            background: var(--color-primary);
+            color: white;
+            padding: 64px 0;
+            text-align: center;
+        }
+        
+        .btn-auth {
+            background: white;
+            color: var(--color-primary);
+            border: 2px solid white;
+            padding: 16px 32px;
+            font-size: var(--font-size-lg);
+            font-weight: 600;
+            border-radius: var(--radius-md);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-auth:hover {
+            background: transparent;
+            color: white;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <!-- Sample App Navigation -->
+    <nav class="sample-nav">
+        <div class="nav-content" style="color: white;">
+            <div style="display: flex; align-items: center; gap: 16px;">
+                <span class="nav-brand">⚀ TaskMaster</span>
+                <span style="font-size: var(--font-size-sm); opacity: 0.8;">Sample App</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 16px;">
+                <div class="powered-by">
+                    ⚿ Powered by AuthentiIDP
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="demo-badge">
+                🧪 DEMO APPLICATION
+            </div>
+            <h1 style="font-size: 48px; margin-bottom: 24px; color: var(--color-text);">
+                Welcome to TaskMaster Demo
+            </h1>
+            <p style="font-size: var(--font-size-xl); color: var(--color-text-muted); max-width: 600px; margin: 0 auto 48px;">
+                Experience AuthentiIDP integration in action with this fully functional sample application
+            </p>
+
+            <!-- Integration Showcase -->
+            <div class="card" style="max-width: 700px; margin: 0 auto; text-align: left;">
+                <h2 style="text-align: center; margin-bottom: 32px;">
+                    Experience AuthentiIDP Integration
+                </h2>
+                
+                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-bottom: 32px;">
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                        <span style="color: var(--color-success); font-size: 20px;">✓</span>
+                        <span>Single Sign-On authentication</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                        <span style="color: var(--color-success); font-size: 20px;">✓</span>
+                        <span>Profile management integration</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                        <span style="color: var(--color-success); font-size: 20px;">✓</span>
+                        <span>Session handling across pages</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                        <span style="color: var(--color-success); font-size: 20px;">✓</span>
+                        <span>Secure logout functionality</span>
+                    </div>
+                </div>
+
+                <div style="background: var(--color-secondary); padding: 24px; border-radius: var(--radius-md); margin-bottom: 32px;">
+                    <h3 style="margin-bottom: 16px;">Try the Demo</h3>
+                    <p style="color: var(--color-text-muted); margin-bottom: 20px;">
+                        Not signed in? Experience the full authentication flow:
+                    </p>
+                    
+                    <div style="display: flex; flex-direction: column; gap: 12px;">
+                        <button class="btn btn-primary btn-full" onclick="signInDemo()">
+                            ⚿ Sign In with AuthentiIDP
+                        </button>
+                        <button class="btn btn-secondary btn-full" onclick="createAccountDemo()">
+                            ⚚ Create Account
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Developer Resources -->
+                <div style="border-top: 1px solid var(--color-border); padding-top: 24px;">
+                    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; font-size: var(--font-size-sm);">
+                        <a href="https://github.com/authenti-idp/demo-app" style="color: var(--color-primary); text-decoration: none; display: flex; align-items: center; gap: 4px;">
+                            ⚘ View source code
+                        </a>
+                        <a href="12-developer-dashboard.html" style="color: var(--color-primary); text-decoration: none; display: flex; align-items: center; gap: 4px;">
+                            ⚑ Integration docs
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section style="padding: 80px 0;">
+        <div class="container">
+            <div class="text-center" style="margin-bottom: 48px;">
+                <h2>Real AuthentiIDP SDK Usage</h2>
+                <p class="text-muted" style="font-size: var(--font-size-lg);">
+                    This demo shows exactly how your app will integrate
+                </p>
+            </div>
+
+            <div class="feature-grid">
+                <div class="feature-card card">
+                    <div class="feature-icon">⚡</div>
+                    <h3 style="margin-bottom: 12px;">Zero Configuration</h3>
+                    <p class="text-muted">
+                        Install the SDK, add one component, and authentication works instantly across all environments.
+                    </p>
+                </div>
+
+                <div class="feature-card card">
+                    <div class="feature-icon">⚿</div>
+                    <h3 style="margin-bottom: 12px;">Built-in Security</h3>
+                    <p class="text-muted">
+                        All tokens, sessions, and credentials are handled automatically with industry best practices.
+                    </p>
+                </div>
+
+                <div class="feature-card card">
+                    <div class="feature-icon">⚡</div>
+                    <h3 style="margin-bottom: 12px;">Beautiful UI</h3>
+                    <p class="text-muted">
+                        Consistent, accessible login flows and profile management that users expect and love.
+                    </p>
+                </div>
+
+                <div class="feature-card card">
+                    <div class="feature-icon">⚘</div>
+                    <h3 style="margin-bottom: 12px;">Auto Analytics</h3>
+                    <p class="text-muted">
+                        Usage metrics and user insights appear automatically in your dashboard with zero setup.
+                    </p>
+                </div>
+
+                <div class="feature-card card">
+                    <div class="feature-icon">⚒</div>
+                    <h3 style="margin-bottom: 12px;">Framework Flexible</h3>
+                    <p class="text-muted">
+                        Works with React, Vue, Angular, vanilla JS, or any web framework you're already using.
+                    </p>
+                </div>
+
+                <div class="feature-card card">
+                    <div class="feature-icon">⤴</div>
+                    <h3 style="margin-bottom: 12px;">Seamless SSO</h3>
+                    <p class="text-muted">
+                        Users sign in once and access all your applications without additional authentication.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 style="margin-bottom: 24px; font-size: 36px;">
+                Ready to Experience SSO?
+            </h2>
+            <p style="font-size: var(--font-size-lg); margin-bottom: 32px; opacity: 0.9;">
+                Sign in to see the protected features and full AuthentiIDP integration in action
+            </p>
+            <a href="#" class="btn-auth" onclick="signInDemo()">
+                ⚿ Sign In Now
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background: var(--color-secondary); padding: 40px 0; text-align: center;">
+        <div class="container">
+            <p style="color: var(--color-text-muted); margin: 0;">
+                For developers: This demo shows real AuthentiIDP SDK usage • 
+                <a href="https://github.com/authenti-idp/demo-app" style="color: var(--color-primary);">
+                    View on GitHub
+                </a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Theme Toggle -->
+    <button class="theme-toggle" id="theme-toggle" style="position: fixed; top: 24px; right: 24px;" aria-label="Toggle theme">
+        ☽
+    </button>
+
+    <script>
+                // Theme management is now handled by the shared theme-manager.js
+        // Demo Authentication Functions
+        function signInDemo() {
+            // Simulate the SSO flow
+            sessionStorage.setItem('demo-authenticated', 'true');
+            window.location.href = '10-sample-protected.html';
+        }
+
+        function createAccountDemo() {
+            // Redirect to registration
+            window.location.href = '02-register.html';
+        }
+
+        // Check if user is already authenticated
+        function checkAuthStatus() {
+            const isAuthenticated = sessionStorage.getItem('demo-authenticated');
+            if (isAuthenticated) {
+                // Show authenticated state
+                const ctaButtons = document.querySelectorAll('.btn-auth, .btn-primary[onclick="signInDemo()"]');
+                ctaButtons.forEach(btn => {
+                    btn.innerHTML = '✓ You\'re Signed In - View Protected Content';
+                    btn.onclick = () => window.location.href = '10-sample-protected.html';
+                });
+                
+                // Add sign out button for authenticated users
+                addSignOutOption();
+            }
+        }
+        
+        function addSignOutOption() {
+            // Find the demo section container
+            const demoSection = document.querySelector('.demo-badge').parentElement;
+            
+            // Create sign out option
+            const signOutSection = document.createElement('div');
+            signOutSection.style.cssText = 'margin-top: 24px; padding: 20px; background: var(--color-secondary); border-radius: var(--radius-md); text-align: center;';
+            signOutSection.innerHTML = `
+                <p style="color: var(--color-text-muted); margin-bottom: 16px; font-size: var(--font-size-sm);">
+                    Already signed in? You can sign out or manage your session.
+                </p>
+                <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+                    <button class="btn btn-secondary" onclick="window.location.href='11-sample-logout.html'" style="font-size: var(--font-size-sm);">
+                        ⚚ Sign Out Options
+                    </button>
+                    <button class="btn btn-secondary" onclick="quickSignOut()" style="font-size: var(--font-size-sm);">
+                        ⚑ Quick Sign Out
+                    </button>
+                </div>
+            `;
+            
+            // Insert after the main demo card
+            const mainCard = document.querySelector('.hero-section .card');
+            if (mainCard && mainCard.parentElement) {
+                mainCard.parentElement.insertBefore(signOutSection, mainCard.nextSibling);
+            }
+        }
+        
+        function quickSignOut() {
+            // Quick sign out - clear demo authentication and redirect
+            sessionStorage.removeItem('demo-authenticated');
+            alert('You have been signed out of the TaskMaster demo.');
+            location.reload(); // Refresh to show signed-out state
+        }
+
+        // Initialize
+        checkAuthStatus();
+    </script>
+</body>
+</html>

@@ -7,9 +7,11 @@
       "Bash(python3:*)",
       "Bash(grep:*)",
       "Bash(mv:*)",
-      "Bash(true)"
+      "Bash(true)",
+      "Bash(open:*)"
     ],
-    "deny": []
+    "deny": [],
+    "defaultMode": "acceptEdits"
   },
   "hooks": {
     "UserPromptSubmit": [
