@@ -1,25 +1,19 @@
 # 📈 User Journey Flowchart: AuthentiIDP v1.0 - MVP Scope
 
-This document outlines key user journeys for AuthentiIDP, a centralized identity provider service for small-scale personal applications. Each flow is presented as an ASCII diagram, showing how users move through the authentication ecosystem.
-
-**MVP Scope Updates**: This document reflects the simplified MVP scope with consolidated flows, removed Privacy settings, integrated Connected Apps management, and streamlined Developer Dashboard.
-
----
-
 ## 🧭 Index of User Journeys
 
 **End-user journeys**
 
-1. [End User Registration & First Login](#1-end-user-registration--first-login) - New user creating account and first authentication
-2. [End User SSO Login Flow](#2-end-user-sso-login-flow) - Returning user accessing applications via SSO
-3. [Password Reset & Recovery](#3-password-reset--recovery) - User recovering access to their account
-4. [User Profile Management](#4-user-profile-management) - User updating personal information and managing connected apps
-5. [Session Management & Logout](#5-session-management--logout) - Session handling and termination flows
+1. [End User Registration & First Login](#1-end-user-registration--first-login)
+2. [End User SSO Login Flow](#2-end-user-sso-login-flow)
+3. [Password Reset & Recovery](#3-password-reset--recovery)
+4. [User Profile Management](#4-user-profile-management)
+5. [Session Management & Logout](#5-session-management--logout)
 
 **Developer journeys**
 
-1. [Developer Integration Workflow](#6-developer-integration-workflow) - Engineer setting up AuthentiIDP in their app
-2. [Application Management Dashboard](#7-application-management-dashboard) - Product manager configuring applications with comprehensive settings
+1. [Developer Integration Workflow](#6-developer-integration-workflow)
+2. [Application Management Dashboard](#7-application-management-dashboard)
 
 ---
 
@@ -29,8 +23,6 @@ This document outlines key user journeys for AuthentiIDP, a centralized identity
 
 ### Flow Purpose
 **Goal**: Enable new users to create an account and successfully authenticate for the first time across multiple applications
-
-**Success Criteria**: User completes registration, verifies email, and successfully logs into at least one connected application within 10 minutes
 
 ### ASCII Flow Diagram
 
@@ -84,33 +76,6 @@ This document outlines key user journeys for AuthentiIDP, a centralized identity
 [Registration complete - user ready for SSO across apps]
 ```
 
-### Key Screens/States
-
-**Registration Page**: Clean form with clear password requirements, email validation, and help text for complex rules
-
-**Email Verification Page**: Clear messaging about checking email with option to resend verification
-
-**Login Page**: Simple login form with "Remember me" option and clear error messaging
-
-**Success State**: Smooth redirect back to original application with user authenticated
-
-### Pain Points & Optimizations
-
-**Current Friction**: Password complexity requirements may cause abandonment
-
-**Optimization Ideas**: 
-- Progressive password validation with real-time feedback
-- Social login options in future versions
-- Clear progress indicators during email verification wait
-
-
-### Error Handling
-
-**Validation Errors**: Real-time validation with specific, actionable error messages
-
-**System Errors**: Graceful degradation with retry options and clear next steps
-
-**Recovery Paths**: Easy access to password reset, email resend, and support contact
 
 ---
 
@@ -118,8 +83,6 @@ This document outlines key user journeys for AuthentiIDP, a centralized identity
 
 ### Flow Purpose
 **Goal**: Provide seamless authentication experience for returning users across multiple connected applications
-
-**Success Criteria**: Authenticated user can access any connected application without re-entering credentials
 
 ### ASCII Flow Diagram
 
@@ -166,33 +129,6 @@ This document outlines key user journeys for AuthentiIDP, a centralized identity
 [Seamless SSO experience across applications]
 ```
 
-### Key Screens/States
-
-**Invisible Success**: Most SSO flows should be invisible - user never sees login page
-
-**Login Page (fallback)**: Only appears when session expired or first visit
-
-**Loading States**: Brief loading indicators during token exchange and validation
-
-**Application Landing**: User lands directly in application with full authentication
-
-### Pain Points & Optimizations
-
-**Current Friction**: Token expiration causing unexpected login prompts
-
-**Optimization Ideas**:
-- Automatic token refresh before expiration
-- Background session validation
-- Graceful handling of network timeouts
-
-
-### Error Handling
-
-**Token Expiration**: Smooth re-authentication flow without losing context
-
-**Network Issues**: Retry mechanisms with fallback to cached authentication
-
-**Application Errors**: Clear error messages with paths back to working state
 
 ---
 
@@ -200,8 +136,6 @@ This document outlines key user journeys for AuthentiIDP, a centralized identity
 
 ### Flow Purpose
 **Goal**: Help users regain access to their accounts when they forget their passwords
-
-**Success Criteria**: User successfully resets password and regains access within 15 minutes
 
 ### ASCII Flow Diagram
 
@@ -271,34 +205,6 @@ This document outlines key user journeys for AuthentiIDP, a centralized identity
 [Access restored across all applications]
 ```
 
-### Key Screens/States
-
-**Reset Request Page**: Simple form focused on email input with clear instructions
-
-**Email Sent Confirmation**: Clear messaging about checking email with resend option
-
-**Password Reset Form**: User-friendly form with password strength feedback
-
-**Success Confirmation**: Clear next steps with direct login option
-
-### Pain Points & Optimizations
-
-**Current Friction**: Users may not check email immediately or email goes to spam
-
-**Optimization Ideas**:
-- SMS backup option for password reset
-- In-app notifications when possible
-- Clear email sender identification
-- Multiple retry attempts with escalating help
-
-
-### Error Handling
-
-**Email Delivery Issues**: Alternative contact methods and manual support options
-
-**Token Expiration**: Clear error messaging with easy restart of reset process
-
-**Validation Errors**: Real-time feedback with specific improvement suggestions
 
 ---
 
@@ -306,8 +212,6 @@ This document outlines key user journeys for AuthentiIDP, a centralized identity
 
 ### Flow Purpose
 **Goal**: Allow users to manage their personal information and account settings centrally
-
-**Success Criteria**: User can update profile information and see changes reflected across all applications
 
 ### ASCII Flow Diagram
 
@@ -360,34 +264,6 @@ This document outlines key user journeys for AuthentiIDP, a centralized identity
               [Remove app access] [Update user session]
 ```
 
-### Key Screens/States
-
-**Profile Overview**: Clean layout showing current information with edit options
-
-**Edit Forms**: Simple forms with real-time validation and preview of changes
-
-**Security Settings**: Clear options for password changes and session management
-
-**Connected Apps Tab**: Integrated application management within profile settings
-
-### Pain Points & Optimizations
-
-**Current Friction**: Changes may take time to propagate to all applications
-
-**Optimization Ideas**:
-- Real-time preview of changes
-- Batch updates to reduce API calls
-- Clear indication of propagation status
-- Rollback option for unwanted changes
-
-
-### Error Handling
-
-**Validation Errors**: Inline validation with clear fix instructions
-
-**Propagation Failures**: Retry mechanisms with manual refresh options
-
-**Permission Errors**: Clear explanation of required permissions and how to grant them
 
 ---
 
@@ -395,8 +271,6 @@ This document outlines key user journeys for AuthentiIDP, a centralized identity
 
 ### Flow Purpose
 **Goal**: Provide users control over their authentication sessions and secure logout functionality
-
-**Success Criteria**: User can log out from all applications simultaneously and understand their session status
 
 ### ASCII Flow Diagram
 
@@ -473,34 +347,6 @@ This document outlines key user journeys for AuthentiIDP, a centralized identity
 [User re-authenticates to continue]
 ```
 
-### Key Screens/States
-
-**Logout Options**: Clear choice between local and global logout with explanations
-
-**Confirmation Page**: Summary of logout actions with option to re-login
-
-**Session Status**: Visual indication of active sessions across applications
-
-**Timeout Warning**: Advance notice before session expiration with extend option
-
-### Pain Points & Optimizations
-
-**Current Friction**: Users confused about partial vs complete logout
-
-**Optimization Ideas**:
-- Visual session status indicators
-- "Remember this choice" for logout preference
-- Gradual logout warnings before forced logout
-- Quick re-authentication for recent logouts
-
-
-### Error Handling
-
-**Logout Failures**: Retry mechanisms with manual session clearing
-
-**Network Issues**: Offline logout capability with sync when reconnected
-
-**Partial Logout**: Clear status of which applications are still authenticated
 
 ---
 
@@ -510,8 +356,6 @@ This document outlines key user journeys for AuthentiIDP, a centralized identity
 
 ### Flow Purpose
 **Goal**: Enable internal developers to add authentication to applications with simplified setup
-
-**Success Criteria**: Developer completes integration and has working authentication within 30 minutes
 
 ### ASCII Flow Diagram
 
@@ -540,23 +384,6 @@ This document outlines key user journeys for AuthentiIDP, a centralized identity
 [Integration complete - users can authenticate across all apps]
 ```
 
-### Key Screens/States
-
-**Simplified Setup Experience**: Install package, configure API keys, add component
-
-**Basic Dashboard**: Simple application management with basic options
-
-**Built-in UI**: Consistent login/profile/logout UI across all apps
-
-**Essential Configuration**: Basic settings with comprehensive application management
-
-### Error Handling
-
-**Simplified Recovery**: SDK handles common error states with user-friendly messages
-
-**Basic Debugging**: Simple error handling with clear guidance
-
-**Integrated Support**: Documentation integrated within application settings
 
 ---
 
@@ -564,8 +391,6 @@ This document outlines key user journeys for AuthentiIDP, a centralized identity
 
 ### Flow Purpose
 **Goal**: Enable product managers to configure and manage applications with comprehensive settings
-
-**Success Criteria**: Manager can view and configure applications through comprehensive 5-tab interface
 
 ### ASCII Flow Diagram
 
@@ -598,23 +423,6 @@ This document outlines key user journeys for AuthentiIDP, a centralized identity
                                     [Generate API credentials]
 ```
 
-### Key Screens/States
-
-**Simple Dashboard View**: All applications with basic management options
-
-**Auto-Discovery**: Applications appear automatically when integrated
-
-**Comprehensive Settings**: 5-tab interface for complete application configuration
-
-**Integrated Documentation**: Documentation included within application settings
-
-### Error Handling
-
-**Configuration Validation**: System validates API keys and connection settings
-
-**Simple Dashboard**: Basic interface with essential management functions
-
-**Clear Guidance**: Documentation and help integrated within settings interface
 
 ---
 
@@ -622,29 +430,63 @@ This document outlines key user journeys for AuthentiIDP, a centralized identity
 
 ### End-user journeys
 ```
-[End User Registration] ──user completes email verification──→ [End User SSO Login]
-         |
-         |──user clicks profile/settings link──→ [User Profile Management]
-                                                         |
-                                                         |──user chooses to change password──→ [Password Reset & Recovery]
-                                                                                                          |
-                                                                                                          |──user completes password change──→ [End User SSO Login]
-[Session Management & Logout] ──user logs out then returns──→ [End User SSO Login]
+[End User Registration]
+   |
+   ──user completes email verification──
+   |
+   v
+[End User SSO Login]
 
-[Any Flow] ──system errors or user mistakes──→ [Error Recovery Flows]
+[End User Registration]
+   |
+   ──user clicks profile/settings link──
+   |
+   v
+[User Profile Management]
+   |
+   ──user chooses to change password──
+   |
+   v
+[Password Reset & Recovery]
+   |
+   ──user completes password change──
+   |
+   v
+[End User SSO Login]
+
+[Session Management & Logout]
+   |
+   ──user logs out then returns──
+   |
+   v
+[End User SSO Login]
+
+[Any Flow]
+   |
+   ──system errors or user mistakes──
+   |
+   v
+[Error Recovery Flows]
 ```
 
 ### Developer journeys
 ```
-[Developer Integration] ──developer needs to configure app──→ [Application Management Dashboard]
-                                                                      |
-                                                                      |──manager selects application──→ [Application Settings - 5-tab interface]
-                                                                                                               |
-                                                                                                               |──manager configures across all tabs──→ [Save Configuration]
+[Developer Integration]
+   |
+   ──developer needs to configure app──
+   |
+   v
+[Application Management Dashboard]
+   |
+   ──manager selects application──
+   |
+   v
+[Application Settings - 5-tab interface]
+   |
+   ──manager configures across all tabs──
+   |
+   v
+[Save Configuration]
 ```
 
 **Connection Notes**: All flows are designed to maintain user context and provide clear paths between related functionality. Error states always include recovery paths back to successful workflows.
-
----
-
-*These simplified user journeys represent a revolutionary approach to internal identity management, eliminating complexity while preserving all security and functionality requirements. The v2.0 experience prioritizes developer productivity and product manager efficiency through intelligent automation and zero-configuration design.*
